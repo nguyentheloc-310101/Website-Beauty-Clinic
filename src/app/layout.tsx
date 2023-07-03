@@ -1,5 +1,8 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+import HeaderAura from '@/components/HeaderAura';
+import './globals.css';
+import { Inter } from 'next/font/google';
+import NavigationAura from '@/components/NavigationAura';
+import FooterAura from '@/components/FooterAura';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,7 +18,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <HeaderAura/>
+        <NavigationAura/>
+
+        <div className="flex-1">
+          {children}
+        </div>
+
+        <FooterAura/>
+      </body>
     </html>
   )
 }
