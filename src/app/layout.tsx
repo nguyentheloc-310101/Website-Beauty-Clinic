@@ -17,13 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="vi">
       <body className={inter.className}>
         <HeaderAura />
         <NavigationAura />
-
         <div className="flex-1">{children}</div>
-
         <FooterAura />
       </body>
     </html>

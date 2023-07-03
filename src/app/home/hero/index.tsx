@@ -29,7 +29,7 @@ const HeroSection = () => {
             Hơn <span className="font-[700]">300.000</span> diện mạo đã được
             nâng tầm khi đến với <span className="font-[700]">Aura</span>
           </div>
-          <div>
+          <div className="mr-[10px]">
             <button>
               <Image
                 src={heroButton}
@@ -37,6 +37,9 @@ const HeroSection = () => {
                 className=" w-[150px] h-[87px] scale-10"
               />
             </button>
+            <div className="relative font-[900] w-[140px] text-center text-[20px] text-white flex top-[-85px] ml-[23px]">
+              ƯU ĐÃI <br /> MỚI NHẤT
+            </div>
           </div>
         </div>
       </div>
