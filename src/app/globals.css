@@ -1,10 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('​https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-
-*, *::before, *::after{
+*,
+*::before,
+*::after {
   padding: 0;
   margin: 0;
 }
@@ -28,7 +29,74 @@ body {
   line-height: 1.5rem;
 }
 
-.product-container{
+.product-container {
   width: calc(100% - 2rem);
   margin-left: 1rem;
+}
+
+.customer-said {
+  background-image: '../statics/images/customer-said/wrapper.png';
+}
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.actorWrapper {
+  display: grid;
+}
+.actor {
+  width: 555px;
+  height: 891px;
+  flex-shrink: 0;
+}
+.text-actor {
+  width: 582px;
+  height: 191px;
+  flex-shrink: 0;
+}
+.paragraph-actor {
+  width: 508px;
+  height: 264px;
+  color: #414141;
+  text-align: right;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 160%;
+}
+.actor-declare {
+  color: var(--gray-2, #4f4f4f);
+  font-size: 27px;
+  /* font-family: Montserrat; */
+  font-style: italic;
+  font-weight: 100;
+  line-height: normal;
+  letter-spacing: -0.27px;
+  text-transform: uppercase;
+}
+.actor-name {
+  margin-top: 10px;
+
+  text-shadow: 0px 1.2201834917068481px 2.4403669834136963px 0px
+    rgba(191, 38, 75, 0.4);
+  font-size: 61.009px;
+  font-style: italic;
+  color: #bf264b;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.61px;
+}
+.actor-desc {
+  text-align: center;
+  text-shadow: 0px 1.2201834917068481px 2.4403669834136963px 0px
+    rgba(191, 38, 75, 0.4);
+  font-size: 24.404px;
+  color: #bf264b;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.244px;
 }
