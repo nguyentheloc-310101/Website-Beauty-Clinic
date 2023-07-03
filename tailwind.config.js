@@ -7,12 +7,14 @@ module.exports = {
   ],
   theme: {
     extend: {
-
+      backgroundImage: {
+        'bg-primary': "url('/statics/images/background.png')",
+      },
     },
     fontFamily: {
-      'vnpro': ['Be Vietnam Pro', 'sans-serif'],
-      'montserrat': ['Montserrat', 'sans-serif']
-    }
+      vnpro: ['Be Vietnam Pro', 'sans-serif'],
+      montserrat: ['Montserrat', 'sans-serif'],
+    },
   },
   plugins: [],
-}
+};

@@ -1,25 +1,31 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Logo from '../statics/images/Logo.png';
 
 const HeaderAura = () => {
-     return (  
-          <div className="w-full flex text-[#bc2449] text-[0.9rem] px-[10rem] py-[1rem] font-[500] items-center justify-between">
-               <Image
-                    src={Logo}
-                    alt="Logo"
-                    className="w-[7rem] h-auto"
-               />
-               <span>TRANG CHỦ</span>
-               <span>GIỚI THIỆU</span>
-               <span>ƯU ĐÃI</span>
-               <span>LIÊN HỆ</span>
-               <div className="flex flex-col items-center">
-                    <span className="text-[0.8rem]">Tư vấn miễn phí</span>
-                    <span className="font-bold text-black">0833.08.2222</span>
-               </div>
-          </div>
-     );
-}
- 
+  const [navbar, setNavbar] = useState(false);
+  return (
+    <div className="w-full h-[100px] flex  px-[235px] py-[1rem] items-center">
+      <Image
+        src={Logo}
+        alt="Logo"
+        className="w-[103px] h-[45px]"
+      />
+      <div className="flex ml-[10%] w-full font-[600] text-[#bc2449] text-[16px] items-center justify-between">
+        <span>TRANG CHỦ</span>
+        <span>GIỚI THIỆU</span>
+        <span>ƯU ĐÃI</span>
+        <span>LIÊN HỆ</span>
+        <div className="flex flex-col items-center">
+          <span className="text-[16px] font-[500px]">Tư vấn miễn phí</span>
+          <span className="font-[700px] text-[18px] text-black">
+            0833.08.2222
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default HeaderAura;

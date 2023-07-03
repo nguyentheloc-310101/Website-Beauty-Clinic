@@ -1,10 +1,10 @@
-import ReelsOutStanding from "@/components/reels/ReelsOutStanding";
-
+import ReelsOutStanding from '@/components/reels/ReelsOutStanding';
+import HomePage from './home';
 
 export default function Home() {
   return (
     <div>
-      <ReelsOutStanding/>
+      <HomePage />
     </div>
   );
 }
