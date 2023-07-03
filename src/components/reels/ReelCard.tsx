@@ -7,7 +7,7 @@ import {AiOutlinePlus} from 'react-icons/ai';
 
 const ReelCard = () => {
      return (  
-          <div className="flex flex-col rounded-lg overflow-hidden w-[20vw] h-[45vh]">
+          <div className="flex flex-col rounded-lg overflow-hidden min-w-[260px] w-[20vw] h-[45vh]">
                <div className="relative w-full h-[95%] overflow-hidden">
                     <ProductsCarousel/>
                     <div className="product-container bottom-[1rem] p-1 bg-[rgba(255,255,255,0.5)] overflow-hidden rounded-lg absolute z-100 w-full flex justify-between items-end">

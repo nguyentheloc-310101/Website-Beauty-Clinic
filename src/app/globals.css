@@ -32,3 +32,6 @@ body {
   width: calc(100% - 2rem);
   margin-left: 1rem;
 }
+.carousel-product > div{
+  height:100%;
+}

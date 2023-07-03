@@ -13,9 +13,6 @@ const ProductsCarousel = () => {
                          className="h-full w-full object-cover"
                     />
                </div>
-               <div>
-                    
-               </div>
           </div>
      );
 }
