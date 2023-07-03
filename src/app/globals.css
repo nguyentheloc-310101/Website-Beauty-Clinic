@@ -1,7 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 
 *, *::before, *::after{
   padding: 0;
@@ -9,23 +10,25 @@
 }
 
 body {
-  font-family: 'Be Vietnam Pro', sans-serif !important;
+  font-family: 'Montserrat', sans-serif;
   width: 100vw;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
 .two-lines-trancate {
-  display: block;
   white-space: wrap;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
-  line-clamp: 2;
-  max-height: calc(2rem * 2);
-  line-height: 1rem;
-  width: 50vw;
+  line-height: 1.5rem;
+}
+
+.product-container{
+  width: calc(100% - 2rem);
+  margin-left: 1rem;
 }

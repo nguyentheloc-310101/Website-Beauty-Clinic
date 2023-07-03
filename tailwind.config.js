@@ -10,7 +10,6 @@ module.exports = {
 
     },
     fontFamily: {
-      'vnpro': ['Be Vietnam Pro', 'sans-serif'],
       'montserrat': ['Montserrat', 'sans-serif']
     }
   },

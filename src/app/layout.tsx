@@ -22,7 +22,7 @@ export default function RootLayout({
         <HeaderAura/>
         <NavigationAura/>
 
-        <div className="flex-1">
+        <div className="flex-1 mb-[5rem]">
           {children}
         </div>
 
