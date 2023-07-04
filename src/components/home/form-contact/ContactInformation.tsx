@@ -1,12 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
-import girls from '../../../statics/images/contact-infom/girls.png';
+import girls from '../../../statics/images/contact-inform/girls.png';
 import FormContact from './FormContact';
 
 const ContactInformation = () => {
   return (
     <div className="contact-container">
-      <div className="relative w-[720px] flex flex-col z-10 justify-center items-center">
+      <div className="absolute left-[60px] top-[105px] w-[720px] flex flex-col z-10 ml-[140px]">
         <div className="text-[#fff] text-[75px] font-[400] uppercase">
           Đặt lich ngay
         </div>

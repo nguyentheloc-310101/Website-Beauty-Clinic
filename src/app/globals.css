@@ -272,10 +272,11 @@ body {
   z-index: 0;
 }
 .contact-container {
+  position: relative;
   display: flex;
   justify-content: flex-end;
   background-size: cover;
-  background-image: url('../statics/images/contact-infom/wrapper.png');
+  background-image: url('../statics/images/contact-inform/wrapper.png');
 }
 .girls-contact {
   display: flex;
@@ -286,6 +287,7 @@ body {
 }
 
 .form-contact {
+  position: relative;
   margin-top: 32px;
   width: 500px;
   height: 530px;
@@ -295,6 +297,10 @@ body {
   gap: 11.82px;
   flex-shrink: 0;
   border-radius: 30px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--linear, linear-gradient(45deg, #fff2de 0%, #fff 100%));
 }
 .btn-primary {
@@ -320,7 +326,17 @@ body {
   border: 0.837px solid #920a23;
   background: linear-gradient(180deg, #c10057 0%, #730033 100%);
 }
-
+.input-contact {
+  width: 350px;
+  height: 54px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  border: 1.19px solid #bf264b;
+  background: #fff;
+}
+.input-contact::placeholder {
+  padding-left: 25px;
+}
 .product-container {
   width: calc(100% - 2rem);
   margin-left: 1rem;
