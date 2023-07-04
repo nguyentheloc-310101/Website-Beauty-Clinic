@@ -36,22 +36,6 @@ const ReelCard = ({title,author,date}:Props) => {
                     </div>
                </div>
           </div>
-          <div className="text-white bg-[#bc2449] w-[1.5rem] h-[1.5rem] rounded-lg flex justify-center items-center">
-            <AiOutlinePlus />
-          </div>
-        </div>
-      </div>
-
-      <div className="h-auto w-full mt-5 px-2">
-        <p className="font-[700] two-lines-trancate w-full text-[1.3rem] text-[#bc2449]">
-          Tên của Reels có thể dài được 2 hàng
-        </p>
-        <div className="flex justify-between">
-          <span className="text-[#36383A] text-[0.9rem]">@username</span>
-          <span className="text-[#36383A] text-[0.9rem]">09/05/2000</span>
-        </div>
-      </div>
-    </div>
   );
 };
 
