@@ -142,10 +142,13 @@ body {
   background-image: url('../statics/images/background.png');
   background-size: contain;
 }
-.customer-said {
-  background-image: '../statics/images/customer-said/wrapper.png';
-}
 
+.customer-said-container {
+  height: 1100px;
+  background-image: url('../statics/images/customer-said/wrapper.png');
+  background-size: cover;
+  margin-bottom: 120px;
+}
 .absolute-center {
   position: absolute;
   top: 50%;
@@ -220,7 +223,8 @@ body {
   align-items: center;
   justify-content: center;
 }
-.card-slider-customer {
+.card-customer {
+  cursor: pointer;
   width: 717px;
   height: 406px;
   flex-shrink: 0;
@@ -336,6 +340,14 @@ body {
 }
 .input-contact::placeholder {
   padding-left: 25px;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
 }
 .product-container {
   width: calc(100% - 2rem);
