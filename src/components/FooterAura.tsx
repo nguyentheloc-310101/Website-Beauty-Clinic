@@ -1,7 +1,7 @@
 import React from 'react';
-import FooterLeftImg from '../statics/images/Footer_left.png';
-import FooterRightImg from '../statics/images/Footer_right.png';
-import Logo from '../statics/images/Logo.png';
+import FooterLeftImg from '../statics/images/live-commerce/Footer_left.png';
+import FooterRightImg from '../statics/images/live-commerce/Footer_right.png';
+import Logo from '../statics/images/live-commerce/Logo.png';
 import Image from 'next/image';
 import { BsChevronRight } from 'react-icons/bs';
 import { BiLogoFacebook } from 'react-icons/bi';

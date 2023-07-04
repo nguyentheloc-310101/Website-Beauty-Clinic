@@ -3,6 +3,7 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import NavigationAura from '@/components/NavigationAura';
 import FooterAura from '@/components/FooterAura';
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,7 +18,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="vi">
+    <html lang="en">
+      <head>
+        <link rel="stylesheet" href="https://sf16-scmcdn-sg.ibytedtos.com/obj/static-sg/livesaas-client/pc/byteplus/css/index.1.1.2-beta.2.css" />
+      </head>
       <body className={inter.className}>
         <HeaderAura />
         <NavigationAura />
