@@ -21,7 +21,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <HeaderAura />
         <NavigationAura />
-        <div className="flex-1">{children}</div>
+
+        <div className="flex-1 mb-[5rem]">{children}</div>
+
         <FooterAura />
       </body>
     </html>

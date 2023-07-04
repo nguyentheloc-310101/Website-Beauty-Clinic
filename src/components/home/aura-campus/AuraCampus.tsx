@@ -8,8 +8,6 @@ import {
   AiFillCaretRight,
   AiOutlineRight,
 } from 'react-icons/ai';
-import IconButton from '@/components/button/iconButton';
-const IconLeftArrow = AiOutlineRight;
 
 const AuraCampus = () => {
   return (
@@ -40,6 +38,7 @@ const AuraCampus = () => {
             <p className="text-gray-700 text-base">
               Lorem ipsum dolor sit amet, consectetur
             </p>
+            <span className="w-[] h-[]"></span>
           </div>
         </div>
         <div className="w-[380px] rounded-[40px] overflow-hidden shadow-lg">

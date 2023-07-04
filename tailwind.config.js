@@ -12,9 +12,14 @@ module.exports = {
       },
     },
     fontFamily: {
+<<<<<<< HEAD
       vnpro: ['Be Vietnam Pro', 'sans-serif'],
       montserrat: ['Montserrat', 'sans-serif'],
     },
+=======
+      'montserrat': ['Montserrat', 'sans-serif']
+    }
+>>>>>>> cb4b2eba8a345de59a1a65d8496ea81161f666cd
   },
   plugins: [],
 };

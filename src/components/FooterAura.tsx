@@ -1,7 +1,7 @@
 import React from 'react';
 import FooterLeftImg from '../statics/images/Footer_left.png';
 import FooterRightImg from '../statics/images/Footer_right.png';
-import Logo from '../statics/images/logo-footer.png';
+import Logo from '../statics/images/Logo.png';
 import Image from 'next/image';
 import { BsChevronRight } from 'react-icons/bs';
 import { BiLogoFacebook } from 'react-icons/bi';
@@ -21,14 +21,14 @@ const FooterAura = () => {
         <Image
           src={Logo}
           alt="Logo"
-          className="w-[7rem] h-auto scale-10"
+          className="w-[7rem] h-auto"
         />
-        <div className="flex flex-col items-center text-[#54424B]">
+        <div className="flex flex-col items-center text-[#98818d]">
           <span>Nầng tầm nét Việt © 2023</span>
           <span>Đăng ký doanh nghiệp số: 0316034950</span>
           <span>MST: 1801544652</span>
         </div>
-        <div className="flex items-center gap-5 text-[#54424B]">
+        <div className="flex items-center gap-5 text-[#98818d]">
           <div className="flex items-center">
             <span>Giới thiệu</span>
             <BsChevronRight className="text-[#bc2449]" />
