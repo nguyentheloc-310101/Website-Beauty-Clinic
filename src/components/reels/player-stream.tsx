@@ -3,13 +3,14 @@ import React, {useRef, useEffect, useMemo} from 'react';
 
 interface Props {
   isConnectStream: boolean;
+  streamInfo: any;
 }
 var webSDK: any = null;
 
-const PlayerStream = ({isConnectStream}:Props) => {
+const PlayerStream = ({isConnectStream,streamInfo}:Props) => {
      const initFlag = useRef(false);
-     const token = "YvFBcI"; //streamInfo?.token;
-     const activityId = "1769851383158785";//streamInfo?.activity_id;
+     const token = streamInfo?.token;
+     const activityId = streamInfo?.activity_id;
 
    
      useEffect(() => {

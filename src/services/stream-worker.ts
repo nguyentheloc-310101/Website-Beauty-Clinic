@@ -5,7 +5,7 @@ import { supabase } from "./supabase";
 const backend_url = `http://localhost:3001/api/v1`
 // const backend_url = `https://api-staging.auradental.vn/api/v1`;
 
-export async function getStreamKey(user_id,username:string, avatar: string){
+export async function getStreamKey(user_id:any,username:string, avatar: string){
      let res = await axios.post(backend_url +"/stream/getStreamKey",{userName:username,avatar});
      console.log(res)
      if (res.status === 200){

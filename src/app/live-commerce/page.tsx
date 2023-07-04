@@ -3,7 +3,6 @@ import ReelsOutStanding from "@/components/reels/ReelsOutStanding";
 import VideoReplay from "@/components/reels/VideoReplay";
 import Script from "next/script";
 
-
 export default function LiveCommerce() {
   return (
     <div>
