@@ -24,7 +24,7 @@ const AuraCampus = () => {
         </div>
       </div>
       <div className="flex items-center px-[130px] gap-[40px] mt-[40px]">
-        <div className="w-[380px] rounded-[40px] overflow-hidden shadow-lg">
+        <div className="w-[380px] rounded-[40px] overflow-hidden shadow-lg bg-white">
           <Image
             src={dongThap}
             alt="cover-img"
@@ -41,7 +41,7 @@ const AuraCampus = () => {
             <span className="w-[] h-[]"></span>
           </div>
         </div>
-        <div className="w-[380px] rounded-[40px] overflow-hidden shadow-lg">
+        <div className="w-[380px] rounded-[40px] overflow-hidden shadow-lg bg-white">
           <Image
             src={caMau}
             alt="cover-img"
@@ -59,7 +59,7 @@ const AuraCampus = () => {
             </p>
           </div>
         </div>
-        <div className="w-[380px] rounded-[40px] overflow-hidden shadow-lg">
+        <div className="w-[380px] rounded-[40px] overflow-hidden shadow-lg bg-white">
           <Image
             src={kienGiang}
             alt="cover-img"
