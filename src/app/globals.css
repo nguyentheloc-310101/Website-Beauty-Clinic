@@ -146,6 +146,26 @@ body {
   background-image: url('../statics/images/background.png');
   background-size: contain;
 }
+.panel-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 84px;
+  height: 249.6px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #c20459 41.39%, #4d0523 100%);
+  left: 12px;
+  bottom: 1px;
+  position: fixed;
+  z-index: 999;
+  padding: 33px 18px;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+/* .panel-contact .show {
+  opacity: 1;
+  visibility: visible;
+} */
 
 /*the third part of the website*/
 .customer-said-container {
