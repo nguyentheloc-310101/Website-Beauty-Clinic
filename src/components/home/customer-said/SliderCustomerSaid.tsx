@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import SliderCardCustomerSaid from './SliderCardCustomerSaid';
-import text from '../../../statics/images/customer-said-video/text-customer.png';
+import text from '../../../statics/images/customer-said/textImg.png';
 import dantri from '../../../statics/images/customer-said/logo/logo-dantri.png';
 import alobacsi from '../../../statics/images/customer-said/logo/logo-alobacsi.png';
 import eva from '../../../statics/images/customer-said/logo/logo-eva.png';
@@ -10,21 +10,26 @@ import afamily from '../../../statics/images/customer-said/logo/logo-afamily.png
 const SliderCustomerSaid = () => {
   return (
     <div className="background-customer-said">
-      <div className="text-aura">
+      <div className="hidden lg:flex lg:items-center lg:justify-center">
         <Image
           src={text}
           alt={'text-customer'}
-          className="w-[812px] h-[258px] "
+          className="w-[812px] h-[258px] mt-[87px] mb-[43px]"
         />
       </div>
-      <div className="flex items center justify-center ">
+      <div className="lg:hidden flex items-center justify-center z-10">
+        <div className="mt-[45px] text-[#fff]  font-[800] text-[31px] w-[220px] h-[62px]">
+          Khách hàng nói gì về Aura
+        </div>
+      </div>
+      <div className="flex items center justify-center">
         <SliderCardCustomerSaid />
       </div>
-      <div className="text-white text-[50px] font-[800] uppercase flex items-center justify-center mt-[75px]">
+      <div className="hidden text-white text-[50px] font-[800] uppercase lg:flex items-center justify-center mt-[75px]">
         Báo chí nói gì về Aura
       </div>
-      <div className="flex items-center justify-center">
-        <div className="logo-container px-">
+      <div className="hidden lg:flex items-center justify-center">
+        <div className="logo-container px-2">
           <Image
             src={dantri}
             alt={'logo'}

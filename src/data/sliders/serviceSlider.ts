@@ -7,11 +7,11 @@ import service6 from '../../statics/images/aura-service/img-service/img6.png';
 import service7 from '../../statics/images/aura-service/img-service/img7.png';
 
 const serviceSlideData = [
-  {
-    key: 1,
-    image: service1,
-    alt: 'image-service',
-  },
+  // {
+  //   key: 1,
+  //   image: service1,
+  //   alt: 'image-service',
+  // },
   {
     key: 2,
     image: service2,

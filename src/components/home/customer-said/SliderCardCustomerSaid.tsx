@@ -35,7 +35,7 @@ const SliderCardCustomerSaid = () => {
 
   return (
     <div
-      className="flex gap-[60px] overflow-x-auto hide-scrollbar"
+      className="flex items-end gap-[25px] lg:gap-[60px] z-100 overflow-x-auto hide-scrollbar h-[500px]"
       ref={sliderRef}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
@@ -63,7 +63,7 @@ const SliderCardCustomerSaid = () => {
         }
         signed={'Linh'}
         image={customer3}
-      />{' '}
+      />
       <CardCustomer
         customer_name={'Cô Thắm - Aura Phú Yên'}
         message={
@@ -71,7 +71,7 @@ const SliderCardCustomerSaid = () => {
         }
         signed={'  Ngọc'}
         image={customer4}
-      />{' '}
+      />
       <CardCustomer
         customer_name={'Chị Liên - Aura Vĩnh Long'}
         message={

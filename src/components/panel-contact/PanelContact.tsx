@@ -31,18 +31,21 @@ const PanelContact = () => {
         alt={'zalo-icon'}
         width={48}
         height={48}
+        className="cursor-pointer"
       />
       <Image
         src={mess}
         alt={'zalo-icon'}
         width={48}
         height={48}
+        className="cursor-pointer"
       />
       <Image
         src={shopee}
         alt={'zalo-icon'}
         width={48}
         height={48}
+        className="cursor-pointer"
       />
     </div>
   );

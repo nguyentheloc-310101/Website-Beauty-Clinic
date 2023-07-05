@@ -23,7 +23,7 @@ const AuraCampus = () => {
     const content = document.getElementById('content') as HTMLElement;
     if (content) {
       content.scrollTo({
-        left: content.scrollLeft - 700,
+        left: content.scrollLeft - 300,
         behavior: 'smooth',
       });
     }
@@ -33,7 +33,7 @@ const AuraCampus = () => {
     const content = document.getElementById('content') as HTMLElement;
     if (content) {
       content.scrollTo({
-        left: content.scrollLeft + 700,
+        left: content.scrollLeft + 300,
         behavior: 'smooth',
       });
     }

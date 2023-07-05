@@ -11,15 +11,20 @@ import profession from '../../../statics/images/campus-scope/profession.png';
 const SeeMoreAboutAura = () => {
   return (
     <div className="see-more-container ">
-      <div className="mt-[120px] mb-[33px] z-50">
+      <div className="hidden mt-[120px] mb-[33px] z-50">
         <Image
           src={text5stars}
           alt={'text-customer'}
-          className="w-[845px] h-auto "
+          className="w-[845px] h-auto"
         />
       </div>
+      <div className="w-[233px] h-[64px] mr-[65px] my-[50px]">
+        <div className="text-center text-[26px] text-[#bf264b] uppercase leading-[115%] font-[800]">
+          Thẩm mỹ viện quốc tế 5 sao
+        </div>
+      </div>
       <div className="card-scope">
-        <div className="flex gap-[37px] mb-[10px]">
+        <div className="flex overflow-x-auto gap-[37px] mb-[10px]">
           <Image
             src={big}
             alt={'text-customer'}
@@ -51,7 +56,7 @@ const SeeMoreAboutAura = () => {
         <Image
           src={ribbon}
           alt={'text-customer'}
-          className="w-full h-[541px]"
+          className="w-full h-[541px] ms:object-contain"
         />
       </div>
     </div>
