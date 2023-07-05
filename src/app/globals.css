@@ -1,8 +1,7 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url("https://sf16-scmcdn-sg.ibytedtos.com/obj/static-sg/livesaas-client/pc/byteplus/css/index.1.1.2-beta.2.css");
 
 *,
 *::before,
@@ -18,10 +17,116 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-image: url('../statics/images/background.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+}
+
+.two-lines-trancate {
+  white-space: wrap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  line-height: 1.5rem;
+}
+
+.product-container {
+  width: calc(100% - 2rem);
+  margin-left: 1rem;
+}
+
+.customer-said {
+  background-image: '../statics/images/customer-said/wrapper.png';
+}
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.actorWrapper {
+  display: grid;
+}
+.actor {
+  width: 555px;
+  height: 891px;
+  flex-shrink: 0;
+}
+.text-actor {
+  width: 582px;
+  height: 191px;
+  flex-shrink: 0;
+}
+.paragraph-actor {
+  width: 508px;
+  height: 264px;
+  color: #414141;
+  text-align: right;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 160%;
+}
+.actor-declare {
+  color: var(--gray-2, #4f4f4f);
+  font-size: 27px;
+
+  font-style: italic;
+  font-weight: 100;
+  line-height: normal;
+  letter-spacing: -0.27px;
+  text-transform: uppercase;
+}
+.actor-name {
+  margin-top: 10px;
+
+  text-shadow: 0px 1.2201834917068481px 2.4403669834136963px 0px
+    rgba(191, 38, 75, 0.4);
+  font-size: 61.009px;
+  font-style: italic;
+  color: #bf264b;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.61px;
+}
+.actor-desc {
+  text-align: center;
+  text-shadow: 0px 1.2201834917068481px 2.4403669834136963px 0px
+    rgba(191, 38, 75, 0.4);
+  font-size: 24.404px;
+  color: #bf264b;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.244px;
+}
+
+.product-container {
+  width: calc(100% - 2rem);
+  margin-left: 1rem;
+}
+.carousel-product > div {
+  height: 100%;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .linear-bg-hover {
@@ -53,16 +158,20 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-75%, -50%);
 }
+
+.modalStyle .ant-modal-content {
+  width: 780px;
+  height: 542px;
+  border-radius: 40px;
+  background: var(--linear, linear-gradient(90deg, #bf264b 0%, #df4b6e 100%));
+  padding: 10px;
+}
+
 /***************************************************************************************************************/
 
 /*AURA campus*/
-.card-campus-container {
-  width: 380px;
-}
-.card-campus-name {
-}
 
 /*the fifth part of the website*/
 .actorWrapper {
@@ -275,56 +384,6 @@ body {
   width: calc(100% - 2rem);
   margin-left: 1rem;
 }
-
-.carousel-product > div{
-  height:100%;
-}
-
-/* Slideshow */
-
-.slideshow {
-  overflow: hidden;
-  width: 100%;
+.carousel-product > div {
   height: 100%;
-  position: relative;
-  top:0;
-  left:0;
-}
-
-.slideshowSlider {
-  height: 100%;
-  white-space: nowrap;
-  transition: ease 1000ms;
-}
-
-.slide {
-  display: inline-block;
-  height:100%;
-  width: 100%;
-  border-radius: 1.25rem;
-  object-fit: cover;
-}
-
-.slideshowDots {
-  text-align: center;
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  bottom: 1rem;
-}
-
-.slideshowDot {
-  display: inline-block;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  margin: 15px 7px 0px;
-  background-color: #c4c4c4;
-}
-
-.slideshowDot.active {
-  background-color: #bc2449;
 }
