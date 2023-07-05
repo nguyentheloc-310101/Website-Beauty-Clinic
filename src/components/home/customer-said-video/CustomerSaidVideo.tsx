@@ -7,7 +7,7 @@ import text from '../../../statics/images/customer-said-video/text-customer.png'
 const CustomerSaidVideo = () => {
   return (
     <>
-      <div className="customer-said-container ">
+      <div className="customer-said-container">
         <div className="relative flex items-center justify-center z-100">
           <Image
             src={text}

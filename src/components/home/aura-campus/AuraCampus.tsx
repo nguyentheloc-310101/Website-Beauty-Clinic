@@ -1,17 +1,45 @@
-import Image from 'next/image';
+'use client';
+import React, { useState } from 'react';
+import Image, { StaticImageData } from 'next/image';
 import dongThap from '../../../statics/images/campus/dongthap.png';
 import caMau from '../../../statics/images/campus/camau.png';
 import kienGiang from '../../../statics/images/campus/kiengiang.png';
 
-import {
-  AiFillCaretLeft,
-  AiFillCaretRight,
-  AiOutlineRight,
-} from 'react-icons/ai';
+import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
+import CardCampusHover from './CardCampusHover';
+import dataCampus from '@/data/sliders/campusSlider';
 
-const AuraCampus = () => {
+interface CampusItem {
+  key: number;
+  name: string;
+  address_hover: string;
+  address: string;
+  image: StaticImageData;
+  time: string;
+}
+
+const AuraCampus: React.FC = () => {
+  const [hoveredCards, setHoveredCards] = useState<boolean[]>([]);
+
+  const handleMouseEnter = (index: number) => {
+    setHoveredCards((prevHoveredCards) => {
+      const updatedHoveredCards = [...prevHoveredCards];
+      updatedHoveredCards[index] = true;
+      return updatedHoveredCards;
+    });
+  };
+
+  const handleMouseLeave = (index: number) => {
+    setHoveredCards((prevHoveredCards) => {
+      const updatedHoveredCards = [...prevHoveredCards];
+      updatedHoveredCards[index] = false;
+      return updatedHoveredCards;
+    });
+  };
+
   return (
     <div>
+      {/* Rest of your code */}
       <div className="flex items-center justify-between px-[130px]">
         <div className="flex font-[800] text-[49px] leading-[140%] text-[#bc2449] ">
           Bạn có hẹn cùng Aura
@@ -24,57 +52,41 @@ const AuraCampus = () => {
         </div>
       </div>
       <div className="flex items-center px-[130px] gap-[40px] mt-[40px]">
-        <div className="w-[380px] rounded-[40px] overflow-hidden shadow-lg bg-white">
-          <Image
-            src={dongThap}
-            alt="cover-img"
-            className="scale-10  h-[380px] "
-            style={{ objectFit: 'cover' }}
-          />
-          <div className="px-6 py-4">
-            <div className="mb-2 font-[800] leading-[140%] text-[25px] text-[#bf264b]">
-              Thẩm mỹ viện Quốc tế Aura - Đồng Tháp
+        {dataCampus.map((item: CampusItem, index: number) => {
+          return (
+            <div
+              key={item.key}
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={() => handleMouseLeave(index)}>
+              {hoveredCards[index] ? (
+                <CardCampusHover
+                  name={item.name}
+                  address={item.address_hover}
+                  image={item.image}
+                  time={item.time}
+                />
+              ) : (
+                <div className="w-[380px] h-[542px] rounded-[40px] overflow-hidden shadow-lg text-[#bf264b] bg-white ">
+                  <Image
+                    src={item.image}
+                    alt="cover-img"
+                    className="scale-10  h-[380px] rounded-t-[40px]"
+                    style={{ objectFit: 'cover' }}
+                    width={380}
+                    height={380}
+                  />
+                  <div className="px-6 py-4">
+                    <div className="mb-2 font-[800] leading-[140%] text-[25px] ">
+                      {item.name}
+                    </div>
+                    <p className="text-base text-[#36383A]">{item.address}</p>
+                    <span className="w-[] h-[]"></span>
+                  </div>
+                </div>
+              )}
             </div>
-            <p className="text-gray-700 text-base">
-              Lorem ipsum dolor sit amet, consectetur
-            </p>
-            <span className="w-[] h-[]"></span>
-          </div>
-        </div>
-        <div className="w-[380px] rounded-[40px] overflow-hidden shadow-lg bg-white">
-          <Image
-            src={caMau}
-            alt="cover-img"
-            className="scale-10  h-[380px] "
-            style={{ objectFit: 'cover' }}
-          />
-          <div className="px-6 py-4">
-            <div className="mb-2 font-[800] leading-[140%] text-[25px] text-[#bf264b]">
-              Thẩm mỹ viện Quốc tế Aura - Cà Mau
-            </div>
-
-            <p className="text-gray-700 text-base">
-              Lorem ipsum dolor sit amet, consectetur
-              {/* <IconButton Icon={IconLeftArrow} /> */}
-            </p>
-          </div>
-        </div>
-        <div className="w-[380px] rounded-[40px] overflow-hidden shadow-lg bg-white">
-          <Image
-            src={kienGiang}
-            alt="cover-img"
-            className="scale-10  h-[380px] "
-            style={{ objectFit: 'cover' }}
-          />
-          <div className="px-6 py-4">
-            <div className="mb-2 font-[800] leading-[140%] text-[25px] text-[#bf264b]">
-              Thẩm mỹ viện Quốc tế Aura - Kiên Giang
-            </div>
-            <p className="text-gray-700 text-base">
-              Lorem ipsum dolor sit amet, consectetur
-            </p>
-          </div>
-        </div>
+          );
+        })}
       </div>
     </div>
   );

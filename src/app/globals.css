@@ -129,6 +129,10 @@ body {
   min-height: 100vh;
 }
 
+.linear-bg-hover {
+  background: var(--linear, linear-gradient(90deg, #bf264b 0%, #df4b6e 100%));
+}
+
 .two-lines-trancate {
   white-space: wrap;
   display: -webkit-box;
@@ -143,6 +147,7 @@ body {
   background-size: contain;
 }
 
+/*the third part of the website*/
 .customer-said-container {
   height: 1100px;
   background-image: url('../statics/images/customer-said/wrapper.png');
@@ -155,6 +160,16 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+/***************************************************************************************************************/
+
+/*AURA campus*/
+.card-campus-container {
+  width: 380px;
+}
+.card-campus-name {
+}
+
+/*the fifth part of the website*/
 .actorWrapper {
   display: grid;
 }
@@ -211,6 +226,10 @@ body {
   line-height: normal;
   letter-spacing: -0.244px;
 }
+
+/***************************************************************************************************************/
+
+/*The sixth part of the website- slider customer card*/
 .background-customer-said {
   width: auto;
   height: 1200px;
@@ -252,6 +271,9 @@ body {
   border-radius: 25px;
   background: #fff;
 }
+/***************************************************************************************************************/
+
+/*3 cards about AURA*/
 .see-more-container {
   position: relative;
   display: flex;
@@ -275,6 +297,9 @@ body {
   position: absolute;
   z-index: 0;
 }
+/***************************************************************************************************************/
+
+/*The form*/
 .contact-container {
   position: relative;
   display: flex;
@@ -341,6 +366,8 @@ body {
 .input-contact::placeholder {
   padding-left: 25px;
 }
+/***************************************************************************************************************/
+
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
