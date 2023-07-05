@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Logo from '../statics/images/Logo.png';
+import Logo from '../statics/images/live-commerce/Logo.png';
 
 const HeaderAura = () => {
   const [navbar, setNavbar] = useState(false);

@@ -7,6 +7,7 @@ import CustomerSaidVideo from '@/components/home/customer-said-video/CustomerSai
 import SliderCustomerSaid from '@/components/home/customer-said/SliderCustomerSaid';
 import SeeMoreAboutAura from '@/components/home/see-more/SeeMoreAboutAura';
 import ContactInformation from '@/components/home/form-contact/ContactInformation';
+import ReelsOutStanding from '@/components/reels/ReelsOutStanding';
 
 const HomePage = () => {
   return (
@@ -19,6 +20,7 @@ const HomePage = () => {
       <SliderCustomerSaid />
       <SeeMoreAboutAura />
       <ContactInformation />
+      <ReelsOutStanding/>
     </div>
   );
 };
