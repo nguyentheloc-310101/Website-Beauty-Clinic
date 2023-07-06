@@ -9,9 +9,13 @@ import modern from '../../../statics/images/campus-scope/mordern.png';
 import profession from '../../../statics/images/campus-scope/profession.png';
 import heartMap from '../../../statics/images/campus-scope/heart_map.png';
 
+import CardCampusResponsive from '../aura-campus/CardCampusResponsive';
+import { CardCustomer } from '../customer-said/CardCustomer';
+import dataCampus from '@/data/sliders/campusSlider';
+
 const SeeMoreAboutAura = () => {
   return (
-    <div className="see-more-container ">
+    <div className="relative flex flex-col items-center justify-center md:mt-[100px]">
       <div className="hidden mt-[120px] mb-[33px] z-50">
         <Image
           src={text5stars}
@@ -19,7 +23,7 @@ const SeeMoreAboutAura = () => {
           className="w-[845px] h-auto"
         />
       </div>
-      <div className="w-[233px] h-[64px] mr-[65px] my-[50px]">
+      <div className="w-[233px] h-[64px] my-[50px]">
         <div className="text-center text-[26px] text-[#bf264b] uppercase leading-[115%] font-[800]">
           Thẩm mỹ viện quốc tế 5 sao
         </div>
@@ -52,28 +56,41 @@ const SeeMoreAboutAura = () => {
             className="w-auto h-[18px] ml-[24px] cursor-pointer"
           />
         </div>
-        <div className="flex">
+      </div>
+      <div className="lg:hidden flex flex-col mt-[10px]">
+        <div className="flex items-center justify-center gap-[9px]">
           <div>
             <Image
               src={heartMap}
               alt={'text-customer'}
-              className="w-auto h-[35px] cursor-pointer"
+              className="w-auto h-[30px] ml-[24px] cursor-pointer"
             />
           </div>
-          <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#BF264B] to-[#DF4B6E] text-[26px] font-[800] uppercase">
-            Aura gần bạn
+          <div className="text-transparent text-[26px] font-[800] uppercase bg-clip-text bg-gradient-to-r from-[#BF264B] to-[#DF4B6E]">
+            Aura Gần bạn
           </div>
-
           <div>
-            {' '}
             <Image
               src={heartMap}
               alt={'text-customer'}
-              className="w-auto h-[35px] cursor-pointer"
+              className="w-auto h-[30px] ml-[24px] cursor-pointer"
             />
           </div>
         </div>
       </div>
+      <div className="md:hidden px-6 flex mt-[40px] w-full items-end gap-[25px] lg:gap-[60px] z-100 overflow-x-auto hide-scrollbar">
+        {dataCampus.map((item) => {
+          return (
+            <CardCampusResponsive
+              key={item.key}
+              place={item.name_short}
+              address={item.address_hover}
+              time={item.time}
+            />
+          );
+        })}
+      </div>
+
       <div className="ribbon-scope">
         <Image
           src={ribbon}

@@ -24,9 +24,8 @@ const HomePage = () => {
       <ActorSaid />
       <SliderCustomerSaid />
       <SeeMoreAboutAura />
-      <div className="hidden">
-        <ContactInformation />
-      </div>
+
+      <ContactInformation />
 
       <ReelsOutStanding />
     </div>

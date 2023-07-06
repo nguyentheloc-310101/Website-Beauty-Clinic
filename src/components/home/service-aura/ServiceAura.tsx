@@ -27,7 +27,7 @@ const SliderService = () => {
   };
   return (
     <div
-      className="flex w-full items-center justify-center md:flex-row lg:overflow-x-scroll "
+      className="flex flex-wrap md:flex-row md:w-full items-center justify-center md:gap-[60px] md:overflow-x-scroll "
       ref={sliderRef}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}

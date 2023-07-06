@@ -7,6 +7,7 @@ const dataCampus = [
   {
     key: 1,
     name: 'Thẩm mỹ viện Quốc tế Aura - Đồng Tháp',
+    name_short: 'TP Đồng Tháp',
     address: 'P1,Đồng Tháp',
     address_hover: 'PG1-09 &PG1-10 - Vincom Shophouse Cà Mau, Phường 1, Cà Mau',
     time: '08:00 - 21:00',
@@ -16,6 +17,7 @@ const dataCampus = [
   {
     key: 2,
     name: 'Thẩm mỹ viện Quốc tế Aura - Cà Mau',
+    name_short: 'TP Cà Mau',
     address: 'P1, Cà Mau',
     address_hover: 'PG1-09 &PG1-10 - Vincom Shophouse Cà Mau, Phường 1, Cà Mau',
     time: '08:00 - 21:00',
@@ -25,6 +27,7 @@ const dataCampus = [
   {
     key: 3,
     name: 'Thẩm mỹ viện Quốc tế Aura - Kiên Giang',
+    name_short: 'TP Kiên Giang',
     address: 'Rạch Giá, Kiên Giang',
     address_hover: 'PG1-09 &PG1-10 - Vincom Shophouse Cà Mau, Phường 1, Cà Mau',
     time: '08:00 - 21:00',
@@ -34,6 +37,7 @@ const dataCampus = [
   {
     key: 4,
     name: 'Thẩm mỹ viện Quốc tế Aura - Vĩnh Long',
+    name_short: 'TP Vĩnh Long',
     address: 'P4, Vĩnh Long',
     address_hover: 'PG1-09 &PG1-10 - Vincom Shophouse Cà Mau, Phường 1, Cà Mau',
     time: '08:00 - 21:00',
@@ -43,6 +47,7 @@ const dataCampus = [
   {
     key: 5,
     name: 'Thẩm mỹ viện Quốc tế Aura - Phú Yên',
+    name_short: 'Tỉnh Phú Yên',
     address: 'Tuy Hòa, Phú Yên',
     address_hover: 'PG1-09 &PG1-10 - Vincom Shophouse Cà Mau, Phường 1, Cà Mau',
     time: '08:00 - 21:00',
