@@ -8,13 +8,17 @@ import HeroSection from '@/components/home/hero';
 import SeeMoreAboutAura from '@/components/home/see-more/SeeMoreAboutAura';
 import SliderService from '@/components/home/service-aura/ServiceAura';
 import ReelsOutStanding from '@/components/reels/ReelsOutStanding';
+import Head from 'next/head';
 
 const HomePage = () => {
   return (
     <div className="home-container">
-      <HeroSection />
-      <SliderService />
-      <div className="hidden xl:block">
+      <Head>
+        <title>Chuỗi thẩm mỹ viện quốc tế Aura Beauty Clinic</title>
+        <meta property="og:title" content="My page title" key="title" />
+      </Head>
+      <div className="flex flex-col items-center justify-center ">
+        <HeroSection />
         <CustomerSaidVideo />
       </div>
       <div className="hidden xl:block">
