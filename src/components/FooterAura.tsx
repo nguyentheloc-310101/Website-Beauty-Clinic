@@ -8,9 +8,30 @@ import { BiLogoFacebook } from 'react-icons/bi';
 import { AiOutlineInstagram } from 'react-icons/ai';
 import { BiLogoTwitter } from 'react-icons/bi';
 import { AiFillYoutube } from 'react-icons/ai';
+import FooterIcon from '../statics/images/mobile_footer.png';
+interface Props{
+  isMobile: boolean;
+}
 
-const FooterAura = () => {
+const FooterAura = ({isMobile}:Props) => {
   return (
+    isMobile?
+    <div className="relative w-full h-auto">
+        <Image
+          src={FooterIcon}
+          alt="Footer left"
+          className="h-[18rem] w-full object-fit"
+        />
+        <div className="absolute bottom-10 left-0 w-full flex text-white text-[1.5rem] justify-center items-center">
+          <div className="flex gap-7">
+            <BiLogoFacebook />
+            <AiOutlineInstagram />
+            <BiLogoTwitter />
+            <AiFillYoutube />
+            </div>  
+        </div>
+    </div>
+    :
     <div className="w-full h-auto !font-montserrat font-[100] flex justify-between items-center">
       <Image
         src={FooterLeftImg}
