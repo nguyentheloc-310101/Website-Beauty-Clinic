@@ -36,6 +36,7 @@ const SliderService = () => {
         return (
           <>
             <CardService
+              key={item.key}
               image={item.image}
               alt={item.alt}
             />
