@@ -147,6 +147,16 @@ body {
   background-size: contain;
   height: fit-content;
 }
+.voucher-button-bg {
+  background-image: url('../statics/images/hero/buttonVoucher.png');
+  background-size: cover;
+  width: 142px;
+  height: 87px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .panel-contact {
   display: flex;
   flex-direction: column;
@@ -163,14 +173,10 @@ body {
   padding: 33px 18px;
   transition: opacity 0.3s, visibility 0.3s;
 }
-/* .panel-contact .show {
-  opacity: 1;
-  visibility: visible;
-} */
 
 /*the third part of the website*/
 .customer-said-container {
-  height: 1100px;
+  height: 900px;
   background-image: url('../statics/images/customer-said/wrapper.png');
   background-size: cover;
   margin-bottom: 120px;
@@ -196,79 +202,18 @@ body {
 /*AURA campus*/
 
 /*the fifth part of the website*/
-.actorWrapper {
-  display: grid;
-}
-.actor {
-  width: 555px;
-  height: 891px;
-  flex-shrink: 0;
-}
-.text-actor {
-  width: 582px;
-  height: 191px;
-  flex-shrink: 0;
-}
-
-.paragraph-actor {
-  width: 508px;
-  height: 264px;
-  color: #414141;
-  text-align: right;
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 160%;
-}
-.actor-declare {
-  color: var(--gray-2, #4f4f4f);
-  font-size: 27px;
-
-  font-style: italic;
-  font-weight: 100;
-  line-height: normal;
-  letter-spacing: -0.27px;
-  text-transform: uppercase;
-}
-.actor-name {
-  margin-top: 10px;
-
-  text-shadow: 0px 1.2201834917068481px 2.4403669834136963px 0px
-    rgba(191, 38, 75, 0.4);
-  font-size: 61.009px;
-  font-style: italic;
-  color: #bf264b;
-  font-weight: 600;
-  line-height: normal;
-  letter-spacing: -0.61px;
-}
-.actor-desc {
-  text-align: center;
-  text-shadow: 0px 1.2201834917068481px 2.4403669834136963px 0px
-    rgba(191, 38, 75, 0.4);
-  font-size: 24.404px;
-  color: #bf264b;
-  font-style: italic;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: -0.244px;
-}
 
 /***************************************************************************************************************/
 
 /*The sixth part of the website- slider customer card*/
 .background-customer-said {
   width: auto;
-  height: 1200px;
+  height: 1100px;
   background-size: cover;
   flex-shrink: 0;
   background-image: url('../statics/images/customer-said/wrapper.png');
 }
-.text-aura {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 .card-customer {
   cursor: pointer;
   width: 717px;
@@ -289,43 +234,7 @@ body {
   );
   display: flex;
 }
-@media (max-width: 630px) {
-  .home-container {
-  }
-  .actor {
-    position: relative;
-    left: 0;
-    width: 235px;
-    height: 377px;
-  }
-  .text-actor {
-    width: 134px;
-    margin-right: 20px;
-    height: auto;
-    flex-shrink: 0;
-  }
-  .card-customer {
-    position: relative;
-    margin-left: 10px;
-    z-index: 200;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    width: 350px;
-    height: 320px;
-    border-radius: 21.563px;
-    border: 3.354px solid #fff;
-    background: linear-gradient(180deg, #ffdada 0%, #fff 50%, #ffe0e0 100%);
-  }
-  .background-customer-said {
-    width: auto;
-    height: 700px;
-    background-size: contain;
-    flex-shrink: 0;
-  }
-}
+
 .logo-container {
   margin-top: 24px;
   gap: 71px;
@@ -449,4 +358,31 @@ body {
 }
 .carousel-product > div {
   height: 100%;
+}
+@media (max-width: 630px) {
+  .card-customer {
+    position: relative;
+    margin-left: 10px;
+    z-index: 200;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 350px;
+    height: 320px;
+    border-radius: 21.563px;
+    border: 3.354px solid #fff;
+    background: linear-gradient(180deg, #ffdada 0%, #fff 50%, #ffe0e0 100%);
+  }
+  .background-customer-said {
+    width: auto;
+    height: 700px;
+    background-size: contain;
+    flex-shrink: 0;
+  }
+  .voucher-button-bg {
+    width: 75px;
+    height: 42px;
+  }
 }

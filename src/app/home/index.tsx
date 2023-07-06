@@ -24,7 +24,10 @@ const HomePage = () => {
       <ActorSaid />
       <SliderCustomerSaid />
       <SeeMoreAboutAura />
-      <ContactInformation />
+      <div className="hidden">
+        <ContactInformation />
+      </div>
+
       <ReelsOutStanding />
     </div>
   );

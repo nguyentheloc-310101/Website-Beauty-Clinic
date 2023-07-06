@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import wrapper from '../../../statics/images/customer-said-video/wrapper.png';
 import ribbon from '../../../statics/images/customer-said-video/ribbon.png';
 import text from '../../../statics/images/customer-said-video/text-customer.png';
 
 const CustomerSaidVideo = () => {
+  const [youtubeID] = useState('IEDEtZ4UVtI');
   return (
     <>
       <div className="customer-said-container">
@@ -12,17 +13,25 @@ const CustomerSaidVideo = () => {
           <Image
             src={text}
             alt={'text-customer'}
-            className="w-[812px] h-[258px] mt-[57px] mb-[20px]"
+            className="md:w-auto md:h-[208px] md:mt-[47px] md:mb-[20px]"
           />
         </div>
 
-        <section className="max-w-[1180px] mx-auto relative w-full z-50">
+        <section className="max-w-[980px] mx-auto relative w-full z-50">
           <div className="pt-[56.25%] relative">
-            <video
+            {/* <video
               className="absolute rounded-[40px] top-0 left-0 w-full h-full object-contain"
               controls>
-              <source src="../../../statics/videos/customerSaid.mp4" />
-            </video>
+              <source
+                src="https://www.youtube.com/watch?v=CNG8u-uNprM&list=RDwQANVR4vqXI&index=3"
+                type="video/mp4"
+              />
+            </video> */}
+            <iframe
+              src="https://www.youtube.com/embed/mfZ-KSP_iA4?&autoplay=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=mfZ-KSP_iA4"
+              className="absolute rounded-[40px] top-0 left-0 w-full h-full object-contain"
+              allowFullScreen
+            />
           </div>
         </section>
 

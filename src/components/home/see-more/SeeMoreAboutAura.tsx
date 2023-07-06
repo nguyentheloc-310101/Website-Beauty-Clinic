@@ -7,6 +7,7 @@ import leftIcon from '../../../statics/images/campus-scope/left-icon.png';
 import big from '../../../statics/images/campus-scope/big.png';
 import modern from '../../../statics/images/campus-scope/mordern.png';
 import profession from '../../../statics/images/campus-scope/profession.png';
+import heartMap from '../../../statics/images/campus-scope/heart_map.png';
 
 const SeeMoreAboutAura = () => {
   return (
@@ -28,22 +29,22 @@ const SeeMoreAboutAura = () => {
           <Image
             src={big}
             alt={'text-customer'}
-            className="w-auto h-[450px] "
+            className="md:w-auto md:h-[450px] w-[265px] h-[398px]"
           />
 
           <Image
             src={modern}
             alt={'text-customer'}
-            className="w-auto h-[450px] "
+            className="md:w-auto md:h-[450px] w-[265px] h-[398px]"
           />
 
           <Image
             src={profession}
             alt={'text-customer'}
-            className="w-auto h-[450px] "
+            className="md:w-auto md:h-[450px] w-[265px] h-[398px]"
           />
         </div>
-        <div className="text-[#BF264B] text-[30px] font-[300] flex items-center">
+        <div className="hidden text-[#BF264B] text-[30px] font-[300] md:flex items-center">
           Tìm hiểu thêm về Aura
           <Image
             src={leftIcon}
@@ -51,12 +52,33 @@ const SeeMoreAboutAura = () => {
             className="w-auto h-[18px] ml-[24px] cursor-pointer"
           />
         </div>
+        <div className="flex">
+          <div>
+            <Image
+              src={heartMap}
+              alt={'text-customer'}
+              className="w-auto h-[35px] cursor-pointer"
+            />
+          </div>
+          <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#BF264B] to-[#DF4B6E] text-[26px] font-[800] uppercase">
+            Aura gần bạn
+          </div>
+
+          <div>
+            {' '}
+            <Image
+              src={heartMap}
+              alt={'text-customer'}
+              className="w-auto h-[35px] cursor-pointer"
+            />
+          </div>
+        </div>
       </div>
       <div className="ribbon-scope">
         <Image
           src={ribbon}
           alt={'text-customer'}
-          className="w-full h-[541px] ms:object-contain"
+          className="hidden lg:w-full lg:h-[541px] ms:object-contain"
         />
       </div>
     </div>

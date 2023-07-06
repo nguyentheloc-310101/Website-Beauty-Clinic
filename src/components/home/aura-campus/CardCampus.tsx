@@ -34,7 +34,6 @@ const CardCampus = (props: CardCampusProps) => {
   const handleMouseLeave = () => {
     setHoveredCards(false);
   };
-  console.log;
   return (
     <div>
       <div
