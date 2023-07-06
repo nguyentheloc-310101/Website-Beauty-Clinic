@@ -22,7 +22,7 @@ const ActorSaid = () => {
           style={{ objectFit: 'cover' }}
         />
         <div className="lg:ml-[30px] text-right">
-          <div className="text-[10px] font-[400]  lg:ml-[40px] w-[150px] text-[#414141] lg:w-[508px] lg:h-[264px] lg:text-[22px] lg:font-[300]">
+          <div className="text-[10px] font-[400]  md:ml-[40px] w-[150px] text-[#414141] md:w-[508px] md:h-[264px] lg:text-[22px] lg:font-[300]">
             &quot;Cơ địa và nội tiết tố thay đổi sau khi sinh con đã từng khiến
             mình rất stress mỗi khi soi gương, da thâm nám dày và vùng da bụng
             chảy xệ. Nhưng thật may vì đã tìm được TMV Aura, chăm sóc toàn diện

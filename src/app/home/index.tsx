@@ -15,12 +15,19 @@ const HomePage = () => {
     <div className="home-container">
       <Head>
         <title>Chuỗi thẩm mỹ viện quốc tế Aura Beauty Clinic</title>
-        <meta property="og:title" content="My page title" key="title" />
+        <meta
+          property="og:title"
+          content="My page title"
+          key="title"
+        />
       </Head>
       <div className="flex flex-col items-center justify-center ">
         <HeroSection />
+      </div>
+      <div className="hidden xl:block">
         <CustomerSaidVideo />
       </div>
+
       <div className="hidden xl:block">
         <AuraCampus />
       </div>
