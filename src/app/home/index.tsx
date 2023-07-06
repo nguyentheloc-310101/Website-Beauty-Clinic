@@ -19,7 +19,6 @@ const HomePage = () => {
       </Head>
       <div className="flex flex-col items-center justify-center ">
         <HeroSection />
-        <SliderImage />
         <CustomerSaidVideo />
       </div>
       <div className="hidden xl:block">

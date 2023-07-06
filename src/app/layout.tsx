@@ -6,13 +6,14 @@ import NavigationAura from '@/components/NavigationAura';
 import FooterAura from '@/components/FooterAura';
 import Script from 'next/script';
 import PanelContact from '@/components/panel-contact/PanelContact';
+import { useEffect, useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const metadata = {
-  title: 'Chuỗi thẩm mỹ viện quốc tế Aura Beauty Clinic',
-  description: '',
-};
+interface WindowSize{
+  width: number | undefined;
+  height: number | undefined;
+}
 
 export default function RootLayout({
   children,
@@ -69,6 +70,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-export default RootLayout
-

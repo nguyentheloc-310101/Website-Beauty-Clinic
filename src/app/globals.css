@@ -350,7 +350,7 @@ body {
   height: 100%;
 }
 /**/
-@media (max-width: 630px) {
+@media (max-width: 640px) {
   .card-customer {
     position: relative;
     margin-left: 10px;
