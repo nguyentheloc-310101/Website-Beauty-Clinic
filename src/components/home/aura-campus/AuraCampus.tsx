@@ -2,11 +2,11 @@
 import Image, { StaticImageData } from 'next/image';
 import { useState } from 'react';
 
-import dataCampus from '@/data/sliders/campusSlider';
 import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
 import CardCampusDetails from './CardCampusDetails';
 import CardCampusHover from './CardCampusHover';
 import CardCampus from './CardCampus';
+import { dataCampus } from '@/data/sliders/campusSlider';
 
 interface CampusItem {
   key: number;
@@ -63,9 +63,10 @@ const AuraCampus = () => {
         className="flex items-center overflow-x-auto hide-scrollbar px-[130px] gap-[50px] mt-[40px] mb-2">
         {dataCampus.map((item: CampusItem) => {
           return (
-            <>
-              <CardCampus item={item} />
-            </>
+            <CardCampus
+              key={item.key}
+              item={item}
+            />
           );
         })}
       </div>

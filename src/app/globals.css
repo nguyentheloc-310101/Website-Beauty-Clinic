@@ -96,7 +96,7 @@ body {
 /*The sixth part of the website- slider customer card*/
 .background-customer-said {
   width: auto;
-  height: 1100px;
+  height: 1300px;
   background-size: cover;
   flex-shrink: 0;
   background-image: url('../statics/images/customer-said/wrapper.png');
@@ -137,12 +137,6 @@ body {
 
 /*3 cards about AURA*/
 
-.card-scope {
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 .ribbon-scope {
   height: 541px;
   bottom: 150px;
@@ -156,6 +150,7 @@ body {
 .contact-container {
   position: relative;
   display: flex;
+  margin-top: 60px;
   justify-content: flex-end;
   background-size: contain;
   background-image: url('../statics/images/contact-inform/wrapper.png');
@@ -243,6 +238,9 @@ body {
     height: 370px;
     text-align: center;
   }
+  .background-customer-said {
+    height: 700px;
+  }
 }
 @media (max-width: 768px) {
   .voucher-button-bg {
@@ -257,6 +255,11 @@ body {
   }
 }
 @media (max-width: 630px) {
+  .panel-contact {
+    width: 40px;
+    height: 130px;
+    padding: 16px 9px;
+  }
   .card-customer {
     position: relative;
     margin-left: 10px;
@@ -306,5 +309,8 @@ body {
     font-size: 13px;
     font-weight: 800;
     line-height: normal;
+  }
+  .background-customer-said {
+    height: 700px;
   }
 }

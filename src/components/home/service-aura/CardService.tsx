@@ -12,7 +12,7 @@ const CardService = (props: CardServiceProps) => {
     <Image
       src={image}
       alt={alt}
-      className="sm:w-[300px] sm:h-[410px] w-[150px] h-[206px]"
+      className="md:w-[300px] md:h-[410px] w-[150px] h-[206px]"
     />
   );
 };

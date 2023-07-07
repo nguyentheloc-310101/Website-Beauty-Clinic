@@ -6,34 +6,34 @@ import leftIcon from '../../../statics/images/campus-scope/left-icon.png';
 
 import big from '../../../statics/images/campus-scope/big.png';
 import modern from '../../../statics/images/campus-scope/mordern.png';
-import profession from '../../../statics/images/campus-scope/profession.png';
+import profession from '../../../statics/images/campus-scope/profession.jpg';
 import heartMap from '../../../statics/images/campus-scope/heart_map.png';
 
 import CardCampusResponsive from '../aura-campus/CardCampusResponsive';
 import { CardCustomer } from '../customer-said/CardCustomer';
-import dataCampus from '@/data/sliders/campusSlider';
+import { dataCampus, dataCampusNearBy } from '@/data/sliders/campusSlider';
 
 const SeeMoreAboutAura = () => {
   return (
     <div className="relative flex flex-col items-center justify-center md:mt-[100px]">
-      <div className="hidden mt-[120px] mb-[33px] z-50">
+      <div className="lg:mt-[120px] lg:mb-[33px] z-50">
         <Image
           src={text5stars}
           alt={'text-customer'}
-          className="w-[845px] h-auto"
+          className="hidden lg:flex lg:w-[845px] lg:h-auto "
         />
       </div>
-      <div className="w-[233px] h-[64px] my-[50px]">
+      <div className="lg:hidden w-[233px] h-[64px] my-[50px]">
         <div className="text-center text-[26px] text-[#bf264b] uppercase leading-[115%] font-[800]">
           Thẩm mỹ viện quốc tế 5 sao
         </div>
       </div>
-      <div className="card-scope">
-        <div className="flex overflow-x-auto gap-[37px] mb-[10px]">
+      <div className="flex flex-col items-center z-10">
+        <div className="flex overflow-x-scroll gap-[37px] mb-[10px]">
           <Image
             src={big}
             alt={'text-customer'}
-            className="md:w-auto md:h-[450px] w-[265px] h-[398px]"
+            className="lg:w-auto lg:h-[450px] w-[265px] h-[398px]"
           />
 
           <Image
@@ -79,7 +79,7 @@ const SeeMoreAboutAura = () => {
         </div>
       </div>
       <div className="md:hidden px-6 flex mt-[40px] w-full items-end gap-[25px] lg:gap-[60px] z-100 overflow-x-auto hide-scrollbar">
-        {dataCampus.map((item) => {
+        {dataCampusNearBy.map((item: any) => {
           return (
             <CardCampusResponsive
               key={item.key}

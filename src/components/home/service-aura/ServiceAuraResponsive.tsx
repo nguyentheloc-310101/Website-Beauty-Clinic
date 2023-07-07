@@ -2,7 +2,7 @@
 import React, { useRef, useState } from 'react';
 import CardService from './CardService';
 import serviceSlideData from '@/data/sliders/serviceSlider';
-const SliderService = () => {
+const SliderServiceResponsive = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [isMouseDown, setIsMouseDown] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -26,13 +26,8 @@ const SliderService = () => {
     sliderRef.current!.scrollLeft = scrollLeft - walk;
   };
   return (
-    <div
-      className="flex md:flex-row md:w-full items-center justify-center md:gap-[60px] md:overflow-x-scroll "
-      ref={sliderRef}
-      onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp}
-      onMouseMove={handleMouseMove}>
-      {serviceSlideData.map((item) => {
+    <div className="flex flex-wrap items-center justify-center gap-[15px]">
+      {serviceSlideData.slice(0, 4).map((item) => {
         return (
           <CardService
             key={item.key}
@@ -45,4 +40,4 @@ const SliderService = () => {
   );
 };
 
-export default SliderService;
+export default SliderServiceResponsive;

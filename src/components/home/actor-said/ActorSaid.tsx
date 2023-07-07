@@ -18,24 +18,24 @@ const ActorSaid = () => {
         <Image
           src={text}
           alt="cover-img"
-          className="md:w-[582px] md:h-[191px] w-[150px] mr-[20px] h-auto"
+          className="lg:w-[582px] lg:h-[191px] md:w-[370px] md:h-auto w-[150px] mr-[20px] h-auto"
           style={{ objectFit: 'cover' }}
         />
         <div className="lg:ml-[30px] text-right">
-          <div className="text-[10px] font-[400]  md:ml-[40px] w-[150px] text-[#414141] md:w-[508px] md:h-[264px] lg:text-[22px] lg:font-[300]">
+          <div className="text-[10px] font-[400] lg:ml-[40px] w-[150px] text-[#414141]  md:w-[350px] md:text-[18px] lg:w-[508px] lg:h-[264px] lg:text-[22px] lg:font-[300]">
             &quot;Cơ địa và nội tiết tố thay đổi sau khi sinh con đã từng khiến
             mình rất stress mỗi khi soi gương, da thâm nám dày và vùng da bụng
             chảy xệ. Nhưng thật may vì đã tìm được TMV Aura, chăm sóc toàn diện
             tại đây chính là quyết định đúng đắn nhất của mình.&quot;
           </div>
           <div className="w-full text-center h-[40px]">
-            <div className="text-[#4f4f4f] mt-[5px] italic sm:font-[300] text-[9px] uppercase lg:font-[100] lg:text-[27px]">
+            <div className="text-[#4f4f4f] mt-[5px] italic sm:font-[300] text-[9px] uppercase ms:text-[12px] md:text-[18px] lg:font-[100] lg:text-[27px]">
               diễn viên
             </div>
-            <div className="font-[600] italic sm:text-[21px] text-transparent bg-clip-text bg-gradient-to-r from-[#BF264B] to-[#DF4B6E] lg:font-[600] lg:text-[61px]">
+            <div className="font-[600] italic sm:text-[21px] text-transparent bg-clip-text bg-gradient-to-r from-[#BF264B] to-[#DF4B6E] md:text-[30px] lg:font-[600] lg:text-[61px]">
               {'LÊ BÊ LA'}
             </div>
-            <div className=" sm:font-[500] text-transparent bg-clip-text bg-gradient-to-r from-[#BF264B] to-[#DF4B6E] mr-[20px] text-[8px] lg:text-[24px] lg:font-[500]">
+            <div className=" sm:font-[500] text-transparent bg-clip-text bg-gradient-to-r from-[#BF264B] to-[#DF4B6E] mr-[20px] text-[8px] md:text-[18px] lg:text-[24px] lg:font-[500]">
               Sạch thâm nám sau 2 liệu trình
             </div>
           </div>
