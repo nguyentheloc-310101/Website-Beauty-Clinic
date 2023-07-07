@@ -1,4 +1,5 @@
 import PrimaryButton from '@/components/button/PrimaryButton';
+import Link from 'next/link';
 import React from 'react';
 
 const FormContactSmall = () => {
@@ -21,10 +22,12 @@ const FormContactSmall = () => {
         placeholder={'Nhập địa chỉ'}
       />
       <div className="">
-        <PrimaryButton
-          text={'Gửi thông tin'}
-          size={'small'}
-        />
+        <Link href={'/verify-advisory'}>
+          <PrimaryButton
+            text={'Gửi thông tin'}
+            size={'small'}
+          />
+        </Link>
       </div>
     </div>
   );
