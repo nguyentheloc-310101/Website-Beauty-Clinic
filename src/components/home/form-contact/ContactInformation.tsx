@@ -8,7 +8,7 @@ const ContactInformation = () => {
     <div className="contact-container">
       <div className="relative flex flex-col items-center justify-center lg:absolute lg:left-[60px] lg:top-[105px] lg:w-[720px] lg:flex lg:flex-col z-10 lg:ml-[140px]">
         <div className="text-[#fff] text-[41px] lg:text-[75px] font-[400] uppercase">
-          Đặt lich ngay
+          Đặt lịch ngay
         </div>
         <div className="text-[#fff] text-[19px] lg:text-[35px] font-[500]">
           Miễn phí thăm khám & soi da
