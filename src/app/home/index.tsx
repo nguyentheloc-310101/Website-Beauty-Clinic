@@ -44,7 +44,6 @@ const HomePage = () => {
       <SeeMoreAboutAura />
       <ContactInformation />
       <ReelsOutStanding />
-      <></>
     </div>
   );
 };

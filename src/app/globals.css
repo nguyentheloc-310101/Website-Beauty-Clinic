@@ -17,6 +17,10 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-image: url('../statics/images/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 100vw;
 }
 
 .linear-bg-hover {
@@ -38,9 +42,15 @@ body {
   line-height: 1.5rem;
 }
 .home-container {
-  background-image: url('../statics/images/background.png');
-  background-size: contain;
   height: fit-content;
+}
+/*** card hien ra sau khi nhan uu dai****/
+.card-service-advisory-container {
+  width: 470px;
+  height: 823px;
+  flex-shrink: 0;
+  border-radius: 29px;
+  background: linear-gradient(180deg, #c20459 56.89%, #4d0523 100%);
 }
 .voucher-button-bg {
   background-image: url('../statics/images/hero/buttonVoucher.png');
@@ -85,11 +95,17 @@ body {
   padding: 10px;
 }
 
+.modalCardService .ant-modal-content {
+  width: 470px;
+  height: 723px;
+  margin: 0;
+  top: 0;
+  flex-shrink: 0;
+  border-radius: 29px;
+  background: linear-gradient(180deg, #c20459 56.89%, #4d0523 100%);
+}
+
 /***************************************************************************************************************/
-
-/*AURA campus*/
-
-/*the fifth part of the website*/
 
 /***************************************************************************************************************/
 
@@ -180,6 +196,50 @@ body {
   justify-content: center;
   background: var(--linear, linear-gradient(45deg, #fff2de 0%, #fff 100%));
 }
+.form-contact-small {
+  position: relative;
+  width: 310px;
+  height: 360px;
+  /* padding: 16px 0px 39.605px 0px; */
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  border-radius: 23px;
+  margin-top: 10px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background: var(--linear, linear-gradient(45deg, #fff2de 0%, #fff 100%));
+}
+/************************************************************************************************************************/
+
+.btn-primary-small {
+  width: 180px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-shrink: 0;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: normal;
+  cursor: pointer;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #ff499b 0%, #ac001f 100%);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-primary-small:hover,
+.btn-primary-small:focus {
+  border: 0.837px solid #920a23;
+  background: linear-gradient(180deg, #c10057 0%, #730033 100%);
+}
+/************************************************************************************************************************/
 .btn-primary {
   width: 260px;
   height: 54px;
@@ -313,4 +373,8 @@ body {
   .background-customer-said {
     height: 700px;
   }
+}
+
+* #modal-card > .ant-modal-content {
+  padding: 0 !important;
 }
