@@ -34,11 +34,9 @@ const HomePage = () => {
       <div className="hidden xl:block">
         <CustomerSaidVideo />
       </div>
-
       <div className="hidden xl:block">
         <AuraCampus />
       </div>
-
       <ActorSaid />
       <SliderCustomerSaid />
       <SeeMoreAboutAura />

@@ -22,7 +22,7 @@ const SliderServiceResponsive = () => {
     if (!isMouseDown) return;
     e.preventDefault();
     const x = e.pageX - sliderRef.current!.offsetLeft;
-    const walk = (x - startX) * 2; // Adjust the sliding speed here
+    const walk = (x - startX) * 2;
     sliderRef.current!.scrollLeft = scrollLeft - walk;
   };
   return (
