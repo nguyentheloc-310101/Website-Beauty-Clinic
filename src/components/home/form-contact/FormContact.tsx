@@ -25,10 +25,7 @@ const FormContact = () => {
           placeholder={'Nhập địa chỉ'}
         />
         <div className="mt-[10px]">
-          <PrimaryButton
-            text={'Gửi thông tin'}
-            size={'big'}
-          />
+          <PrimaryButton text={'Gửi thông tin'} />
         </div>
       </div>
     </div>

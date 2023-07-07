@@ -49,8 +49,8 @@ const CardCampusDetails = (props: CardCampusDetailsProps) => {
                 Đặt dịch vụ
               </p>
             </div>
-            <div className="w-[128px] h-[36px] hover:w-[129px] hover:h-[37px] rounded-[8px] cursor-pointer bg-[#BC2449] hover:bg-[#fff] text-[#fff]  hover:text-[#BC2449] ml-[30px]">
-              <p className="h-full font-[600] text-center flex items-center justify-center">
+            <div className="w-[128px] h-[36px] hover:w-[129px] hover:h-[37px] rounded-[8px] cursor-pointer bg-[#BC2449] ml-[30px]">
+              <p className="text-[#fff]  h-full font-[600] text-center flex items-center justify-center">
                 Gọi ngay
               </p>
             </div>

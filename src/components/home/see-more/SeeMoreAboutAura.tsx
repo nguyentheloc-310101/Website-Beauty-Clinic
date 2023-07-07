@@ -6,7 +6,7 @@ import leftIcon from '../../../statics/images/campus-scope/left-icon.png';
 
 import big from '../../../statics/images/campus-scope/big.png';
 import modern from '../../../statics/images/campus-scope/mordern.png';
-import profession from '../../../statics/images/campus-scope/profession.png';
+import profession from '../../../statics/images/campus-scope/profession.jpg';
 import heartMap from '../../../statics/images/campus-scope/heart_map.png';
 
 import CardCampusResponsive from '../aura-campus/CardCampusResponsive';
@@ -16,7 +16,7 @@ import { dataCampus, dataCampusNearBy } from '@/data/sliders/campusSlider';
 const SeeMoreAboutAura = () => {
   return (
     <div className="relative flex flex-col items-center justify-center md:mt-[100px]">
-      <div className="lg:mt-[50px] lg:mb-[33px] z-50">
+      <div className="lg:mt-[120px] lg:mb-[33px] z-50">
         <Image
           src={text5stars}
           alt={'text-customer'}
@@ -91,11 +91,11 @@ const SeeMoreAboutAura = () => {
         })}
       </div>
 
-      <div className="lg:flex lg:absolute lg:z-0 lg:h-[541px] lg:w-[100%] lg:bottom-[40px] hidden">
+      <div className="ribbon-scope">
         <Image
           src={ribbon}
           alt={'text-customer'}
-          className="lg:flex lg:w-full lg:h-[541px] ms:object-contain"
+          className="hidden lg:w-full lg:h-[541px] ms:object-contain"
         />
       </div>
     </div>
