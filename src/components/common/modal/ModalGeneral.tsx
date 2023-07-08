@@ -1,10 +1,10 @@
 import { ReactNode } from 'react';
-import { XMarkIcon } from '@heroicons/react/24/outline';
-import { ExclamationCircleIcon } from '@heroicons/react/24/solid';
+
 import Image from 'next/image';
 import heroCover from '../../../statics/images/card-service-advisory/3girls.png';
 
 import ButtonDefault from '../buttons/ButtonDefault';
+import { CloseCircleOutlined } from '@ant-design/icons';
 
 interface Props {
   title?: string;
@@ -42,7 +42,8 @@ function ModalNew({
               width={400}
               style={{ objectFit: 'contain' }}
             />
-            <XMarkIcon
+
+            <CloseCircleOutlined
               className="w-6 h-6 z-50 absolute top-3 right-3 text-white cursor-pointer"
               onClick={onCancel}
             />
@@ -77,7 +78,7 @@ const BottomButtonEdit = ({
       <div className="grid grid-cols-2 gap-6 mt-6">
         {note ? (
           <div className="flex gap-1 items-start">
-            <ExclamationCircleIcon className="w-5 h-5 text-[#767A7F] " />
+            {/* <ExclamationCircleIcon className="w-5 h-5 text-[#767A7F] " /> */}
             <p className="text-[14px] text-[#767A7F] font-[400] leading-[20px] text-start font-['Inter']">
               {note}
             </p>

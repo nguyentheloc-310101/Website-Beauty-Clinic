@@ -1,9 +1,4 @@
-import React from 'react';
-import Image from 'next/image';
-import { Modal } from 'antd';
-import girls from '../../../statics/images/card-service-advisory/3girls.png';
 import ModalNew from '@/components/common/modal/ModalGeneral';
-import FormContact from '../form-contact/FormContact';
 import FormContactSmall from '../form-contact/FormContactAdvisory';
 
 interface CardServiceAdvisory {

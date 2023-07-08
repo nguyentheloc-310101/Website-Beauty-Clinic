@@ -7,14 +7,19 @@ import FooterAura from '@/components/FooterAura';
 import Script from 'next/script';
 import PanelContact from '@/components/panel-contact/PanelContact';
 import { useEffect, useState } from 'react';
+import { Metadata } from 'next';
+import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] });
 
-interface WindowSize{
+interface WindowSize {
   width: number | undefined;
   height: number | undefined;
 }
-
+export const metadata: Metadata = {
+  title: 'Welcome to my website',
+  description: 'Description of my website',
+};
 export default function RootLayout({
   children,
 }: {
@@ -22,50 +27,51 @@ export default function RootLayout({
 }) {
   const [windowSize, setWindowSize] = useState<WindowSize>({
     width: undefined,
-    height: undefined
-  })
+    height: undefined,
+  });
   const [isMobile, setIsMobile] = useState(false);
-  useEffect(()=>{
-    const handleSize = () =>{
+  useEffect(() => {
+    const handleSize = () => {
       setWindowSize({
         width: window.innerWidth,
-        height: window.innerHeight
-      })
-    }
-    window.addEventListener("resize",handleSize);
+        height: window.innerHeight,
+      });
+    };
+    window.addEventListener('resize', handleSize);
     handleSize();
-    return ()=>window.removeEventListener("resize",handleSize);
-  },[]);
+    return () => window.removeEventListener('resize', handleSize);
+  }, []);
 
-  useEffect(()=>{
-    if (windowSize.width){
-      if (windowSize.width < 640){
+  useEffect(() => {
+    if (windowSize.width) {
+      if (windowSize.width < 640) {
         setIsMobile(true);
-      }else{
+      } else {
         setIsMobile(false);
       }
     }
-  },[windowSize]);
-  
+  }, [windowSize]);
+
   return (
     <html lang="vi">
-      <head>
+      <Head>
         <link
           rel="stylesheet"
           href="https://sf16-scmcdn-sg.ibytedtos.com/obj/static-sg/livesaas-client/pc/byteplus/css/index.1.1.2-beta.2.css"
         />
-      </head>
+        <title>aura</title>
+      </Head>
       <body className={inter.className}>
-        <HeaderAura isMobile={isMobile}/>
-        <NavigationAura isMobile={isMobile}/>
+        <HeaderAura isMobile={isMobile} />
+        <NavigationAura isMobile={isMobile} />
 
         <div className="flex-1 mb-[5rem]">
           <PanelContact />
           {children}
         </div>
 
-        <FooterAura isMobile={isMobile}/>
-        <Script  src="https://sf16-scmcdn-sg.ibytedtos.com/obj/static-sg/livesaas-client/pc/byteplus/js/index.1.1.2-beta.2.js"/>
+        <FooterAura isMobile={isMobile} />
+        <Script src="https://sf16-scmcdn-sg.ibytedtos.com/obj/static-sg/livesaas-client/pc/byteplus/js/index.1.1.2-beta.2.js" />
       </body>
     </html>
   );
