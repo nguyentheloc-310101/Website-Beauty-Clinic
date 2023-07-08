@@ -2,7 +2,6 @@ import { ReactNode } from 'react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { ExclamationCircleIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
-import heroCover from '../../../statics/images/card-service-advisory/3girls.png';
 
 import ButtonDefault from '../buttons/ButtonDefault';
 
@@ -27,9 +26,8 @@ function ModalNew({
 }: Props) {
   return (
     <div
-      className={`z-[1000] fixed top-0 left-0 w-full h-full bg-black/20 p-8 ${
-        hidden && 'hidden'
-      }`}>
+      className={`z-[1000] fixed top-0 left-0 w-full h-full bg-black/20 p-8 ${hidden && 'hidden'
+        }`}>
       <div
         className={`flex justify-center items-center rounded-lg h-full w-full`}>
         <div
@@ -37,7 +35,7 @@ function ModalNew({
           style={{ height: `${height}` }}>
           <div className="relative w-[450] h-auto">
             <Image
-              src={heroCover}
+              src={'statics/images/card-service-advisory/3girls.png'}
               alt="cover-img"
               width={400}
               style={{ objectFit: 'contain' }}
