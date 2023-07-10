@@ -29,11 +29,11 @@ const SeeMoreAboutAura = () => {
         </div>
       </div>
       <div className="flex flex-col items-center z-10">
-        <div className="flex overflow-x-scroll gap-[37px] mb-[10px]">
+        <div className="flex overflow-x-scroll gap-[37px] mb-[20px] scrollbar-hide">
           <Image
             src={big}
             alt={'text-customer'}
-            className="lg:w-auto lg:h-[450px] w-[265px] h-[398px]"
+            className="lg:w-auto lg:h-[450px] w-[265px] h-[398px] z-50"
           />
 
           <Image
@@ -53,7 +53,7 @@ const SeeMoreAboutAura = () => {
           <Image
             src={leftIcon}
             alt={'text-customer'}
-            className="w-auto h-[18px] ml-[24px] cursor-pointer"
+            className="w-auto h-[18px] ml-[24px] cursor-pointer z-50"
           />
         </div>
       </div>
@@ -78,7 +78,7 @@ const SeeMoreAboutAura = () => {
           </div>
         </div>
       </div>
-      <div className="md:hidden px-6 flex mt-[40px] w-full items-end gap-[25px] lg:gap-[60px] z-100 overflow-x-auto hide-scrollbar">
+      <div className="md:hidden px-6 flex mt-[40px] w-full items-end gap-[25px] lg:gap-[60px] z-100 overflow-x-auto scrollbar-hide">
         {dataCampusNearBy.map((item: any) => {
           return (
             <CardCampusResponsive
