@@ -34,15 +34,25 @@ const CustomerSaidVideo = () => {
           <Image
             src={text}
             alt={'text-customer'}
-            className="md:w-auto md:h-[208px] md:mt-[47px] md:mb-[20px]"
+            className="w-[300px] mt-[16px] mr-[40px] md:w-auto md:h-[208px] md:mt-[47px] md:mb-[20px]"
           />
         </div>
-        {!isMobile && (
-          <section className="max-w-[980px] mx-auto relative w-full z-50">
+        {!isMobile ? (
+          <section className="max-w-[980px] mx-auto relative w-full  z-50">
             <div className="pt-[56.25%] relative">
               <iframe
                 src="https://www.youtube.com/embed/mfZ-KSP_iA4?&autoplay=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=mfZ-KSP_iA4"
                 className="absolute rounded-[40px] top-0 left-0 w-full h-full object-contain"
+                allowFullScreen
+              />
+            </div>
+          </section>
+        ) : (
+          <section className="max-w-[360px] mx-auto relative w-full mt-[5px]  z-50">
+            <div className="pt-[56.25%] relative">
+              <iframe
+                src="https://www.youtube.com/embed/mfZ-KSP_iA4?&autoplay=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=mfZ-KSP_iA4"
+                className="absolute rounded-[20px] top-0 left-0 w-full h-full object-contain"
                 allowFullScreen
               />
             </div>
@@ -52,7 +62,7 @@ const CustomerSaidVideo = () => {
         <Image
           src={ribbon}
           alt="ribbon-img"
-          className="sm:hidden relative z-10 md:hidden lg:top-[-850px]"
+          className="relative z-10 top-[-150px] lg:top-[-600px] object-contain"
           width={2000}
         />
       </div>
