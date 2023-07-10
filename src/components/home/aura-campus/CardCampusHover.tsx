@@ -29,13 +29,13 @@ const CardCampusHover = ({ name, address, image, time }: CardHoverProps) => {
             {time}
           </p>
         </div>
-        <div className="flex w-full h-[55px] justify-between px-[30px] mb-[40px]">
-          <div className="w-[128px] h-[36px] hover:w-[129px] hover:h-[37px] bg-[#fff] hover:bg-[#F9F9F1] rounded-[8px] cursor-pointer border-[#BC2449]">
+        <div className="flex w-full h-[55px] item-center px-6 mt-[20px]">
+          <div className="w-[128px] h-[36px]  hover:h-[36.5px] bg-[#fff] hover:bg-[#F9F9F1] rounded-[8px] cursor-pointer border-[#BC2449]">
             <p className="text-[#BF264B] h-full font-[600] text-center flex items-center justify-center">
               Đặt dịch vụ
             </p>
           </div>
-          <div className="w-[128px] h-[36px] hover:w-[129px] hover:h-[37px] rounded-[8px] cursor-pointer bg-[#BC2449] hover:bg-[#fff] text-[#fff]  hover:text-[#BC2449] ml-[30px]">
+          <div className="w-[128px] h-[36px] hover:w-[129px] hover:h-[37px] rounded-[8px] cursor-pointer bg-[#BC2449] hover:bg-[#fff] text-[#fff] hover:text-[#BC2449] ml-[24px]">
             <p className="h-full font-[600] text-center flex items-center justify-center">
               Gọi ngay
             </p>

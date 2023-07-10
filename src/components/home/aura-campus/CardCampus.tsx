@@ -3,6 +3,7 @@ import Image, { StaticImageData } from 'next/image';
 import CardCampusHover from './CardCampusHover';
 import CardCampusDetails from './CardCampusDetails';
 import { Modal } from 'antd';
+import CardCampusMapMobile from './mobile/CardCampusMapMobile';
 
 interface CampusItem {
   key: number;
@@ -22,7 +23,9 @@ const CardCampus = (props: CardCampusProps) => {
   const { item } = props;
   const [hoveredCards, setHoveredCards] = useState(false);
   const [isDetails, setIsDetails] = useState(false);
-  const [isDetailsMobile, setIsDetailsMobile] = useState(false);
+
+  const [showCampusMapMobile, setShowCampusMapMobile] =
+    useState<boolean>(false);
   const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
@@ -98,6 +101,14 @@ const CardCampus = (props: CardCampusProps) => {
           time={item.time}
           map={item.map}
           isMobile={isMobile}
+          setShowCampusMapMobile={setShowCampusMapMobile}
+        />
+      )}
+      {showCampusMapMobile && (
+        <CardCampusMapMobile
+          showCampusMapMobile={showCampusMapMobile}
+          setShowCampusMapMobile={setShowCampusMapMobile}
+          image={item.map}
         />
       )}
     </div>

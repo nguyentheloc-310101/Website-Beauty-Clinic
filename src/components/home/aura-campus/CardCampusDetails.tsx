@@ -1,7 +1,7 @@
 import { Modal } from 'antd';
 import Image, { StaticImageData } from 'next/image';
 
-import React from 'react';
+import React, { useState } from 'react';
 import CardCampusDetailsMobile from './mobile/CardCampusDetailsMobile';
 import { CloseCircleFilled, LogoutOutlined } from '@ant-design/icons';
 
@@ -12,13 +12,24 @@ interface CardCampusDetailsProps {
   time: string;
   map: StaticImageData;
   setIsDetails: (e: boolean) => void;
+  setShowCampusMapMobile: (e: boolean) => void;
   isMobile: boolean;
   isDetails: boolean;
 }
 
 const CardCampusDetails = (props: CardCampusDetailsProps) => {
-  const { name, address, time, image, map, setIsDetails, isDetails, isMobile } =
-    props;
+  const {
+    name,
+    address,
+    time,
+    image,
+    map,
+    setIsDetails,
+    isDetails,
+    isMobile,
+    setShowCampusMapMobile,
+  } = props;
+
   return (
     <Modal
       open={isDetails}
@@ -30,12 +41,16 @@ const CardCampusDetails = (props: CardCampusDetailsProps) => {
       onOk={() => setIsDetails(false)}
       onCancel={() => setIsDetails(false)}>
       {isMobile ? (
-        <CardCampusDetailsMobile
-          image={image}
-          name={name}
-          address={address}
-          time={time}
-        />
+        <>
+          <CardCampusDetailsMobile
+            image={image}
+            name={name}
+            address={address}
+            time={time}
+            setShowCampusMapMobile={setShowCampusMapMobile}
+          />
+          {/* {showCampusMapMobile && <> </>} */}
+        </>
       ) : (
         <div className="grid grid-cols-2 gap-[20px]">
           <div>

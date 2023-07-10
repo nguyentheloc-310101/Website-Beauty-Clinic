@@ -306,11 +306,29 @@ body {
     text-align: center;
   }
 }
-@media (max-width: 630px) {
+/* .panel-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 84px;
+  height: 249.6px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #c20459 41.39%, #4d0523 100%);
+  left: 12px;
+  bottom: 180px;
+  position: fixed;
+  z-index: 999;
+  padding: 33px 18px;
+  transition: opacity 0.3s, visibility 0.3s;
+} */
+@media (max-width: 640px) {
   .panel-contact {
     width: 40px;
     height: 130px;
     padding: 16px 9px;
+    left: 348px;
+    bottom: 2%;
   }
   .card-customer {
     position: relative;
@@ -368,6 +386,8 @@ body {
   .customer-said-container {
     background-size: contain;
     height: 333px;
+    margin-bottom: 55px;
+    /* padding: */
   }
 }
 
