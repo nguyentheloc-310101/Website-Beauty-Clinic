@@ -29,11 +29,11 @@ const SeeMoreAboutAura = () => {
         </div>
       </div>
       <div className="flex flex-col items-center z-10">
-        <div className="flex overflow-x-scroll gap-[37px] mb-[10px]">
+        <div className="flex overflow-x-scroll gap-[37px] mb-[20px] scrollbar-hide">
           <Image
             src={big}
             alt={'text-customer'}
-            className="lg:w-auto lg:h-[450px] w-[265px] h-[398px]"
+            className="lg:w-auto lg:h-[450px] w-[265px] h-[398px] z-50"
           />
 
           <Image
@@ -53,42 +53,9 @@ const SeeMoreAboutAura = () => {
           <Image
             src={leftIcon}
             alt={'text-customer'}
-            className="w-auto h-[18px] ml-[24px] cursor-pointer"
+            className="w-auto h-[18px] ml-[24px] cursor-pointer z-50"
           />
         </div>
-      </div>
-      <div className="lg:hidden flex flex-col mt-[10px]">
-        <div className="flex items-center justify-center gap-[9px]">
-          <div>
-            <Image
-              src={heartMap}
-              alt={'text-customer'}
-              className="w-auto h-[30px] ml-[24px] cursor-pointer"
-            />
-          </div>
-          <div className="text-transparent text-[26px] font-[800] uppercase bg-clip-text bg-gradient-to-r from-[#BF264B] to-[#DF4B6E]">
-            Aura Gần bạn
-          </div>
-          <div>
-            <Image
-              src={heartMap}
-              alt={'text-customer'}
-              className="w-auto h-[30px] ml-[24px] cursor-pointer"
-            />
-          </div>
-        </div>
-      </div>
-      <div className="md:hidden px-6 flex mt-[40px] w-full items-end gap-[25px] lg:gap-[60px] z-100 overflow-x-auto hide-scrollbar">
-        {dataCampusNearBy.map((item: any) => {
-          return (
-            <CardCampusResponsive
-              key={item.key}
-              place={item.name_short}
-              address={item.address_hover}
-              time={item.time}
-            />
-          );
-        })}
       </div>
 
       <div className="lg:flex lg:absolute lg:z-0 lg:h-[541px] lg:w-[100%] lg:bottom-[40px] hidden">

@@ -40,11 +40,11 @@ const AuraCampus = () => {
   };
   return (
     <div>
-      <div className="flex items-center justify-between px-[130px]">
-        <div className="flex font-[800] text-[49px] leading-[140%] text-[#bc2449] ">
+      <div className="flex items-center justify-center uppercase lg:justify-between lg:px-[130px]">
+        <div className="flex items-center text-[26px] font-[800] lg:text-[49px] lg:leading-[140%] text-[#bc2449] ">
           Bạn có hẹn cùng Aura
         </div>
-        <div className="flex items-center text-[#BF264B] text-[38px] font-[300] gap-[40px]">
+        <div className="hidden lg:flex  text-[#BF264B] text-[38px] font-[300] gap-[40px]">
           <button
             className="cursor-pointer"
             onClick={scrollLeft}>
@@ -60,7 +60,7 @@ const AuraCampus = () => {
       </div>
       <div
         id="content"
-        className="flex items-center overflow-x-auto hide-scrollbar px-[130px] gap-[50px] mt-[40px] mb-2">
+        className="flex items-center overflow-x-auto hide-scrollbar gap-[16px] px-[16px] mt-[32px] lg:px-[130px] lg:gap-[50px] lg:mt-[40px] mb-2">
         {dataCampus.map((item: CampusItem) => {
           return (
             <CardCampus

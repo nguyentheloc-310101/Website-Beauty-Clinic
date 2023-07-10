@@ -22,7 +22,7 @@ const FormContact = () => {
         />
         <InputContact
           label={'Dịch vụ muốn tư vấn'}
-          placeholder={'Nhập địa chỉ'}
+          placeholder={'Nhập tên dịch vụ'}
         />
         <div className="mt-[10px]">
           <PrimaryButton
