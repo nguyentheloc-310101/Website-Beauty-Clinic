@@ -23,9 +23,6 @@ const CustomerSaidVideo = () => {
       setLoadingVideo(false);
     };
   }, []);
-  {
-    isMobile ? console.log('mobile') : console.log('pc');
-  }
 
   return (
     <>

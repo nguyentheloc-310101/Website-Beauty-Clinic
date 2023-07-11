@@ -1,10 +1,103 @@
-export const navigationLinks = [
+// export const navigationLinks: any = [
+//   {
+//     name: 'Phẫu thuật thẩm mỹ',
+//     subLinks: [
+//       {
+//         head: 'Mắt',
+//         subLink: [
+//           {
+//             name: 'Nhấn mí',
+//             link: '/',
+//           },
+//           {
+//             name: 'Cắt mí MiniDeep 6D',
+//             link: '/',
+//           },
+//           {
+//             name: 'Cắt mí Dove eyes',
+//             link: '/',
+//           },
+//           {
+//             name: 'Treo cung nội bì',
+//             link: '/',
+//           },
+//           {
+//             name: 'Cắt mí dưới',
+//             link: '/',
+//           },
+//         ],
+//       },
+//       {
+//         head: 'Mũi',
+//         subLink: [
+//           {
+//             name: 'Nhấn mí',
+//             link: '/',
+//           },
+//         ],
+//       },
+//       {
+//         head: 'Xử lý gồ',
+//         subLink: [
+//           {
+//             name: 'Nhấn mí',
+//             link: '/',
+//           },
+//         ],
+//       },
+//     ],
+//   },
+//   {
+//     name: 'Điều trị nám',
+//     subLinks: [
+//       {
+//         head: 'Mắt',
+//         subLink: [
+//           {
+//             name: 'Nhấn mí',
+//             link: '/',
+//           },
+//         ],
+//       },
+//     ],
+//   },
+//   {
+//     name: 'Phun xăm',
+//     subLink: [
+//       {
+//         head: 'Mắt',
+//         subLink: [
+//           {
+//             name: 'Nhấn mí',
+//             link: '/',
+//           },
+//         ],
+//       },
+//     ],
+//   },
+//   {
+//     name: 'Tạo hình không xâm lấn',
+//     subLinks: [
+//       {
+//         head: 'Mắt',
+//         subLink: [
+//           {
+//             name: 'Nhấn mí',
+//             link: '/',
+//           },
+//         ],
+//       },
+//     ],
+//   },
+// ];
+export const links = [
   {
     name: 'Phẫu thuật thẩm mỹ',
-    subLink: [
+    submenu: true,
+    sublinks: [
       {
-        head: 'Mắt',
-        subLinks: [
+        Head: 'Mắt',
+        sublink: [
           {
             name: 'Nhấn mí',
             link: '/',
@@ -28,63 +121,62 @@ export const navigationLinks = [
         ],
       },
       {
-        head: 'Mũi',
-        subLinks: [
-          {
-            name: 'Nhấn mí',
-            link: '/',
-          },
+        Head: 'Mũi',
+        sublink: [
+          { name: 'Dịch vụ đang cập nhật', link: '/' },
+          { name: 'Dịch vụ đang cập nhật', link: '/' },
         ],
       },
       {
-        head: 'Xử lý gồ',
-        subLinks: [
-          {
-            name: 'Nhấn mí',
-            link: '/',
-          },
+        Head: 'Xử lý gồ',
+        sublink: [
+          { name: 'Dịch vụ đang cập nhật', link: '/' },
+          { name: 'Dịch vụ đang cập nhật', link: '/' },
         ],
       },
     ],
   },
   {
     name: 'Điều trị nám',
-    subLink: [
+    submenu: true,
+    sublinks: [
       {
-        head: 'Mắt',
-        subLinks: [
-          {
-            name: 'Nhấn mí',
-            link: '/',
-          },
+        Head: 'Đang cập nhật',
+        sublink: [
+          { name: 'Dịch vụ đang cập nhật', link: '/' },
+          { name: 'Dịch vụ đang cập nhật', link: '/' },
+          { name: 'Dịch vụ đang cập nhật', link: '/' },
+          { name: 'Dịch vụ đang cập nhật', link: '/' },
         ],
       },
     ],
   },
   {
     name: 'Phun xăm',
-    subLink: [
+    submenu: true,
+    sublinks: [
       {
-        head: 'Mắt',
-        subLinks: [
-          {
-            name: 'Nhấn mí',
-            link: '/',
-          },
+        Head: 'Đang cập nhật',
+        sublink: [
+          { name: 'Dịch vụ đang cập nhật', link: '/' },
+          { name: 'Dịch vụ đang cập nhật', link: '/' },
+          { name: 'Dịch vụ đang cập nhật', link: '/' },
+          { name: 'Dịch vụ đang cập nhật', link: '/' },
         ],
       },
     ],
   },
   {
     name: 'Tạo hình không xâm lấn',
-    subLink: [
+    submenu: true,
+    sublinks: [
       {
-        head: 'Mắt',
-        subLinks: [
-          {
-            name: 'Nhấn mí',
-            link: '/',
-          },
+        Head: 'Đang cập nhật',
+        sublink: [
+          { name: 'Dịch vụ đang cập nhật', link: '/' },
+          { name: 'Dịch vụ đang cập nhật', link: '/' },
+          { name: 'Dịch vụ đang cập nhật', link: '/' },
+          { name: 'Dịch vụ đang cập nhật', link: '/' },
         ],
       },
     ],

@@ -7,16 +7,15 @@ import ServiceIcon from '../statics/images/service.png';
 import FooterIcon from '../statics/images/popup_footer.png';
 import { BsChevronDown } from 'react-icons/bs';
 import Link from 'next/link';
+import NavLinks from './navbar/NavLinks';
 
 interface Props {
   isMobile: boolean;
 }
 const HeaderAura = ({ isMobile }: Props) => {
   const [isOpened, setIsOpened] = useState(false);
-  const [heading, setHeading] = useState<string>('');
-  const [subHeading, setSubHeading] = useState<string>('');
   return isMobile ? (
-    <div className="relative flex justify-between items-center py-[1rem] px-[20px]">
+    <div className="relative flex justify-between items-center py-[1rem] px-[20px] ">
       <Image
         src={BurgerIcon}
         alt="Burger"
@@ -30,7 +29,7 @@ const HeaderAura = ({ isMobile }: Props) => {
       />
       <div></div>
       <div
-        className={`z-[100] absolute p-5 top-[5rem] left-0 bg-white flex flex-col w-[60vw] gap-3 transition-transform duration-500 ${
+        className={`z-[100] absolute p-5 top-[5rem] left-0 bg-white flex flex-col w-[70vw] gap-3 transition-transform duration-500 ${
           isOpened ? 'translate-x-0' : '-translate-x-full'
         }`}>
         <Link href="/">
@@ -62,65 +61,8 @@ const HeaderAura = ({ isMobile }: Props) => {
           </div>
           <BsChevronDown className="text-[1rem] text-[rgba(0,0,0,0.2)]" />
         </div>
-        {/* <div className="flex flex-col pl-[2rem] ga[-2">
-          <div className="flex justify-between items-center py-2">
-            <span className="font-[700] text-[1rem]">Phẫu thuật thẩm mỹ</span>
-            <BsChevronDown className="text-[1rem] text-[rgba(0,0,0,0.2)]" />
-          </div>
 
-          <div className="flex justify-between items-center py-2">
-            <span className="font-[700] text-[1rem]">Điều trị nám</span>
-            <BsChevronDown className="text-[1rem] text-[rgba(0,0,0,0.2)]" />
-          </div>
-
-          <div className="flex justify-between items-center py-2">
-            <span className="font-[700] text-[1rem]">Phun xăm</span>
-            <BsChevronDown className="text-[1rem] text-[rgba(0,0,0,0.2)]" />
-          </div>
-
-          <div className="flex justify-between items-center py-2">
-            <span className="font-[700] text-[1rem]">
-              Tạo hình không xâm lấn
-            </span>
-            <BsChevronDown className="text-[1rem] text-[rgba(0,0,0,0.2)]" />
-          </div>
-        </div> */}
-        <>
-          {navigationLinks.sublinks.map((slinks: any, index: number) => (
-            <div key={index}>
-              <div>
-                <h1
-                  onClick={() =>
-                    subHeading !== slinks.Head
-                      ? setSubHeading(slinks.Head)
-                      : setSubHeading('')
-                  }
-                  className="py-4 pl-7 font-semibold md:pr-0 pr-5 flex justify-between items-center md:pr-0 pr-5">
-                  {slinks.Head}
-
-                  <span className="text-xl md:mt-1 md:ml-2 inline">
-                    <ion-icon
-                      name={`${
-                        subHeading === slinks.Head
-                          ? 'chevron-up'
-                          : 'chevron-down'
-                      }`}></ion-icon>
-                  </span>
-                </h1>
-                <div
-                  className={`${
-                    subHeading === slinks.Head ? 'md:hidden' : 'hidden'
-                  }`}>
-                  {slinks.sublink.map((slink) => (
-                    <li className="py-3 pl-14">
-                      <Link to={slink.link}>{slink.name}</Link>
-                    </li>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </>
+        <NavLinks />
         <Image
           src={FooterIcon}
           className="w-full h-[4rem] object-cover mt-2"

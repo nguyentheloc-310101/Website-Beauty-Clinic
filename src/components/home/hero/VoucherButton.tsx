@@ -12,7 +12,6 @@ const VoucherButton = ({
     <div
       className="voucher-button-bg cursor-pointer"
       onClick={() => {
-        console.log('726376217');
         setIsAdviceCard(!isAdviseCard);
       }}>
       <div className="text-[#fff] uppercase font-[900] text-[10px] md:text-[20px] text-center p-2">
