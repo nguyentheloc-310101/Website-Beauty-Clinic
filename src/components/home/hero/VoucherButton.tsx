@@ -3,7 +3,6 @@ interface VoucherButtonProps {
   isAdviseCard: boolean;
   setIsAdviceCard: (e: boolean) => void;
 }
-
 const VoucherButton = ({
   isAdviseCard,
   setIsAdviceCard,
