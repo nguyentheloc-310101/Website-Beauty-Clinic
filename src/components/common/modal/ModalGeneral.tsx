@@ -26,8 +26,9 @@ function ModalNew({
 }: Props) {
   return (
     <div
-      className={`z-[1000] fixed top-0 left-0 w-full h-full bg-black/20 p-8 ${hidden && 'hidden'
-        }`}>
+      className={`z-[1000] fixed top-0 left-0 w-full h-full bg-black/20 p-8 ${
+        hidden && 'hidden'
+      }`}>
       <div
         className={`flex justify-center items-center rounded-lg h-full w-full`}>
         <div
