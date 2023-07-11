@@ -4,12 +4,14 @@ import Image, { StaticImageData } from 'next/image';
 import React, { useState } from 'react';
 import CardCampusDetailsMobile from './mobile/CardCampusDetailsMobile';
 import { CloseCircleFilled, LogoutOutlined } from '@ant-design/icons';
+import { ListImageDetails } from '@/data/sliders/campusSlider';
 
 interface CardCampusDetailsProps {
   image: StaticImageData;
   name: string;
   address: string;
   time: string;
+  image_list: ListImageDetails[];
   map: StaticImageData;
   setIsDetails: (e: boolean) => void;
   setShowCampusMapMobile: (e: boolean) => void;
@@ -27,6 +29,7 @@ const CardCampusDetails = (props: CardCampusDetailsProps) => {
     setIsDetails,
     isDetails,
     isMobile,
+    image_list,
     setShowCampusMapMobile,
   } = props;
 
@@ -48,8 +51,8 @@ const CardCampusDetails = (props: CardCampusDetailsProps) => {
             address={address}
             time={time}
             setShowCampusMapMobile={setShowCampusMapMobile}
+            image_list={image_list}
           />
-          {/* {showCampusMapMobile && <> </>} */}
         </>
       ) : (
         <div className="grid grid-cols-2 gap-[20px]">

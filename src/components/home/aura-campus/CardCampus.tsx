@@ -1,19 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import Image, { StaticImageData } from 'next/image';
-import CardCampusHover from './CardCampusHover';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { CampusItem } from './AuraCampus';
 import CardCampusDetails from './CardCampusDetails';
-import { Modal } from 'antd';
+import CardCampusHover from './CardCampusHover';
 import CardCampusMapMobile from './mobile/CardCampusMapMobile';
-
-interface CampusItem {
-  key: number;
-  name: string;
-  address_hover: string;
-  address: string;
-  image: StaticImageData;
-  time: string;
-  map: StaticImageData;
-}
 
 interface CardCampusProps {
   item: CampusItem;
@@ -74,7 +64,7 @@ const CardCampus = (props: CardCampusProps) => {
             time={item.time}
           />
         ) : (
-          <div className="w-[237px] rounded-[20px] lg:w-[380px] lg:h-[542px] lg:rounded-[40px] shadow-lg text-[#bf264b] bg-white mb-2">
+          <div className="w-[237px] rounded-[20px] lg:w-[380px]  mb-[60px] lg:h-[542px] lg:rounded-[40px] shadow-lg text-[#bf264b] bg-white">
             <Image
               src={item.image}
               alt="cover-img"
@@ -102,6 +92,7 @@ const CardCampus = (props: CardCampusProps) => {
           map={item.map}
           isMobile={isMobile}
           setShowCampusMapMobile={setShowCampusMapMobile}
+          image_list={item.image_list}
         />
       )}
       {showCampusMapMobile && (

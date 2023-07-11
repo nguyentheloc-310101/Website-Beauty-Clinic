@@ -1,25 +1,53 @@
 import React from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { IoMdShareAlt } from 'react-icons/io';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Pagination, Navigation } from 'swiper/modules';
+import { ListImageDetails } from '@/data/sliders/campusSlider';
 interface CampusDetailsMobile {
   image: StaticImageData;
+  image_list: ListImageDetails[];
   name: string;
   address: string;
   time: string;
   setShowCampusMapMobile: (e: boolean) => void;
 }
 const CardCampusDetailsMobile = (props: CampusDetailsMobile) => {
-  const { image, name, time, address, setShowCampusMapMobile } = props;
+  const { image, name, time, address, image_list, setShowCampusMapMobile } =
+    props;
   return (
     <div className="flex justify-center">
       <div className="rounded-[20px] text-white">
-        <Image
-          src={image}
-          alt="cover-img"
-          className="h-[288px] w-[361px] rounded-t-[20px]"
-          style={{ objectFit: 'cover' }}
-        />
+        <div className="h-[288px] w-[350px]">
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={30}
+            loop={true}
+            pagination={{
+              clickable: true,
+            }}
+            navigation={true}
+            modules={[Pagination, Navigation]}
+            className="mySwiper">
+            {image_list.map((item) => {
+              return (
+                <SwiperSlide key={item.index}>
+                  <Image
+                    src={item.image_details}
+                    alt="cover-img"
+                    className="h-[288px] w-[361px] rounded-t-[20px]"
+                    style={{ objectFit: 'cover' }}
+                  />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </div>
         <div className="px-[16px] mt-2 w-full">
           <div className="mb-2 font-[800] leading-[140%] text-[16px] ">
             {name}

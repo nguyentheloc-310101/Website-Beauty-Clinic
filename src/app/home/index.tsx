@@ -31,9 +31,7 @@ const HomePage = () => {
       <div className="md:hidden">
         <SliderServiceResponsive />
       </div>
-      {/* <div className="hidden xl:block"> */}
       <CustomerSaidVideo />
-      {/* </div> */}
       <AuraCampus />
       <ActorSaid />
       <SliderCustomerSaid />

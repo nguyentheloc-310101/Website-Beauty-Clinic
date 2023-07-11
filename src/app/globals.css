@@ -22,7 +22,36 @@ body {
   background-size: cover;
   max-width: 100vw;
 }
+/*swipe*/
+.swiper {
+  width: 100%;
+  height: 100%;
+}
 
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+}
 .linear-bg-hover {
   background: var(--linear, linear-gradient(90deg, #bf264b 0%, #df4b6e 100%));
 }
@@ -142,7 +171,7 @@ body {
   border-radius: 25px;
   background: #fff;
 }
-/***************************************************************************************************************/
+
 /*3 cards about AURA*/
 
 .ribbon-scope {
@@ -152,7 +181,6 @@ body {
   position: absolute;
   z-index: 0;
 }
-/***************************************************************************************************************/
 
 /*The form*/
 .contact-container {
@@ -206,7 +234,6 @@ body {
   margin-bottom: 20px;
   background: var(--linear, linear-gradient(45deg, #fff2de 0%, #fff 100%));
 }
-/************************************************************************************************************************/
 
 .btn-primary-small {
   width: 180px;
@@ -231,7 +258,6 @@ body {
   border: 0.837px solid #920a23;
   background: linear-gradient(180deg, #c10057 0%, #730033 100%);
 }
-/************************************************************************************************************************/
 .btn-primary {
   width: 260px;
   height: 54px;
@@ -266,7 +292,6 @@ body {
 .input-contact::placeholder {
   padding-left: 25px;
 }
-/***************************************************************************************************************/
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }

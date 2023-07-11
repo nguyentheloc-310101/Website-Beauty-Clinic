@@ -6,7 +6,7 @@ import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
 import CardCampusDetails from './CardCampusDetails';
 import CardCampusHover from './CardCampusHover';
 import CardCampus from './CardCampus';
-import { dataCampus } from '@/data/sliders/campusSlider';
+import { ListImageDetails, dataCampus } from '@/data/sliders/campusSlider';
 
 interface CampusItem {
   key: number;
@@ -16,6 +16,7 @@ interface CampusItem {
   image: StaticImageData;
   time: string;
   map: StaticImageData;
+  image_list: ListImageDetails[];
 }
 
 const AuraCampus = () => {
@@ -60,7 +61,7 @@ const AuraCampus = () => {
       </div>
       <div
         id="content"
-        className="flex items-center overflow-x-auto hide-scrollbar gap-[16px] px-[16px] mt-[32px] lg:px-[130px] lg:gap-[50px] lg:mt-[40px] mb-2">
+        className="flex items-center overflow-x-auto hide-scrollbar gap-[16px] px-[16px] mt-[32px] lg:px-[130px] lg:gap-[50px] lg:mt-[40px]">
         {dataCampus.map((item: CampusItem) => {
           return (
             <CardCampus
@@ -75,3 +76,4 @@ const AuraCampus = () => {
 };
 
 export default AuraCampus;
+export type { CampusItem };

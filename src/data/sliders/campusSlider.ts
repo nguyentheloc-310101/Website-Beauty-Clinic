@@ -4,6 +4,12 @@ import kiengiang from '../../statics/images/campus/kiengiang.png';
 import mapCamau from '../../statics/images/campus/maps/camau_map.png';
 import vinhLong from '../../statics/images/campus/vinhlong.png';
 import phuYen from '../../statics/images/campus/phuyen.png';
+import { StaticImageData } from 'next/image';
+
+interface ListImageDetails {
+  index: React.Key;
+  image_details: StaticImageData;
+}
 
 export const dataCampus = [
   {
@@ -15,7 +21,22 @@ export const dataCampus = [
     time: '08:00 - 21:00',
     map: mapCamau,
     image: dongthap,
+    image_list: [
+      {
+        index: 1,
+        image_details: vinhLong,
+      },
+      {
+        index: 2,
+        image_details: dongthap,
+      },
+      {
+        index: 3,
+        image_details: camau,
+      },
+    ],
   },
+
   {
     key: 2,
     name: 'Thẩm mỹ viện Quốc tế Aura - Cà Mau',
@@ -25,6 +46,12 @@ export const dataCampus = [
     time: '08:00 - 21:00',
     map: mapCamau,
     image: camau,
+    image_list: [
+      {
+        index: 1,
+        image_details: camau,
+      },
+    ],
   },
   {
     key: 3,
@@ -35,6 +62,16 @@ export const dataCampus = [
     time: '08:00 - 21:00',
     map: mapCamau,
     image: kiengiang,
+    image_list: [
+      {
+        index: 1,
+        image_details: kiengiang,
+      },
+      {
+        index: 2,
+        image_details: dongthap,
+      },
+    ],
   },
   {
     key: 4,
@@ -45,6 +82,16 @@ export const dataCampus = [
     time: '08:00 - 21:00',
     map: mapCamau,
     image: vinhLong,
+    image_list: [
+      {
+        index: 1,
+        image_details: vinhLong,
+      },
+      {
+        index: 2,
+        image_details: dongthap,
+      },
+    ],
   },
   {
     key: 5,
@@ -55,6 +102,16 @@ export const dataCampus = [
     time: '08:00 - 21:00',
     map: mapCamau,
     image: phuYen,
+    image_list: [
+      {
+        index: 1,
+        image_details: phuYen,
+      },
+      {
+        index: 2,
+        image_details: dongthap,
+      },
+    ],
   },
 ];
 
@@ -68,6 +125,20 @@ export const dataCampusNearBy = [
     time: '08:00 - 21:00',
     map: mapCamau,
     image: dongthap,
+    image_list: [
+      {
+        index: 1,
+        image_details: vinhLong,
+      },
+      {
+        index: 2,
+        image_details: dongthap,
+      },
+      {
+        index: 3,
+        image_details: camau,
+      },
+    ],
   },
   {
     key: 2,
@@ -78,6 +149,20 @@ export const dataCampusNearBy = [
     time: '08:00 - 21:00',
     map: mapCamau,
     image: dongthap,
+    image_list: [
+      {
+        index: 1,
+        image_details: vinhLong,
+      },
+      {
+        index: 2,
+        image_details: dongthap,
+      },
+      {
+        index: 3,
+        image_details: camau,
+      },
+    ],
   },
   {
     key: 3,
@@ -88,6 +173,16 @@ export const dataCampusNearBy = [
     time: '08:00 - 21:00',
     map: mapCamau,
     image: dongthap,
+    image_list: [
+      {
+        index: 1,
+        image_details: dongthap,
+      },
+      {
+        index: 2,
+        image_details: dongthap,
+      },
+    ],
   },
   {
     key: 4,
@@ -98,6 +193,16 @@ export const dataCampusNearBy = [
     time: '08:00 - 21:00',
     map: mapCamau,
     image: vinhLong,
+    image_list: [
+      {
+        index: 1,
+        image_details: vinhLong,
+      },
+      {
+        index: 2,
+        image_details: dongthap,
+      },
+    ],
   },
   {
     key: 5,
@@ -108,6 +213,16 @@ export const dataCampusNearBy = [
     time: '08:00 - 21:00',
     map: mapCamau,
     image: dongthap,
+    image_list: [
+      {
+        index: 1,
+        image_details: vinhLong,
+      },
+      {
+        index: 2,
+        image_details: dongthap,
+      },
+    ],
   },
   {
     key: 6,
@@ -118,6 +233,20 @@ export const dataCampusNearBy = [
     time: '08:00 - 21:00',
     map: mapCamau,
     image: camau,
+    image_list: [
+      {
+        index: 1,
+        image_details: vinhLong,
+      },
+      {
+        index: 2,
+        image_details: dongthap,
+      },
+      {
+        index: 3,
+        image_details: camau,
+      },
+    ],
   },
   {
     key: 7,
@@ -128,6 +257,17 @@ export const dataCampusNearBy = [
     time: '08:00 - 21:00',
     map: mapCamau,
     image: dongthap,
+    image_list: [
+      {
+        index: 1,
+        image_details: dongthap,
+      },
+
+      {
+        index: 2,
+        image_details: camau,
+      },
+    ],
   },
   {
     key: 8,
@@ -138,5 +278,24 @@ export const dataCampusNearBy = [
     time: '08:00 - 21:00',
     map: mapCamau,
     image: phuYen,
+    image_list: [
+      {
+        index: 1,
+        image_details: phuYen,
+      },
+      {
+        index: 2,
+        image_details: dongthap,
+      },
+      {
+        index: 3,
+        image_details: camau,
+      },
+      {
+        index: 4,
+        image_details: phuYen,
+      },
+    ],
   },
 ];
+export type { ListImageDetails };
