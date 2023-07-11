@@ -19,7 +19,7 @@ const FormContactSmall = () => {
       />
       <InputContactSmall
         label={'Dịch vụ muốn tư vấn'}
-        placeholder={'Nhập địa chỉ'}
+        placeholder={'Nhập tên dịch vụ'}
       />
       <Link href={'/verify-advisory'}>
         <PrimaryButton
