@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 
 import Image from 'next/image';
+import girls from '../../../statics/images/card-service-advisory/3girls.png';
 
 import ButtonDefault from '../buttons/ButtonDefault';
 import { CloseCircleOutlined } from '@ant-design/icons';
@@ -36,9 +37,10 @@ function ModalNew({
           style={{ height: `${height}` }}>
           <div className="relative w-[450] h-auto">
             <Image
-              src={'statics/images/card-service-advisory/3girls.png'}
+              src={girls}
               alt="cover-img"
               width={400}
+              height={350}
               style={{ objectFit: 'contain' }}
             />
 
