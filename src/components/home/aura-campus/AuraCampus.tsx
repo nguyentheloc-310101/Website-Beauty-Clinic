@@ -47,13 +47,13 @@ const AuraCampus = () => {
         </div>
         <div className="hidden lg:flex  text-[#BF264B] text-[38px] font-[300] gap-[40px]">
           <button
-            className="cursor-pointer"
+            className="cursor-pointer z-50"
             onClick={scrollLeft}>
             <AiFillCaretLeft />
           </button>
           Xem thêm
           <button
-            className="cursor-pointer"
+            className="cursor-pointer z-50"
             onClick={scrollRight}>
             <AiFillCaretRight />
           </button>

@@ -3,13 +3,7 @@ import Image, { StaticImageData } from 'next/image';
 import { IoMdShareAlt } from 'react-icons/io';
 import { Modal } from 'antd';
 import { CloseCircleFilled } from '@ant-design/icons';
-import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import { Pagination, Navigation } from 'swiper/modules';
 
 interface CardCampusMapMobile {
   image: StaticImageData;
