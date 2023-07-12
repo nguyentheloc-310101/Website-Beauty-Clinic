@@ -2,6 +2,7 @@ import React from 'react';
 interface btnProps {
   text: string;
   size: string;
+  disabled?: boolean;
 }
 
 const PrimaryButton = ({ text, size }: btnProps) => {
@@ -12,7 +13,7 @@ const PrimaryButton = ({ text, size }: btnProps) => {
   } else if (size === 'big') {
     className = 'btn-primary';
   }
-  return <div className={className}>{text}</div>;
+  return <button className={className}>{text}</button>;
 };
 
 export default PrimaryButton;

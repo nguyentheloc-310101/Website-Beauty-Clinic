@@ -3,8 +3,7 @@ import Image, { StaticImageData } from 'next/image';
 import { useState } from 'react';
 
 import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
-import CardCampusDetails from './CardCampusDetails';
-import CardCampusHover from './CardCampusHover';
+
 import CardCampus from './CardCampus';
 import { ListImageDetails, dataCampus } from '@/data/sliders/campusSlider';
 

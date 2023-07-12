@@ -1,12 +1,6 @@
 import { message } from 'antd';
 import axios from 'axios';
-
-interface DataPost {
-  name: string;
-  phone: string;
-  address: string;
-  service: string;
-}
+import { NextResponse } from 'next/server';
 
 const AURA_BEAUTY_CLINIC_BOT = {
   appId: 'cli_a426424310789009',
@@ -37,7 +31,7 @@ const tenantToken = async (appId: string, appSecret: string) => {
   }
 };
 
-class LarkController {
+class LarkService {
   getTenantToken = catchAsync(async ({ req, res, next }: any) => {
     const { infoApp } = req.body;
     const data = JSON.stringify({
@@ -64,7 +58,8 @@ class LarkController {
   });
   createARecord = catchAsync(async ({ req, res, next }: any) => {
     const { tableData, tableInfo } = req.body;
-    if (!tableData) return next(new AppError('Không có dữ liệu để thêm', 400));
+    if (!tableData)
+      return NextResponse.json({ error: 'No data added' }, { status: 500 });
     let token = await tenantToken(
       AURA_BEAUTY_CLINIC_BOT.appId,
       AURA_BEAUTY_CLINIC_BOT.appSecret
@@ -90,68 +85,5 @@ class LarkController {
       return next(new AppError('Không thêm được record', 400));
     }
   });
-
-  sendMessage = catchAsync(async ({ req, res, next }: any) => {
-    const { phone, name, address, service, chatId } = req.body;
-    const a = {
-      en_us: {
-        title: 'Aura Beauty Clinic Bot',
-        content: [
-          [
-            {
-              tag: 'text',
-              text: 'SĐT Khách hàng:',
-            },
-          ],
-          [
-            {
-              tag: 'text',
-              text: ` ${phone}      ${name}`,
-            },
-          ],
-
-          [
-            {
-              tag: 'text',
-              text: `Địa Chỉ: ${address}`,
-            },
-          ],
-
-          [
-            {
-              tag: 'text',
-              text: `Dịch vụ: ${service}`,
-            },
-          ],
-        ],
-      },
-    };
-
-    let token = await tenantToken(
-      AURA_BEAUTY_CLINIC_BOT.appId,
-      AURA_BEAUTY_CLINIC_BOT.appSecret
-    );
-    const config = {
-      url: 'https://open.larksuite.com/open-apis/im/v1/messages?receive_id_type=chat_id',
-      method: 'POST',
-      data: {
-        receive_id: chatId,
-        content: JSON.stringify(a),
-        msg_type: 'post',
-      },
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    };
-    const response = await axios(config);
-    console.log(response.data);
-    if (response.data.data) {
-      return res.status(200).send({
-        status: 'Success',
-      });
-    } else {
-      return next(new AppError('Không gửi được tin nhắn', 400));
-    }
-  });
 }
-module.exports = new LarkController();
+export default LarkService;
