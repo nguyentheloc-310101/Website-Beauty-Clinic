@@ -2,34 +2,118 @@ import PrimaryButton from '@/components/button/PrimaryButton';
 import InputForm from '@/components/common/form/input/InputForm';
 import { InputContact } from '@/components/common/form/input/contact-input/InputContact';
 import { Form, Input } from 'antd';
-import React from 'react';
+
+import { useRouter } from 'next/navigation';
+
+import React, { ChangeEvent, FormEvent, useState } from 'react';
+import { Contact } from './FormContactAdvisory';
+const initState = {
+  name: '',
+  phone: '',
+  address: '',
+  service: '',
+};
 
 const FormContact = () => {
+  const router = useRouter();
+
+  const [data, setData] = useState<Contact>(initState);
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    console.log(JSON.stringify(data));
+    const { name, phone, address, service } = data;
+    console.log(data);
+    //api send
+    // setLoading(true);
+    await fetch('http://localhost:8080/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name,
+        phone,
+        address,
+        service,
+      }),
+    });
+    await fetch('http://localhost:8080/api/send-message', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name,
+        phone,
+        address,
+        service,
+      }),
+    });
+    await fetch('http://localhost:8080/api/send-message-external', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name,
+        phone,
+        address,
+        service,
+      }),
+    });
+    // setLoading(false);
+
+    router.push(`/verify-advisory`);
+  };
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const name = e.target.name;
+
+    setData((prevData) => ({
+      ...prevData,
+      [name]: e.target.value,
+    }));
+  };
   return (
     <div>
       <div className="form-contact">
-        <InputContact
-          label={'Họ và tên'}
-          placeholder={'Nhập họ và tên'}
-        />
-        <InputContact
-          label={'Số điện thoại'}
-          placeholder={'Nhập số điện thoại'}
-        />
-        <InputContact
-          label={'Nơi sinh sống'}
-          placeholder={'Nhập địa chỉ'}
-        />
-        <InputContact
-          label={'Dịch vụ muốn tư vấn'}
-          placeholder={'Nhập tên dịch vụ'}
-        />
-        <div className="mt-[10px]">
-          <PrimaryButton
-            text={'Gửi thông tin'}
-            size={'big'}
+        <form onSubmit={handleSubmit}>
+          <InputContact
+            name={'name'}
+            value={data.name}
+            onChange={handleChange}
+            label={'Họ và tên'}
+            placeholder={'Nhập họ và tên'}
           />
-        </div>
+          <InputContact
+            name={'phone'}
+            onChange={handleChange}
+            label={'Số điện thoại'}
+            value={data.phone}
+            placeholder={'Nhập số điện thoại'}
+          />
+          <InputContact
+            onChange={handleChange}
+            name={'address'}
+            label={'Nơi sinh sống'}
+            placeholder={'Nhập địa chỉ'}
+          />
+          <InputContact
+            onChange={handleChange}
+            name={'service'}
+            value={data.service}
+            label={'Dịch vụ muốn tư vấn'}
+            placeholder={'Nhập tên dịch vụ'}
+          />
+          <div className="ml-[30px] mt-[10px] lg:w-[full] lg:flex lg:ml-[50px]">
+            <PrimaryButton
+              text={'Gửi thông tin'}
+              size={'big'}
+            />
+          </div>
+        </form>
       </div>
     </div>
   );

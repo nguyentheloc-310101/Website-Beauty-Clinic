@@ -28,7 +28,7 @@ const FormContactSmall = () => {
     const { name, phone, address, service } = data;
     console.log(data);
     //api send
-    setLoading(true);
+    // setLoading(true);
     await fetch('http://localhost:8080/api/contact', {
       method: 'POST',
       headers: {
@@ -65,7 +65,7 @@ const FormContactSmall = () => {
         service,
       }),
     });
-    setLoading(false);
+    // setLoading(false);
 
     router.push(`/verify-advisory`);
   };
@@ -149,3 +149,4 @@ const InputContactSmall = (props: InputContactProps) => {
     </div>
   );
 };
+export type { Contact };

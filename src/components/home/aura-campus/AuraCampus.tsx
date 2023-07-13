@@ -44,7 +44,7 @@ const AuraCampus = () => {
         <div className="flex items-center text-[26px] font-[800] lg:text-[49px] lg:leading-[140%] text-[#bc2449] ">
           Bạn có hẹn cùng Aura
         </div>
-        <div className="hidden lg:flex  text-[#BF264B] text-[38px] font-[300] gap-[40px]">
+        <div className="hidden lg:flex text-[#BF264B] text-[38px] font-[300] gap-[40px]">
           <button
             className="cursor-pointer z-50"
             onClick={scrollLeft}>
