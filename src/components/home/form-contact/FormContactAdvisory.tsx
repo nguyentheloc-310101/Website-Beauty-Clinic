@@ -1,4 +1,3 @@
-'use client';
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 
 import { useRouter } from 'next/navigation';
@@ -19,6 +18,7 @@ const initState = {
 };
 const FormContactSmall = () => {
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
   const [data, setData] = useState<Contact>(initState);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -26,8 +26,10 @@ const FormContactSmall = () => {
 
     console.log(JSON.stringify(data));
     const { name, phone, address, service } = data;
+    console.log(data);
     //api send
-    const res = await fetch('http://localhost:8080/api/contact', {
+    setLoading(true);
+    await fetch('http://localhost:8080/api/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -39,9 +41,21 @@ const FormContactSmall = () => {
         service,
       }),
     });
-    // const result = await res.json();
-    // console.log(result);
-    router.push(`/verify-advisory/`);
+    await fetch('http://localhost:8080/api/send-message', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name,
+        phone,
+        address,
+        service,
+      }),
+    });
+    setLoading(false);
+
+    router.push(`/verify-advisory`);
   };
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

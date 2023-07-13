@@ -1,12 +1,6 @@
 import { message } from 'antd';
 import axios from 'axios';
 import { NextApiResponse } from 'next';
-interface Contact {
-  name?: string;
-  phone?: string;
-  address?: string;
-  service?: string;
-}
 
 const AURA_BEAUTY_CLINIC_BOT = {
   app_id: 'cli_a426424310789009',
@@ -17,6 +11,19 @@ const TABLE_AURA_CONTACT = {
   app_token: 'SeHebBYCIavlT3sngajuIldystf',
   table_id: 'tbl9PFCwZVcjqTsn',
 };
+
+function generateUUID(): string {
+  const chars =
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let uuid = '';
+
+  for (let i = 0; i < 50; i++) {
+    const randomIndex = Math.floor(Math.random() * chars.length);
+    uuid += chars[randomIndex];
+  }
+
+  return uuid;
+}
 
 const tenantToken = async (appId: string, appSecret: string) => {
   try {
@@ -44,29 +51,69 @@ const tenantToken = async (appId: string, appSecret: string) => {
 };
 
 export async function POST(request: Request, response: Response) {
-  const tokenNew = await tenantToken(
+  const { phone, name, address, service, chatId } = await request.json();
+  const a = {
+    en_us: {
+      title: 'Aura Bot 🤖',
+      content: [
+        [
+          {
+            tag: 'text',
+            text: '📱 SĐT:                👤 Khách hàng:',
+          },
+        ],
+        [
+          {
+            tag: 'text',
+            text: ` ${phone}      ${name}`,
+          },
+        ],
+        [
+          {
+            tag: 'text',
+            text: '',
+          },
+        ],
+        [
+          {
+            tag: 'text',
+            text: `🏠 ĐC: ${address}`,
+          },
+        ],
+        [
+          {
+            tag: 'text',
+            text: '',
+          },
+        ],
+        [
+          {
+            tag: 'text',
+            text: `🛅 Dịch vụ: ${service}`,
+          },
+        ],
+      ],
+    },
+  };
+  let tokenNew = await tenantToken(
     AURA_BEAUTY_CLINIC_BOT.app_id,
     AURA_BEAUTY_CLINIC_BOT.app_secret
   );
-  const data: Contact = await request.json();
-  const { name, phone, address, service } = data;
-  var dataP = JSON.stringify({
-    fields: {
-      'Họ và Tên khách hàng': name,
-      'Số điện thoại': phone,
-      'Nơi sinh sống': address,
-      'Dịch vụ muốn tư vấn': service,
-    },
+  var data = JSON.stringify({
+    receive_id: 'oc_fde65a8f5b419338203e85835b161942',
+    msg_type: 'text',
+    content: '{"text":"function generate UUID test"}',
+    uuid: generateUUID(),
   });
 
   var config = {
     method: 'POST',
-    url: 'https://open.larksuite.com/open-apis/bitable/v1/apps/SeHebBYCIavlT3sngajuIldystf/tables/tbl9PFCwZVcjqTsn/records',
+    url: 'https://open.larksuite.com/open-apis/im/v1/messages?receive_id_type=chat_id',
     headers: {
-      Authorization: `Bearer ${tokenNew}`,
       'Content-Type': 'application/json',
+      Authorization: `Bearer ${tokenNew}`,
     },
-    data: dataP,
+    data: data,
   };
 
   axios(config)
