@@ -21,7 +21,7 @@ const CardCampusDetailsMobile = (props: CampusDetailsMobile) => {
   const { image, name, time, address, image_list, setShowCampusMapMobile } =
     props;
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center ">
       <div className="rounded-[20px] text-white">
         <div className="h-[288px] w-[350px]">
           <Swiper

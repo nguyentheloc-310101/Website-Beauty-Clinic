@@ -123,6 +123,9 @@ body {
   background: var(--linear, linear-gradient(90deg, #bf264b 0%, #df4b6e 100%));
   padding: 10px;
 }
+.modalStyleMobile {
+  margin-right: 17px;
+}
 .modalStyleMobile .ant-modal-content {
   /*pc mode*/
   width: 361px;
