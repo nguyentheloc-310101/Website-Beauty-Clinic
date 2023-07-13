@@ -31,7 +31,7 @@ const PanelContact = () => {
         alt={'zalo-icon'}
         width={48}
         height={48}
-        className="cursor-pointer"
+        className="cursor-pointer lg:mt-[8px]"
       />
       <Image
         src={mess}

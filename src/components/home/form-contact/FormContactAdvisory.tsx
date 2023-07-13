@@ -65,7 +65,7 @@ const FormContactSmall = () => {
         service,
       }),
     });
-    setLoading(false);
+    // setLoading(false);
 
     router.push(`/verify-advisory`);
   };
@@ -149,3 +149,4 @@ const InputContactSmall = (props: InputContactProps) => {
     </div>
   );
 };
+export type { Contact };

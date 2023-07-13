@@ -59,7 +59,7 @@ const CustomerSaidVideo = () => {
         <Image
           src={ribbon}
           alt="ribbon-img"
-          className="relative z-10 top-[-150px] lg:top-[-600px] object-contain"
+          className="relative z-10 top-[-150px] lg:top-[-700px] object-contain"
           width={2000}
         />
       </div>

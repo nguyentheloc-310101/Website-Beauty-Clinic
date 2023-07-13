@@ -95,8 +95,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 84px;
-  height: 249.6px;
+  width: 64px;
+  height: 220px;
   flex-shrink: 0;
   border-radius: 12px;
   background: linear-gradient(180deg, #c20459 41.39%, #4d0523 100%);
@@ -104,7 +104,7 @@ body {
   bottom: 180px;
   position: fixed;
   z-index: 999;
-  padding: 33px 18px;
+  padding: 23px 12px;
   transition: opacity 0.3s, visibility 0.3s;
 }
 /*video*/
@@ -112,7 +112,7 @@ body {
   height: 900px;
   background-image: url('../statics/images/customer-said/wrapper.png');
   background-size: cover;
-  margin-bottom: 120px;
+  margin-bottom: 220px;
 }
 
 .modalStyle .ant-modal-content {
@@ -288,10 +288,11 @@ body {
   border-radius: 12px;
   border: 1.19px solid #bf264b;
   background: #fff;
+  padding: 20px;
 }
-.input-contact::placeholder {
+/* .input-contact::placeholder {
   padding-left: 25px;
-}
+} */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -337,7 +338,7 @@ body {
     width: 40px;
     height: 130px;
     padding: 16px 9px;
-    left: 348px;
+    left: 332px;
     bottom: 2%;
   }
   .card-customer {
