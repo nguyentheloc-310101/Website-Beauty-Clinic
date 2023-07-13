@@ -75,7 +75,7 @@ const FormContactSmall = () => {
           name={'name'}
           value={data.name}
           onChange={handleChange}
-          label={'Họ và tên (test deploy)'}
+          label={'Họ và tên'}
           placeholder={'Nhập họ và tên'}
         />
         <InputContactSmall
