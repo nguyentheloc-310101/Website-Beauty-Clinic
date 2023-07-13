@@ -53,7 +53,7 @@ const FormContactSmall = () => {
         service,
       }),
     });
-    await fetch('http://localhost:8080/api/send-message-external', {
+    await fetch('https://staging.thammyaura.vn/api/send-message-external', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
