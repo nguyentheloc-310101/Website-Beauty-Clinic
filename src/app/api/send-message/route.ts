@@ -2,6 +2,12 @@ import { message } from 'antd';
 import axios from 'axios';
 import { NextApiResponse } from 'next';
 
+interface Contact {
+  name?: string;
+  phone?: string;
+  address?: string;
+  service?: string;
+}
 const AURA_BEAUTY_CLINIC_BOT = {
   app_id: 'cli_a426424310789009',
   app_secret: 'L3FoXxPUlOQerSAhCjdHKh6NfxjKmX64',
@@ -51,50 +57,11 @@ const tenantToken = async (appId: string, appSecret: string) => {
 };
 
 export async function POST(request: Request, response: Response) {
-  const { phone, name, address, service, chatId } = await request.json();
-  const a = {
-    en_us: {
-      title: 'Aura Bot 🤖',
-      content: [
-        [
-          {
-            tag: 'text',
-            text: '📱 SĐT:                👤 Khách hàng:',
-          },
-        ],
-        [
-          {
-            tag: 'text',
-            text: ` ${phone}      ${name}`,
-          },
-        ],
-        [
-          {
-            tag: 'text',
-            text: '',
-          },
-        ],
-        [
-          {
-            tag: 'text',
-            text: `🏠 ĐC: ${address}`,
-          },
-        ],
-        [
-          {
-            tag: 'text',
-            text: '',
-          },
-        ],
-        [
-          {
-            tag: 'text',
-            text: `🛅 Dịch vụ: ${service}`,
-          },
-        ],
-      ],
-    },
-  };
+  const dataForm: Contact = await request.json();
+  const { name, phone, address, service } = dataForm;
+
+  const a = 'test declare var';
+
   let tokenNew = await tenantToken(
     AURA_BEAUTY_CLINIC_BOT.app_id,
     AURA_BEAUTY_CLINIC_BOT.app_secret
@@ -102,7 +69,7 @@ export async function POST(request: Request, response: Response) {
   var data = JSON.stringify({
     receive_id: 'oc_fde65a8f5b419338203e85835b161942',
     msg_type: 'text',
-    content: '{"text":"function generate UUID test"}',
+    content: `{"text":"Tên khách hàng: ${name}\\nSố điện thoại: ${phone} \\nĐịa chỉ: ${address} \\nDịch vụ: ${service}"}`,
     uuid: generateUUID(),
   });
 

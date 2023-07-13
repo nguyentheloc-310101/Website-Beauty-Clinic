@@ -33,9 +33,7 @@ const tenantToken = async (appId: string, appSecret: string) => {
       data: data,
     };
     const token = await axios(config);
-    console.log('================================================');
-    console.log(token.data.tenant_access_token);
-    console.log('================================================');
+
     return token.data.tenant_access_token;
   } catch (e) {
     console.error(e);
