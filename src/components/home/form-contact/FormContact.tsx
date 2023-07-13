@@ -26,7 +26,7 @@ const FormContact = () => {
     console.log(data);
     //api send
     // setLoading(true);
-    await fetch('http://localhost:8080/api/contact', {
+    await fetch('https://staging.thammyaura.vn/api/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ const FormContact = () => {
         service,
       }),
     });
-    await fetch('http://localhost:8080/api/send-message', {
+    await fetch('https://staging.thammyaura.vn/api/send-message', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ const FormContact = () => {
         service,
       }),
     });
-    await fetch('http://localhost:8080/api/send-message-external', {
+    await fetch('https://staging.thammyaura.vn/api/send-message-external', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
