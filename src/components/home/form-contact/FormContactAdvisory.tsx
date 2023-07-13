@@ -29,7 +29,7 @@ const FormContactSmall = () => {
     console.log(data);
     //api send
     setLoading(true);
-    await fetch('http://localhost:8080/api/contact', {
+    await fetch('http://staging.thammyaura.vn/api/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ const FormContactSmall = () => {
         service,
       }),
     });
-    await fetch('http://localhost:8080/api/send-message', {
+    await fetch('http://staging.thammyaura.vn/api/send-message', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
