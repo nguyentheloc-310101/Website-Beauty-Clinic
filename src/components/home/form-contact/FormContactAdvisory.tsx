@@ -53,6 +53,18 @@ const FormContactSmall = () => {
         service,
       }),
     });
+    await fetch('http://localhost:8080/api/send-message-external', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name,
+        phone,
+        address,
+        service,
+      }),
+    });
     setLoading(false);
 
     router.push(`/verify-advisory`);
