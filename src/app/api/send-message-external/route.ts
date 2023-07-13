@@ -1,4 +1,5 @@
-import axios, { AxiosRequestConfig } from 'axios';
+import axios from 'axios';
+import { NextApiRequest, NextApiResponse } from 'next';
 import { NextResponse } from 'next/server';
 
 interface Contact {
@@ -16,6 +17,24 @@ const TABLE_AURA_CONTACT = {
   app_token: 'SeHebBYCIavlT3sngajuIldystf',
   table_id: 'tbl9PFCwZVcjqTsn',
 };
+// const tenantTokenAppBot = async () => {
+//   try {
+//     const { app_id, app_secret } = AURA_BEAUTY_CLINIC_BOT;
+//     const data = { appId: app_id, appSecret: app_secret };
+//     const config = {
+//       method: 'POST',
+//       url: 'https://open.larksuite.com/open-apis/auth/v3/app_access_token/internal',
+//       headers: { 'Content-Type': 'application/json' },
+//       data,
+//     };
+//     const {
+//       data: { tenant_access_token },
+//     } = await axios(config);
+//     return tenant_access_token;
+//   } catch (error) {
+//     throw new Error('error');
+//   }
+// };
 
 function generateUUID(): string {
   const chars =
@@ -55,44 +74,35 @@ const tenantToken = async (appId: string, appSecret: string) => {
   }
 };
 
-export async function POST(request: Request, response: Response) {
-  console.log('Im here message');
-
+export async function POST(request: Request, respons: NextApiResponse) {
   const dataForm: Contact = await request.json();
   const { name, phone, address, service } = dataForm;
 
-  const a = 'test declare var';
-
-  let tokenNew = await tenantToken(
-    AURA_BEAUTY_CLINIC_BOT.app_id,
-    AURA_BEAUTY_CLINIC_BOT.app_secret
-  );
-  var data = JSON.stringify({
-    receive_id: 'oc_fde65a8f5b419338203e85835b161942',
-    msg_type: 'text',
-    content: `{"text":"Tên khách hàng: ${name}\\nSố điện thoại: ${phone} \\nĐịa chỉ: ${address} \\nDịch vụ: ${service}"}`,
-    uuid: generateUUID(),
-  });
-
-  var config = {
-    method: 'POST',
-    url: 'https://open.larksuite.com/open-apis/im/v1/messages?receive_id_type=chat_id',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${tokenNew}`,
+  const axios = require('axios');
+  const res = await axios.post(
+    'https://open.larksuite.com/open-apis/bot/v2/hook/ea66e46c-7222-44bc-9568-eadfe4bcf7b2',
+    {
+      msg_type: 'text',
+      content: `{"text":"Tên khách hàng: ${String(
+        name
+      )}\\nSố điện thoại: ${phone} \\nĐịa chỉ: ${address} \\nDịch vụ: ${service}"}`,
     },
-    data: data,
-  };
-
-  return axios(config)
-    .then(function (_response) {
+    {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+  );
+  return res
+    .then(function (_response: any) {
       console.log(JSON.stringify(_response.data));
       return NextResponse.json({
         msg: 'Successfully send message to Group Chat',
         status: 200,
       });
     })
-    .catch(function (error) {
+    .catch(function (error: any) {
       console.log(error);
     });
+  //   console.log(res);
 }

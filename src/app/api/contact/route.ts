@@ -1,6 +1,7 @@
 import { message } from 'antd';
 import axios from 'axios';
 import { NextApiResponse } from 'next';
+import { NextResponse } from 'next/server';
 interface Contact {
   name?: string;
   phone?: string;
@@ -42,6 +43,7 @@ const tenantToken = async (appId: string, appSecret: string) => {
 };
 
 export async function POST(request: Request, response: Response) {
+  console.log('Im here contact');
   const tokenNew = await tenantToken(
     AURA_BEAUTY_CLINIC_BOT.app_id,
     AURA_BEAUTY_CLINIC_BOT.app_secret
@@ -67,11 +69,15 @@ export async function POST(request: Request, response: Response) {
     data: dataP,
   };
 
-  axios(config)
-    .then(function (response) {
-      console.log(JSON.stringify(response.data));
+  return axios(config)
+    .then(function (_response) {
+      console.log(JSON.stringify(_response.data));
+      return NextResponse.json({
+        msg: 'Successfully created new user contact',
+        status: 200,
+      });
     })
     .catch(function (error) {
-      console.log(error);
+      console.log(123, error);
     });
 }
