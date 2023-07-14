@@ -9,27 +9,30 @@ import SeeMoreAboutAura from '@/components/home/see-more/SeeMoreAboutAura';
 import SliderService from '@/components/home/service-aura/ServiceAura';
 import SliderServiceResponsive from '@/components/home/service-aura/ServiceAuraResponsive';
 import ReelsOutStanding from '@/components/reels/ReelsOutStanding';
+import Head from 'next/head';
 
 const HomePage = () => {
   return (
-    <div className="home-container">
-      <div className="flex flex-col items-center justify-center ">
-        <HeroSection />
+    <>
+      <div className="home-container">
+        <div className="flex flex-col items-center justify-center ">
+          <HeroSection />
+        </div>
+        <div className="hidden md:block">
+          <SliderService />
+        </div>
+        <div className="md:hidden">
+          <SliderServiceResponsive />
+        </div>
+        <CustomerSaidVideo />
+        <AuraCampus />
+        <ActorSaid />
+        <SliderCustomerSaid />
+        <SeeMoreAboutAura />
+        <ContactInformation />
+        <ReelsOutStanding />
       </div>
-      <div className="hidden md:block">
-        <SliderService />
-      </div>
-      <div className="md:hidden">
-        <SliderServiceResponsive />
-      </div>
-      <CustomerSaidVideo />
-      <AuraCampus />
-      <ActorSaid />
-      <SliderCustomerSaid />
-      <SeeMoreAboutAura />
-      <ContactInformation />
-      <ReelsOutStanding />
-    </div>
+    </>
   );
 };
 
