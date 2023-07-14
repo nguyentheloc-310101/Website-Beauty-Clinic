@@ -1,5 +1,4 @@
-import LarkService from '@/services/lark/larkService';
-import axios, { AxiosRequestConfig } from 'axios';
+import axios from 'axios';
 import { NextResponse } from 'next/server';
 
 interface Contact {
@@ -8,15 +7,6 @@ interface Contact {
   address?: string;
   service?: string;
 }
-// const AURA_BEAUTY_CLINIC_BOT = {
-//   app_id: 'cli_a426424310789009',
-//   app_secret: 'L3FoXxPUlOQerSAhCjdHKh6NfxjKmX64',
-// };
-
-// const TABLE_AURA_CONTACT = {
-//   app_token: 'SeHebBYCIavlT3sngajuIldystf',
-//   table_id: 'tbl9PFCwZVcjqTsn',
-// };
 
 function generateUUID(): string {
   const chars =
@@ -31,30 +21,30 @@ function generateUUID(): string {
   return uuid;
 }
 
-// const tenantToken = async (appId: string, appSecret: string) => {
-//   try {
-//     const data = JSON.stringify({
-//       app_id: appId,
-//       app_secret: appSecret,
-//     });
-//     const config = {
-//       method: 'POST',
-//       url: 'https://open.larksuite.com/open-apis/auth/v3/app_access_token/internal',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       data: data,
-//     };
-//     const token = await axios(config);
-//     console.log('================================================');
-//     console.log(token.data.tenant_access_token);
-//     console.log('================================================');
-//     return token.data.tenant_access_token;
-//   } catch (e) {
-//     console.error(e);
-//     return { error: 'Failed to get access token' };
-//   }
-// };
+const tenantToken = async (appId: any, appSecret: any) => {
+  try {
+    const data = JSON.stringify({
+      app_id: appId,
+      app_secret: appSecret,
+    });
+    const config = {
+      method: 'POST',
+      url: 'https://open.larksuite.com/open-apis/auth/v3/app_access_token/internal',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      data: data,
+    };
+    const token = await axios(config);
+    console.log('================================================');
+    console.log(token.data.tenant_access_token);
+    console.log('================================================');
+    return token.data.tenant_access_token;
+  } catch (e) {
+    console.error(e);
+    return { error: 'Failed to get access token' };
+  }
+};
 
 export async function POST(request: Request, response: Response) {
   console.log('Im here message');
@@ -62,14 +52,54 @@ export async function POST(request: Request, response: Response) {
   const dataForm: Contact = await request.json();
   const { name, phone, address, service } = dataForm;
 
-  let tokenNew = await LarkService.tenantToken(
+  let tokenNew = await tenantToken(
     process.env.NEXT_PUBLIC_AURA_BOT_APP_ID,
     process.env.NEXT_PUBLIC_AURA_BOT_APP_SECRET
   );
+  const a = {
+    en_us: {
+      title: 'Aura Beauty Clinic Bot 🤖',
+      content: [
+        [
+          {
+            tag: 'text',
+            text: `👤 Khách hàng: ${name}`,
+          },
+        ],
+        [
+          {
+            tag: 'text',
+            text: `📱 SĐT: ${phone}`,
+          },
+        ],
+
+        [
+          {
+            tag: 'text',
+            text: `🏠 Địa chỉ: ${address}`,
+          },
+        ],
+        // [
+        //   {
+        //     tag: 'text',
+        //     text: '',
+        //   },
+        // ],
+        [
+          {
+            tag: 'text',
+            text: `🛅 Dịch vụ: ${service}`,
+          },
+        ],
+      ],
+    },
+  };
   var data = JSON.stringify({
     receive_id: 'oc_fde65a8f5b419338203e85835b161942',
-    msg_type: 'text',
-    content: `{"text":"Tên khách hàng: ${name}\\nSố điện thoại: ${phone} \\nĐịa chỉ: ${address} \\nDịch vụ: ${service}"}`,
+    // msg_type: 'text',
+    // content: `{"text":"Tên khách hàng: ${name}\\nSố điện thoại: ${phone} \\nĐịa chỉ: ${address} \\nDịch vụ: ${service}"}`,
+    content: JSON.stringify(a),
+    msg_type: 'post',
     uuid: generateUUID(),
   });
 

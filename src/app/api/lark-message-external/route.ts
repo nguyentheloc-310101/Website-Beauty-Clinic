@@ -10,17 +10,54 @@ interface Contact {
 export async function POST(request: Request, response: NextApiResponse) {
   const dataForm: Contact = await request.json();
   const { name, phone, address, service } = dataForm;
+  const a = {
+    msg_type: 'post',
+    content: {
+      post: {
+        en_us: {
+          title: 'Khách hàng liên hệ Aura Website',
+          content: [
+            [
+              {
+                tag: 'text',
+                text: `👤 Khách hàng: ${name}`,
+              },
+            ],
+            [
+              {
+                tag: 'text',
+                text: `📱 SĐT: ${phone}`,
+              },
+            ],
+
+            [
+              {
+                tag: 'text',
+                text: `🏠 Địa chỉ: ${address}`,
+              },
+            ],
+            [
+              {
+                tag: 'text',
+                text: `🛅 Dịch vụ: ${service}`,
+              },
+            ],
+          ],
+        },
+      },
+    },
+  };
 
   const axios = require('axios');
   try {
     const res = await axios.post(
       process.env.NEXT_PUBLIC_WEBHOOK_BOT_EXTERNAL_URL,
-      {
-        msg_type: 'text',
-        content: `{"text":"Tên khách hàng: ${String(
-          name
-        )}\\nSố điện thoại: ${phone} \\nĐịa chỉ: ${address} \\nDịch vụ: ${service}"}`,
-      },
+      a,
+      // msg_type: 'text',
+      // content: `{"text":"Tên khách hàng: ${String(
+      //   name
+      // )}\\nSố điện thoại: ${phone} \\nĐịa chỉ: ${address} \\nDịch vụ: ${service}"}`,
+
       {
         headers: {
           'Content-Type': 'application/json',
