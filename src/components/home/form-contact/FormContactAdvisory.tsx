@@ -1,7 +1,8 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import PrimaryButton from '@/components/button/PrimaryButton';
-import { Spin } from 'antd';
+import { Form, Spin, message } from 'antd';
+import InputForm from '@/components/common/form/input/InputForm';
 
 interface Contact {
   name: string;
@@ -22,9 +23,10 @@ const FormContactSmall = () => {
   const [data, setData] = useState<Contact>(initState);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
     // console.log(JSON.stringify(data));
+    if (data.name == '' || data.phone == '' || data.service == '') {
+      return message.warning('Hãy điền Tên dịch vụ và số điện thoại');
+    }
     const { name, phone, address, service } = data;
     console.log(data);
     //api send
@@ -94,7 +96,10 @@ const FormContactSmall = () => {
       tip="Loading"
       size="large">
       <div className="form-contact-small">
-        <form onSubmit={handleSubmit}>
+        <Form
+          onFinish={handleSubmit}
+          layout={'vertical'}
+          style={{ maxWidth: 600 }}>
           <InputContactSmall
             name={'name'}
             value={data.name}
@@ -102,6 +107,7 @@ const FormContactSmall = () => {
             label={'Họ và tên'}
             placeholder={'Nhập họ và tên'}
           />
+
           <InputContactSmall
             name={'phone'}
             onChange={handleChange}
@@ -109,6 +115,7 @@ const FormContactSmall = () => {
             value={data.phone}
             placeholder={'Nhập số điện thoại'}
           />
+
           <InputContactSmall
             onChange={handleChange}
             name={'address'}
@@ -116,6 +123,7 @@ const FormContactSmall = () => {
             value={data.address}
             placeholder={'Nhập địa chỉ'}
           />
+
           <InputContactSmall
             onChange={handleChange}
             name={'service'}
@@ -123,7 +131,6 @@ const FormContactSmall = () => {
             label={'Dịch vụ muốn tư vấn'}
             placeholder={'Nhập tên dịch vụ'}
           />
-
           <div className="w-full flex items-center justify-center mt-[10px]">
             <PrimaryButton
               typeBtn="submit"
@@ -132,7 +139,7 @@ const FormContactSmall = () => {
               size={'small'}
             />
           </div>
-        </form>
+        </Form>
       </div>
     </Spin>
   );
@@ -146,9 +153,10 @@ interface InputContactProps {
   onChange?: any;
   name?: string;
   value?: any;
+  required?: boolean;
 }
 const InputContactSmall = (props: InputContactProps) => {
-  const { label, value, name, placeholder, onChange } = props;
+  const { label, value, name, placeholder, onChange, required } = props;
   return (
     <div>
       <label className="block mb-1 text-[#BF264B] lg:text-[14px] font-[500]">
@@ -157,6 +165,7 @@ const InputContactSmall = (props: InputContactProps) => {
       <input
         onChange={onChange}
         name={name}
+        required={required}
         value={value}
         className="w-[240px] h-[34px] p-[20px] rounded-[7px] border border-[#bf264b] "
         placeholder={placeholder}
