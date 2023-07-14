@@ -27,6 +27,7 @@ const HeaderAura = ({ isMobile }: Props) => {
         alt="logo"
         className="h-[3rem] w-auto"
       />
+
       <div></div>
       <div
         className={`z-[100] absolute p-5 top-[5rem] left-0 bg-white flex flex-col w-[70vw] gap-3 transition-transform duration-500 ${
