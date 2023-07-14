@@ -1,3 +1,4 @@
+import LarkService from '@/services/lark/larkService';
 import { message } from 'antd';
 import axios from 'axios';
 import { NextApiResponse } from 'next';
@@ -14,39 +15,11 @@ const AURA_BEAUTY_CLINIC_BOT = {
   app_secret: 'L3FoXxPUlOQerSAhCjdHKh6NfxjKmX64',
 };
 
-const TABLE_AURA_CONTACT = {
-  app_token: 'SeHebBYCIavlT3sngajuIldystf',
-  table_id: 'tbl9PFCwZVcjqTsn',
-};
-
-const tenantToken = async (appId: string, appSecret: string) => {
-  try {
-    const data = JSON.stringify({
-      app_id: appId,
-      app_secret: appSecret,
-    });
-    const config = {
-      method: 'POST',
-      url: 'https://open.larksuite.com/open-apis/auth/v3/app_access_token/internal',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      data: data,
-    };
-    const token = await axios(config);
-
-    return token.data.tenant_access_token;
-  } catch (e) {
-    console.error(e);
-    return { error: 'Failed to get access token' };
-  }
-};
-
 export async function POST(request: Request, response: Response) {
   console.log('Im here contact');
-  const tokenNew = await tenantToken(
-    AURA_BEAUTY_CLINIC_BOT.app_id,
-    AURA_BEAUTY_CLINIC_BOT.app_secret
+  const tokenNew = await LarkService.tenantToken(
+    process.env.NEXT_PUBLIC_AURA_BOT_APP_ID,
+    process.env.NEXT_PUBLIC_AURA_BOT_APP_SECRET
   );
   const data: Contact = await request.json();
   const { name, phone, address, service } = data;

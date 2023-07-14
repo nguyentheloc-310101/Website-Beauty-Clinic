@@ -8,7 +8,7 @@ const AURA_BEAUTY_CLINIC_BOT = {
 };
 
 class LarkService {
-  static tenantToken = async (appId: string, appSecret: string) => {
+  static tenantToken = async (appId: any, appSecret: any) => {
     try {
       var data = JSON.stringify({
         app_id: appId,
@@ -29,6 +29,35 @@ class LarkService {
       return token.data.tenant_access_token;
     } catch (e) {
       throw new Error(message as any);
+    }
+  };
+  static generateUUID(): string {
+    const chars =
+      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let uuid = '';
+
+    for (let i = 0; i < 50; i++) {
+      const randomIndex = Math.floor(Math.random() * chars.length);
+      uuid += chars[randomIndex];
+    }
+
+    return uuid;
+  }
+  static tenantTokenAppBot = async (app_id: string, app_secret: string) => {
+    try {
+      const data = { appId: app_id, appSecret: app_secret };
+      const config = {
+        method: 'POST',
+        url: 'https://open.larksuite.com/open-apis/auth/v3/app_access_token/internal',
+        headers: { 'Content-Type': 'application/json' },
+        data,
+      };
+      const {
+        data: { tenant_access_token },
+      } = await axios(config);
+      return tenant_access_token;
+    } catch (error) {
+      throw new Error('error');
     }
   };
 }
