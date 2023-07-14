@@ -29,46 +29,6 @@ const FormContactSmall = () => {
     console.log(data);
     //api send
     setLoading(true);
-<<<<<<< HEAD
-    await fetch('https://staging.thammyaura.vn/api/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name,
-        phone,
-        address,
-        service,
-      }),
-    });
-    await fetch('https://staging.thammyaura.vn/api/send-message', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name,
-        phone,
-        address,
-        service,
-      }),
-    });
-    await fetch('https://staging.thammyaura.vn/api/send-message-external', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name,
-        phone,
-        address,
-        service,
-      }),
-    });
-    // setLoading(false);
-
-=======
     await fetch(
       `${process.env.NEXT_PUBLIC_DOMAIN}/${process.env.NEXT_PUBLIC_LARK_CREATE_RECORD_API}`,
       {
@@ -115,7 +75,6 @@ const FormContactSmall = () => {
       }
     );
     setLoading(false);
->>>>>>> loc-dev
     router.push(`/verify-advisory`);
   };
   const handleChange = (
