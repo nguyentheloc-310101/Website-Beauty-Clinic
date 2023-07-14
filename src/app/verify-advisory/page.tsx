@@ -4,11 +4,7 @@ import { Breadcrumb } from 'antd';
 import Image from 'next/image';
 import phoneCall from '../../statics/images/verify-advisory/phoneCall.png';
 import Link from 'next/link';
-import { Metadata } from 'next';
-export const metadata: Metadata = {
-  title: 'Chuỗi thẩm mỹ viện quốc tế Aura Beauty Clinic',
-  description: 'Aura Beauty Clinic',
-};
+
 const VerifyAdvisory = () => {
   return (
     <div className="lg:px-[200px] lg:mt-[100px] px-[20px] mt-[20px]">
