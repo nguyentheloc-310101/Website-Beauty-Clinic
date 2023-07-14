@@ -50,7 +50,7 @@ export default function RootLayout({
   }, [windowSize]);
 
   return (
-    <html lang="vi">
+    <html lang="en">
       <body className={inter.className}>
         <HeaderAura isMobile={isMobile} />
         <NavigationAura isMobile={isMobile} />
