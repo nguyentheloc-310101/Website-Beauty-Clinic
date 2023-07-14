@@ -10,6 +10,9 @@ import SliderService from '@/components/home/service-aura/ServiceAura';
 import SliderServiceResponsive from '@/components/home/service-aura/ServiceAuraResponsive';
 import ReelsOutStanding from '@/components/reels/ReelsOutStanding';
 
+export const metadata = {
+  title: 'Home page',
+};
 const HomePage = () => {
   return (
     <div className="home-container">
