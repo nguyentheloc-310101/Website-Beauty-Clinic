@@ -1,4 +1,3 @@
-import { Tooltip } from 'antd';
 import React from 'react';
 interface IconButtonProps {
   Icon: React.ForwardRefExoticComponent<any>;

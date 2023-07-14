@@ -1,11 +1,8 @@
 'use client';
-import Image, { StaticImageData } from 'next/image';
-import { useState } from 'react';
-
+import { StaticImageData } from 'next/image';
 import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
-
-import CardCampus from './CardCampus';
 import { ListImageDetails, dataCampus } from '@/data/sliders/campusSlider';
+import CardCampus from './CardCampus';
 
 interface CampusItem {
   key: number;

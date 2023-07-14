@@ -1,11 +1,18 @@
+import { Button } from 'antd';
 import React from 'react';
 interface btnProps {
   text: string;
   size: string;
-  disabled?: boolean;
+  typeBtn?: 'button' | 'submit' | 'reset';
+  loading?: boolean;
 }
 
-const PrimaryButton = ({ text, size }: btnProps) => {
+const PrimaryButton = ({
+  text,
+  size,
+  loading,
+  typeBtn = 'submit',
+}: btnProps) => {
   let className = '';
 
   if (size === 'small') {
@@ -13,7 +20,14 @@ const PrimaryButton = ({ text, size }: btnProps) => {
   } else if (size === 'big') {
     className = 'btn-primary';
   }
-  return <button className={className}>{text}</button>;
+  return (
+    <button
+      // htmlType={typeBtn}
+      // loading={loading}
+      className={`${className}`}>
+      {text}
+    </button>
+  );
 };
 
 export default PrimaryButton;

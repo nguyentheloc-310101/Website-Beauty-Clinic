@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
-
 import { useRouter } from 'next/navigation';
 import PrimaryButton from '@/components/button/PrimaryButton';
+import { Spin } from 'antd';
 
 interface Contact {
   name: string;
@@ -18,17 +18,18 @@ const initState = {
 };
 const FormContactSmall = () => {
   const router = useRouter();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const [data, setData] = useState<Contact>(initState);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    console.log(JSON.stringify(data));
+    // console.log(JSON.stringify(data));
     const { name, phone, address, service } = data;
     console.log(data);
     //api send
     setLoading(true);
+<<<<<<< HEAD
     await fetch('https://staging.thammyaura.vn/api/contact', {
       method: 'POST',
       headers: {
@@ -67,6 +68,54 @@ const FormContactSmall = () => {
     });
     // setLoading(false);
 
+=======
+    await fetch(
+      `${process.env.NEXT_PUBLIC_DOMAIN}/${process.env.NEXT_PUBLIC_LARK_CREATE_RECORD_API}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          phone,
+          address,
+          service,
+        }),
+      }
+    );
+    await fetch(
+      `${process.env.NEXT_PUBLIC_DOMAIN}/${process.env.NEXT_PUBLIC_LARK_MESSAGE_INTERNAL_API}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          phone,
+          address,
+          service,
+        }),
+      }
+    );
+    await fetch(
+      `${process.env.NEXT_PUBLIC_DOMAIN}/${process.env.NEXT_PUBLIC_LARK_MESSAGE_EXTERNAL_API}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          phone,
+          address,
+          service,
+        }),
+      }
+    );
+    setLoading(false);
+>>>>>>> loc-dev
     router.push(`/verify-advisory`);
   };
   const handleChange = (
@@ -81,45 +130,52 @@ const FormContactSmall = () => {
   };
 
   return (
-    <div className="form-contact-small">
-      <form onSubmit={handleSubmit}>
-        <InputContactSmall
-          name={'name'}
-          value={data.name}
-          onChange={handleChange}
-          label={'Họ và tên'}
-          placeholder={'Nhập họ và tên'}
-        />
-        <InputContactSmall
-          name={'phone'}
-          onChange={handleChange}
-          label={'Số điện thoại'}
-          value={data.phone}
-          placeholder={'Nhập số điện thoại'}
-        />
-        <InputContactSmall
-          onChange={handleChange}
-          name={'address'}
-          label={'Nơi sinh sống'}
-          value={data.address}
-          placeholder={'Nhập địa chỉ'}
-        />
-        <InputContactSmall
-          onChange={handleChange}
-          name={'service'}
-          value={data.service}
-          label={'Dịch vụ muốn tư vấn'}
-          placeholder={'Nhập tên dịch vụ'}
-        />
-
-        <div className="w-full flex items-center justify-center mt-[10px]">
-          <PrimaryButton
-            text={'Gửi thông tin'}
-            size={'small'}
+    <Spin
+      spinning={loading}
+      tip="Loading"
+      size="large">
+      <div className="form-contact-small">
+        <form onSubmit={handleSubmit}>
+          <InputContactSmall
+            name={'name'}
+            value={data.name}
+            onChange={handleChange}
+            label={'Họ và tên'}
+            placeholder={'Nhập họ và tên'}
           />
-        </div>
-      </form>
-    </div>
+          <InputContactSmall
+            name={'phone'}
+            onChange={handleChange}
+            label={'Số điện thoại'}
+            value={data.phone}
+            placeholder={'Nhập số điện thoại'}
+          />
+          <InputContactSmall
+            onChange={handleChange}
+            name={'address'}
+            label={'Nơi sinh sống'}
+            value={data.address}
+            placeholder={'Nhập địa chỉ'}
+          />
+          <InputContactSmall
+            onChange={handleChange}
+            name={'service'}
+            value={data.service}
+            label={'Dịch vụ muốn tư vấn'}
+            placeholder={'Nhập tên dịch vụ'}
+          />
+
+          <div className="w-full flex items-center justify-center mt-[10px]">
+            <PrimaryButton
+              typeBtn="submit"
+              loading={loading}
+              text={'Gửi thông tin'}
+              size={'small'}
+            />
+          </div>
+        </form>
+      </div>
+    </Spin>
   );
 };
 

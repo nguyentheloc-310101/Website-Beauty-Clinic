@@ -21,10 +21,11 @@ const FormContact = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    console.log(JSON.stringify(data));
+    // console.log(JSON.stringify(data));
     const { name, phone, address, service } = data;
     console.log(data);
     //api send
+<<<<<<< HEAD
     // setLoading(true);
     await fetch('https://staging.thammyaura.vn/api/contact', {
       method: 'POST',
@@ -63,6 +64,54 @@ const FormContact = () => {
       }),
     });
     // setLoading(false);
+=======
+
+    await fetch(
+      `${process.env.NEXT_PUBLIC_DOMAIN}/${process.env.NEXT_PUBLIC_LARK_CREATE_RECORD_API}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          phone,
+          address,
+          service,
+        }),
+      }
+    );
+    await fetch(
+      `${process.env.NEXT_PUBLIC_DOMAIN}/${process.env.NEXT_PUBLIC_LARK_MESSAGE_INTERNAL_API}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          phone,
+          address,
+          service,
+        }),
+      }
+    );
+    await fetch(
+      `${process.env.NEXT_PUBLIC_DOMAIN}/${process.env.NEXT_PUBLIC_LARK_MESSAGE_EXTERNAL_API}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          phone,
+          address,
+          service,
+        }),
+      }
+    );
+>>>>>>> loc-dev
 
     router.push(`/verify-advisory`);
   };

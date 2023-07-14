@@ -1,0 +1,3 @@
+curl -X POST -H "Content-Type: application/json" \
+	-d '{"msg_type":"text","content":{"text":"request example"}}' \
+ https://open.larksuite.com/open-apis/bot/v2/hook/b80f4e01-4cd2-4ca7-87b7-e7877c7090de
