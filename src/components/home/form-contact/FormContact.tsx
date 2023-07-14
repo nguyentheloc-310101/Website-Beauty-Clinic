@@ -38,7 +38,7 @@ const FormContact = () => {
         service,
       }),
     });
-    await fetch('http://localhost:8080/api/send-message', {
+    await fetch('http://localhost:8080/api/lark-message', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ const FormContact = () => {
         service,
       }),
     });
-    await fetch('http://localhost:8080/api/send-message-external', {
+    await fetch('http://localhost:8080/api/lark-message-external', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
