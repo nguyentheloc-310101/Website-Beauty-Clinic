@@ -8,6 +8,7 @@ import Script from 'next/script';
 import PanelContact from '@/components/panel-contact/PanelContact';
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
+import { Metadata } from 'next';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,6 +16,15 @@ interface WindowSize {
   width: number | undefined;
   height: number | undefined;
 }
+export const metadata: Metadata = {
+  icons: {
+    icon: {
+      url: '/favicon.png',
+      type: 'image/png',
+    },
+    shortcut: { url: '/favicon.png', type: 'image/png' },
+  },
+};
 
 export default function RootLayout({
   children,
@@ -50,13 +60,6 @@ export default function RootLayout({
 
   return (
     <html lang="vi">
-      <Head>
-        <link
-          rel="stylesheet"
-          href="https://sf16-scmcdn-sg.ibytedtos.com/obj/static-sg/livesaas-client/pc/byteplus/css/index.1.1.2-beta.2.css"
-        />
-        <title>aura</title>
-      </Head>
       <body className={inter.className}>
         <HeaderAura isMobile={isMobile} />
         <NavigationAura isMobile={isMobile} />

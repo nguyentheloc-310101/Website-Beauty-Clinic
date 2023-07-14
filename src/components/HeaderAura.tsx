@@ -27,6 +27,7 @@ const HeaderAura = ({ isMobile }: Props) => {
         alt="logo"
         className="h-[3rem] w-auto"
       />
+
       <div></div>
       <div
         className={`z-[100] absolute p-5 top-[5rem] left-0 bg-white flex flex-col w-[70vw] gap-3 transition-transform duration-500 ${
@@ -63,11 +64,13 @@ const HeaderAura = ({ isMobile }: Props) => {
         </div>
 
         <NavLinks />
-        <Image
-          src={FooterIcon}
-          className="w-full h-[4rem] object-cover mt-2"
-          alt="footer"
-        />
+        <Link href="/">
+          <Image
+            src={FooterIcon}
+            className="w-full h-[4rem] object-cover mt-2"
+            alt="footer"
+          />
+        </Link>
       </div>
     </div>
   ) : (
@@ -75,7 +78,7 @@ const HeaderAura = ({ isMobile }: Props) => {
       <Image
         src={Logo}
         alt="Logo"
-        className="w-[103px] h-[45px]"
+        className="w-[103px] h-[45px] cursor-pointer"
       />
       <div className="flex ml-[10%] w-full font-[600] text-[#bc2449] text-[16px] items-center justify-between">
         <span className="text-center cursor-pointer">TRANG CHỦ</span>
