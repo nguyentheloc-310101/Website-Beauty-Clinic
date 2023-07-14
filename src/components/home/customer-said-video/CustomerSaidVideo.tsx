@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import wrapper from '../../../statics/images/customer-said-video/wrapper.png';
 import ribbon from '../../../statics/images/customer-said-video/ribbon.png';
 import text from '../../../statics/images/customer-said-video/text-customer.png';
 

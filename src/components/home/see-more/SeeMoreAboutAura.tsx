@@ -1,17 +1,10 @@
-import React from 'react';
 import Image from 'next/image';
-import text5stars from '../../../statics/images/campus-scope/text-5star.png';
-import ribbon from '../../../statics/images/campus-scope/ribbon.png';
-import leftIcon from '../../../statics/images/campus-scope/left-icon.png';
-
 import big from '../../../statics/images/campus-scope/big.png';
+import ribbon from '../../../statics/images/campus-scope/ribbon.png';
 import modern from '../../../statics/images/campus-scope/mordern.png';
+import leftIcon from '../../../statics/images/campus-scope/left-icon.png';
+import text5stars from '../../../statics/images/campus-scope/text-5star.png';
 import profession from '../../../statics/images/campus-scope/profession.png';
-import heartMap from '../../../statics/images/campus-scope/heart_map.png';
-
-import CardCampusResponsive from '../aura-campus/CardCampusResponsive';
-import { CardCustomer } from '../customer-said/CardCustomer';
-import { dataCampus, dataCampusNearBy } from '@/data/sliders/campusSlider';
 
 const SeeMoreAboutAura = () => {
   return (
