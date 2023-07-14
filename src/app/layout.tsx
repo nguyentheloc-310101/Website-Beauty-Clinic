@@ -16,15 +16,7 @@ interface WindowSize {
   width: number | undefined;
   height: number | undefined;
 }
-export const metadata: Metadata = {
-  icons: {
-    icon: {
-      url: '/favicon.png',
-      type: 'image/png',
-    },
-    shortcut: { url: '/favicon.png', type: 'image/png' },
-  },
-};
+
 //
 export default function RootLayout({
   children,
