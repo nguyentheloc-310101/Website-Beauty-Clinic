@@ -35,13 +35,13 @@ function ModalNew({
         <div
           className={`flex flex-col relative overflow-hidden bg-gradient-to-t from-[#bf264b]  to-[#4d0523] rounded-[29px] w-[${width}] h-[${height}]`}
           style={{ height: `${height}` }}>
-          <div className="relative w-[650] h-auto">
+          <div className="relative  h-auto">
             <Image
               src={girls}
               alt="cover-img"
               // width={400}
               // height={350}
-              className="lg:w-[600px] lg:h-[350px] "
+              className="lg:w-[400px] lg:h-[350px] "
               style={{ objectFit: 'cover' }}
             />
 
