@@ -23,9 +23,8 @@ const FormContactSmall = () => {
   const [data, setData] = useState<Contact>(initState);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    // console.log(JSON.stringify(data));
     if (data.name == '' || data.phone == '' || data.service == '') {
-      return message.warning('Hãy điền Tên dịch vụ và số điện thoại');
+      return message.warning('Vui lòng điền đầy đủ thông tin!');
     }
     const { name, phone, address, service } = data;
     console.log(data);
@@ -77,6 +76,7 @@ const FormContactSmall = () => {
       }
     );
     setLoading(false);
+    message.success('Gửi thông tin thành công');
     router.push(`/verify-advisory`);
   };
   const handleChange = (
@@ -89,13 +89,23 @@ const FormContactSmall = () => {
       [name]: e.target.value,
     }));
   };
+  const handleChangePhone = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const result = e.target.value.replace(/\D/g, '');
+    setData((prevState) => ({
+      ...prevState,
+      phone: result,
+    }));
+  };
 
   return (
     <Spin
+      className="rounded-[24px]"
       spinning={loading}
       tip="Loading"
       size="large">
-      <div className="form-contact-small">
+      <div className="relative w-[310px] h-[360px] flex flex-cols item-center justify-center gap-[8px] mb-[10px] border bg-gradient-to-r from-[#fff2de] to-[#fff] rounded-[23px] pt-[16px] pl-[12px]">
         <Form
           onFinish={handleSubmit}
           layout={'vertical'}
@@ -110,7 +120,7 @@ const FormContactSmall = () => {
 
           <InputContactSmall
             name={'phone'}
-            onChange={handleChange}
+            onChange={handleChangePhone}
             label={'Số điện thoại'}
             value={data.phone}
             placeholder={'Nhập số điện thoại'}

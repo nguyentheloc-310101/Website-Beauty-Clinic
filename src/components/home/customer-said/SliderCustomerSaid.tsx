@@ -29,7 +29,7 @@ const SliderCustomerSaid = () => {
         Báo chí nói gì về Aura
       </div>
       <div className="hidden lg:flex items-center justify-center">
-        <div className="logo-container px-2">
+        <div className="mt-[24px] gap-[71px] flex w-[1150px] h-[130px] justify-center items-center rounded-[25px] bg-white px-2">
           <Image
             src={dantri}
             alt={'logo'}

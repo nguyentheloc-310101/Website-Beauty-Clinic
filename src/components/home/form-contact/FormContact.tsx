@@ -1,7 +1,7 @@
 import PrimaryButton from '@/components/button/PrimaryButton';
 import InputForm from '@/components/common/form/input/InputForm';
 import { InputContact } from '@/components/common/form/input/contact-input/InputContact';
-import { Form, Input } from 'antd';
+import { Form, Input, message } from 'antd';
 
 import { useRouter } from 'next/navigation';
 
@@ -19,7 +19,9 @@ const FormContact = () => {
 
   const [data, setData] = useState<Contact>(initState);
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    if (data.name == '' || data.phone == '' || data.service == '') {
+      return message.warning('Vui lòng điền đầy đủ thông tin!');
+    }
 
     // console.log(JSON.stringify(data));
     const { name, phone, address, service } = data;
@@ -71,7 +73,7 @@ const FormContact = () => {
         }),
       }
     );
-
+    message.success('Gửi thông tin tư vấn thành công');
     router.push(`/verify-advisory`);
   };
   const handleChange = (
@@ -84,10 +86,19 @@ const FormContact = () => {
       [name]: e.target.value,
     }));
   };
+  const handleChangePhone = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const result = e.target.value.replace(/\D/g, '');
+    setData((prevState) => ({
+      ...prevState,
+      phone: result,
+    }));
+  };
   return (
     <div>
       <div className="form-contact">
-        <form onSubmit={handleSubmit}>
+        <Form onFinish={handleSubmit}>
           <InputContact
             name={'name'}
             value={data.name}
@@ -97,7 +108,7 @@ const FormContact = () => {
           />
           <InputContact
             name={'phone'}
-            onChange={handleChange}
+            onChange={handleChangePhone}
             label={'Số điện thoại'}
             value={data.phone}
             placeholder={'Nhập số điện thoại'}
@@ -121,7 +132,7 @@ const FormContact = () => {
               size={'big'}
             />
           </div>
-        </form>
+        </Form>
       </div>
     </div>
   );

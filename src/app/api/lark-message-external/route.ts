@@ -53,10 +53,6 @@ export async function POST(request: Request, response: NextApiResponse) {
     const res = await axios.post(
       process.env.NEXT_PUBLIC_WEBHOOK_BOT_EXTERNAL_URL,
       a,
-      // msg_type: 'text',
-      // content: `{"text":"Tên khách hàng: ${String(
-      //   name
-      // )}\\nSố điện thoại: ${phone} \\nĐịa chỉ: ${address} \\nDịch vụ: ${service}"}`,
 
       {
         headers: {
