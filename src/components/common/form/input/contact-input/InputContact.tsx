@@ -11,14 +11,14 @@ export const InputContact = (props: InputContactProps) => {
   const { name, label, value, placeholder, onChange } = props;
   return (
     <div className="">
-      <label className="block mb-1 text-[#BF264B] lg:text-[21px] font-[500]">
+      <div className="block mb-1 text-[#BF264B] lg:text-[20px] font-[500]">
         {label}
-      </label>
+      </div>
       <input
         onChange={onChange}
         name={name}
         value={value}
-        className="w-[240px] h-[37px] p-[12px] lg:w-[350px] lg:h-[54px] rounded-[12px] border border-solid border-[#bf264b] lg:p-[20px]"
+        className="w-[240px] h-[37px] p-[12px] lg:text-[20px] lg:w-[380px] lg:mb-[12px] lg:h-[54px] rounded-[12px] border border-solid border-[#bf264b] lg:p-[20px]"
         placeholder={placeholder}
       />
     </div>

@@ -57,6 +57,7 @@ const CustomerSaidVideo = () => {
 
         <Image
           src={ribbon}
+          priority={true}
           alt="ribbon-img"
           className="relative z-10 top-[-150px] lg:top-[-700px] object-contain"
           width={2000}

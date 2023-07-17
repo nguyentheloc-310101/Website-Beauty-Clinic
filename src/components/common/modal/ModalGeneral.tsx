@@ -38,10 +38,12 @@ function ModalNew({
           <div className="relative  h-auto">
             <Image
               src={girls}
+              // src={girls.src}
               alt="cover-img"
-              // width={400}
-              // height={350}
-              className="lg:w-[400px] lg:h-[350px] "
+              priority={true}
+              width={400}
+              height={350}
+              // className="lg:w-[400px] lg:h-[350px]"
               style={{ objectFit: 'cover' }}
             />
 

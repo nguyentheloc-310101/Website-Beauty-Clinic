@@ -23,12 +23,13 @@ const HeaderAura = ({ isMobile }: Props) => {
         className="h-[1.5rem]"
         onClick={() => setIsOpened((prev: boolean) => !prev)}
       />
-      <Image
-        src={Logo}
-        alt="logo"
-        className="h-[3rem] w-auto"
-      />
-
+      <Link href="/">
+        <Image
+          src={Logo}
+          alt="logo"
+          className="h-[3rem] w-auto"
+        />
+      </Link>
       <div></div>
       <div
         className={`z-[100] absolute p-5 top-[5rem] left-0 bg-white flex flex-col w-[70vw] gap-3 transition-transform duration-500 ${
@@ -49,7 +50,6 @@ const HeaderAura = ({ isMobile }: Props) => {
             {/* <BsChevronDown className="text-[1rem] text-[rgba(0,0,0,0.2)]" /> */}
           </div>
         </Link>
-
         <div className="flex justify-between items-center">
           <div className="flex gap-2 items-center">
             <Image
@@ -91,11 +91,14 @@ const HeaderAura = ({ isMobile }: Props) => {
     </div>
   ) : (
     <div className="w-full h-[100px] flex xl:px-[10rem] lg:px-[7rem]  md:px-[6rem] py-[1rem] items-center">
-      <Image
-        src={Logo}
-        alt="Logo"
-        className="w-[103px] h-[45px] cursor-pointer"
-      />
+      <Link href="/">
+        <Image
+          src={Logo}
+          alt="Logo"
+          className="w-[103px] h-[45px] cursor-pointer"
+        />
+      </Link>
+
       <div className="flex ml-[10%] w-full font-[600] text-[#bc2449] text-[16px] items-center justify-between">
         <Link href="/">
           <span className="text-center cursor-pointer">TRANG CHỦ</span>

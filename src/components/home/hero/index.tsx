@@ -15,6 +15,7 @@ const HeroSection = () => {
         <div>
           <Image
             src={heroCover}
+            priority={true}
             alt="cover-img"
             className="scale-10"
             style={{ objectFit: 'cover' }}
@@ -24,6 +25,7 @@ const HeroSection = () => {
           <div className="relative">
             <Image
               src={heroBox}
+              priority={true}
               alt={'hero-box'}
               className="md:w-auto md:h-[155px] w-auto h-[78px]"
             />

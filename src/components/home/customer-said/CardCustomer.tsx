@@ -24,6 +24,7 @@ export const CardCustomer = (props: CardCustomerProps) => {
       <div className="lg:flex lg:mr-[20px]">
         <Image
           src={image}
+          priority={true}
           alt={'image-customer'}
           className="w-auto h-[273px] left-[55px] top-[-90px] lg:top-0 lg:bottom-[10px] lg:h-[406px] lg:w-auto absolute lg:relative"
         />
