@@ -16,7 +16,7 @@ const CardServiceAdvisory = ({
           setIsAdviceCard(false);
         }}
         width={'450px'}>
-        <div className="mt-[20px]">
+        <div className="lg:mt-[20px] mt-[10px]">
           <FormContactSmall />
         </div>
       </ModalNew>

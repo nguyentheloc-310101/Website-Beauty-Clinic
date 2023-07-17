@@ -23,9 +23,8 @@ const FormContact = () => {
       return message.warning('Vui lòng điền đầy đủ thông tin!');
     }
 
-    // console.log(JSON.stringify(data));
     const { name, phone, address, service } = data;
-    console.log(data);
+
     //api send
 
     await fetch(

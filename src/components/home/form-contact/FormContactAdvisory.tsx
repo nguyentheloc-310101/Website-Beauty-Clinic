@@ -1,8 +1,7 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react';
-import { useRouter } from 'next/navigation';
 import PrimaryButton from '@/components/button/PrimaryButton';
 import { Form, Spin, message } from 'antd';
-import InputForm from '@/components/common/form/input/InputForm';
+import { useRouter } from 'next/navigation';
+import { ChangeEvent, FormEvent, useState } from 'react';
 
 interface Contact {
   name: string;
@@ -75,8 +74,8 @@ const FormContactSmall = () => {
         }),
       }
     );
-    setLoading(false);
     message.success('Gửi thông tin thành công');
+    setLoading(false);
     router.push(`/verify-advisory`);
   };
   const handleChange = (
@@ -105,7 +104,7 @@ const FormContactSmall = () => {
       spinning={loading}
       tip="Loading"
       size="large">
-      <div className="relative w-[310px] h-[360px] flex flex-cols item-center justify-center gap-[8px] mb-[10px] border bg-gradient-to-r from-[#fff2de] to-[#fff] rounded-[23px] pt-[16px] pl-[12px]">
+      <div className="relative w-[242px] h-[245px] pt-[5px] lg:w-[310px] lg:h-[360px] flex flex-cols item-center justify-center gap-[8px] mb-[10px] border bg-gradient-to-r from-[#fff2de] to-[#fff] rounded-[23px] lg:pt-[16px] lg:pl-[12px]">
         <Form
           onFinish={handleSubmit}
           layout={'vertical'}
@@ -169,7 +168,7 @@ const InputContactSmall = (props: InputContactProps) => {
   const { label, value, name, placeholder, onChange, required } = props;
   return (
     <div>
-      <label className="block mb-1 text-[#BF264B] lg:text-[14px] font-[500]">
+      <label className="block lg:mb-1 text-[#BF264B] lg:text-[14px] font-[500]">
         {label}
       </label>
       <input
@@ -177,7 +176,7 @@ const InputContactSmall = (props: InputContactProps) => {
         name={name}
         required={required}
         value={value}
-        className="w-[240px] h-[34px] p-[20px] rounded-[7px] border border-[#bf264b] "
+        className="w-[180px] h-[30px] p-[12px] lg:w-[240px] lg:h-[34px] lg:p-[20px] rounded-[7px] border border-[#bf264b] "
         placeholder={placeholder}
       />
     </div>
