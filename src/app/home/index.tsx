@@ -14,7 +14,7 @@ import Head from 'next/head';
 const HomePage = () => {
   return (
     <>
-      <div className="home-container">
+      <div className="h-fit">
         <div className="flex flex-col items-center justify-center ">
           <HeroSection />
         </div>

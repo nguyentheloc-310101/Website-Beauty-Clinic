@@ -1,47 +1,55 @@
+import { Form, Input } from 'antd';
+
 interface Props {
-  title: string;
-  id: string;
-  name: string;
-  type: string;
+  name?: string;
+  label?: string;
   placeholder?: string;
-  defaultValue?: string;
+  value?: any;
   required?: boolean;
-  readOnly?: boolean;
-  myOnChange?: (e: any) => void;
+  classNameInput?: string;
+  message?: string;
+  size?: string;
+  type?: string;
+  onChange?: (value: any) => void;
+  labelColor?: string;
 }
 
-const InputForm = ({
-  title,
-  id,
-  name,
-  type,
-  placeholder,
-  defaultValue,
-  required = false,
-  readOnly = false,
-  myOnChange,
-}: Props) => {
+const InputForm = (props: Props) => {
+  let {
+    label,
+    name,
+    required = true,
+    message = '',
+    placeholder,
+    classNameInput,
+    type,
+    value,
+    labelColor,
+    onChange,
+  } = props;
+
   return (
-    <div>
-      <label
-        htmlFor={id}
-        className={`block font-medium text-sm mb-1 text-slate-600 ${
-          required ? 'required' : ''
-        }`}>
-        {title}
-      </label>
-      <input
+    <Form.Item
+      label={
+        <label
+          style={{
+            color: `${labelColor}`,
+            fontWeight: '500',
+          }}>
+          {label}
+        </label>
+      }
+      name={name}
+      rules={[{ required: required, message: message }]}>
+      <Input
+        onChange={onChange}
+        value={value}
         type={type}
-        id={id}
-        name={name}
-        className={`form-input w-full ${readOnly ? 'bg-slate-200' : ''}`}
-        defaultValue={defaultValue}
-        required={required}
         placeholder={placeholder}
-        readOnly={readOnly}
-        onChange={myOnChange}
+        className={`rounded-[10px] hover:border-[#bf264b] h-[24px] lg:w-full lg:h-[40px] border-[#bf264b] border focus:border-[#bf264b] ${classNameInput}`}
       />
-    </div>
+    </Form.Item>
   );
 };
+
 export default InputForm;

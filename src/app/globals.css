@@ -52,15 +52,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-.linear-bg-hover {
-  background: var(--linear, linear-gradient(90deg, #bf264b 0%, #df4b6e 100%));
-}
-.absolute-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-75%, -50%);
-}
+
 .two-lines-trancate {
   white-space: wrap;
   display: -webkit-box;
@@ -70,17 +62,9 @@ body {
   -webkit-line-clamp: 2;
   line-height: 1.5rem;
 }
-.home-container {
-  height: fit-content;
-}
+
 /*** card hien ra sau khi nhan uu dai****/
-.card-service-advisory-container {
-  width: 470px;
-  height: 823px;
-  flex-shrink: 0;
-  border-radius: 29px;
-  background: linear-gradient(180deg, #c20459 56.89%, #4d0523 100%);
-}
+
 .voucher-button-bg {
   background-image: url('../statics/images/hero/buttonVoucher.png');
   background-size: cover;
@@ -161,29 +145,7 @@ body {
   display: flex;
 }
 
-.logo-container {
-  margin-top: 24px;
-  gap: 71px;
-  display: flex;
-  width: 1150px;
-  height: 130px;
-  justify-content: center;
-  align-items: center;
-  gap: 71px;
-  flex-shrink: 0;
-  border-radius: 25px;
-  background: #fff;
-}
-
 /*3 cards about AURA*/
-
-.ribbon-scope {
-  height: 541px;
-  bottom: 150px;
-  width: 100%;
-  position: absolute;
-  z-index: 0;
-}
 
 /*The form*/
 .contact-container {
@@ -217,24 +179,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--linear, linear-gradient(45deg, #fff2de 0%, #fff 100%));
-}
-.form-contact-small {
-  position: relative;
-  width: 310px;
-  height: 360px;
-  /* padding: 16px 0px 39.605px 0px; */
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
-  border-radius: 23px;
-  margin-top: 10px;
-  padding: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
   background: var(--linear, linear-gradient(45deg, #fff2de 0%, #fff 100%));
 }
 
@@ -284,18 +228,7 @@ body {
   border: 0.837px solid #920a23;
   background: linear-gradient(180deg, #c10057 0%, #730033 100%);
 }
-.input-contact {
-  width: 350px;
-  height: 54px;
-  flex-shrink: 0;
-  border-radius: 12px;
-  border: 1.19px solid #bf264b;
-  background: #fff;
-  padding: 20px;
-}
-/* .input-contact::placeholder {
-  padding-left: 25px;
-} */
+
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -381,10 +314,7 @@ body {
     width: 307px;
     height: 366px;
   }
-  .input-contact {
-    width: 240px;
-    height: 37px;
-  }
+
   .btn-primary {
     width: 180px;
     height: 37px;
@@ -397,7 +327,9 @@ body {
   .background-customer-said {
     height: 700px;
   }
+
   .customer-said-container {
+    /**/
     background-size: contain;
     height: 333px;
     margin-bottom: 55px;

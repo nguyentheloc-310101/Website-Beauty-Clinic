@@ -18,7 +18,7 @@ export const InputContact = (props: InputContactProps) => {
         onChange={onChange}
         name={name}
         value={value}
-        className="input-contact"
+        className="w-[240px] h-[37px] p-[12px] lg:w-[350px] lg:h-[54px] rounded-[12px] border border-solid border-[#bf264b] lg:p-[20px]"
         placeholder={placeholder}
       />
     </div>
