@@ -27,7 +27,7 @@ function ModalNew({
 }: Props) {
   return (
     <div
-      className={`z-[1000] fixed top-0 left-0 w-full h-full bg-black/20 p-8 ${
+      className={`z-[1000] fixed top-0 left-0 w-full h-full bg-black/20 p-[40px] ${
         hidden && 'hidden'
       }`}>
       <div
@@ -35,13 +35,14 @@ function ModalNew({
         <div
           className={`flex flex-col relative overflow-hidden bg-gradient-to-t from-[#bf264b]  to-[#4d0523] rounded-[29px] w-[${width}] h-[${height}]`}
           style={{ height: `${height}` }}>
-          <div className="relative w-[450] h-auto">
+          <div className="relative w-[650] h-auto">
             <Image
               src={girls}
               alt="cover-img"
-              width={400}
-              height={350}
-              style={{ objectFit: 'contain' }}
+              // width={400}
+              // height={350}
+              className="lg:w-[600px] lg:h-[350px] "
+              style={{ objectFit: 'cover' }}
             />
 
             <CloseCircleOutlined
@@ -49,7 +50,9 @@ function ModalNew({
               onClick={onCancel}
             />
           </div>
-          <div className="flex items-center justify-center">{children}</div>
+          <div className="flex items-center justify-center mb-[20px]">
+            {children}
+          </div>
         </div>
       </div>
     </div>

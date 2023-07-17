@@ -5,7 +5,7 @@ import BurgerIcon from '../statics/images/Layer_1.png';
 import HomeIcon from '../statics/images/home.png';
 import ServiceIcon from '../statics/images/service.png';
 import FooterIcon from '../statics/images/popup_footer.png';
-import { BsChevronDown } from 'react-icons/bs';
+import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
 import Link from 'next/link';
 import NavLinks from './navbar/NavLinks';
 
@@ -13,7 +13,8 @@ interface Props {
   isMobile: boolean;
 }
 const HeaderAura = ({ isMobile }: Props) => {
-  const [isOpened, setIsOpened] = useState(false);
+  const [isOpened, setIsOpened] = useState<boolean>(false);
+  const [openServiceDrop, setOpenServiceDrop] = useState<boolean>(false);
   return isMobile ? (
     <div className="relative flex justify-between items-center py-[1rem] px-[20px] ">
       <Image
@@ -45,7 +46,7 @@ const HeaderAura = ({ isMobile }: Props) => {
                 Trang chủ
               </span>
             </div>
-            <BsChevronDown className="text-[1rem] text-[rgba(0,0,0,0.2)]" />
+            {/* <BsChevronDown className="text-[1rem] text-[rgba(0,0,0,0.2)]" /> */}
           </div>
         </Link>
 
@@ -60,10 +61,25 @@ const HeaderAura = ({ isMobile }: Props) => {
               Dịch vụ
             </span>
           </div>
-          <BsChevronDown className="text-[1rem] text-[rgba(0,0,0,0.2)]" />
-        </div>
 
-        <NavLinks />
+          {openServiceDrop ? (
+            <BsChevronUp
+              onClick={() => {
+                setOpenServiceDrop(false);
+              }}
+              className="text-[1rem] text-[#bc2449]"
+            />
+          ) : (
+            <BsChevronDown
+              onClick={() => {
+                setOpenServiceDrop(true);
+              }}
+              className="text-[1rem] text-[rgba(0,0,0,0.2)]"
+            />
+          )}
+        </div>
+        {openServiceDrop && <NavLinks />}
+
         <Link href="/">
           <Image
             src={FooterIcon}
@@ -81,10 +97,19 @@ const HeaderAura = ({ isMobile }: Props) => {
         className="w-[103px] h-[45px] cursor-pointer"
       />
       <div className="flex ml-[10%] w-full font-[600] text-[#bc2449] text-[16px] items-center justify-between">
-        <span className="text-center cursor-pointer">TRANG CHỦ</span>
-        <span className="text-center cursor-pointer">GIỚI THIỆU</span>
-        <span className="text-center cursor-pointer">ƯU ĐÃI</span>
-        <span className="text-center cursor-pointer">LIÊN HỆ</span>
+        <Link href="/">
+          <span className="text-center cursor-pointer">TRANG CHỦ</span>
+        </Link>
+        <Link href="/introduction">
+          <span className="text-center cursor-pointer">GIỚI THIỆU</span>
+        </Link>
+        <Link href="/preferential">
+          <span className="text-center cursor-pointer">ƯU ĐÃI</span>
+        </Link>
+        <Link href="/contact">
+          <span className="text-center cursor-pointer">LIÊN HỆ</span>
+        </Link>
+
         <div className="flex flex-col items-center">
           <span className="text-[16px] font-[500px] text-center cursor-pointer">
             Tư vấn miễn phí

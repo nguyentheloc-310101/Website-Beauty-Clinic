@@ -21,7 +21,7 @@ const NavLinks = () => {
               {link.name}
               <span className="text-xl md:hidden inline">
                 {heading === link.name ? (
-                  <BsChevronUp className="text-[1rem] text-[rgba(0,0,0,0.2)]" />
+                  <BsChevronUp className="text-[1rem] text-[#bc2449]" />
                 ) : (
                   <BsChevronDown className="text-[1rem] text-[rgba(0,0,0,0.2)]" />
                 )}
@@ -82,7 +82,7 @@ const NavLinks = () => {
 
                     <span className="text-xl md:mt-1 md:ml-2 inline">
                       {subHeading === slinks.Head ? (
-                        <BsChevronUp className="text-[1rem] text-[rgba(0,0,0,0.2)]" />
+                        <BsChevronUp className="text-[1rem] text-[#bc2449]" />
                       ) : (
                         <BsChevronDown className="text-[1rem] text-[rgba(0,0,0,0.2)]" />
                       )}
