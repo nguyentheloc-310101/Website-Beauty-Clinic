@@ -17,6 +17,11 @@ interface WindowSize {
   height: number | undefined;
 }
 
+interface BreakCrumbProps {
+  icon?: React.ForwardRefExoticComponent<any>;
+  title: string;
+  linkTo?: string;
+}
 //
 export default function RootLayout({
   children,
