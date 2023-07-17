@@ -101,7 +101,7 @@ body {
   background-color: #bc2449;
 }
 
-.two-lines-trancate {
+.two-lines-truncate {
   white-space: wrap;
   display: -webkit-box;
   -webkit-box-orient: vertical;
