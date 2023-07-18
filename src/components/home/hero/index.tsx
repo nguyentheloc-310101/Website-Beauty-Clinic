@@ -1,23 +1,30 @@
 'use-client';
 import React, { useState } from 'react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import heroCover from '../../../statics/images/hero/hero-image.png';
 import heroBox from '../../../statics/images/hero/bg-box.png';
 import heroButton from '../../../statics/images/hero/buttonVoucher.png';
 import VoucherButton from './VoucherButton';
 import CardServiceAdvisory from '../card-service-advisory/CardServiceAdvisory';
-
-const HeroSection = () => {
+import axios from 'axios';
+type Repo = {
+  heroImg: StaticImageData;
+};
+const HeroSection = (props: any) => {
+  const { heroImg } = props;
+  // console.log(heroImg);
   const [isAdviseCard, setIsAdviceCard] = useState<boolean>(false);
   return (
     <div className="relative">
       <div>
         <div>
-          <Image
-            src={heroCover}
+          <img
+            src={
+              'https://ucarecdn.com/2e8759c5-78dd-41f2-acc0-1b8e2ea32cdf/-/preview/-/format/webp/-/quality/smart/-/progressive/yes/'
+            }
             alt="cover-img"
-            className="scale-10"
-            style={{ objectFit: 'cover' }}
+            className="w-full h-full"
+            style={{ objectFit: 'cover', width: '100%' }}
           />
         </div>
         <div className="relative flex z-50 items-center top-[-60px] justify-center">
@@ -47,3 +54,19 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
+export async function getStaticProps() {
+  const image = await axios.get(
+    'https://ucarecdn.com/2e8759c5-78dd-41f2-acc0-1b8e2ea32cdf/-/preview/-/format/webp/-/quality/smart/-/progressive/yes/'
+  );
+  const imageBuffer = await image?.buffer();
+  console.log(imageBuffer);
+  console.log(imageBuffer.toString('base64'));
+  return {
+    props: {
+      image: {
+        src: imageBuffer.toString('base64'),
+      },
+    },
+  };
+}
