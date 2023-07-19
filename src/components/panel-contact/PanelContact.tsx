@@ -1,9 +1,9 @@
 'use client';
-import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import zalo from '../../statics/images/panel-contact/zalo.png';
+import { useEffect, useState } from 'react';
 import mess from '../../statics/images/panel-contact/mess.png';
 import shopee from '../../statics/images/panel-contact/shopee.png';
+import zalo from '../../statics/images/panel-contact/zalo.png';
 
 const PanelContact = () => {
   const [showIcon, setShowIcon] = useState(false);

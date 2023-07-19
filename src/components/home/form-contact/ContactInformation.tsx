@@ -1,8 +1,7 @@
-import React from 'react';
-import Image from 'next/image';
-import girls from '../../../statics/images/contact-inform/girls.png';
+/* eslint-disable @next/next/no-img-element */
 import FormContact from './FormContact';
-
+const girls =
+  'https://ucarecdn.com/ca7c18ca-e877-4294-9028-1e70a6aa4c02/-/preview/-/quality/normal/-/format/webp/';
 const ContactInformation = () => {
   return (
     <div className="contact-container">
@@ -17,7 +16,7 @@ const ContactInformation = () => {
       </div>
 
       <div className="hidden md:flex md:flex-col-reverse md:h-[900px] md:w-auto md:mr-[245px]">
-        <Image
+        <img
           src={girls}
           alt={'text-customer'}
           className="w-[699px] h-auto"

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useMemo } from 'react';
+import { useEffect, useRef } from 'react';
 
 interface Props {
   isConnectStream: boolean;

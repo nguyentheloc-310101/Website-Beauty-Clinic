@@ -1,4 +1,4 @@
-import Image from 'next/image';
+/* eslint-disable @next/next/no-img-element */
 import { useEffect, useState } from 'react';
 import { CampusItem } from './AuraCampus';
 import CardCampusDetails from './CardCampusDetails';
@@ -65,7 +65,7 @@ const CardCampus = (props: CardCampusProps) => {
           />
         ) : (
           <div className="w-[237px] rounded-[20px] lg:w-[380px]  mb-[60px] lg:h-[542px] lg:rounded-[40px] shadow-lg text-[#bf264b] bg-white">
-            <Image
+            <img
               src={item.image}
               alt="cover-img"
               className="w-[237px] h-[237px] rounded-t-[20px] lg:h-[380px] lg:w-[380px] lg:rounded-t-[40px]"

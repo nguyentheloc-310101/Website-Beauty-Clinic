@@ -1,45 +1,44 @@
-import service1 from '../../statics/images/aura-service/img-service/img1.png';
-import service2 from '../../statics/images/aura-service/img-service/img2.png';
-import service3 from '../../statics/images/aura-service/img-service/img3.png';
-import service4 from '../../statics/images/aura-service/img-service/img4.png';
-import service5 from '../../statics/images/aura-service/img-service/img5.png';
-import service6 from '../../statics/images/aura-service/img-service/img6.png';
-import service7 from '../../statics/images/aura-service/img-service/img7.png';
-
 const serviceSlideData = [
-  // {
-  //   key: 1,
-  //   image: service1,
-  //   alt: 'image-service',
-  // },
+  {
+    key: 1,
+    image:
+      'https://ucarecdn.com/304efce1-7a63-4d3d-9dd1-28c1368fd782/-/preview/676x896/-/quality/lightest/-/format/webp/',
+    alt: 'image-service',
+  },
   {
     key: 2,
-    image: service2,
+    image:
+      'https://ucarecdn.com/9b4bad6c-539e-4fd2-9a23-26991408593b/-/preview/676x896/-/quality/lightest/-/format/webp/',
     alt: 'image-service',
   },
   {
     key: 3,
-    image: service3,
+    image:
+      'https://ucarecdn.com/825dc06f-db55-497b-94e8-515011a1a3a9/-/preview/676x896/-/quality/lightest/-/format/webp/',
     alt: 'image-service',
   },
   {
     key: 4,
-    image: service4,
+    image:
+      'https://ucarecdn.com/62162c7f-f3ed-4cec-871f-7552fba87ea4/-/preview/676x896/-/quality/lightest/-/format/webp/',
     alt: 'image-service',
   },
   {
     key: 5,
-    image: service5,
+    image:
+      'https://ucarecdn.com/e9acdc2b-dfe1-443e-ae3d-8aa9009eecaf/-/preview/676x896/-/quality/lightest/-/format/webp/',
     alt: 'image-service',
   },
   {
     key: 6,
-    image: service6,
+    image:
+      'https://ucarecdn.com/d882ed28-e2ad-4c0c-9857-f07d2406356c/-/preview/676x896/-/quality/lightest/-/format/webp/',
     alt: 'image-service',
   },
   {
     key: 7,
-    image: service7,
+    image:
+      'https://ucarecdn.com/d351f070-1576-4929-9376-be86afafc8d5/-/preview/676x896/-/quality/lightest/-/format/webp/',
     alt: 'image-service',
   },
 ];

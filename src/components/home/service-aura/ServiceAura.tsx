@@ -1,7 +1,7 @@
 'use client';
+import serviceSlideData from '@/data/sliders/serviceSlider';
 import React, { useRef, useState } from 'react';
 import CardService from './CardService';
-import serviceSlideData from '@/data/sliders/serviceSlider';
 const SliderService = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [isMouseDown, setIsMouseDown] = useState(false);

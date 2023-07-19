@@ -1,21 +1,23 @@
-import React from 'react';
-import Image from 'next/image';
-import actor from '../../../statics/images/actor-said/actor.png';
-import text from '../../../statics/images/actor-said/text.png';
+/* eslint-disable @next/next/no-img-element */
 
+const actorImg =
+  'https://ucarecdn.com/19ef73bc-b2a0-4361-933f-b52840c62fd4/-/preview/-/quality/lightest/-/format/webp/';
+
+const text =
+  'https://ucarecdn.com/ca937c1c-edcb-4dda-8091-9909d65f62a8/-/preview/-/quality/lightest/-/format/webp/';
 const ActorSaid = () => {
   return (
     <div className="grid grid-cols-2 lg:px-[107px] sm:mt-[80px] lg:mt-[100px] sm:h-fit">
       <div className="col-span-1 md:w-[555px] md:h-[891px]">
-        <Image
-          src={actor}
-          alt="cover-img"
+        <img
+          src={actorImg}
+          alt="actor-img"
           className="scale-10"
           style={{ objectFit: 'cover' }}
         />
       </div>
       <div className="col-span-1 lg:mt-[66px]">
-        <Image
+        <img
           src={text}
           alt="cover-img"
           className="lg:w-[582px] lg:h-[191px] md:w-[370px] md:h-auto w-[150px] mr-[20px] h-auto"

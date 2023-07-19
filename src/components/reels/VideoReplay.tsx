@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
-import MainImg from '../../statics/images/live-commerce/20230703-133201.png';
-import Video1Img from '../../statics/images/live-commerce/20230703-133154.png';
-import Video2Img from '../../statics/images/live-commerce/20230703-133132.png';
-import { LiaEyeSolid } from 'react-icons/lia';
-import PlayerStream from './player-stream';
 import { supabase } from '@/services/supabase';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { LiaEyeSolid } from 'react-icons/lia';
+import Video2Img from '../../statics/images/live-commerce/20230703-133132.png';
+import Video1Img from '../../statics/images/live-commerce/20230703-133154.png';
+import MainImg from '../../statics/images/live-commerce/20230703-133201.png';
+import PlayerStream from './player-stream';
 
 const VideoReplay = () => {
   const [streams, setStreams] = useState([]);

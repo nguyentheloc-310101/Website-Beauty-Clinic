@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
 import Image from 'next/image';
-import Logo from '../statics/images/live-commerce/Logo.png';
+import Link from 'next/link';
+import { useState } from 'react';
+import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
 import BurgerIcon from '../statics/images/Layer_1.png';
 import HomeIcon from '../statics/images/home.png';
-import ServiceIcon from '../statics/images/service.png';
+import Logo from '../statics/images/live-commerce/Logo.png';
 import FooterIcon from '../statics/images/popup_footer.png';
-import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
-import Link from 'next/link';
+import ServiceIcon from '../statics/images/service.png';
 import NavLinks from './navbar/NavLinks';
 
 interface Props {

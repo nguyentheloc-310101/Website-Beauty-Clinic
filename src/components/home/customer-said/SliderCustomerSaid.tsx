@@ -1,11 +1,10 @@
-import React from 'react';
 import Image from 'next/image';
-import SliderCardCustomerSaid from './SliderCardCustomerSaid';
-import text from '../../../statics/images/customer-said/textImg.png';
-import dantri from '../../../statics/images/customer-said/logo/logo-dantri.png';
-import alobacsi from '../../../statics/images/customer-said/logo/logo-alobacsi.png';
-import eva from '../../../statics/images/customer-said/logo/logo-eva.png';
 import afamily from '../../../statics/images/customer-said/logo/logo-afamily.png';
+import alobacsi from '../../../statics/images/customer-said/logo/logo-alobacsi.png';
+import dantri from '../../../statics/images/customer-said/logo/logo-dantri.png';
+import eva from '../../../statics/images/customer-said/logo/logo-eva.png';
+import text from '../../../statics/images/customer-said/textImg.png';
+import SliderCardCustomerSaid from './SliderCardCustomerSaid';
 
 const SliderCustomerSaid = () => {
   return (

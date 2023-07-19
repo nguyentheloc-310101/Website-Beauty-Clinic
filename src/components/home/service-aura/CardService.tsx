@@ -1,15 +1,14 @@
-import React from 'react';
-import Image, { StaticImageData } from 'next/image';
+/* eslint-disable @next/next/no-img-element */
 
 interface CardServiceProps {
-  image: StaticImageData;
+  image: string;
   alt: string;
 }
 
 const CardService = (props: CardServiceProps) => {
   const { image, alt } = props;
   return (
-    <Image
+    <img
       src={image}
       alt={alt}
       className="md:w-[300px] md:h-[410px] w-[150px] h-[206px]"

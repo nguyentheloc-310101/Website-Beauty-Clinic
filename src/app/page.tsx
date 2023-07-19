@@ -1,6 +1,5 @@
-import Head from 'next/head';
-import HomePage from './home';
 import { Metadata } from 'next';
+import HomePage from './home';
 
 export const metadata: Metadata = {
   title: 'Chuỗi thẩm mỹ viện quốc tế Aura Beauty Clinic',

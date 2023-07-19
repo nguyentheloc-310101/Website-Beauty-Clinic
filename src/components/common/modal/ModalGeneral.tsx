@@ -1,10 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import { ReactNode } from 'react';
 
-import Image from 'next/image';
-import girls from '../../../statics/images/card-service-advisory/3girls.png';
-
-import ButtonDefault from '../buttons/ButtonDefault';
 import { CloseCircleOutlined } from '@ant-design/icons';
+import ButtonDefault from '../buttons/ButtonDefault';
 
 interface Props {
   title?: string;
@@ -36,11 +34,9 @@ function ModalNew({
           className={`flex flex-col relative overflow-hidden bg-gradient-to-t from-[#bf264b]  to-[#4d0523] rounded-[29px] w-[${width}] h-[${height}]`}
           style={{ height: `${height}` }}>
           <div className="relative  h-auto">
-            <Image
-              src={girls}
+            <img
+              src="https://ucarecdn.com/f0067f8a-e6d2-47ab-80df-129476142768/-/preview/-/quality/lightest/-/format/webp/"
               alt="cover-img"
-              // width={400}
-              // height={350}
               className="lg:w-[400px] lg:h-[350px] "
               style={{ objectFit: 'cover' }}
             />

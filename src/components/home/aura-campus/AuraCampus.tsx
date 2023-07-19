@@ -1,7 +1,6 @@
 'use client';
-import { StaticImageData } from 'next/image';
-import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
 import { ListImageDetails, dataCampus } from '@/data/sliders/campusSlider';
+import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
 import CardCampus from './CardCampus';
 
 interface CampusItem {
@@ -9,9 +8,9 @@ interface CampusItem {
   name: string;
   address_hover: string;
   address: string;
-  image: StaticImageData;
+  image: any;
   time: string;
-  map: StaticImageData;
+  map: any;
   image_list: ListImageDetails[];
 }
 

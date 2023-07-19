@@ -1,8 +1,7 @@
-import React from 'react';
-import ProductImg from '../../statics/images/live-commerce/reels/product_img.png';
 import Image from 'next/image';
-import ProductsCarousel from './ProductsCarousel';
 import { AiOutlinePlus } from 'react-icons/ai';
+import ProductImg from '../../statics/images/live-commerce/reels/product_img.png';
+import ProductsCarousel from './ProductsCarousel';
 
 interface Props {
   title: string;
