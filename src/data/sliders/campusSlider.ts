@@ -18,6 +18,7 @@ const phuYen =
   'https://ucarecdn.com/5f8cf952-e6a2-420a-a586-0534354234a0/-/preview/625x625/-/quality/lightest/-/format/webp/';
 export const dataCampus = [
   {
+    //
     key: 1,
     name: 'Thẩm mỹ viện Quốc tế Aura - Đồng Tháp',
     name_short: 'TP Đồng Tháp',
