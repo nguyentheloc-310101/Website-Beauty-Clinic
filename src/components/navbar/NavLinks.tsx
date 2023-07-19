@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { links } from './MyLinks';
 import Link from 'next/link';
-import { DownOutlined, UpOutlined } from '@ant-design/icons';
+import { useState } from 'react';
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
+import { links } from './MyLinks';
 
 const NavLinks = () => {
   const [heading, setHeading] = useState('');

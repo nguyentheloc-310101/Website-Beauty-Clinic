@@ -1,10 +1,9 @@
-import React from 'react';
-import Image, { StaticImageData } from 'next/image';
+/* eslint-disable @next/next/no-img-element */
 interface CardCustomerProps {
   customer_name: string;
   message: string;
   signed: string;
-  image: StaticImageData;
+  image: any;
 }
 export const CardCustomer = (props: CardCustomerProps) => {
   const { customer_name, message, signed, image } = props;
@@ -22,7 +21,7 @@ export const CardCustomer = (props: CardCustomerProps) => {
         </div>
       </div>
       <div className="lg:flex lg:mr-[20px]">
-        <Image
+        <img
           src={image}
           priority={true}
           alt={'image-customer'}

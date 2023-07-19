@@ -1,16 +1,22 @@
-import Image from 'next/image';
-import big from '../../../statics/images/campus-scope/big.png';
-import ribbon from '../../../statics/images/campus-scope/ribbon.png';
-import modern from '../../../statics/images/campus-scope/mordern.png';
-import leftIcon from '../../../statics/images/campus-scope/left-icon.png';
-import text5stars from '../../../statics/images/campus-scope/text-5star.png';
-import profession from '../../../statics/images/campus-scope/profession.png';
+/* eslint-disable @next/next/no-img-element */
+const big =
+  'https://ucarecdn.com/5a13183f-7f66-4d9e-b08b-c75ebcb55198/-/preview/-/quality/lightest/-/format/webp/';
+const ribbon =
+  'https://ucarecdn.com/205392a3-8131-4e98-857c-c42de0638347/-/preview/-/quality/lightest/-/format/webp/';
+const modern =
+  'https://ucarecdn.com/7f029865-8b70-4cf8-89f9-98772420bda9/-/preview/-/quality/lightest/-/format/webp/';
+const leftIcon =
+  'https://ucarecdn.com/862e2b7b-bebd-44fb-8ff9-0034d1b3a88b/-/preview/-/quality/lightest/-/format/webp/';
+const text5stars =
+  'https://ucarecdn.com/d96567d8-ff54-408d-9f57-c393c661bb09/-/preview/-/quality/lightest/-/format/webp/';
+const profession =
+  'https://ucarecdn.com/3e624024-4900-4527-9049-f907f1fe246f/-/preview/-/quality/lightest/-/format/webp/';
 
 const SeeMoreAboutAura = () => {
   return (
     <div className="relative flex flex-col items-center justify-center md:mt-[100px]">
       <div className="lg:mt-[50px] lg:mb-[33px] z-50">
-        <Image
+        <img
           src={text5stars}
           alt={'text-customer'}
           className="hidden lg:flex lg:w-[845px] lg:h-auto "
@@ -23,19 +29,19 @@ const SeeMoreAboutAura = () => {
       </div>
       <div className="flex flex-col items-center z-10">
         <div className="flex overflow-x-scroll gap-[37px] mb-[20px] scrollbar-hide">
-          <Image
+          <img
             src={big}
             alt={'text-customer'}
             className="lg:w-auto lg:h-[450px] w-[265px] h-[398px] z-50"
           />
 
-          <Image
+          <img
             src={modern}
             alt={'text-customer'}
             className="md:w-auto md:h-[450px] w-[265px] h-[398px]"
           />
 
-          <Image
+          <img
             src={profession}
             alt={'text-customer'}
             className="md:w-auto md:h-[450px] w-[265px] h-[398px]"
@@ -43,7 +49,7 @@ const SeeMoreAboutAura = () => {
         </div>
         <div className="hidden text-[#BF264B] text-[30px] font-[300] md:flex items-center">
           Tìm hiểu thêm về Aura
-          <Image
+          <img
             src={leftIcon}
             alt={'text-customer'}
             className="w-auto h-[18px] ml-[24px] cursor-pointer z-50"
@@ -52,7 +58,7 @@ const SeeMoreAboutAura = () => {
       </div>
 
       <div className="lg:flex lg:absolute lg:z-0 lg:h-[541px] lg:w-[100%] lg:bottom-[40px] hidden">
-        <Image
+        <img
           src={ribbon}
           alt={'text-customer'}
           className="lg:flex lg:w-full lg:h-[541px] ms:object-contain"

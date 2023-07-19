@@ -1,12 +1,9 @@
-import React from 'react';
-import Image, { StaticImageData } from 'next/image';
-import { IoMdShareAlt } from 'react-icons/io';
-import { Modal } from 'antd';
+/* eslint-disable @next/next/no-img-element */
 import { CloseCircleFilled } from '@ant-design/icons';
-
+import { Modal } from 'antd';
 
 interface CardCampusMapMobile {
-  image: StaticImageData;
+  image: any;
   showCampusMapMobile: boolean;
   setShowCampusMapMobile: (e: boolean) => void;
 }
@@ -23,7 +20,7 @@ const CardCampusMapMobile = (props: CardCampusMapMobile) => {
       onOk={() => setShowCampusMapMobile(false)}
       onCancel={() => setShowCampusMapMobile(false)}>
       <div className="relative flex justify-center overflow-hidden">
-        <Image
+        <img
           src={image}
           alt="cover-img"
           className="h-[466px] w-[361px] rounded-[20px]"

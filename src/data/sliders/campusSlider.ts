@@ -1,16 +1,21 @@
-import camau from '../../statics/images/campus/camau.png';
-import dongthap from '../../statics/images/campus/dongthap.png';
-import kiengiang from '../../statics/images/campus/kiengiang.png';
 import mapCamau from '../../statics/images/campus/maps/camau_map.png';
-import vinhLong from '../../statics/images/campus/vinhlong.png';
-import phuYen from '../../statics/images/campus/phuyen.png';
+//
 import { StaticImageData } from 'next/image';
 
 interface ListImageDetails {
   index: React.Key;
-  image_details: StaticImageData;
+  image_details: any;
 }
-
+const dongthap =
+  'https://ucarecdn.com/f1ed5dc5-53d4-4955-9dbd-3c792302be39/-/preview/-/quality/lightest/-/format/webp/';
+const caMau =
+  'https://ucarecdn.com/d88f4050-c486-41e5-be12-6161c73689ee/-/preview/-/quality/lightest/-/format/webp/';
+const kienGiang =
+  'https://ucarecdn.com/c29fc12f-5120-4667-959f-59d5e8391b19/-/preview/-/quality/lightest/-/format/webp/';
+const vinhLong =
+  'https://ucarecdn.com/4bcf6203-9e83-4079-b90c-5b76a6807484/-/preview/-/quality/lightest/-/format/webp/';
+const phuYen =
+  'https://ucarecdn.com/5f8cf952-e6a2-420a-a586-0534354234a0/-/preview/-/quality/lightest/-/format/webp/';
 export const dataCampus = [
   {
     key: 1,
@@ -24,15 +29,15 @@ export const dataCampus = [
     image_list: [
       {
         index: 1,
-        image_details: vinhLong,
-      },
-      {
-        index: 2,
         image_details: dongthap,
       },
       {
+        index: 2,
+        image_details: caMau,
+      },
+      {
         index: 3,
-        image_details: camau,
+        image_details: vinhLong,
       },
     ],
   },
@@ -45,11 +50,11 @@ export const dataCampus = [
     address_hover: 'PG1-09 &PG1-10 - Vincom Shophouse Cà Mau, Phường 1, Cà Mau',
     time: '08:00 - 21:00',
     map: mapCamau,
-    image: camau,
+    image: caMau,
     image_list: [
       {
         index: 1,
-        image_details: camau,
+        image_details: caMau,
       },
     ],
   },
@@ -61,11 +66,11 @@ export const dataCampus = [
     address_hover: 'PG1-09 &PG1-10 - Vincom Shophouse Cà Mau, Phường 1, Cà Mau',
     time: '08:00 - 21:00',
     map: mapCamau,
-    image: kiengiang,
+    image: kienGiang,
     image_list: [
       {
         index: 1,
-        image_details: kiengiang,
+        image_details: caMau,
       },
       {
         index: 2,
@@ -128,15 +133,15 @@ export const dataCampusNearBy = [
     image_list: [
       {
         index: 1,
-        image_details: vinhLong,
-      },
-      {
-        index: 2,
         image_details: dongthap,
       },
       {
+        index: 2,
+        image_details: caMau,
+      },
+      {
         index: 3,
-        image_details: camau,
+        image_details: phuYen,
       },
     ],
   },
@@ -152,7 +157,7 @@ export const dataCampusNearBy = [
     image_list: [
       {
         index: 1,
-        image_details: vinhLong,
+        image_details: dongthap,
       },
       {
         index: 2,
@@ -160,7 +165,7 @@ export const dataCampusNearBy = [
       },
       {
         index: 3,
-        image_details: camau,
+        image_details: caMau,
       },
     ],
   },
@@ -216,7 +221,7 @@ export const dataCampusNearBy = [
     image_list: [
       {
         index: 1,
-        image_details: vinhLong,
+        image_details: caMau,
       },
       {
         index: 2,
@@ -232,11 +237,11 @@ export const dataCampusNearBy = [
     address_hover: 'PG1-09 &PG1-10 - Vincom Shophouse Cà Mau, Phường 1, Cà Mau',
     time: '08:00 - 21:00',
     map: mapCamau,
-    image: camau,
+    image: caMau,
     image_list: [
       {
         index: 1,
-        image_details: vinhLong,
+        image_details: caMau,
       },
       {
         index: 2,
@@ -244,7 +249,7 @@ export const dataCampusNearBy = [
       },
       {
         index: 3,
-        image_details: camau,
+        image_details: phuYen,
       },
     ],
   },
@@ -265,7 +270,7 @@ export const dataCampusNearBy = [
 
       {
         index: 2,
-        image_details: camau,
+        image_details: caMau,
       },
     ],
   },
@@ -277,7 +282,7 @@ export const dataCampusNearBy = [
     address_hover: 'PG1-09 &PG1-10 - Vincom Shophouse Cà Mau, Phường 1, Cà Mau',
     time: '08:00 - 21:00',
     map: mapCamau,
-    image: phuYen,
+    image: 'phuYen',
     image_list: [
       {
         index: 1,
@@ -289,7 +294,7 @@ export const dataCampusNearBy = [
       },
       {
         index: 3,
-        image_details: camau,
+        image_details: caMau,
       },
       {
         index: 4,

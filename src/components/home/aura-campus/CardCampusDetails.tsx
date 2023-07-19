@@ -1,18 +1,17 @@
+/* eslint-disable @next/next/no-img-element */
 import { Modal } from 'antd';
-import Image, { StaticImageData } from 'next/image';
 
-import React, { useState } from 'react';
-import CardCampusDetailsMobile from './mobile/CardCampusDetailsMobile';
-import { CloseCircleFilled, LogoutOutlined } from '@ant-design/icons';
 import { ListImageDetails } from '@/data/sliders/campusSlider';
+import { CloseCircleFilled } from '@ant-design/icons';
+import CardCampusDetailsMobile from './mobile/CardCampusDetailsMobile';
 
 interface CardCampusDetailsProps {
-  image: StaticImageData;
+  image: any;
   name: string;
   address: string;
   time: string;
   image_list: ListImageDetails[];
-  map: StaticImageData;
+  map: any;
   setIsDetails: (e: boolean) => void;
   setShowCampusMapMobile: (e: boolean) => void;
   isMobile: boolean;
@@ -57,7 +56,7 @@ const CardCampusDetails = (props: CardCampusDetailsProps) => {
       ) : (
         <div className="grid grid-cols-2 gap-[20px]">
           <div>
-            <Image
+            <img
               src={image}
               alt="cover-img"
               className="scale-10 h-[288px] w-[380px] rounded-tl-[40px]"
@@ -89,7 +88,7 @@ const CardCampusDetails = (props: CardCampusDetailsProps) => {
           </div>
 
           <div>
-            <Image
+            <img
               src={map}
               alt="cover-img"
               className="h-[520px] w-[380px] rounded-r-[40px]"

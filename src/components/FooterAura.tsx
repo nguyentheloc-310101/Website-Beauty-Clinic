@@ -1,37 +1,33 @@
-import React from 'react';
+import Image from 'next/image';
+import { AiFillYoutube, AiOutlineInstagram } from 'react-icons/ai';
+import { BiLogoFacebook, BiLogoTwitter } from 'react-icons/bi';
+import { BsChevronRight } from 'react-icons/bs';
 import FooterLeftImg from '../statics/images/live-commerce/Footer_left.png';
 import FooterRightImg from '../statics/images/live-commerce/Footer_right.png';
 import Logo from '../statics/images/live-commerce/Logo.png';
-import Image from 'next/image';
-import { BsChevronRight } from 'react-icons/bs';
-import { BiLogoFacebook } from 'react-icons/bi';
-import { AiOutlineInstagram } from 'react-icons/ai';
-import { BiLogoTwitter } from 'react-icons/bi';
-import { AiFillYoutube } from 'react-icons/ai';
 import FooterIcon from '../statics/images/mobile_footer.png';
-interface Props{
+interface Props {
   isMobile: boolean;
 }
 
-const FooterAura = ({isMobile}:Props) => {
-  return (
-    isMobile?
+const FooterAura = ({ isMobile }: Props) => {
+  return isMobile ? (
     <div className="relative w-full h-auto">
-        <Image
-          src={FooterIcon}
-          alt="Footer left"
-          className="h-[18rem] w-full object-fit"
-        />
-        <div className="absolute bottom-10 left-0 w-full flex text-white text-[1.5rem] justify-center items-center">
-          <div className="flex gap-7">
-            <BiLogoFacebook />
-            <AiOutlineInstagram />
-            <BiLogoTwitter />
-            <AiFillYoutube />
-            </div>  
+      <Image
+        src={FooterIcon}
+        alt="Footer left"
+        className="h-[18rem] w-full object-fit"
+      />
+      <div className="absolute bottom-10 left-0 w-full flex text-white text-[1.5rem] justify-center items-center">
+        <div className="flex gap-7">
+          <BiLogoFacebook />
+          <AiOutlineInstagram />
+          <BiLogoTwitter />
+          <AiFillYoutube />
         </div>
+      </div>
     </div>
-    :
+  ) : (
     <div className="w-full h-auto !font-montserrat font-[100] flex justify-between items-center">
       <Image
         src={FooterLeftImg}

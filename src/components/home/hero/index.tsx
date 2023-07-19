@@ -1,31 +1,30 @@
+/* eslint-disable @next/next/no-img-element */
 'use-client';
-import React, { useState } from 'react';
-import Image from 'next/image';
-import heroCover from '../../../statics/images/hero/hero-image.png';
-import heroBox from '../../../statics/images/hero/bg-box.png';
-import heroButton from '../../../statics/images/hero/buttonVoucher.png';
-import VoucherButton from './VoucherButton';
+import { useState } from 'react';
 import CardServiceAdvisory from '../card-service-advisory/CardServiceAdvisory';
+import VoucherButton from './VoucherButton';
 
-const HeroSection = () => {
+const HeroSection = (props: any) => {
+  const { heroImg } = props;
+  // console.log(heroImg);
   const [isAdviseCard, setIsAdviceCard] = useState<boolean>(false);
   return (
     <div className="relative">
       <div>
         <div>
-          <Image
-            src={heroCover}
-            priority={true}
+          <img
+            src={
+              'https://ucarecdn.com/2e8759c5-78dd-41f2-acc0-1b8e2ea32cdf/-/preview/-/format/webp/-/quality/normal/-/progressive/yes/'
+            }
             alt="cover-img"
-            className="scale-10"
-            style={{ objectFit: 'cover' }}
+            className="w-full h-full"
+            style={{ objectFit: 'cover', width: '100%' }}
           />
         </div>
         <div className="relative flex z-50 items-center top-[-60px] justify-center">
           <div className="relative">
-            <Image
-              src={heroBox}
-              priority={true}
+            <img
+              src="https://ucarecdn.com/70990fde-ce92-4480-81b8-b7b2c4134eb4/-/preview/-/quality/lightest/-/format/webp/"
               alt={'hero-box'}
               className="md:w-auto md:h-[155px] w-auto h-[78px]"
             />

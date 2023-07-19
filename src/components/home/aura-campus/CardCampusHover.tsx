@@ -1,17 +1,16 @@
-import React from 'react';
-import Image, { StaticImageData } from 'next/image';
+/* eslint-disable @next/next/no-img-element */
 
 interface CardHoverProps {
   name: string;
   address: string;
-  image: StaticImageData;
+  image: any;
   time: string;
 }
 
 const CardCampusHover = ({ name, address, image, time }: CardHoverProps) => {
   return (
     <div className="w-[380px] h-[542px] rounded-[40px] shadow-lg p-[6px] bg-gradient-to-r from-[#BF264B] to-[#DF4B6E] text-white lg:mb-[60px]">
-      <Image
+      <img
         src={image}
         alt="cover-img"
         className="scale-10 h-[288px] w-[380px] rounded-t-[40px]"

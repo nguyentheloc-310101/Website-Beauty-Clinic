@@ -45,7 +45,6 @@ const VerifyAdvisory = () => {
           <Image
             src={phoneCall}
             alt="phoneCall"
-            // width={72}
             className="lg:w-[72px] w-[40px]"
             style={{ objectFit: 'contain' }}
           />

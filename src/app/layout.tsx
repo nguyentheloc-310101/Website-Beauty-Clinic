@@ -1,14 +1,12 @@
 'use client';
-import HeaderAura from '@/components/HeaderAura';
-import './globals.css';
-import { Inter } from 'next/font/google';
-import NavigationAura from '@/components/NavigationAura';
 import FooterAura from '@/components/FooterAura';
-import Script from 'next/script';
+import HeaderAura from '@/components/HeaderAura';
+import NavigationAura from '@/components/NavigationAura';
 import PanelContact from '@/components/panel-contact/PanelContact';
+import { Inter } from 'next/font/google';
+import Script from 'next/script';
 import { useEffect, useState } from 'react';
-import Head from 'next/head';
-import { Metadata } from 'next';
+import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 

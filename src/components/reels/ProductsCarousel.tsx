@@ -1,4 +1,3 @@
-import React from 'react';
 import Thumb from '../../statics/images/live-commerce/reels/20230703-134150.png';
 import Product1 from '../../statics/images/live-commerce/reels/product_1.png';
 import Product2 from '../../statics/images/live-commerce/reels/product_2.png';

@@ -1,4 +1,3 @@
-import React from 'react';
 import Image from 'next/image';
 import leftMap from '../../../statics/images/campus-scope/left_map.png';
 

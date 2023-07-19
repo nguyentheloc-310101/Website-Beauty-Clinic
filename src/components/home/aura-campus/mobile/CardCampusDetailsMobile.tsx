@@ -1,14 +1,14 @@
-import React from 'react';
-import Image, { StaticImageData } from 'next/image';
+/* eslint-disable @next/next/no-img-element */
+import { StaticImageData } from 'next/image';
 import { IoMdShareAlt } from 'react-icons/io';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import { Pagination, Navigation } from 'swiper/modules';
 import { ListImageDetails } from '@/data/sliders/campusSlider';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Navigation, Pagination } from 'swiper/modules';
 interface CampusDetailsMobile {
   image: StaticImageData;
   image_list: ListImageDetails[];
@@ -37,7 +37,7 @@ const CardCampusDetailsMobile = (props: CampusDetailsMobile) => {
             {image_list.map((item) => {
               return (
                 <SwiperSlide key={item.index}>
-                  <Image
+                  <img
                     src={item.image_details}
                     alt="cover-img"
                     className="h-[288px] w-[361px] rounded-t-[20px]"

@@ -1,16 +1,10 @@
-/** @type {import('next').NextConfig} */
 module.exports = {
-  async headers() {
-    return [
+  images: {
+    remotePatterns: [
       {
-        source: '/', // automatically handles all locales
-        headers: [
-          {
-            key: 'x-hello',
-            value: 'world',
-          },
-        ],
+        protocol: 'https',
+        hostname: 'ucarecdn.com',
       },
-    ];
+    ],
   },
 };
