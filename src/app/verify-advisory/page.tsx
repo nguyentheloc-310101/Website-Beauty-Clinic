@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 import { HomeOutlined } from '@ant-design/icons';
 import { Breadcrumb } from 'antd';
@@ -42,8 +43,10 @@ const VerifyAdvisory = () => {
           TMV Quốc Tế Aura sẽ liên hệ tư vấn cho quý khách sớm nhất.
         </div>
         <div className="lg:mt-[10px] lg:mb-[20px]">
-          <Image
-            src={phoneCall}
+          <img
+            src={
+              'https://ucarecdn.com/4d029cbc-0c25-478a-8867-2ae7b732fa44/-/preview/116x140/-/quality/lightest/-/format/webp/'
+            }
             alt="phoneCall"
             className="lg:w-[72px] w-[40px]"
             style={{ objectFit: 'contain' }}
