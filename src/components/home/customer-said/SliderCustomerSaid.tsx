@@ -5,7 +5,7 @@ import dantri from '../../../statics/images/customer-said/logo/logo-dantri.png';
 import eva from '../../../statics/images/customer-said/logo/logo-eva.png';
 import text from '../../../statics/images/customer-said/textImg.png';
 import SliderCardCustomerSaid from './SliderCardCustomerSaid';
-
+//TODO: optimize image
 const SliderCustomerSaid = () => {
   return (
     <div className="background-customer-said">
