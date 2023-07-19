@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 interface VoucherButtonProps {
   isAdviseCard: boolean;
@@ -20,5 +21,6 @@ const VoucherButton = ({
     </div>
   );
 };
+//
 
 export default VoucherButton;

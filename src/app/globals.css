@@ -114,7 +114,7 @@ body {
 /*** card hien ra sau khi nhan uu dai****/
 
 .voucher-button-bg {
-  background-image: url('https://ucarecdn.com/4324e514-b0a0-4e86-beaf-afe3c0ff9123/-/preview/-/quality/lightest/-/format/webp/');
+  background-image: url('https://ucarecdn.com/4324e514-b0a0-4e86-beaf-afe3c0ff9123/-/preview/-/quality/lightest/-/format/webp/s');
   background-size: cover;
   width: 142px;
   height: 87px;
@@ -142,7 +142,7 @@ body {
 /*video*/
 .customer-said-container {
   height: 900px;
-  background-image: url('https://ucarecdn.com/50206a34-4e1f-4501-b539-007aa7161dca/-/preview/-/quality/lightest/-/format/webp/');
+  background-image: url('https://ucarecdn.com/50206a34-4e1f-4501-b539-007aa7161dca/-/preview/-/quality/lightest/-/format/webp/s');
   background-size: cover;
   margin-bottom: 220px;
 }
@@ -166,13 +166,13 @@ body {
   background: var(--linear, linear-gradient(90deg, #bf264b 0%, #df4b6e 100%));
   padding: 7px;
 }
-
+/*TODO: optimize*/
 .background-customer-said {
   width: auto;
   height: 1300px;
   background-size: cover;
   flex-shrink: 0;
-  background-image: url('https://ucarecdn.com/3a579a11-3e0d-4a94-9603-c16f1d839ad1/-/preview/-/quality/lightest/-/format/webp/');
+  background-image: url('https://ucarecdn.com/3a579a11-3e0d-4a94-9603-c16f1d839ad1/-/preview/-/quality/lightest/-/format/webp/s');
 }
 
 .card-customer {
@@ -202,7 +202,7 @@ body {
   margin-top: 60px;
   justify-content: flex-end;
   background-size: cover;
-  background-image: url('https://ucarecdn.com/9de3b75d-c451-47b4-be4a-4a5f15f937e5/-/preview/-/quality/lightest/-/format/webp/');
+  background-image: url('https://ucarecdn.com/9de3b75d-c451-47b4-be4a-4a5f15f937e5/-/preview/-/quality/lightest/-/format/webp/s');
 }
 .girls-contact {
   display: flex;
