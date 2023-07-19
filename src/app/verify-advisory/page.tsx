@@ -2,8 +2,6 @@
 'use client';
 import { HomeOutlined } from '@ant-design/icons';
 import { Breadcrumb } from 'antd';
-import Image from 'next/image';
-import phoneCall from '../../statics/images/verify-advisory/phoneCall.png';
 import Link from 'next/link';
 
 const VerifyAdvisory = () => {
