@@ -1,16 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 
-const actorImg =
-  'https://ucarecdn.com/19ef73bc-b2a0-4361-933f-b52840c62fd4/-/preview/-/quality/lightest/-/format/webp/';
-
-const text =
-  'https://ucarecdn.com/ca937c1c-edcb-4dda-8091-9909d65f62a8/-/preview/-/quality/lightest/-/format/webp/';
 const ActorSaid = () => {
   return (
     <div className="grid grid-cols-2 lg:px-[107px] sm:mt-[80px] lg:mt-[100px] sm:h-fit">
       <div className="col-span-1 md:w-[555px] md:h-[891px]">
         <img
-          src={actorImg}
+          src={
+            'https://ucarecdn.com/19ef73bc-b2a0-4361-933f-b52840c62fd4/-/preview/-/quality/smart/-/format/webp/'
+          }
           alt="actor-img"
           className="scale-10"
           style={{ objectFit: 'cover' }}
@@ -18,7 +15,9 @@ const ActorSaid = () => {
       </div>
       <div className="col-span-1 lg:mt-[66px]">
         <img
-          src={text}
+          src={
+            'https://ucarecdn.com/ca937c1c-edcb-4dda-8091-9909d65f62a8/-/preview/-/quality/lightest/-/format/webp/'
+          }
           alt="cover-img"
           className="lg:w-[582px] lg:h-[191px] md:w-[370px] md:h-auto w-[150px] mr-[20px] h-auto"
           style={{ objectFit: 'cover' }}

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from 'next/image';
 import afamily from '../../../statics/images/customer-said/logo/logo-afamily.png';
 import alobacsi from '../../../statics/images/customer-said/logo/logo-alobacsi.png';
@@ -5,13 +6,16 @@ import dantri from '../../../statics/images/customer-said/logo/logo-dantri.png';
 import eva from '../../../statics/images/customer-said/logo/logo-eva.png';
 import text from '../../../statics/images/customer-said/textImg.png';
 import SliderCardCustomerSaid from './SliderCardCustomerSaid';
+
 //TODO: optimize image
 const SliderCustomerSaid = () => {
   return (
     <div className="background-customer-said">
       <div className="hidden lg:flex lg:items-center lg:justify-center">
-        <Image
-          src={text}
+        <img
+          src={
+            'https://ucarecdn.com/4f1b4f0e-d7c3-4fd2-a93b-3220db293803/-/preview/-/quality/lightest/-/format/webp/'
+          }
           alt={'text-customer'}
           className="w-[812px] h-[258px] mt-[87px] mb-[43px]"
         />
@@ -29,23 +33,31 @@ const SliderCustomerSaid = () => {
       </div>
       <div className="hidden lg:flex items-center justify-center">
         <div className="mt-[24px] gap-[71px] flex w-[1150px] h-[130px] justify-center items-center rounded-[25px] bg-white px-2">
-          <Image
-            src={dantri}
+          <img
+            src={
+              'https://ucarecdn.com/7481cd64-c420-4ae6-89d7-36995c4e2a31/-/preview/-/quality/lightest/-/format/webp/'
+            }
             alt={'logo'}
             className="w-auto h-[41px] "
           />
-          <Image
-            src={alobacsi}
+          <img
+            src={
+              'https://ucarecdn.com/b1997dc6-5cb7-4d03-996d-fb5488efa80b/-/preview/-/quality/lightest/-/format/webp/'
+            }
             alt={'logo'}
             className="w-auto h-[44px] "
           />
-          <Image
-            src={eva}
+          <img
+            src={
+              'https://ucarecdn.com/92e056f3-4185-4177-9a86-4ac887f8e39e/-/preview/-/quality/lightest/-/format/webp/'
+            }
             alt={'logo'}
             className="w-auto h-[54px] "
           />
-          <Image
-            src={afamily}
+          <img
+            src={
+              'https://ucarecdn.com/4b90e8f0-abbb-45b3-bc7b-cf382befd0e3/-/preview/-/quality/lightest/-/format/webp/'
+            }
             alt={'logo'}
             className="w-auto h-[57px] "
           />

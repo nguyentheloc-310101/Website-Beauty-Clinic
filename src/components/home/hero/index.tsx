@@ -9,12 +9,12 @@ const HeroSection = (props: any) => {
   // console.log(heroImg);
   const [isAdviseCard, setIsAdviceCard] = useState<boolean>(false);
   return (
-    <div className="relative">
+    <div className="relative w-full">
       <div>
-        <div>
+        <div className="w-full">
           <img
             src={
-              'https://ucarecdn.com/2e8759c5-78dd-41f2-acc0-1b8e2ea32cdf/-/preview/-/format/webp/-/quality/normal/-/progressive/yes/'
+              'https://ucarecdn.com/2e8759c5-78dd-41f2-acc0-1b8e2ea32cdf/-/preview/-/quality/lightest/-/format/webp/'
             }
             alt="cover-img"
             className="w-full h-full"
@@ -24,7 +24,7 @@ const HeroSection = (props: any) => {
         <div className="relative flex z-50 items-center top-[-60px] justify-center">
           <div className="relative">
             <img
-              src="https://ucarecdn.com/70990fde-ce92-4480-81b8-b7b2c4134eb4/-/preview/-/quality/lightest/-/format/webp/"
+              src="https://ucarecdn.com/70990fde-ce92-4480-81b8-b7b2c4134eb4/-/preview/1536x393/-/quality/lightest/-/format/webp/"
               alt={'hero-box'}
               className="md:w-auto md:h-[155px] w-auto h-[78px]"
             />
