@@ -13,7 +13,7 @@ import ReelsOutStanding from '@/components/reels/ReelsOutStanding';
 const HomePage = () => {
   return (
     <>
-      <div className="h-fit">
+      <div className="">
         <div className="flex flex-col items-center justify-center ">
           <HeroSection />
         </div>

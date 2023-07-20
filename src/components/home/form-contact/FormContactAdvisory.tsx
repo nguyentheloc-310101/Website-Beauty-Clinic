@@ -1,5 +1,5 @@
 import PrimaryButton from '@/components/button/PrimaryButton';
-import { Form, Spin, message } from 'antd';
+import { Form, message } from 'antd';
 import { useRouter } from 'next/navigation';
 import { ChangeEvent, FormEvent, useState } from 'react';
 
@@ -99,58 +99,52 @@ const FormContactSmall = () => {
   };
 
   return (
-    <Spin
-      className="rounded-[24px]"
-      spinning={loading}
-      tip="Loading"
-      size="large">
-      <div className="relative w-[242px] h-[245px] pt-[5px] lg:w-[310px] lg:h-[360px] flex flex-cols item-center justify-center gap-[8px] mb-[10px] border bg-gradient-to-r from-[#fff2de] to-[#fff] rounded-[23px] lg:pt-[16px] lg:pl-[12px]">
-        <Form
-          onFinish={handleSubmit}
-          layout={'vertical'}
-          style={{ maxWidth: 600 }}>
-          <InputContactSmall
-            name={'name'}
-            value={data.name}
-            onChange={handleChange}
-            label={'Họ và tên'}
-            placeholder={'Nhập họ và tên'}
-          />
+    <div className="relative w-[242px] h-[245px] pt-[5px] md:w-[250px] lg:w-[310px] lg:h-[360px] flex flex-cols item-center justify-center gap-[8px] mb-[10px] border bg-gradient-to-r from-[#fff2de] to-[#fff] rounded-[23px] lg:pt-[16px] lg:pl-[12px]">
+      <Form
+        onFinish={handleSubmit}
+        layout={'vertical'}
+        style={{ maxWidth: 600 }}>
+        <InputContactSmall
+          name={'name'}
+          value={data.name}
+          onChange={handleChange}
+          label={'Họ và tên'}
+          placeholder={'Nhập họ và tên'}
+        />
 
-          <InputContactSmall
-            name={'phone'}
-            onChange={handleChangePhone}
-            label={'Số điện thoại'}
-            value={data.phone}
-            placeholder={'Nhập số điện thoại'}
-          />
+        <InputContactSmall
+          name={'phone'}
+          onChange={handleChangePhone}
+          label={'Số điện thoại'}
+          value={data.phone}
+          placeholder={'Nhập số điện thoại'}
+        />
 
-          <InputContactSmall
-            onChange={handleChange}
-            name={'address'}
-            label={'Nơi sinh sống'}
-            value={data.address}
-            placeholder={'Nhập địa chỉ'}
-          />
+        <InputContactSmall
+          onChange={handleChange}
+          name={'address'}
+          label={'Nơi sinh sống'}
+          value={data.address}
+          placeholder={'Nhập địa chỉ'}
+        />
 
-          <InputContactSmall
-            onChange={handleChange}
-            name={'service'}
-            value={data.service}
-            label={'Dịch vụ muốn tư vấn'}
-            placeholder={'Nhập tên dịch vụ'}
+        <InputContactSmall
+          onChange={handleChange}
+          name={'service'}
+          value={data.service}
+          label={'Dịch vụ muốn tư vấn'}
+          placeholder={'Nhập tên dịch vụ'}
+        />
+        <div className="w-full flex items-center justify-center mt-[10px]">
+          <PrimaryButton
+            typeBtn="submit"
+            loading={loading}
+            text={'Gửi thông tin'}
+            size={'small'}
           />
-          <div className="w-full flex items-center justify-center mt-[10px]">
-            <PrimaryButton
-              typeBtn="submit"
-              loading={loading}
-              text={'Gửi thông tin'}
-              size={'small'}
-            />
-          </div>
-        </Form>
-      </div>
-    </Spin>
+        </div>
+      </Form>
+    </div>
   );
 };
 

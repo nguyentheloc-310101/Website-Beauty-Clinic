@@ -37,7 +37,7 @@ function ModalNew({
             <img
               src="https://ucarecdn.com/f0067f8a-e6d2-47ab-80df-129476142768/-/quality/lightest/-/format/auto/"
               alt="cover-img"
-              className="lg:w-[400px] lg:h-[350px] "
+              className="lg:w-[450px] lg:h-[350px] "
               style={{ objectFit: 'cover' }}
             />
 
