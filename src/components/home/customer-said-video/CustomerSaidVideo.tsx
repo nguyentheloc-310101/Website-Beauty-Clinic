@@ -27,7 +27,7 @@ const CustomerSaidVideo = () => {
         <div className="relative flex items-center justify-center z-100">
           <img
             src={
-              'https://ucarecdn.com/d5d55773-18dc-434c-854f-42f81ef4b85c/-/preview/-/quality/lightest/-/format/webp/'
+              'https://ucarecdn.com/d5d55773-18dc-434c-854f-42f81ef4b85c/-/quality/lightest/-/format/webp/'
             }
             alt={'text-customer'}
             className="w-[300px] mt-[16px] mr-[40px] md:w-auto md:h-[208px] md:mt-[47px] md:mb-[20px]"

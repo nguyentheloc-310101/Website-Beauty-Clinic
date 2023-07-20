@@ -2,7 +2,7 @@
 const big =
   'https://ucarecdn.com/5a13183f-7f66-4d9e-b08b-c75ebcb55198/-/preview/500x700/-/quality/lightest/-/format/webp/';
 const ribbon =
-  'https://ucarecdn.com/205392a3-8131-4e98-857c-c42de0638347/-/preview/-/quality/lightest/-/format/webp/';
+  'https://ucarecdn.com/205392a3-8131-4e98-857c-c42de0638347/-/quality/lightest/-/format/webp/';
 const modern =
   'https://ucarecdn.com/7f029865-8b70-4cf8-89f9-98772420bda9/-/preview/500x700/-/quality/lightest/-/format/webp/';
 const leftIcon =

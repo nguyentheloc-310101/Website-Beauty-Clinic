@@ -4,7 +4,7 @@ import React, { useRef, useState } from 'react';
 import { CardCustomer } from './CardCustomer';
 //TODO: transfer to file data and use map()
 const customer1 =
-  'https://ucarecdn.com/bd420e86-e59c-499f-9d91-ff90d68f6117/-/preview/-/quality/lightest/-/format/webp/';
+  'https://ucarecdn.com/bd420e86-e59c-499f-9d91-ff90d68f6117/-/quality/lightest/-/format/webp/';
 const customer2 =
   'https://ucarecdn.com/3f842cbd-8893-490c-8363-fc0992c36dca/-/preview/510x573/-/quality/lightest/-/format/webp/';
 const customer3 =

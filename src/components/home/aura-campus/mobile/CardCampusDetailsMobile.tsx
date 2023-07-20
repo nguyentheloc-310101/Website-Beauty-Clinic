@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import { StaticImageData } from 'next/image';
 import { IoMdShareAlt } from 'react-icons/io';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -10,7 +9,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
 interface CampusDetailsMobile {
-  image: StaticImageData;
+  image: any;
   image_list: ListImageDetails[];
   name: string;
   address: string;
@@ -18,8 +17,7 @@ interface CampusDetailsMobile {
   setShowCampusMapMobile: (e: boolean) => void;
 }
 const CardCampusDetailsMobile = (props: CampusDetailsMobile) => {
-  const { image, name, time, address, image_list, setShowCampusMapMobile } =
-    props;
+  const { name, time, address, image_list, setShowCampusMapMobile } = props;
   return (
     <div className="flex justify-center ">
       <div className="rounded-[20px] text-white">

@@ -6,7 +6,7 @@ const ActorSaid = () => {
       <div className="col-span-1 md:w-[555px] md:h-[891px]">
         <img
           src={
-            'https://ucarecdn.com/19ef73bc-b2a0-4361-933f-b52840c62fd4/-/preview/-/quality/smart/-/format/webp/'
+            'https://ucarecdn.com/19ef73bc-b2a0-4361-933f-b52840c62fd4/-/quality/smart/-/format/webp/'
           }
           alt="actor-img"
           className="scale-10"
