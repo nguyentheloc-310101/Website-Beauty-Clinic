@@ -1,7 +1,7 @@
 import Slideshow from '../commons/SlideShow';
 
 const Product1 =
-  'https://ucarecdn.com/b22bd7c0-c0e3-45b0-954b-bd8cbb51b3b7/-/quality/smart/-/format/auto/';
+  'https://ucarecdn.com/b22bd7c0-c0e3-45b0-954b-bd8cbb51b3b7/-/quality/smart/-/format/webp/';
 const Product2 =
   'https://ucarecdn.com/773651e6-61d7-4439-8c2d-1c0d80053f78/-/quality/smart/-/format/auto/';
 const Product3 =
@@ -33,7 +33,7 @@ const ProductsCarousel = () => {
   const listImages = [Thumb, Product1, Product2, Product3];
   return (
     <div className="w-full h-full absolute top-0 left-0">
-      <Slideshow listImages={shuffle(listImages)} />
+      <Slideshow listImages={listImages} />
     </div>
   );
 };
