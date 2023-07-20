@@ -39,7 +39,6 @@ const CustomerSaidVideo = () => {
               <iframe
                 src="https://www.youtube.com/embed/mfZ-KSP_iA4?&autoplay=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=mfZ-KSP_iA4"
                 className="absolute rounded-[40px] bg-black top-0 left-0 w-full h-full object-contain"
-                allowFullScreen
               />
               {/* <div className="absolute rounded-[40px] bg-black top-0 left-0 w-full h-full object-contain"></div> */}
             </div>
@@ -50,7 +49,6 @@ const CustomerSaidVideo = () => {
               <iframe
                 src="https://www.youtube.com/embed/mfZ-KSP_iA4?&autoplay=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=mfZ-KSP_iA4"
                 className="absolute rounded-[40px] bg-black top-0 left-0 w-full h-full object-contain"
-                allowFullScreen
               />
               {/* <div className="absolute rounded-[40px] bg-black top-0 left-0 w-full h-full object-contain"></div> */}
             </div>
