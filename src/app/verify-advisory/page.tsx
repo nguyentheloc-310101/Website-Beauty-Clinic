@@ -43,7 +43,7 @@ const VerifyAdvisory = () => {
         <div className="lg:mt-[10px] lg:mb-[20px]">
           <img
             src={
-              'https://ucarecdn.com/4d029cbc-0c25-478a-8867-2ae7b732fa44/-/preview/116x140/-/quality/lightest/-/format/webp/'
+              'https://ucarecdn.com/4d029cbc-0c25-478a-8867-2ae7b732fa44/-/preview/116x140/-/quality/lightest/-/format/auto/'
             } //
             alt="phoneCall"
             className="lg:w-[72px] w-[40px]"
