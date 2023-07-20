@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import { supabase } from '@/services/supabase';
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { LiaEyeSolid } from 'react-icons/lia';
 

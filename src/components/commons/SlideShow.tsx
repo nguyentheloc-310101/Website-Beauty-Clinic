@@ -3,7 +3,7 @@ import React from 'react';
 const delay = 2500;
 
 interface Props {
-  listImages: any;
+  listImages: string[];
 }
 
 const Slideshow = ({ listImages }: Props) => {
@@ -36,7 +36,7 @@ const Slideshow = ({ listImages }: Props) => {
       <div
         className="slideshowSlider"
         style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}>
-        {listImages.map((src: string, index: number) => (
+        {listImages.map((src, index) => (
           <img
             className="slide"
             alt="slide"
