@@ -36,25 +36,23 @@ const CustomerSaidVideo = () => {
         {!isMobile ? (
           <section className="max-w-[980px] mx-auto relative w-full  z-50">
             <div className="pt-[56.25%] relative">
-              {/* <iframe
-                // src="https://www.youtube.com/embed/mfZ-KSP_iA4?&autoplay=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=mfZ-KSP_iA4"
-                src=""
+              <iframe
+                src="https://www.youtube.com/embed/mfZ-KSP_iA4?&autoplay=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=mfZ-KSP_iA4"
                 className="absolute rounded-[40px] bg-black top-0 left-0 w-full h-full object-contain"
                 allowFullScreen
-              /> */}
-              <div className="absolute rounded-[40px] bg-black top-0 left-0 w-full h-full object-contain"></div>
+              />
+              {/* <div className="absolute rounded-[40px] bg-black top-0 left-0 w-full h-full object-contain"></div> */}
             </div>
           </section>
         ) : (
           <section className="max-w-[360px] mx-auto relative w-full mt-[5px]  z-50">
             <div className="pt-[56.25%] relative">
-              {/* <iframe
-                // src="https://www.youtube.com/embed/mfZ-KSP_iA4?&autoplay=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=mfZ-KSP_iA4"
-                src=""
+              <iframe
+                src="https://www.youtube.com/embed/mfZ-KSP_iA4?&autoplay=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=mfZ-KSP_iA4"
                 className="absolute rounded-[40px] bg-black top-0 left-0 w-full h-full object-contain"
                 allowFullScreen
-              /> */}
-              <div className="absolute rounded-[40px] bg-black top-0 left-0 w-full h-full object-contain"></div>
+              />
+              {/* <div className="absolute rounded-[40px] bg-black top-0 left-0 w-full h-full object-contain"></div> */}
             </div>
           </section>
         )}
