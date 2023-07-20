@@ -30,14 +30,15 @@ const CustomerSaidVideo = () => {
               'https://ucarecdn.com/d5d55773-18dc-434c-854f-42f81ef4b85c/-/quality/lightest/-/format/webp/'
             }
             alt={'text-customer'}
-            className="w-[300px] mt-[16px] mr-[40px] md:w-auto md:h-[208px] md:mt-[47px] md:mb-[20px]"
+            className="w-[300px] mt-[16px] md:w-auto md:h-[208px] md:mt-[47px] md:mb-[20px]"
           />
         </div>
         {!isMobile ? (
           <section className="max-w-[980px] mx-auto relative w-full  z-50">
             <div className="pt-[56.25%] relative">
               <iframe
-                src="https://www.youtube.com/embed/mfZ-KSP_iA4?&autoplay=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=mfZ-KSP_iA4"
+                // src="https://www.youtube.com/embed/mfZ-KSP_iA4?&autoplay=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=mfZ-KSP_iA4"
+                src=""
                 className="absolute rounded-[40px] bg-black top-0 left-0 w-full h-full object-contain"
               />
               {/* <div className="absolute rounded-[40px] bg-black top-0 left-0 w-full h-full object-contain"></div> */}
@@ -47,8 +48,9 @@ const CustomerSaidVideo = () => {
           <section className="max-w-[360px] mx-auto relative w-full mt-[5px]  z-50">
             <div className="pt-[56.25%] relative">
               <iframe
-                src="https://www.youtube.com/embed/mfZ-KSP_iA4?&autoplay=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=mfZ-KSP_iA4"
+                // src="https://www.youtube.com/embed/mfZ-KSP_iA4?&autoplay=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=mfZ-KSP_iA4"
                 className="absolute rounded-[40px] bg-black top-0 left-0 w-full h-full object-contain"
+                src=""
               />
               {/* <div className="absolute rounded-[40px] bg-black top-0 left-0 w-full h-full object-contain"></div> */}
             </div>

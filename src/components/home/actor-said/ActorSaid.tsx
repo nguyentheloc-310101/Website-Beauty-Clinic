@@ -3,13 +3,13 @@
 const ActorSaid = () => {
   return (
     <div className="grid grid-cols-2 lg:px-[107px] sm:mt-[80px] lg:mt-[100px] sm:h-fit">
-      <div className="col-span-1 md:w-[555px] md:h-[891px]">
+      <div className="col-span-1 ">
         <img
           src={
             'https://ucarecdn.com/19ef73bc-b2a0-4361-933f-b52840c62fd4/-/quality/smart/-/format/webp/'
           }
           alt="actor-img"
-          className="scale-10"
+          className="md:w-[555px] md:h-[891px]"
           style={{ objectFit: 'cover' }}
         />
       </div>
