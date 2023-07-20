@@ -65,7 +65,6 @@ export default function RootLayout({
         </div>
 
         <FooterAura isMobile={isMobile} />
-        <Script src="https://sf16-scmcdn-sg.ibytedtos.com/obj/static-sg/livesaas-client/pc/byteplus/js/index.1.1.2-beta.2.js" />
       </body>
     </html>
   );
