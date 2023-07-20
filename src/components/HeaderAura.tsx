@@ -1,13 +1,19 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
 import BurgerIcon from '../statics/images/Layer_1.png';
 import HomeIcon from '../statics/images/home.png';
-import Logo from '../statics/images/live-commerce/Logo.png';
-import FooterIcon from '../statics/images/popup_footer.png';
+// import Logo from '../statics/images/live-commerce/Logo.png';
+// import FooterIcon from '../statics/images/popup_footer.png';
 import ServiceIcon from '../statics/images/service.png';
 import NavLinks from './navbar/NavLinks';
+
+const FooterIcon =
+  'https://ucarecdn.com/755747d3-1799-4b18-af37-70ef308bb242/-/quality/smart/-/format/auto/';
+const Logo =
+  'https://ucarecdn.com/a7cf14e7-3e76-4ad9-b713-814cf1d021dc/-/quality/smart/-/format/auto/';
 
 interface Props {
   isMobile: boolean;
@@ -24,7 +30,7 @@ const HeaderAura = ({ isMobile }: Props) => {
         onClick={() => setIsOpened((prev: boolean) => !prev)}
       />
       <Link href="/">
-        <Image
+        <img
           src={Logo}
           alt="logo"
           className="h-[3rem] w-auto"
@@ -81,7 +87,7 @@ const HeaderAura = ({ isMobile }: Props) => {
         {openServiceDrop && <NavLinks />}
 
         <Link href="/">
-          <Image
+          <img
             src={FooterIcon}
             className="w-full h-[4rem] object-cover mt-2"
             alt="footer"
@@ -92,7 +98,7 @@ const HeaderAura = ({ isMobile }: Props) => {
   ) : (
     <div className="w-full h-[100px] flex xl:px-[10rem] lg:px-[7rem]  md:px-[6rem] py-[1rem] items-center">
       <Link href="/">
-        <Image
+        <img
           src={Logo}
           alt="Logo"
           className="w-[103px] h-[45px] cursor-pointer"

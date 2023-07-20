@@ -1,6 +1,5 @@
-import Image from 'next/image';
+/* eslint-disable @next/next/no-img-element */
 import { AiOutlinePlus } from 'react-icons/ai';
-import ProductImg from '../../statics/images/live-commerce/reels/product_img.png';
 import ProductsCarousel from './ProductsCarousel';
 
 interface Props {
@@ -15,8 +14,10 @@ const ReelCard = ({ title, author, date }: Props) => {
         <ProductsCarousel />
         <div className="product-container absolute bottom-[2.5rem] p-1 bg-[rgba(255,255,255,0.5)] overflow-hidden rounded-lg z-100 flex justify-between items-end">
           <div className="flex-1 h-full flex items-center gap-1">
-            <Image
-              src={ProductImg}
+            <img
+              src={
+                'https://ucarecdn.com/2a7d2727-a6ec-43e1-8af7-dcc8511a35aa/-/quality/lighter/-/format/auto/'
+              }
               alt="product img"
               className="w-[2rem] h-[2rem] sm:w-[4rem] sm:h-[4rem] object-cover overflow-hiden rounded-lg"
             />

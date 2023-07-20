@@ -1,12 +1,16 @@
+/* eslint-disable @next/next/no-img-element */
 import { supabase } from '@/services/supabase';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { LiaEyeSolid } from 'react-icons/lia';
-import Video2Img from '../../statics/images/live-commerce/20230703-133132.png';
-import Video1Img from '../../statics/images/live-commerce/20230703-133154.png';
-import MainImg from '../../statics/images/live-commerce/20230703-133201.png';
-import PlayerStream from './player-stream';
 
+import PlayerStream from './player-stream';
+const MainImg =
+  'https://ucarecdn.com/49a4f250-587d-4660-a221-e6fb026890dd/-/quality/smart/-/format/auto/';
+const Video1Img =
+  'https://ucarecdn.com/e70e3d89-5556-411d-975f-8f72e60bf868/-/quality/smart/-/format/auto/';
+const Video2Img =
+  'https://ucarecdn.com/03ef030b-62ca-479a-b593-a8928a96705a/-/quality/smart/-/format/auto/';
 const VideoReplay = () => {
   const [streams, setStreams] = useState([]);
   useEffect(() => {
@@ -25,20 +29,20 @@ const VideoReplay = () => {
       console.log(e);
     }
   };
-  const channel = supabase
-    .channel('schema-db-changes')
-    .on(
-      'postgres_changes',
-      {
-        event: '*',
-        schema: 'public',
-        table: 'stream_info',
-      },
-      async (payload) => {
-        await getStreams();
-      }
-    )
-    .subscribe();
+  // const channel = supabase
+  //   .channel('schema-db-changes')
+  //   .on(
+  //     'postgres_changes',
+  //     {
+  //       event: '*',
+  //       schema: 'public',
+  //       table: 'stream_info',
+  //     },
+  //     async (payload) => {
+  //       await getStreams();
+  //     }
+  //   )
+  //   .subscribe();
   return (
     <div className="w-full h-auto px-[16px] sm:px-[5rem] pt-5 flex-wrap">
       <p className="font-[700] py-1 sm:py-5 text-[1.5rem] sm:text-[2rem] text-[#bc2449]">
@@ -47,7 +51,7 @@ const VideoReplay = () => {
       <div className="flex justify-between gap-5 h-[60vh] sm:h-[75vh]">
         <div className="relative w-[50%] h-full overflow-hidden rounded-lg">
           <div className="z-50 w-full h-full absolute top-0 left-0 bg-gradient-to-b from-transparent to-slate-50"></div>
-          <Image
+          <img
             src={MainImg}
             alt="theme"
             className="z-10 w-full h-full object-cover"
@@ -93,7 +97,7 @@ const VideoReplay = () => {
               </div>
               <div className="h-[50%]">
                 <div className="relative rounded-lg h-[80%] overflow-hidden">
-                  <Image
+                  <img
                     src={Video2Img}
                     alt="theme"
                     className="w-full h-full"
@@ -169,7 +173,7 @@ const VideoReplay = () => {
             <>
               <div className="h-[50%]">
                 <div className="relative rounded-lg h-[80%] overflow-hidden">
-                  <Image
+                  <img
                     src={Video2Img}
                     alt="theme"
                     className="w-full h-full"
@@ -193,7 +197,7 @@ const VideoReplay = () => {
               </div>
               <div className="h-[50%]">
                 <div className="relative rounded-lg h-[80%] overflow-hidden">
-                  <Image
+                  <img
                     src={Video1Img}
                     alt="theme"
                     className="w-full h-full"

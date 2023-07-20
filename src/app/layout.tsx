@@ -1,5 +1,5 @@
 'use client';
-import FooterAura from '@/components/FooterAura';
+import FooterAura from '@/components/footer/FooterAura';
 import HeaderAura from '@/components/HeaderAura';
 import NavigationAura from '@/components/NavigationAura';
 import PanelContact from '@/components/panel-contact/PanelContact';
@@ -15,11 +15,6 @@ interface WindowSize {
   height: number | undefined;
 }
 
-interface BreakCrumbProps {
-  icon?: React.ForwardRefExoticComponent<any>;
-  title: string;
-  linkTo?: string;
-}
 //
 export default function RootLayout({
   children,

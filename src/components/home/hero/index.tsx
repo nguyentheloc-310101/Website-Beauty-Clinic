@@ -4,8 +4,7 @@ import { useState } from 'react';
 import CardServiceAdvisory from '../card-service-advisory/CardServiceAdvisory';
 import VoucherButton from './VoucherButton';
 
-const HeroSection = (props: any) => {
-  const { heroImg } = props;
+const HeroSection = () => {
   // console.log(heroImg);
   const [isAdviseCard, setIsAdviceCard] = useState<boolean>(false);
   return (

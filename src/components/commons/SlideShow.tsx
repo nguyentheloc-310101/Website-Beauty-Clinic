@@ -1,9 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 const delay = 2500;
 
 interface Props {
-  listImages: StaticImageData[];
+  listImages: any;
 }
 
 const Slideshow = ({ listImages }: Props) => {
@@ -36,8 +37,8 @@ const Slideshow = ({ listImages }: Props) => {
       <div
         className="slideshowSlider"
         style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}>
-        {listImages.map((src, index) => (
-          <Image
+        {listImages.map((src: string, index: number) => (
+          <img
             className="slide"
             alt="slide"
             key={index}
@@ -47,7 +48,7 @@ const Slideshow = ({ listImages }: Props) => {
       </div>
 
       <div className="slideshowDots">
-        {listImages.map((_, idx) => (
+        {listImages.map((_: any, idx: number) => (
           <div
             key={idx}
             className={`slideshowDot${index === idx ? ' active' : ''}`}

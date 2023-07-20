@@ -1,8 +1,13 @@
-import Thumb from '../../statics/images/live-commerce/reels/20230703-134150.png';
-import Product1 from '../../statics/images/live-commerce/reels/product_1.png';
-import Product2 from '../../statics/images/live-commerce/reels/product_2.png';
-import Product3 from '../../statics/images/live-commerce/reels/product_3.png';
 import Slideshow from '../commons/SlideShow';
+
+const Product1 =
+  'https://ucarecdn.com/b22bd7c0-c0e3-45b0-954b-bd8cbb51b3b7/-/quality/smart/-/format/auto/';
+const Product2 =
+  'https://ucarecdn.com/773651e6-61d7-4439-8c2d-1c0d80053f78/-/quality/smart/-/format/auto/';
+const Product3 =
+  'https://ucarecdn.com/c4094d26-9690-4356-bbce-e6d044d51157/-/quality/smart/-/format/auto/';
+const Thumb =
+  'https://ucarecdn.com/b1ad3872-ba34-4ddd-8539-dfd04252331e/-/quality/smart/-/format/auto/';
 
 function shuffle(array: any[]) {
   let currentIndex = array.length,
