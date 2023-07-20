@@ -99,7 +99,7 @@ const FormContactSmall = () => {
   };
 
   return (
-    <div className="relative w-[242px] h-[245px] pt-[5px] lg:w-[310px] lg:h-[360px] flex flex-cols item-center justify-center gap-[8px] mb-[10px] border bg-gradient-to-r from-[#fff2de] to-[#fff] rounded-[23px] lg:pt-[16px] lg:pl-[12px]">
+    <div className="relative w-[242px] h-[245px] pt-[5px] md:w-[250px] lg:w-[310px] lg:h-[360px] flex flex-cols item-center justify-center gap-[8px] mb-[10px] border bg-gradient-to-r from-[#fff2de] to-[#fff] rounded-[23px] lg:pt-[16px] lg:pl-[12px]">
       <Form
         onFinish={handleSubmit}
         layout={'vertical'}
