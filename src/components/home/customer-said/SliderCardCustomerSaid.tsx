@@ -4,17 +4,17 @@ import React, { useRef, useState } from 'react';
 import { CardCustomer } from './CardCustomer';
 //TODO: transfer to file data and use map()
 const customer1 =
-  'https://ucarecdn.com/bd420e86-e59c-499f-9d91-ff90d68f6117/-/quality/lightest/-/format/auto/';
+  'https://ucarecdn.com/bd420e86-e59c-499f-9d91-ff90d68f6117/-/quality/lightest/-/format/webp/';
 const customer2 =
-  'https://ucarecdn.com/3f842cbd-8893-490c-8363-fc0992c36dca/-/preview/510x573/-/quality/lightest/-/format/auto/';
+  'https://ucarecdn.com/3f842cbd-8893-490c-8363-fc0992c36dca/-/preview/510x573/-/quality/lightest/-/format/webp/';
 const customer3 =
-  'https://ucarecdn.com/fa429afc-1895-43e1-a0c6-64a03335d07e/-/preview/706x760/-/quality/lightest/-/format/auto/';
+  'https://ucarecdn.com/fa429afc-1895-43e1-a0c6-64a03335d07e/-/preview/706x760/-/quality/lightest/-/format/webp/';
 const customer4 =
-  'https://ucarecdn.com/39f43306-89f3-431d-ada8-08469195e87c/-/preview/706x760/-/quality/lightest/-/format/auto/';
+  'https://ucarecdn.com/39f43306-89f3-431d-ada8-08469195e87c/-/preview/706x760/-/quality/lightest/-/format/webp/';
 const customer5 =
-  'https://ucarecdn.com/839f9b61-fbb5-4ba6-b78b-bbd2473b128f/-/preview/510x573/-/quality/lightest/-/format/auto/';
+  'https://ucarecdn.com/839f9b61-fbb5-4ba6-b78b-bbd2473b128f/-/preview/510x573/-/quality/lightest/-/format/webp/';
 const customer6 =
-  'https://ucarecdn.com/45899a1c-5e01-40f5-8d16-5210b42ddfc7/-/preview/706x760/-/quality/lightest/-/format/auto/';
+  'https://ucarecdn.com/45899a1c-5e01-40f5-8d16-5210b42ddfc7/-/preview/706x760/-/quality/lightest/-/format/webp/';
 
 const SliderCardCustomerSaid = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -54,7 +54,7 @@ const SliderCardCustomerSaid = () => {
         }
         signed={'Hai'}
         image={
-          'https://ucarecdn.com/bd420e86-e59c-499f-9d91-ff90d68f6117/-/preview/310x373/-/quality/lightest/-/format/auto/'
+          'https://ucarecdn.com/bd420e86-e59c-499f-9d91-ff90d68f6117/-/preview/310x373/-/quality/lightest/-/format/webp/'
         }
       />
       <CardCustomer

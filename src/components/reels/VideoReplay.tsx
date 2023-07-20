@@ -5,11 +5,11 @@ import { LiaEyeSolid } from 'react-icons/lia';
 
 import PlayerStream from './player-stream';
 const MainImg =
-  'https://ucarecdn.com/49a4f250-587d-4660-a221-e6fb026890dd/-/quality/smart/-/format/auto/';
+  'https://ucarecdn.com/49a4f250-587d-4660-a221-e6fb026890dd/-/quality/smart/-/format/webp/';
 const Video1Img =
-  'https://ucarecdn.com/e70e3d89-5556-411d-975f-8f72e60bf868/-/quality/smart/-/format/auto/';
+  'https://ucarecdn.com/e70e3d89-5556-411d-975f-8f72e60bf868/-/quality/smart/-/format/webp/';
 const Video2Img =
-  'https://ucarecdn.com/03ef030b-62ca-479a-b593-a8928a96705a/-/quality/smart/-/format/auto/';
+  'https://ucarecdn.com/03ef030b-62ca-479a-b593-a8928a96705a/-/quality/smart/-/format/webp/';
 const VideoReplay = () => {
   const [streams, setStreams] = useState([]);
   useEffect(() => {

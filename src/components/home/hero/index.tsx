@@ -13,7 +13,7 @@ const HeroSection = () => {
         <div className="w-full">
           <img
             src={
-              'https://ucarecdn.com/2e8759c5-78dd-41f2-acc0-1b8e2ea32cdf/-/quality/lightest/-/format/auto/'
+              'https://ucarecdn.com/2e8759c5-78dd-41f2-acc0-1b8e2ea32cdf/-/quality/lightest/-/format/webp/'
             }
             alt="cover-img"
             className="w-full h-full"
@@ -23,7 +23,7 @@ const HeroSection = () => {
         <div className="relative flex z-50 items-center top-[-60px] justify-center">
           <div className="relative">
             <img
-              src="https://ucarecdn.com/70990fde-ce92-4480-81b8-b7b2c4134eb4/-/preview/1536x393/-/quality/lightest/-/format/auto/"
+              src="https://ucarecdn.com/70990fde-ce92-4480-81b8-b7b2c4134eb4/-/preview/1536x393/-/quality/lightest/-/format/webp/"
               alt={'hero-box'}
               className="md:w-auto md:h-[155px] w-auto h-[78px]"
             />

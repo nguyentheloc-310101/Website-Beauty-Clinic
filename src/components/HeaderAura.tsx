@@ -9,9 +9,9 @@ import ServiceIcon from '../statics/images/service.png';
 import NavLinks from './navbar/NavLinks';
 
 const FooterIcon =
-  'https://ucarecdn.com/755747d3-1799-4b18-af37-70ef308bb242/-/quality/smart/-/format/auto/';
+  'https://ucarecdn.com/755747d3-1799-4b18-af37-70ef308bb242/-/quality/smart/-/format/webp/';
 const Logo =
-  'https://ucarecdn.com/a7cf14e7-3e76-4ad9-b713-814cf1d021dc/-/quality/smart/-/format/auto/';
+  'https://ucarecdn.com/a7cf14e7-3e76-4ad9-b713-814cf1d021dc/-/quality/smart/-/format/webp/';
 
 interface Props {
   isMobile: boolean;

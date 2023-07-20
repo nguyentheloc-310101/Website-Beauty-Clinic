@@ -35,7 +35,7 @@ function ModalNew({
           style={{ height: `${height}` }}>
           <div className="relative  h-auto">
             <img
-              src="https://ucarecdn.com/f0067f8a-e6d2-47ab-80df-129476142768/-/quality/lightest/-/format/auto/"
+              src="https://ucarecdn.com/f0067f8a-e6d2-47ab-80df-129476142768/-/quality/lightest/-/format/webp/"
               alt="cover-img"
               className="lg:w-[450px] lg:h-[350px] "
               style={{ objectFit: 'cover' }}

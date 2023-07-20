@@ -16,7 +16,7 @@ const ReelCard = ({ title, author, date }: Props) => {
           <div className="flex-1 h-full flex items-center gap-1">
             <img
               src={
-                'https://ucarecdn.com/2a7d2727-a6ec-43e1-8af7-dcc8511a35aa/-/quality/lighter/-/format/auto/'
+                'https://ucarecdn.com/2a7d2727-a6ec-43e1-8af7-dcc8511a35aa/-/quality/lighter/-/format/webp/'
               }
               alt="product img"
               className="w-[2rem] h-[2rem] sm:w-[4rem] sm:h-[4rem] object-cover overflow-hiden rounded-lg"

@@ -11,7 +11,7 @@ const FooterAura = ({ isMobile }: Props) => {
     <div className="relative w-full h-auto">
       <img
         src={
-          'https://ucarecdn.com/e59438fb-6bc5-41ae-8f3e-8f9e137bdbdd/-/quality/smart/-/format/auto/'
+          'https://ucarecdn.com/e59438fb-6bc5-41ae-8f3e-8f9e137bdbdd/-/quality/smart/-/format/webp/'
         }
         alt="Footer left"
         className="h-[18rem] w-full object-contain"
@@ -29,7 +29,7 @@ const FooterAura = ({ isMobile }: Props) => {
     <div className="w-full h-auto !font-montserrat font-[100] flex justify-between items-center">
       <img
         src={
-          'https://ucarecdn.com/8ac0837c-2954-488d-8967-2692dfd24b74/-/preview/586x270/-/quality/smart/-/format/auto/'
+          'https://ucarecdn.com/8ac0837c-2954-488d-8967-2692dfd24b74/-/preview/586x270/-/quality/smart/-/format/webp/'
         }
         alt="Footer left"
         className="h-[15rem] w-auto"
@@ -37,7 +37,7 @@ const FooterAura = ({ isMobile }: Props) => {
       <div className="flex flex-col items-center gap-2">
         <img
           src={
-            'https://ucarecdn.com/a7cf14e7-3e76-4ad9-b713-814cf1d021dc/-/preview/586x270/-/quality/smart/-/format/auto/'
+            'https://ucarecdn.com/a7cf14e7-3e76-4ad9-b713-814cf1d021dc/-/preview/586x270/-/quality/smart/-/format/webp/'
           }
           alt="Logo"
           className="w-[7rem] h-auto"
@@ -78,7 +78,7 @@ const FooterAura = ({ isMobile }: Props) => {
       </div>
       <img
         src={
-          'https://ucarecdn.com/bb2ead69-fa99-4d44-a6d4-62112bfa810c/-/preview/586x270/-/quality/smart/-/format/auto/'
+          'https://ucarecdn.com/bb2ead69-fa99-4d44-a6d4-62112bfa810c/-/preview/586x270/-/quality/smart/-/format/webp/'
         }
         alt="Footer right"
         className="h-[15rem] w-auto"

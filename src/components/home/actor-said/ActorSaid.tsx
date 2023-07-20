@@ -6,7 +6,7 @@ const ActorSaid = () => {
       <div className="col-span-1 ">
         <img
           src={
-            'https://ucarecdn.com/19ef73bc-b2a0-4361-933f-b52840c62fd4/-/quality/smart/-/format/auto/'
+            'https://ucarecdn.com/19ef73bc-b2a0-4361-933f-b52840c62fd4/-/quality/smart/-/format/webp/'
           }
           alt="actor-img"
           className="md:w-[555px] md:h-[891px]"
@@ -16,7 +16,7 @@ const ActorSaid = () => {
       <div className="col-span-1 lg:mt-[66px]">
         <img
           src={
-            'https://ucarecdn.com/ca937c1c-edcb-4dda-8091-9909d65f62a8/-/preview/576x189/-/quality/lightest/-/format/auto/'
+            'https://ucarecdn.com/ca937c1c-edcb-4dda-8091-9909d65f62a8/-/preview/576x189/-/quality/lightest/-/format/webp/'
           }
           alt="cover-img"
           className="lg:w-[582px] lg:h-[191px] md:w-[370px] md:h-auto w-[150px] mr-[20px] h-auto"

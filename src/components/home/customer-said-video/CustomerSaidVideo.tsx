@@ -28,7 +28,7 @@ const CustomerSaidVideo = () => {
         <div className="relative flex items-center justify-center z-100">
           <img
             src={
-              'https://ucarecdn.com/d5d55773-18dc-434c-854f-42f81ef4b85c/-/quality/lightest/-/format/auto/'
+              'https://ucarecdn.com/d5d55773-18dc-434c-854f-42f81ef4b85c/-/quality/lightest/-/format/webp/'
             }
             alt={'text-customer'}
             className="w-[300px] mt-[16px] md:w-auto md:h-[208px] md:mt-[47px] md:mb-[20px]"
@@ -70,7 +70,7 @@ const CustomerSaidVideo = () => {
         )}
         <img
           src={
-            'https://ucarecdn.com/ae813e5a-99e3-4c9d-9c2d-f8671a02b73c/-/preview/-/quality/lightest/-/format/auto/'
+            'https://ucarecdn.com/ae813e5a-99e3-4c9d-9c2d-f8671a02b73c/-/preview/-/quality/lightest/-/format/webp/'
           }
           alt="ribbon-img"
           className="relative z-10 top-[-150px] lg:top-[-700px] object-contain"

@@ -17,7 +17,7 @@ const ContactInformation = () => {
       <div className="hidden md:flex md:flex-col-reverse md:h-[900px] md:w-auto md:mr-[245px]">
         <img
           src={
-            'https://ucarecdn.com/ca7c18ca-e877-4294-9028-1e70a6aa4c02/-/preview/1698x1024/-/quality/lighter/-/format/auto/'
+            'https://ucarecdn.com/ca7c18ca-e877-4294-9028-1e70a6aa4c02/-/preview/1698x1024/-/quality/lighter/-/format/webp/'
           }
           alt={'text-customer'}
           className="w-[699px] h-auto"
