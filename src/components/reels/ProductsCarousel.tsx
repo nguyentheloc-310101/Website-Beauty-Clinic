@@ -9,26 +9,6 @@ const Product3 =
 const Thumb =
   'https://ucarecdn.com/b1ad3872-ba34-4ddd-8539-dfd04252331e/-/quality/smart/-/format/auto/';
 
-function shuffle(array: any[]) {
-  let currentIndex = array.length,
-    randomIndex;
-
-  // While there remain elements to shuffle.
-  while (currentIndex != 0) {
-    // Pick a remaining element.
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex],
-      array[currentIndex],
-    ];
-  }
-
-  return array;
-}
-
 const ProductsCarousel = () => {
   const listImages = [Thumb, Product1, Product2, Product3];
   return (
