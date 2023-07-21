@@ -6,40 +6,6 @@ interface Props {
   isMobile: boolean;
 }
 
-<<<<<<< HEAD
-const FooterAura = ({ isMobile }: Props) => {
-  return isMobile ? (
-    <div className="relative w-full h-auto">
-      <img
-        src={
-          'https://ucarecdn.com/e59438fb-6bc5-41ae-8f3e-8f9e137bdbdd/-/quality/smart/-/format/webp/'
-        }
-        alt="Footer left"
-        className="h-[18rem] w-full object-contain"
-      />
-      <div className="absolute bottom-10 left-0 w-full flex text-white text-[1.5rem] justify-center items-center">
-        <div className="flex gap-7">
-          <BiLogoFacebook />
-          <AiOutlineInstagram />
-          <BiLogoTwitter />
-          <AiFillYoutube />
-        </div>
-      </div>
-    </div>
-  ) : (
-    <div className="w-full h-auto !font-montserrat font-[100] flex justify-between items-center">
-      <img
-        src={
-          'https://ucarecdn.com/8ac0837c-2954-488d-8967-2692dfd24b74/-/preview/586x270/-/quality/smart/-/format/webp/'
-        }
-        alt="Footer left"
-        className="h-[15rem] w-auto"
-      />
-      <div className="flex flex-col items-center gap-2">
-        <img
-          src={
-            'https://ucarecdn.com/a7cf14e7-3e76-4ad9-b713-814cf1d021dc/-/preview/586x270/-/quality/smart/-/format/webp/'
-=======
 const FooterAura = () => {
   return (
     <>
@@ -47,7 +13,6 @@ const FooterAura = () => {
         <img
           src={
             'https://ucarecdn.com/e59438fb-6bc5-41ae-8f3e-8f9e137bdbdd/-/quality/smart/-/format/auto/'
->>>>>>> loc-dev
           }
           alt="Footer left"
           className="h-[18rem] w-full object-contain"
@@ -61,16 +26,6 @@ const FooterAura = () => {
           </div>
         </div>
       </div>
-<<<<<<< HEAD
-      <img
-        src={
-          'https://ucarecdn.com/bb2ead69-fa99-4d44-a6d4-62112bfa810c/-/preview/586x270/-/quality/smart/-/format/webp/'
-        }
-        alt="Footer right"
-        className="h-[15rem] w-auto"
-      />
-    </div>
-=======
 
       <div className="hidden w-full h-auto !font-montserrat font-[100] lg:flex justify-between items-center">
         <img
@@ -131,7 +86,6 @@ const FooterAura = () => {
         />
       </div>
     </>
->>>>>>> loc-dev
   );
 };
 
