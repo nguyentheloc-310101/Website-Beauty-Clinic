@@ -43,38 +43,38 @@ const FormContactSmall = () => {
           service,
         }),
       }
-    );
-    await fetch(
-      `${process.env.NEXT_PUBLIC_DOMAIN}/${process.env.NEXT_PUBLIC_LARK_MESSAGE_INTERNAL_API}`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name,
-          phone,
-          address,
-          service,
-        }),
-      }
-    );
-    await fetch(
-      `${process.env.NEXT_PUBLIC_DOMAIN}/${process.env.NEXT_PUBLIC_LARK_MESSAGE_EXTERNAL_API}`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name,
-          phone,
-          address,
-          service,
-        }),
-      }
-    );
-    message.success('Gửi thông tin thành công');
+    ),
+      await fetch(
+        `${process.env.NEXT_PUBLIC_DOMAIN}/${process.env.NEXT_PUBLIC_LARK_MESSAGE_INTERNAL_API}`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name,
+            phone,
+            address,
+            service,
+          }),
+        }
+      ),
+      await fetch(
+        `${process.env.NEXT_PUBLIC_DOMAIN}/${process.env.NEXT_PUBLIC_LARK_MESSAGE_EXTERNAL_API}`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name,
+            phone,
+            address,
+            service,
+          }),
+        }
+      ),
+      message.success('Gửi thông tin thành công');
     setLoading(false);
     router.push(`/verify-advisory`);
   };
