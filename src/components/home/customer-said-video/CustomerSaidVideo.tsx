@@ -1,27 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { useEffect, useState } from 'react';
-
-const srcVideo = 'https://www.youtube.com/watch?v=mfZ-KSP_iA4&t=1s';
 const CustomerSaidVideo = () => {
-  const [isMobile, setIsMobile] = useState(true); // Set initial value to true
-  const [loadingVideo, setLoadingVideo] = useState(false);
-
-  useEffect(() => {
-    setLoadingVideo(true);
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 640);
-    };
-
-    handleResize(); // Capture initial browser size
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      setLoadingVideo(false);
-    };
-  }, []);
-
   return (
     <>
       <div className="customer-said-container lg:relative">
