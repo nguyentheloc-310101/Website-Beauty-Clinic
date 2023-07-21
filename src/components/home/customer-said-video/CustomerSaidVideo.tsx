@@ -42,7 +42,7 @@ const CustomerSaidVideo = () => {
                 className="absolute rounded-[40px] bg-black top-0 left-0 w-full h-full object-contain"
               /> */}
               <iframe
-                src="https://www.youtube.com/embed/mfZ-KSP_iA4?autoplay=0&&loop=1&rel=0&showinfo=0&color=red&iv_load_policy=3&playlist=mfZ-KSP_iA4"
+                src="https://www.youtube.com/embed/mfZ-KSP_iA4?rel=0&showinfo=0&color=red&iv_load_policy=3&playlist=mfZ-KSP_iA4"
                 title="Aura Video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;loop"
                 className="absolute rounded-[40px] bg-black top-0 left-0 w-full h-full object-contain"
@@ -58,7 +58,7 @@ const CustomerSaidVideo = () => {
                 className="absolute rounded-[40px] bg-black top-0 left-0 w-full h-full object-contain"
               /> */}
               <iframe
-                src="https://www.youtube.com/embed/mfZ-KSP_iA4?autoplay=0&&loop=1&rel=0&showinfo=0&color=red&iv_load_policy=3&playlist=mfZ-KSP_iA4"
+                src="https://www.youtube.com/embed/mfZ-KSP_iA4?rel=0&showinfo=0&color=red&iv_load_policy=3&playlist=mfZ-KSP_iA4"
                 title="Aura Video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;loop"
                 className="absolute rounded-[40px] bg-black top-0 left-0 w-full h-full object-contain"

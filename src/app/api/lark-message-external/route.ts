@@ -1,4 +1,5 @@
 import { NextApiResponse } from 'next';
+import { NextResponse } from 'next/server';
 
 interface Contact {
   name?: string;
@@ -61,12 +62,12 @@ export async function POST(request: Request, response: NextApiResponse) {
       }
     );
     console.log(JSON.stringify(res.data));
-    return response.json({
+    return NextResponse.json({
       msg: 'Successfully send message to Group Chat',
       status: 200,
     });
   } catch (error: any) {
     console.log(error);
-    return response.json({ error: 'Internal server error' });
+    return NextResponse.json({ error: 'Internal server error' });
   }
 }
