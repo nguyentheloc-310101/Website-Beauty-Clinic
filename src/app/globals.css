@@ -145,7 +145,6 @@ body {
   height: 900px;
   background-image: url('https://ucarecdn.com/50206a34-4e1f-4501-b539-007aa7161dca/-/preview/-/quality/lightest/-/format/webp/s');
   background-size: cover;
-  margin-bottom: 220px;
 }
 
 .modalStyle .ant-modal-content {
@@ -323,7 +322,7 @@ body {
     width: 40px;
     height: 130px;
     padding: 16px 9px;
-    left: 332px;
+    left: 350px;
     bottom: 2%;
   }
   .card-customer {
@@ -379,7 +378,7 @@ body {
 
   .customer-said-container {
     /**/
-    background-size: contain;
+    background-size: cover;
     height: 323px;
     margin-bottom: 55px;
     /* padding: */
