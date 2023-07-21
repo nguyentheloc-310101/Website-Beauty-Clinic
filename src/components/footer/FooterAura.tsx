@@ -2,9 +2,6 @@
 import { AiFillYoutube, AiOutlineInstagram } from 'react-icons/ai';
 import { BiLogoFacebook, BiLogoTwitter } from 'react-icons/bi';
 import { BsChevronRight } from 'react-icons/bs';
-interface Props {
-  isMobile: boolean;
-}
 
 const FooterAura = () => {
   return (
