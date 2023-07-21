@@ -31,11 +31,7 @@ const CustomerSaidVideo = () => {
               'https://ucarecdn.com/d5d55773-18dc-434c-854f-42f81ef4b85c/-/quality/lightest/-/format/webp/'
             }
             alt={'text-customer'}
-<<<<<<< HEAD
-            className="w-[300px] mt-[16px] md:w-auto md:h-[208px] md:mt-[47px] md:mb-[20px]"
-=======
             className="w-[300px] mt-[16px] mr-[40px] md:w-auto md:h-[208px] md:mt-[47px] z-50 md:mb-[20px]"
->>>>>>> loc-dev
           />
         </div>
 
