@@ -3,10 +3,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
-import BurgerIcon from '../statics/images/Layer_1.png';
-import HomeIcon from '../statics/images/home.png';
-import ServiceIcon from '../statics/images/service.png';
-import NavLinks from './navbar/NavLinks';
+import BurgerIcon from '../../statics/images/Layer_1.png';
+import HomeIcon from '../../statics/images/home.png';
+import ServiceIcon from '../../statics/images/service.png';
+import NavLinks from './NavLinks';
 
 const FooterIcon =
   'https://ucarecdn.com/755747d3-1799-4b18-af37-70ef308bb242/-/quality/smart/-/format/auto/';

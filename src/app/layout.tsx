@@ -1,6 +1,6 @@
 'use client';
-import HeaderAura from '@/components/HeaderAura';
-import NavigationAura from '@/components/NavigationAura';
+import HeaderAura from '@/components/navbar/HeaderAura';
+import NavigationAura from '@/components/navbar/NavigationAura';
 import FooterAura from '@/components/footer/FooterAura';
 import PanelContact from '@/components/panel-contact/PanelContact';
 import { Inter } from 'next/font/google';
