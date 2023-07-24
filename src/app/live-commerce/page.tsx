@@ -1,6 +1,6 @@
 'use client';
-import ReelsOutStanding from '@/components/reels/ReelsOutStanding';
-import VideoReplay from '@/components/reels/VideoReplay';
+import ReelsOutStanding from '@/components/live-stream/reels/ReelsOutStanding';
+import VideoReplay from '@/components/live-stream/reels/VideoReplay';
 import Head from 'next/head';
 import Script from 'next/script';
 

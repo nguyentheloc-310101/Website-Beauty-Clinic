@@ -8,7 +8,7 @@ import HeroSection from '@/components/home/hero';
 import SeeMoreAboutAura from '@/components/home/see-more/SeeMoreAboutAura';
 import SliderService from '@/components/home/service-aura/ServiceAura';
 import SliderServiceResponsive from '@/components/home/service-aura/ServiceAuraResponsive';
-import ReelsOutStanding from '@/components/reels/ReelsOutStanding';
+import ReelsOutStanding from '@/components/live-stream/reels/ReelsOutStanding';
 
 const HomePage = () => {
   return (

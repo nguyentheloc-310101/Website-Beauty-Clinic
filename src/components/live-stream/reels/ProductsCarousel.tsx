@@ -1,4 +1,4 @@
-import Slideshow from '../commons/SlideShow';
+import Slideshow from '../slide-show/SlideShow';
 
 const Product1 =
   'https://ucarecdn.com/b22bd7c0-c0e3-45b0-954b-bd8cbb51b3b7/-/quality/smart/-/format/webp/';
