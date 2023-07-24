@@ -1,11 +1,10 @@
 import PrimaryButton from '@/components/button/PrimaryButton';
-import InputForm from '@/components/common/form/input/InputForm';
 import { InputContact } from '@/components/common/form/input/contact-input/InputContact';
-import { Form, Input, message } from 'antd';
+import { Form, message } from 'antd';
 
 import { useRouter } from 'next/navigation';
 
-import React, { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { Contact } from './FormContactAdvisory';
 const initState = {
   name: '',
@@ -18,11 +17,20 @@ const FormContact = () => {
   const router = useRouter();
 
   const [data, setData] = useState<Contact>(initState);
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async () => {
     if (data.name == '' || data.phone == '' || data.service == '') {
       return message.warning('Vui lòng điền đầy đủ thông tin!');
     }
-
+    const tmp = data.phone.substring(0, 2);
+    if (tmp == '84') {
+      if (data.phone.length !== 11) {
+        return message.error('Hãy nhập đúng số điện thoại (nếu bắt đầu là 84)');
+      }
+    } else {
+      if (data.phone.length !== 10) {
+        return message.error('Hãy nhập đúng số điện thoại');
+      }
+    }
     const { name, phone, address, service } = data;
 
     //api send

@@ -21,10 +21,22 @@ const FormContactSmall = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [data, setData] = useState<Contact>(initState);
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async () => {
     if (data.name == '' || data.phone == '' || data.service == '') {
       return message.warning('Vui lòng điền đầy đủ thông tin!');
     }
+
+    const tmp = data.phone.substring(0, 2);
+    if (tmp == '84') {
+      if (data.phone.length !== 11) {
+        return message.error('Hãy nhập đúng số điện thoại (nếu bắt đầu là 84)');
+      }
+    } else {
+      if (data.phone.length !== 10) {
+        return message.error('Hãy nhập đúng số điện thoại');
+      }
+    }
+
     const { name, phone, address, service } = data;
     console.log(data);
     //api send
@@ -92,6 +104,7 @@ const FormContactSmall = () => {
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const result = e.target.value.replace(/\D/g, '');
+
     setData((prevState) => ({
       ...prevState,
       phone: result,
@@ -99,7 +112,7 @@ const FormContactSmall = () => {
   };
 
   return (
-    <div className="relative w-[242px] h-[245px] pt-[5px] md:w-[250px] lg:w-[310px] lg:h-[360px] flex flex-cols item-center justify-center gap-[8px] mb-[10px] border bg-gradient-to-r from-[#fff2de] to-[#fff] rounded-[23px] lg:pt-[16px] lg:pl-[12px]">
+    <div className="relative w-[242px] h-[245px] pt-[5px] md:w-[250px] lg:w-[310px] lg:h-[320px] flex flex-cols item-center justify-center gap-[8px] mb-[10px] border bg-gradient-to-r from-[#fff2de] to-[#fff] rounded-[23px] lg:pt-[16px] lg:pl-[10px]">
       <Form
         onFinish={handleSubmit}
         layout={'vertical'}
