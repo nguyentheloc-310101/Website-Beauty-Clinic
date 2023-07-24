@@ -96,8 +96,6 @@ export async function POST(request: Request, response: Response) {
   };
   var data = JSON.stringify({
     receive_id: 'oc_fde65a8f5b419338203e85835b161942',
-    // msg_type: 'text',
-    // content: `{"text":"Tên khách hàng: ${name}\\nSố điện thoại: ${phone} \\nĐịa chỉ: ${address} \\nDịch vụ: ${service}"}`,
     content: JSON.stringify(a),
     msg_type: 'post',
     uuid: generateUUID(),
