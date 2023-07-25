@@ -1,11 +1,11 @@
-/* eslint-disable @next/next/no-img-element */
 import { ReactNode } from 'react';
-
-import { CloseCircleOutlined } from '@ant-design/icons';
+import { XMarkIcon } from '@heroicons/react/24/outline';
+import { ExclamationCircleIcon } from '@heroicons/react/24/solid';
 import ButtonDefault from '../buttons/ButtonDefault';
+import { CloseCircleOutlined } from '@ant-design/icons';
 
 interface Props {
-  title?: string;
+  title: string;
   onCancel?: any;
   height?: string;
   onOk?: any;
@@ -14,7 +14,7 @@ interface Props {
   width?: string;
 }
 
-function ModalNew({
+function ModalGeneral({
   title,
   onCancel,
   height,
@@ -25,37 +25,30 @@ function ModalNew({
 }: Props) {
   return (
     <div
-      className={`z-[1000] fixed top-0 left-0 w-full h-full bg-black/20 p-[40px] ${
+      className={`z-[1000] fixed top-0 left-0 w-full h-full bg-black/20 p-8 ${
         hidden && 'hidden'
       }`}>
-      <div
-        className={`flex justify-center items-center rounded-lg h-full w-full`}>
+      <div className={`flex justify-center items-center h-full w-full`}>
         <div
-          className={`flex flex-col relative overflow-hidden bg-gradient-to-t from-[#bf264b]  to-[#4d0523] rounded-[29px] w-[${width}] h-[${height}]`}
+          className={`flex flex-col relative overflow-y-visible bg-white rounded-lg overflow-hidden w-[${width}] h-[${height}]`}
           style={{ height: `${height}` }}>
-          <div className="relative  h-auto">
-            <img
-              src="https://ucarecdn.com/f0067f8a-e6d2-47ab-80df-129476142768/-/quality/lightest/-/format/auto/"
-              alt="cover-img"
-              className="lg:w-[450px] lg:h-[350px] "
-              style={{ objectFit: 'cover' }}
-            />
-
+          <div className="sticky flex items-center justify-center h-[72px]  px-6 bg-white">
+            <h4 className="text-[24px] text-center text-black leading-[50px] font-[500]">
+              {title}
+            </h4>
             <CloseCircleOutlined
-              className="w-6 h-6 z-50 absolute top-3 right-3 text-white cursor-pointer"
+              className="w-6 h-6 z-50 absolute top-7 right-4 text-black cursor-pointer"
               onClick={onCancel}
             />
           </div>
-          <div className="flex items-center justify-center mb-[20px]">
-            {children}
-          </div>
+          <div className="flex-1 px-6 py-3  overflow-y-auto">{children}</div>
         </div>
       </div>
     </div>
   );
 }
 
-export default ModalNew;
+export default ModalGeneral;
 
 interface BottomButtonEdit {
   note?: string;
@@ -78,7 +71,7 @@ const BottomButtonEdit = ({
       <div className="grid grid-cols-2 gap-6 mt-6">
         {note ? (
           <div className="flex gap-1 items-start">
-            {/* <ExclamationCircleIcon className="w-5 h-5 text-[#767A7F] " /> */}
+            <ExclamationCircleIcon className="w-5 h-5 text-[#767A7F] " />
             <p className="text-[14px] text-[#767A7F] font-[400] leading-[20px] text-start font-['Inter']">
               {note}
             </p>

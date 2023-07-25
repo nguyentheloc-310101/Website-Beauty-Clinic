@@ -36,7 +36,7 @@ const AuraCampus = () => {
   };
   return (
     <div>
-      <div className="flex items-center justify-center uppercase lg:justify-between lg:px-[130px]">
+      <div className="flex items-center justify-center uppercase lg:justify-between lg:px-[130px] lg:mt-[120px]">
         <div className="flex items-center text-[26px] font-[800] lg:text-[49px] lg:leading-[140%] text-[#bc2449] ">
           Bạn có hẹn cùng Aura
         </div>
