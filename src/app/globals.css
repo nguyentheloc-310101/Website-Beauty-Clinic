@@ -168,7 +168,7 @@ body {
   background: var(--linear, linear-gradient(90deg, #bf264b 0%, #df4b6e 100%));
   padding: 7px;
 }
-/*TODO: optimize*/
+
 .background-customer-said {
   width: auto;
   height: 1300px;

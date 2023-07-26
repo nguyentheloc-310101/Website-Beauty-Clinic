@@ -51,7 +51,7 @@ const items: MenuProps['items'] = [
     ],
   },
 ];
-
+//TODO: add drop down categories
 const NavigationAura = () => {
   return (
     <div className="hidden w-full text-white bg-[#bc2449] text-[14px] lg:flex items-center justify-between font-[600] xl:px-[10rem] lg:px-[7rem] md:px-[6rem] py-[10px] hover:text-[]">
