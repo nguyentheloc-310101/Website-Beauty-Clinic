@@ -2,10 +2,7 @@
 import { AiFillYoutube, AiOutlineInstagram } from 'react-icons/ai';
 import { BiLogoFacebook, BiLogoTwitter } from 'react-icons/bi';
 import { BsChevronRight } from 'react-icons/bs';
-<<<<<<< HEAD
-=======
 import LogoSvg from '../../../public/images/svg/LogoSvg';
->>>>>>> loc-dev
 
 const FooterAura = () => {
   return (

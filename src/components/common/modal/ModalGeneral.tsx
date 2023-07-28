@@ -32,21 +32,10 @@ function ModalGeneral({
         <div
           className={`flex flex-col relative overflow-y-visible bg-white rounded-lg overflow-hidden w-[${width}] h-[${height}]`}
           style={{ height: `${height}` }}>
-<<<<<<< HEAD
-          <div className="relative  h-auto">
-            <img
-              src="https://ucarecdn.com/f0067f8a-e6d2-47ab-80df-129476142768/-/quality/lightest/-/format/webp/"
-              alt="cover-img"
-              className="lg:w-[450px] lg:h-[350px] "
-              style={{ objectFit: 'cover' }}
-            />
-
-=======
           <div className="sticky flex items-center justify-center h-[72px]  px-6 bg-white">
             <h4 className="text-[24px] text-center text-black leading-[50px] font-[500]">
               {title}
             </h4>
->>>>>>> loc-dev
             <CloseCircleOutlined
               className="w-6 h-6 z-50 absolute top-7 right-4 text-black cursor-pointer"
               onClick={onCancel}
