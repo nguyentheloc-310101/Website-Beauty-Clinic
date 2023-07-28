@@ -1,14 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import ServiceDefinition from '@/components/service-details/service-definition/ServiceDefinition';
+import ServiceForm from '@/components/service-details/service-form/ServiceForm';
 import ServiceHero from '@/components/service-details/service-hero/ServiceHero';
+import OtherServices from '@/components/service-details/service-others/OtherServices';
 import ServiceReason from '@/components/service-details/service-reason/ServiceReason';
 import ServiceSteps from '@/components/service-details/service-steps/ServiceSteps';
+import ZaloQR from '@/components/service-details/zalo-qr/ZaloQR';
 import { gradientText } from '@/constants/gradentText';
 import { Metadata } from 'next';
-import LogoSvg from '../../../public/images/svg/LogoSvg';
-import ServiceForm from '@/components/service-details/service-form/ServiceForm';
-import OtherServices from '@/components/service-details/service-others/OtherServices';
-import ZaloQR from '@/components/service-details/zalo-qr/ZaloQR';
 export const metadata: Metadata = {
   title: 'Thẩm mỹ quốc tế Aura - Dịch vụ',
   description: 'Aura Beauty Clinic',

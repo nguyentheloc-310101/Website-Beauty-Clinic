@@ -26,7 +26,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  /* background: var(--linear, linear-gradient(45deg, #fff2de 0%, #fff 100%)); */
+  background: linear-gradient(0deg, #f3f3f3 0%, #f3f3f3 100%),
+    lightgray 0px -93.16px / 100% 103.683% no-repeat;
   /* background-image: url('https://ucarecdn.com/e2a42527-861c-4f2e-96a3-3e6b3cafeedd/-/preview//-/quality/lightest/-/format/webp/s'); */
   background-repeat: no-repeat;
   background-size: cover;
