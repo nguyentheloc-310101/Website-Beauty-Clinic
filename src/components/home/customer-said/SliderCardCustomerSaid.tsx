@@ -1,8 +1,6 @@
 'use client';
 import React, { useRef, useState } from 'react';
-
 import { CardCustomer } from './CardCustomer';
-//TODO: transfer to file data and use map()
 const customer1 =
   'https://ucarecdn.com/bd420e86-e59c-499f-9d91-ff90d68f6117/-/quality/lightest/-/format/webp/';
 const customer2 =

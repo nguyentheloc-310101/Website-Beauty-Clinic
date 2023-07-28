@@ -7,12 +7,7 @@ interface btnProps {
   loading?: boolean;
 }
 
-const PrimaryButton = ({
-  text,
-  size,
-  loading,
-  typeBtn = 'submit',
-}: btnProps) => {
+const PrimaryButton = ({ text, size, loading, typeBtn }: btnProps) => {
   let className = '';
 
   if (size === 'small') {
@@ -22,7 +17,7 @@ const PrimaryButton = ({
   }
   return (
     <button
-      // htmlType={typeBtn}
+      type={typeBtn}
       // loading={loading}
       className={`${className}`}>
       {text}

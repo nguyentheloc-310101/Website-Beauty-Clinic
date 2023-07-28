@@ -6,12 +6,13 @@ interface Props {
   placeholder?: string;
   value?: any;
   required?: boolean;
-  classNameInput?: string;
+  className?: string;
   message?: string;
   size?: string;
   type?: string;
   onChange?: (value: any) => void;
   labelColor?: string;
+  labelSize?: string;
 }
 
 const InputForm = (props: Props) => {
@@ -21,10 +22,11 @@ const InputForm = (props: Props) => {
     required = true,
     message = '',
     placeholder,
-    classNameInput,
+    className,
     type,
     value,
     labelColor,
+    labelSize,
     onChange,
   } = props;
 
@@ -35,6 +37,7 @@ const InputForm = (props: Props) => {
           style={{
             color: `${labelColor}`,
             fontWeight: '500',
+            fontSize: `${labelSize}`,
           }}>
           {label}
         </label>
@@ -46,7 +49,7 @@ const InputForm = (props: Props) => {
         value={value}
         type={type}
         placeholder={placeholder}
-        className={`rounded-[10px] hover:border-[#bf264b] h-[24px] lg:w-full lg:h-[40px] border-[#bf264b] border focus:border-[#bf264b] ${classNameInput}`}
+        className={`rounded-[6px]  h-[24px] lg:w-full lg:h-[40px]  ${className}`}
       />
     </Form.Item>
   );

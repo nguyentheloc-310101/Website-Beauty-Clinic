@@ -1,5 +1,6 @@
 export const categoryData = [
   {
+    key: 1,
     category_name: 'Phẩu thuật thẩm mỹ',
     group: true,
     service_group: [
@@ -30,11 +31,13 @@ export const categoryData = [
     ],
   },
   {
+    key: 2,
     category_name: 'Điều trị nám',
     group: false,
     services: ['Môi', 'Chân mày'],
   },
   {
+    key: 3,
     category_name: 'Phun xăm',
     group: true,
     service_group: [
@@ -65,6 +68,7 @@ export const categoryData = [
     ],
   },
   {
+    key: 4,
     category_name: 'Tạo hình không xâm lấn',
     group: false,
     service: [
@@ -75,6 +79,7 @@ export const categoryData = [
     ],
   },
   {
+    key: 5,
     category_name: 'Nâng cơ trẻ hóa',
     group: true,
     service_group: [
@@ -94,6 +99,7 @@ export const categoryData = [
     ],
   },
   {
+    key: 5,
     category_name: 'Dịch vụ khác',
     group: false,
     service: [

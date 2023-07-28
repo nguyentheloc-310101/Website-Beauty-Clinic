@@ -9,11 +9,14 @@ import SeeMoreAboutAura from '@/components/home/see-more/SeeMoreAboutAura';
 import SliderService from '@/components/home/service-aura/ServiceAura';
 import SliderServiceResponsive from '@/components/home/service-aura/ServiceAuraResponsive';
 import ReelsOutStanding from '@/components/live-stream/reels/ReelsOutStanding';
+import PanelContact from '@/components/panel-contact/PanelContact';
 
 const HomePage = () => {
   return (
     <>
       <div className="">
+        <PanelContact />
+
         <div className="flex flex-col items-center justify-center ">
           <HeroSection />
         </div>

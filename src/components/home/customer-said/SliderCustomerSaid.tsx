@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import SliderCardCustomerSaid from './SliderCardCustomerSaid';
 
-//TODO: optimize image
 const SliderCustomerSaid = () => {
   return (
     <div className="background-customer-said">

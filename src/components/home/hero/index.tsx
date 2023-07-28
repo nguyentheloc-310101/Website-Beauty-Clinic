@@ -37,10 +37,7 @@ const HeroSection = () => {
         </div>
       </div>
       {isAdviseCard && (
-        <CardServiceAdvisory
-          isAdviseCard={isAdviseCard}
-          setIsAdviceCard={setIsAdviceCard}
-        />
+        <CardServiceAdvisory setIsAdviceCard={setIsAdviceCard} />
       )}
     </div>
   );

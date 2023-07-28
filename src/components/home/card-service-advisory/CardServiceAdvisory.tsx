@@ -1,17 +1,13 @@
-import ModalNew from '@/components/common/modal/ModalGeneral';
+import ModalFormAdvisory from '@/components/home/card-service-advisory/ModalFormAdvisory';
 import FormContactSmall from '../form-contact/FormContactAdvisory';
 
 interface CardServiceAdvisory {
-  isAdviseCard: boolean;
   setIsAdviceCard: (e: boolean) => void;
 }
-const CardServiceAdvisory = ({
-  isAdviseCard,
-  setIsAdviceCard,
-}: CardServiceAdvisory) => {
+const CardServiceAdvisory = ({ setIsAdviceCard }: CardServiceAdvisory) => {
   return (
     <div className="w-[400px] h-fit rounded-lg">
-      <ModalNew
+      <ModalFormAdvisory
         onCancel={() => {
           setIsAdviceCard(false);
         }}
@@ -19,7 +15,7 @@ const CardServiceAdvisory = ({
         <div className="lg:mt-[20px] mt-[10px]">
           <FormContactSmall />
         </div>
-      </ModalNew>
+      </ModalFormAdvisory>
     </div>
   );
 };
