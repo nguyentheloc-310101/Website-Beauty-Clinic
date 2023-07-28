@@ -1,4 +1,6 @@
 import { Dropdown, MenuProps, Space } from 'antd';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 interface itemSubMenu {
@@ -290,6 +292,7 @@ const NavigationAura = () => {
   const handleMouseEnter = (item: MenuProps['items']) => {
     setItemDropDown(item);
   };
+
   let items: MenuProps['items'] = itemDropDown;
   return (
     <div className="hidden w-full text-white bg-[#bc2449] text-[14px] lg:flex items-center justify-between font-[600] xl:px-[10rem] lg:px-[7rem] md:px-[6rem] py-[10px] hover:text-[]">
@@ -311,11 +314,11 @@ const NavigationAura = () => {
         className="cursor-pointer"
         onMouseEnter={() => handleMouseEnter(itemsTriNam)}>
         <Dropdown menu={{ items }}>
-          <a onClick={(e) => e.preventDefault()}>
+          <Link href="/service-details">
             <Space>
               <span className="text-center hover:text-[#f7d5dd]">Trị nám</span>
             </Space>
-          </a>
+          </Link>
         </Dropdown>
       </div>
       <div
@@ -333,40 +336,36 @@ const NavigationAura = () => {
         className="cursor-pointer"
         onMouseEnter={() => handleMouseEnter(itemsTaoHinh)}>
         <Dropdown menu={{ items }}>
-          <a onClick={(e) => e.preventDefault()}>
-            <Space>
-              <span className="text-center hover:text-[#f7d5dd]">
-                {' '}
-                Tạo hình không xâm lấn
-              </span>
-            </Space>
-          </a>
+          <Space>
+            <span className="text-center hover:text-[#f7d5dd]">
+              Tạo hình không xâm lấn
+            </span>
+          </Space>
         </Dropdown>
       </div>
+
       <div
         className="cursor-pointer"
         onMouseEnter={() => handleMouseEnter(itemsNangCo)}>
         <Dropdown menu={{ items }}>
-          <a onClick={(e) => e.preventDefault()}>
-            <Space>
+          <Space>
+            <Link href="/service-details">
               <span className="text-center hover:text-[#f7d5dd]">
                 Nâng cơ trẻ hóa
               </span>
-            </Space>
-          </a>
+            </Link>
+          </Space>
         </Dropdown>
       </div>
       <div
         className="cursor-pointer"
         onMouseEnter={() => handleMouseEnter(itemsOtherService)}>
         <Dropdown menu={{ items }}>
-          <a onClick={(e) => e.preventDefault()}>
-            <Space>
-              <span className="text-center hover:text-[#f7d5dd]">
-                Dịch vụ khác
-              </span>
-            </Space>
-          </a>
+          <Space>
+            <span className="text-center hover:text-[#f7d5dd]">
+              Dịch vụ khác
+            </span>
+          </Space>
         </Dropdown>
       </div>
     </div>
