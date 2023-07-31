@@ -1,8 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
 import { gradientText } from '@/constants/gradentText';
 import { DownArrowSvg } from '../../../../../public/icons/DownArrowSvg';
+import UpArrowSvg from '../../../../../public/icons/UpArrowSvg';
 interface DoctorCardProps {
   name: string;
   image: any;
@@ -10,9 +12,9 @@ interface DoctorCardProps {
   desc_doctor: string;
   major: string;
 }
-
 const DoctorCard = (props: DoctorCardProps) => {
   const { name, image, experience, desc_doctor, major } = props;
+  const [openDetailDoctor, setOpenDetailDoctor] = useState<boolean>(false);
   return (
     <div className="w-full h-auto rounded-[16px] p-[16px] border gap-[16px] flex lg:rounded-[20px] lg:flex-col lg:w-[430px] lg:h-auto bg-white">
       <div className="w-[92px] h-full flex items-center justify-center lg:w-full lg:h-[322px] lg:object-contain">
@@ -30,10 +32,13 @@ const DoctorCard = (props: DoctorCardProps) => {
             <span>{name}</span>
           </div>
           <div>
-            <DownArrowSvg />
+            {openDetailDoctor ? (
+              <UpArrowSvg onClick={() => setOpenDetailDoctor(false)} />
+            ) : (
+              <DownArrowSvg onClick={() => setOpenDetailDoctor(true)} />
+            )}
           </div>
         </div>
-
         <div className="text-[10px] leading-[14px] lg:text-[16px] font-[400] lg:leading-[24px] lg:mt-[8px] text-[#36383A] lg:tracking-[0.5px]">
           <span className="font-[700]">{experience} năm</span> kinh nghiệm
         </div>
