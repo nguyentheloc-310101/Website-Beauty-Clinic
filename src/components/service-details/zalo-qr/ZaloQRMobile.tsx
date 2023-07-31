@@ -4,7 +4,7 @@ import React from 'react';
 
 const ZaloQRMobile = () => {
   return (
-    <div className="relative pl-[16px] pt-[16px] h-[543px] w-full overflow-hidden">
+    <div className="relative px-[16px] pt-[16px] h-[543px] w-full overflow-hidden">
       <div className="relative">
         <div
           className={`w-[178px] h-[48px] ${gradientText} text-[16px] font-[800] leading-[24px] tracking-[0.25px] absolute top-0`}>
@@ -16,7 +16,7 @@ const ZaloQRMobile = () => {
           className="ml-[30px]"
         />
       </div>
-      <div className="absolute bottom-0 w-full flex justify-between">
+      <div className="absolute z-50 mb-[20px] flex justify-between">
         <div className="bg-white rounded-[16px] w-[172px] h-[156px]">zalo</div>
         <div className="bg-white rounded-[16px] w-[172px] h-[156px] mr-[16px]">
           QR
