@@ -2,9 +2,9 @@
 import { Form } from 'antd';
 import React from 'react';
 
-const RightFormContent = () => {
+const FormInputContent = () => {
   return (
-    <div className="lg:px-[60px] flex items-center justify-center z-50">
+    <div className="px-[16px] lg:px-[60px] w-full flex items-center justify-center z-50">
       <Form className="w-full gap-[20px]">
         <InputContact
           name={'name'}
@@ -33,12 +33,17 @@ const RightFormContent = () => {
           label={'Dịch vụ quan tâm'}
           placeholder={'Nhập tên dịch vụ'}
         />
+        <div className="flex my-[16px] w-full items-center justify-center">
+          <button className="bg-gradient-to-r py-[12px] px-[24px] w-full h-[42px] rounded-[8px] from-[#FFF2DE] to-[#FFF] text-[#BC2449] text-[16px] font-[600] leading-[20px] tracking-[0.25px] flex items-center justify-center">
+            Gửi thông tin
+          </button>
+        </div>
       </Form>
     </div>
   );
 };
 
-export default RightFormContent;
+export default FormInputContent;
 
 interface InputContactProps {
   label: string;
@@ -58,7 +63,7 @@ export const InputContact = (props: InputContactProps) => {
         onChange={onChange}
         name={name}
         value={value}
-        className=" lg:p-[12px] lg:text-[18px] lg:w-full lg:mb-[12px] lg:h-[44px] rounded-[6px] "
+        className="w-full h-[42px] p-[10px] lg:p-[12px] lg:text-[18px] lg:w-full lg:mb-[12px] lg:h-[44px] rounded-[6px] "
         placeholder={placeholder}
       />
     </div>
