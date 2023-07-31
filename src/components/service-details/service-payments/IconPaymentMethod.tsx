@@ -19,7 +19,7 @@ const IconPaymentMethod = (props: IconPaymentMethodProps) => {
           />
         </div>
       </div>
-      <div className="flex text-center w-[56px] text-[10px] leading-[14px] lg:w-fit items-center mt-[5px] justify-center lg:text-[16px] font-[600] lg:leading-[25px]">
+      <div className="flex text-center text-[10px] leading-[14px] lg:w-full items-center mt-[5px] justify-center lg:text-[16px] font-[600] lg:leading-[25px]">
         {method}
       </div>
     </div>

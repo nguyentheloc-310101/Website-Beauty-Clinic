@@ -5,7 +5,7 @@ import FormInputContent from './right-form/FormInputContent';
 
 const ServiceForm = () => {
   return (
-    <div className="linear-bg my-[80px] w-full h-[416px] rounded-[20px] grid grid-cols-2">
+    <div className="linear-bg my-[80px] w-full h-[526px] rounded-[20px] grid grid-cols-2">
       <LeftFormContent />
       <FormInputContent />
     </div>

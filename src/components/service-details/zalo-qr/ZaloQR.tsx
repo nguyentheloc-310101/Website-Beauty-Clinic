@@ -19,7 +19,7 @@ const ZaloQR = () => {
             <div>
               <img
                 src="https://ucarecdn.com/4ad33566-6235-47cd-b85a-5fdfe5cb9eb9/-/preview/220x220/-/quality/smart/-/format/auto/"
-                alt=""
+                alt="zalo-img"
                 className=" h-[72px] w-[72px]"
               />
             </div>

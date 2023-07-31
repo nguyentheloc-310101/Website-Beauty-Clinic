@@ -11,7 +11,7 @@ const ServiceSteps = () => {
       </div>
       <div className="overflow-x-auto">
         {/*TODO: chuyen sang dung map()*/}
-        <div className=" w-fit lg:mt-[20px] gap-[16px] lg:w-fit flex flex-row lg:flex-wrap lg:gap-[20px]">
+        <div className=" w-fit mt-[8px] lg:mt-[20px] gap-[16px] lg:w-fit flex flex-row lg:flex-wrap lg:gap-[20px]">
           <ServiceStepCard
             step={1}
             image={

@@ -7,6 +7,7 @@ import OtherServices from '@/components/service-details/service-others/OtherServ
 import ServicePayment from '@/components/service-details/service-payments/ServicePayment';
 import ServiceSteps from '@/components/service-details/service-steps/ServiceSteps';
 import ZaloQR from '@/components/service-details/zalo-qr/ZaloQR';
+import ZaloQRMobile from '@/components/service-details/zalo-qr/ZaloQRMobile';
 import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Thẩm mỹ quốc tế Aura - Dịch vụ',
@@ -51,15 +52,18 @@ const ServicePage = () => {
       <div className="lg:pr-[130px] lg:pl-[430px] lg:mt-[30vh]">
         <ServicePayment />
       </div>
-      <div className="px-[130px] mt-[5%]">
+      <div className="hidden lg:block lg:px-[130px] lg:mt-[5%]">
         <OtherServices />
       </div>
 
-      {/* <div className="mt-[80px] relative h-[500px]">
+      <div className="hidden lg:block mt-[80px] relative h-[500px]">
         <div className="absolute bottom-[-37%]">
           <ZaloQR />
         </div>
-      </div> */}
+      </div>
+      <div className="lg:hidden">
+        <ZaloQRMobile />
+      </div>
     </div>
   );
 };
