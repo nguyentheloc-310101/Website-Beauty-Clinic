@@ -6,3 +6,9 @@ interface TDoctor {
   desc_doctor: string;
   major: string;
 }
+
+interface ServiceStepCardProps {
+  step: number;
+  image: any;
+  desc: string;
+}
