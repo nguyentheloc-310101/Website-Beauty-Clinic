@@ -16,10 +16,27 @@ const ZaloQRMobile = () => {
           className="ml-[30px]"
         />
       </div>
-      <div className="absolute z-50 mb-[20px] flex justify-between">
-        <div className="bg-white rounded-[16px] w-[172px] h-[156px]">zalo</div>
-        <div className="bg-white rounded-[16px] w-[172px] h-[156px] mr-[16px]">
-          QR
+      <div className="absolute bottom-0 z-50 mb-[20px] flex gap-[20px]">
+        <div className="bg-white rounded-[16px] w-[172px] h-[156px] flex flex-col items-center justify-center">
+          <img
+            src="https://ucarecdn.com/6a874539-7817-48b6-833d-76664308b445/-/preview/469x216/-/quality/smart/-/format/auto/"
+            alt="doctor"
+            className="w-[80px] h-[80px]"
+          />
+          <div className="text-[10px] mt-[16px] text-center font-[400] leading-[14px] text-[#36383A]">
+            Truy cập <span className="font-[600]">Aura ID</span> <br /> trên
+            Zalo ngay hôm nay!
+          </div>
+        </div>
+        <div className="bg-white rounded-[16px] w-[172px] h-[156px] flex flex-col items-center justify-center">
+          <img
+            src="https://ucarecdn.com/19186b1e-2285-401b-89b0-491cedf542fe/-/preview/469x216/-/quality/smart/-/format/auto/"
+            alt="doctor"
+            className="w-[80px] h-[80px]"
+          />
+          <div className="text-[10px] mt-[16px] text-center font-[400] leading-[14px] text-[#36383A]">
+            Hoặc quét <br /> <span className="font-[600]">QR code</span>
+          </div>
         </div>
       </div>
     </div>
