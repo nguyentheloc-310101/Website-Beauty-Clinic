@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
-import ServiceDefinition from '@/components/service-details/service-definition/ServiceDefinition';
+import { Doctors } from '@/components/service-details/service-doctors/Doctors';
 import ServiceForm from '@/components/service-details/service-form/ServiceForm';
+import ServiceFormMobile from '@/components/service-details/service-form/ServiceFormMobile';
 import ServiceHero from '@/components/service-details/service-hero/ServiceHero';
 import OtherServices from '@/components/service-details/service-others/OtherServices';
-import ServiceReason from '@/components/service-details/service-reason/ServiceReason';
+import ServicePayment from '@/components/service-details/service-payments/ServicePayment';
 import ServiceSteps from '@/components/service-details/service-steps/ServiceSteps';
 import ZaloQR from '@/components/service-details/zalo-qr/ZaloQR';
-import { gradientText } from '@/constants/gradentText';
 import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Thẩm mỹ quốc tế Aura - Dịch vụ',
@@ -17,29 +17,21 @@ const ServicePage = () => {
   return (
     <div>
       <ServiceHero />
-      <div className="flex flex-cols">
+      <div className="lg:flex flex-cols">
         <div>
-          <div className="lg:w-[430px] my-[80px]">
-            {/* <ServiceSideBar /> */}
-          </div>
+          <div className="lg:w-[430px] lg:my-[80px]"></div>
         </div>
-        <div className="pr-[130px] my-[80px]">
-          {/*Service information*/}
-          <div className="mb-[80px]">
-            <div
-              className={`${gradientText} lg:text-[35px] font-[800] lg:leading-[52px] lg:track-[0.25px]`}>
-              Hiểu hơn về nám
-            </div>
-            <ServiceDefinition />
-            <ServiceReason />
+        <div className="lg:my-[80px]">
+          <div className="px-[16px] pb-[16px] lg:mb-[80px]">
+            <Doctors />
           </div>
-          {/*Section: Step*/}
-          <ServiceSteps />
+          <div className="p-[16px]">
+            <ServiceSteps />
+          </div>
         </div>
       </div>
-      {/*Section: Form advisory*/}
-      <div className="relative pr-[130px]">
-        <div className="ml-[430px]">
+      <div className="hidden lg:block relative pr-[130px]">
+        <div className="lg:ml-[430px]">
           <ServiceForm />
         </div>
         <img
@@ -48,15 +40,26 @@ const ServicePage = () => {
           className="absolute top-[-15vh] right-0 w-[90vw] h-auto "
         />
       </div>
-      {/*Section: Other services*/}
-      <div className="px-[130px] mt-[15%]">
+      <div className="relative lg:hidden h-[683px] w-full overflow-hidden">
+        <ServiceFormMobile />
+        <img
+          src="https://ucarecdn.com/449f407d-d989-466f-b772-8412f0e620cb/-/quality/smart/-/format/auto/"
+          alt="rb-service"
+          className="absolute top-[-1vh] w-full h-auto "
+        />
+      </div>
+      <div className="lg:pr-[130px] lg:pl-[430px] lg:mt-[30vh]">
+        <ServicePayment />
+      </div>
+      <div className="px-[130px] mt-[5%]">
         <OtherServices />
       </div>
-      <div className="mt-[80px] relative h-[500px]">
+
+      {/* <div className="mt-[80px] relative h-[500px]">
         <div className="absolute bottom-[-37%]">
           <ZaloQR />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

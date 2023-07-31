@@ -6,7 +6,7 @@ const ZaloQR = () => {
   return (
     <div className="lg:ml-[130px] grid grid-cols-2">
       <div>
-        <div className="p-[40px] bg-white/100 rounded-[40px] border w-full h-fit">
+        <div className="p-[40px] bg-white/100 rounded-[40px] border w-[547px] h-fit">
           <div
             className={`w-[470px] h-auto lg:text-[35px] font-[800] leading-[52px] tracking-[0.25px] ${gradientText}`}>
             Tìm hiểu thêm về <br /> Thẩm mỹ viện Aura?

@@ -19,6 +19,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.linear-bg {
+  background: linear-gradient(180deg, #c20459 41.39%, #4d0523 100%);
+}
 body {
   font-family: 'Montserrat', sans-serif;
   width: 100vw;
@@ -250,10 +253,10 @@ body {
   flex-shrink: 0;
   color: #fff;
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 600;
   line-height: normal;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 8px;
   background: linear-gradient(180deg, #ff499b 0%, #ac001f 100%);
   transition: background-color 0.3s, border-color 0.3s;
 }

@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import LeftFormContent from './left/LeftFormContent';
-import RightFormContent from './right-form/RightFormContent';
+import FormInputContent from './right-form/FormInputContent';
 
 const ServiceForm = () => {
   return (
-    <div className="bg-gradient-to-r from-[#C20459] to-[#4D0523] my-[80px] w-full h-[416px] rounded-[20px] grid grid-cols-2">
+    <div className="linear-bg my-[80px] w-full h-[416px] rounded-[20px] grid grid-cols-2">
       <LeftFormContent />
-      <RightFormContent />
+      <FormInputContent />
     </div>
   );
 };
