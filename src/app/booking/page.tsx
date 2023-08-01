@@ -16,7 +16,7 @@ const BookingPage = () => {
   return (
     <div className="mt-[12px] lg:mt-[2px] flex flex-col px-[16px] lg:grid lg:grid-cols-2 lg:px-[130px] lg:py-[30px] lg:gap-[24px]">
       <div className="flex flex-col lg:flex-col lg:gap-[24px]">
-        <div>
+        <div className="date-picker-antd">
           <CalendarBooking setDateBooking={setDateBooking} />
         </div>
         <div className="">
