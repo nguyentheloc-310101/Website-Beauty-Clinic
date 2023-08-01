@@ -53,7 +53,7 @@ export const links = [
     sublinks: [
       {
         Head: 'Điều trị nám',
-        sublink: [],
+        sublink: [{ name: 'Dịch vụ đang cập nhật', link: '/service-details' }],
       },
       {
         Head: 'Chân Mày',

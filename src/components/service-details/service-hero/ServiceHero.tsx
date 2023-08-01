@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import PrimaryButton from '@/components/button/PrimaryButton';
 import { gradientText } from '@/constants/gradentText';
+import Link from 'next/link';
 import React from 'react';
 
 const ServiceHero = () => {
@@ -36,10 +37,12 @@ const ServiceHero = () => {
             </div>
           </div>
           <div className="hidden lg:block">
-            <PrimaryButton
-              text={'Đặt hẹn ngay'}
-              size={'big'}
-            />
+            <Link href="/booking">
+              <PrimaryButton
+                text={'Đặt hẹn ngay'}
+                size={'big'}
+              />{' '}
+            </Link>
           </div>
           <div className="lg:hidden">
             {' '}

@@ -12,7 +12,7 @@ const CardOtherServiceHover = (props: CardOtherServiceProps) => {
   const { image, desc, service_name } = props;
   return (
     <div
-      className={` rounded-[40px] gap-[40px] lg:p-[36px] w-full h-auto border flex my-[20px] border-[#BC2449] bg-[#BC2449]`}>
+      className={` rounded-[40px] gap-[40px] lg:p-[36px] w-full h-auto border flex my-[20px] border-[#BC2449] `}>
       <div className="w-[240px] ">
         <img
           src={image}
@@ -22,14 +22,14 @@ const CardOtherServiceHover = (props: CardOtherServiceProps) => {
       </div>
       <div className="w-full h-auto">
         <div
-          className={`text-white text-[24px] font-[800] leading-[36px] mb-[18px]`}>
+          className={`${gradientText} text-[24px] font-[800] leading-[36px] mb-[18px]`}>
           {service_name}
         </div>
-        <div className="my-[18px] text-[16px] text-white font-[400] leading-[24px] tracking-[0.5px]">
+        <div className="my-[18px] text-[16px]font-[400] leading-[24px] tracking-[0.5px]">
           {desc}
         </div>
         <div>
-          <div className="text-[16px] w-fit cursor-pointer font-[300] leading-[24px] text-white ">
+          <div className="text-[16px] w-fit cursor-pointer font-[300] leading-[24px] ">
             Xem thêm
           </div>
         </div>

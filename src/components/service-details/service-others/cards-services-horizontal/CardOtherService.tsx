@@ -31,7 +31,7 @@ const CardOtherService = (props: CardOtherServiceProps) => {
         />
       ) : (
         <div
-          className={` rounded-[40px] gap-[40px] lg:p-[36px] w-full h-auto border flex my-[20px] border-[#BC2449] bg-white/100`}>
+          className={` rounded-[40px] gap-[40px] lg:p-[36px] w-full h-auto border flex my-[20px]  bg-white/100`}>
           <div className="w-[240px] ">
             <img
               src={image}
