@@ -23,7 +23,7 @@ const HeaderAura = () => {
         <Image
           src={BurgerIcon}
           alt="Burger"
-          className="h-[1.5rem]"
+          className="h-[16px] w-[24px]"
           onClick={() => setIsOpened((prev: boolean) => !prev)}
         />
         <Link href="/">

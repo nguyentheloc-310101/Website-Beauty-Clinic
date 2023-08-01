@@ -1,8 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
-import React, { useState } from 'react';
-import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
 import { gradientText } from '@/constants/gradentText';
+import { useState } from 'react';
 import { DownArrowSvg } from '../../../../../public/icons/DownArrowSvg';
 import UpArrowSvg from '../../../../../public/icons/UpArrowSvg';
 interface DoctorCardProps {
