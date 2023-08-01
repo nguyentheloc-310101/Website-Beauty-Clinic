@@ -47,7 +47,7 @@ const TimeTableBooking = (props: TimeTableBookingProps) => {
         className={`${gradientText} mb-[16px] lg:text-[24px] font-[800] lg:leading-[36px] `}>
         Chọn giờ làm dịch vụ
       </div>
-      <div className="flex gap-[8px] flex-wrap lg:gap-[12px]">
+      <div className="flex ml-[5px] items-center justify-start gap-[8px] flex-wrap lg:gap-[12px]">
         {time.map((item, index) => {
           return (
             <div
