@@ -36,12 +36,12 @@ const PopUpConfirm = ({
           <div className="flex justify-center items-center h-full">
             <div className="flex flex-col relative  overflow-auto bg-white rounded-2xl">
               <Spin spinning={loading}>
-                <div className="p-6 flex flex-col relative  overflow-auto bg-white rounded-2xl w-[448px] h-[553px]">
+                <div className="p-6 flex flex-col relative  overflow-auto bg-white rounded-2xl lg:w-[448px] lg:h-[553px]">
                   <div className="flex items-center justify-center w-full relative">
-                    <h4
-                      className={`text-[34px] text-[${color}] font-[600] font-['Be Vietnam Pro']`}>
+                    <div
+                      className={`text-center text-[20px] lg:text-[34px] text-[${color}] font-[600] font-['Be Vietnam Pro']`}>
                       {title}
-                    </h4>
+                    </div>
                     <XMarkIcon
                       className="w-6 h-6 absolute right-6 text-[#8F9499] cursor-pointer hover:text-[#464749]"
                       onClick={onCancel}
@@ -52,25 +52,39 @@ const PopUpConfirm = ({
                       <Lottie
                         animationData={lottie}
                         loop={true}
-                        className="w-[400px] h-[300px] object-cover"
+                        className="lg:w-[400px] lg:h-[300px] h-[250px] object-cover"
                       />
                     </div>
-                    <p className="text-center text-[16px]">
-                      {description}{' '}
-                      <p className="text-[#5A68ED]">{highlight}</p>
+                    <p className="text-center text-[10px] font-[300] lg:text-[16px]">
+                      {description}
+                      <p className={`text-[${color}]`}>{highlight}</p>
                     </p>
                   </div>
-                  <div>
+                  <div className="mt-[10px] lg:mt-[2px]">
                     <div className="grid grid-cols-2 gap-6">
-                      <ButtonPopConfirm
-                        titleBt={btnLeftTitle}
-                        borderBt={`1px solid ${color}`}
-                        bgColor="white"
-                        textColor={color}
-                        heightBt="44px"
-                        typeBt="button"
-                        onclick={onCancel}
-                      />
+                      <div className="hidden lg:block">
+                        <ButtonPopConfirm
+                          titleBt={btnLeftTitle}
+                          borderBt={`1px solid ${color}`}
+                          bgColor="white"
+                          textColor={color}
+                          heightBt="44px"
+                          typeBt="button"
+                          onclick={onCancel}
+                        />
+                      </div>
+                      <div className="block lg:hidden">
+                        <ButtonPopConfirm
+                          titleBt={'Trở lại'}
+                          borderBt={`1px solid ${color}`}
+                          bgColor="white"
+                          textColor={color}
+                          heightBt="44px"
+                          typeBt="button"
+                          onclick={onCancel}
+                        />
+                      </div>
+
                       <ButtonPopConfirm
                         titleBt={btnRightTitle}
                         heightBt="44px"
