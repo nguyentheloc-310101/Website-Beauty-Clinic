@@ -13,7 +13,7 @@ const HeroSection = () => {
         <div className="w-full">
           <img
             src={
-              'https://ucarecdn.com/0671beec-521d-4966-ada9-e564afcadfbb/-/quality/lightest/-/format/webp/'
+              'https://ucarecdn.com/0671beec-521d-4966-ada9-e564afcadfbb/-/quality/smart/-/format/auto/'
             }
             alt="cover-img"
             className="w-full h-full"

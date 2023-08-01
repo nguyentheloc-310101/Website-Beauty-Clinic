@@ -22,6 +22,7 @@
 .linear-bg {
   background: linear-gradient(180deg, #c20459 41.39%, #4d0523 100%);
 }
+
 body {
   font-family: 'Montserrat', sans-serif;
   width: 100vw;

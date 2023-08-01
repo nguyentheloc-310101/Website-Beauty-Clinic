@@ -20,7 +20,7 @@ interface SelectItemFormProps {
   size?: SizeType;
   subLabel?: string;
   showSearch?: boolean;
-  maxTagPlaceholder: string;
+  maxTagPlaceholder?: string;
   onChange?: Function;
 }
 
@@ -56,7 +56,8 @@ const SelectFormMultiple = (props: SelectItemFormProps) => {
     };
     return JSON.stringify(options).includes(value) ? (
       <Tag
-        color={'#F8DDE4'}
+        // color={'#F8DDE4'}
+        style={{ color: '#BC2449', backgroundColor: '#F8DDE4' }}
         onMouseDown={onPreventMouseDown}
         closable={closable}
         onClose={onClose}>
@@ -105,7 +106,7 @@ const SelectFormMultiple = (props: SelectItemFormProps) => {
         style={{ width: '100%' }}
         showSearch={showSearch}
         maxTagPlaceholder={(value) => (
-          <Tag color="blue">
+          <Tag color="#BC2449">
             +{value.length} {maxTagPlaceholder}
           </Tag>
         )}
