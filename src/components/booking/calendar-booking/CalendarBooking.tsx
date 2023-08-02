@@ -17,7 +17,9 @@ const CalendarBooking = (props: CalendarBookingProps) => {
         Chọn ngày đặt hẹn
       </div>
       <div className="flex flex-col items-end justify-end">
-        <div className="w-full">
+        <div
+          id="datePicker-antd_id"
+          className="w-full">
           <Calendar
             fullscreen={false}
             onSelect={onSelectChange}

@@ -15,15 +15,15 @@ const BookingPage = () => {
 
   return (
     <div className="mt-[12px] lg:mt-[2px] flex flex-col px-[16px] lg:grid lg:grid-cols-2 lg:px-[130px] lg:py-[30px] lg:gap-[24px]">
-      <div className="flex flex-col lg:flex-col lg:gap-[24px]">
-        <div className="date-picker-antd">
+      <div className="flex flex-col lg:flex-col lg:gap-[24px] lg:h-full">
+        <div>
           <CalendarBooking setDateBooking={setDateBooking} />
         </div>
         <div className="">
           <TimeTableBooking setTimeBooking={setTimeBooking} />
         </div>
       </div>
-      <div className="p-[24px] lg:flex lg:w-[580px] rounded-[20px] bg-[#fff] lg:p-[24px]">
+      <div className="p-[24px] lg:flex lg:w-full rounded-[20px] bg-[#fff] lg:p-[24px]">
         <div className="w-full">
           <SummaryBookingForm
             setConfirmSending={setConfirmSending}

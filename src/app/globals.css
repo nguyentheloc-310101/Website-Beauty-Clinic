@@ -161,26 +161,6 @@ body {
   background-size: cover;
 }
 
-.modalStyle .ant-modal-content {
-  /*pc mode*/
-  width: 780px;
-  height: 542px;
-  border-radius: 40px;
-  background: var(--linear, linear-gradient(90deg, #bf264b 0%, #df4b6e 100%));
-  padding: 10px;
-}
-.modalStyleMobile {
-  margin-right: 17px;
-}
-.modalStyleMobile .ant-modal-content {
-  /*pc mode*/
-  width: 361px;
-  height: 482px;
-  border-radius: 20px;
-  background: var(--linear, linear-gradient(90deg, #bf264b 0%, #df4b6e 100%));
-  padding: 7px;
-}
-
 .background-customer-said {
   width: auto;
   height: 1300px;
@@ -398,7 +378,82 @@ body {
     /* padding: */
   }
 }
-
+.modalStyle .ant-modal-content {
+  /*pc mode*/
+  width: 780px;
+  height: 542px;
+  border-radius: 40px;
+  background: var(--linear, linear-gradient(90deg, #bf264b 0%, #df4b6e 100%));
+  padding: 10px;
+}
+.modalStyleMobile {
+  margin-right: 17px;
+}
+.modalStyleMobile .ant-modal-content {
+  /*pc mode*/
+  width: 361px;
+  height: 482px;
+  border-radius: 20px;
+  background: var(--linear, linear-gradient(90deg, #bf264b 0%, #df4b6e 100%));
+  padding: 7px;
+}
 * #modal-card > .ant-modal-content {
   padding: 0 !important;
+}
+#datePicker-antd_id
+  > div
+  > div.ant-picker-panel
+  *
+  > td.ant-picker-cell.ant-picker-cell-in-view.ant-picker-cell-selected
+  > div {
+  background: none;
+  border: none;
+}
+.ant-picker-calendar
+  .ant-picker-cell-in-view.ant-picker-cell-today
+  .ant-picker-cell-inner::before {
+  border: none;
+}
+
+#datePicker-antd_id * td {
+  height: 50px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+#datePicker-antd_id
+  > div
+  > div.ant-picker-panel
+  *
+  > td.ant-picker-cell.ant-picker-cell-in-view.ant-picker-cell-selected
+  > div
+  > div.ant-picker-calendar-date-value {
+  background: var(--gradient, linear-gradient(90deg, #bf264b 0%, #df4b6e 100%));
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+#datePicker-antd_id
+  > div
+  > div.ant-picker-calendar-header
+  > div.ant-radio-group.ant-radio-group-outline.ant-radio-group-small.ant-picker-calendar-mode-switch.css-dev-only-do-not-override-14wwjjs
+  > label.ant-radio-button-wrapper.ant-radio-button-wrapper-checked.css-dev-only-do-not-override-14wwjjs
+  > span {
+  color: #36383a;
+}
+#datePicker-antd_id
+  :where(
+    .css-dev-only-do-not-override-14wwjjs
+  ).ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+  color: #36383a;
+}
+
+#datePicker-antd_id
+  *
+  label.ant-radio-button-wrapper.ant-radio-button-wrapper-checked {
+  border-color: #36383a;
 }

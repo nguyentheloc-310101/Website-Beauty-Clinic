@@ -105,7 +105,7 @@ const SummaryBookingForm = (props: SummaryBookingProps) => {
           />
         </div>
 
-        <div className="mt-[12px] lg:mt-[12px]">
+        <div className="mt-[12px] lg:mt-[24px]">
           <SelectFormDefault
             placeholder={'Chọn cơ sở muốn làm'}
             size={'large'}
@@ -115,7 +115,7 @@ const SummaryBookingForm = (props: SummaryBookingProps) => {
             options={dataMock}
           />
         </div>
-        <div className="mt-[48px] lg:mt-[12px]">
+        <div className="mt-[48px] lg:mt-[48px]">
           <CustomerInform
             setCustomerName={setCustomerName}
             setCustomerEmail={setCustomerEmail}
