@@ -11,6 +11,7 @@ import { message } from 'antd';
 import { Service } from '@/interfaces/service/service';
 import { User } from '@/interfaces/users/user';
 import useSWR from 'swr';
+import { CreateOrderId } from '@/utils/helpers/create-order-uid';
 
 const desc_popConfirm_sending =
   'Khi bấm “Xác nhận”, đặt hẹn của bạn sẽ được lên lịch. Sẽ có tư vấn viên liên hệ với bạn thời gian sớm nhất. ';
@@ -19,22 +20,12 @@ const BookingPage = () => {
   const [timeBooking, setTimeBooking] = useState<string>('00:00');
   const [confirmSending, setConfirmSending] = useState<boolean>(false);
 
-  // const [allClinics, setAllClinics] = useState<Clinic[]>([]);
-  // const [allServices, setAllServices] = useState<Service[]>([]);
-  // const [allUsers, setAllUsers] = useState<User[]>([]);
   const [service, setService] = useState<string[]>([]);
   const [clinic, setClinic] = useState<string>('');
-  // const [customerName, setCustomerName] = useState<string>('');
   const [customerEmail, setCustomerEmail] = useState<string>('');
   const [customerPhone, setCustomerPhone] = useState<string>();
   const customerName = useRef<string>('');
   const [loading, setLoading] = useState<boolean>(false);
-
-  // useEffect(() => {
-  //   getAllClinics();
-  //   getAllServices();
-  //   //getAllUsers();
-  // }, []);
 
   const onOkeTest = () => {
     console.log('service: ', service);
@@ -57,28 +48,40 @@ const BookingPage = () => {
       return;
     }
     let newCustomer = {
-      name: customerName,
-      email: customerEmail ? customerEmail : '',
+      name: customerName.current,
+      email: customerEmail,
       phone: customerPhone,
     };
-
+    let userId = '';
+    let orderId = CreateOrderId();
     setLoading(true);
-    const { error: errorCreateUser } = await supabase
-      .from('user')
-      .insert(newCustomer);
+    const { data: dataUser, error: errorCreateUser } = await supabase
+      .from('users')
+      .insert(newCustomer)
+      .select('*');
     if (errorCreateUser) {
+      console.log('I am at create User');
       message.warning(errorCreateUser.message);
       return;
     }
-  };
+    userId = dataUser[0].id;
 
-  // const getAllClinics = async () => {
-  //   const { data }: any = await supabase
-  //     .from('clinics')
-  //     .select('*')
-  //     .eq('active', true);
-  //   setAllClinics(data);
-  // };
+    // create all other
+    let new_order = {
+      id: orderId,
+      user_id: userId,
+      clinic_id: clinic,
+    };
+    const { data: dataOrder, error: errorOrder } = await supabase
+      .from('orders')
+      .insert(new_order);
+    if (errorOrder) {
+      console.log('I am at create Order');
+      message.warning(errorOrder.message);
+      return;
+    }
+    // message.success('Order Create Success');
+  };
 
   const fetchUsers = async () => {
     const { data }: any = await supabase.from('users').select('*');
@@ -112,7 +115,7 @@ const BookingPage = () => {
 
   const {
     data: allUsers,
-    error,
+    error: errorUsers,
     isLoading: userIsLoading,
   } = useSWR<User[]>('/users/get', fetchUsers);
 
@@ -127,7 +130,6 @@ const BookingPage = () => {
     error: serviceError,
     isLoading: serviceIsLoading,
   } = useSWR<Service[]>('/services/get', fetchServices);
-
   useEffect(() => {
     if (userIsLoading || clinicIsLoading || serviceIsLoading) {
       setLoading(true);
@@ -137,27 +139,12 @@ const BookingPage = () => {
   }, [userIsLoading, clinicIsLoading, serviceIsLoading]);
 
   useEffect(() => {
-    if (clinicError || serviceError) {
+    if (clinicError || serviceError || errorUsers) {
       setLoading(false);
     } else {
       setLoading(true);
     }
-  }, [clinicError, serviceError]);
-
-  const onCancel = () => {
-    setConfirmSending(false);
-  };
-  // const getAllServices = async () => {
-  //   let { data, error } = await supabase
-  //     .from('services')
-  //     .select(`*,category_id(*)`)
-  //     .order('created_at', { ascending: false });
-  //   if (error) {
-  //     message.error(error.message);
-  //     return;
-  //   }
-  //   setAllServices(data as Service[]);
-  // };
+  }, [clinicError, serviceError, errorUsers]);
 
   return (
     <div className="mt-[12px] lg:mt-[2px] flex flex-col px-[16px] lg:grid lg:grid-cols-2 lg:px-[130px] lg:py-[30px] lg:gap-[24px]">
@@ -194,7 +181,7 @@ const BookingPage = () => {
           color={'#BC2449'}
           lottie={lottie_booking}
           onCancel={() => setConfirmSending(false)}
-          onOk={onOkeTest}
+          onOk={onOk}
         />
       )}
     </div>

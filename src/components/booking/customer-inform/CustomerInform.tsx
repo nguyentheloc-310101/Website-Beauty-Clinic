@@ -26,7 +26,6 @@ const CustomerInform = ({
       setStatusPhone('');
     }
     setPhoneValue(result.trim());
-
     setCustomerPhone(result.trim());
   };
 
@@ -39,7 +38,6 @@ const CustomerInform = ({
     } else {
       setStatusName('');
     }
-    console.log(result.trim());
     customerName.current = result.trim();
   };
 
