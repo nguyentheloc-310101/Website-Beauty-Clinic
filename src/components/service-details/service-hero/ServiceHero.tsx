@@ -45,11 +45,12 @@ const ServiceHero = () => {
             </Link>
           </div>
           <div className="lg:hidden">
-            {' '}
-            <PrimaryButton
-              text={'Đặt hẹn ngay'}
-              size={'small'}
-            />
+            <Link href="/booking">
+              <PrimaryButton
+                text={'Đặt hẹn ngay'}
+                size={'small'}
+              />
+            </Link>
           </div>
         </div>
       </div>
