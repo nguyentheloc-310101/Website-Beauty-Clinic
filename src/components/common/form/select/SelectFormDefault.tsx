@@ -43,7 +43,7 @@ const SelectFormDefault = (props: SelectItemFormProps) => {
   const style = {
     alignLabel: 'flex items-end mb-[-8px]',
     label:
-      'w-[100%] mb-0 not-italic font-normal text-sm leading-5 text-gray-900 relative ',
+      'w-[100%] mb-1 not-italic font-normal text-sm leading-5 text-gray-900 relative ',
     subLabel: 'text-xs text-[#B9BDC1] ml-1',
     inputBox: `w-[100%] mt-[-8px] not-italic font-normal text-base tracking-[0.5px] text-[#36383A] rounded-lg border-solid border-1px border-[#B9BDC1]`,
     icon: { color: '#36383A', fontSize: 20 },
@@ -54,7 +54,7 @@ const SelectFormDefault = (props: SelectItemFormProps) => {
       name={name}
       label={
         label && (
-          <div className="flex items-end mb-[4px]">
+          <div className="flex items-end mb-[8px]">
             <span className="d-block text-[#36383A] lg:text-[16px] font-[300]">
               {label}
             </span>

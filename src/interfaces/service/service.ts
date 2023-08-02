@@ -1,6 +1,20 @@
+import { CategoryService } from './category-service';
 interface Service {
-  key: React.Key;
-  service_group_name: string;
-  service_list: string[];
+  id: string;
+  created_at: string;
+  name: string;
+  price: number;
+  image: string;
+  description: string;
+  category_id: CategoryService;
+  active: boolean;
+  label: string;
+  status: string;
 }
-export type { Service };
+
+interface ExtendedService extends Service {
+  quantity: number;
+  newPrice: number;
+}
+
+export type { Service, ExtendedService };

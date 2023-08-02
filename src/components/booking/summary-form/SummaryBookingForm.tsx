@@ -1,28 +1,27 @@
 import { gradientText } from '@/constants/gradentText';
 import { Form, message } from 'antd';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ItemInfo } from '../components/ItemInform';
 import SelectFormMultiple from '@/components/common/form/select/SelectFormMultiple';
 import SelectFormDefault from '@/components/common/form/select/SelectFormDefault';
 import CustomerInform from '../customer-inform/CustomerInform';
+import { Clinic } from '@/interfaces/clinic/clinic';
+import { Service } from '@/interfaces/service/service';
 
-const dataMock = [
-  {
-    label: 'Vi tảo đông y',
-    value: 'a1',
-  },
-  {
-    label: 'Thẩm mỹ viện Quốc tế Aura - Vĩnh Long',
-    value: 'b1',
-  },
-];
 interface SummaryBookingProps {
   timeBooking: string;
   dateBooking: string;
+  allClinics: Clinic[];
+  allServices: Service[];
+  setService: (service: string[]) => void;
+  setClinic: (clinic: string) => void;
   setConfirmSending: (e: boolean) => void;
+  customerName: any;
+  setCustomerEmail: (e: string) => void;
+  setCustomerPhone: (e: string) => void;
 }
 interface Booking {
-  customer_name: string;
+  customer_name: any;
   phone: number;
   email: string;
   service: string[];
@@ -30,20 +29,64 @@ interface Booking {
   time_booking: string;
   date_booking: string;
 }
-
+interface SelectParams {
+  label: string;
+  value: string;
+}
 const SummaryBookingForm = (props: SummaryBookingProps) => {
-  const { timeBooking, dateBooking, setConfirmSending } = props;
-  const [service, setService] = useState<string[]>([]);
-  const [clinic, setClinic] = useState<string>('');
-  const [customerName, setCustomerName] = useState<string>('');
-  const [customerEmail, setCustomerEmail] = useState<string>('');
-  const [customerPhone, setCustomerPhone] = useState<number>();
+  const {
+    timeBooking,
+    dateBooking,
+    allClinics,
+    allServices,
+    setClinic,
+    setService,
+    setCustomerEmail,
+    setCustomerPhone,
+    customerName,
+    setConfirmSending,
+  } = props;
 
-  const onFinish = () => {
-    if (service == null) {
-      message.warning('Vui lòng chọn dịch vụ');
+  const [clinicsFormat, setClinicsFormat] = useState<SelectParams[]>([]);
+  const [servicesFormat, setServicesFormat] = useState<SelectParams[]>([]);
+
+  useEffect(() => {
+    if (!allClinics) {
+      message.error('no data allClinics');
       return;
     }
+    formatClinicData(allClinics);
+    if (!allServices) {
+      message.error('no data allServices');
+      return;
+    }
+    formatServiceData(allServices);
+  }, [allClinics, allServices]);
+
+  const formatClinicData = (clinics: Clinic[]) => {
+    const result: SelectParams[] = clinics.map((clinic) => {
+      return {
+        value: clinic.id,
+        label: clinic.name,
+      };
+    });
+    setClinicsFormat(result);
+  };
+  const formatServiceData = (clinics: Service[]) => {
+    const result: SelectParams[] = clinics.map((clinic) => {
+      return {
+        value: clinic.id,
+        label: clinic.name,
+      };
+    });
+    setServicesFormat(result);
+  };
+
+  const onFinish = (e: any) => {
+    // if (e.service == null) {
+    //   message.warning('Vui lòng chọn dịch vụ');
+    //   return;
+    // }
     if (dateBooking == 'dd-mm-yy') {
       message.warning('Vui lòng chọn ngày đặt hẹn');
       return;
@@ -52,19 +95,8 @@ const SummaryBookingForm = (props: SummaryBookingProps) => {
       message.warning('Vui lòng chọn thời gian đặt hẹn');
       return;
     }
-    if (customerName == '') {
-      message.warning('Vui lòng nhập tên khách hàng');
-      return;
-    }
-    if (customerPhone == null) {
-      message.warning('Vui lòng nhập số điện thoại khách hàng');
-      return;
-    }
-    if (customerEmail == '') {
-      message.warning('Vui lòng nhập email khách hàng');
-      return;
-    }
-
+    setService(e?.service);
+    setClinic(e?.clinic);
     setConfirmSending(true);
   };
 
@@ -100,7 +132,7 @@ const SummaryBookingForm = (props: SummaryBookingProps) => {
             label={'Dịch vụ'}
             required={true}
             name={'service'}
-            options={dataMock}
+            options={servicesFormat}
             maxTagPlaceholder={''}
           />
         </div>
@@ -112,12 +144,12 @@ const SummaryBookingForm = (props: SummaryBookingProps) => {
             label={'Cơ sở thực hiện'}
             name={'clinic'}
             subLabel={'(Không bắt buộc)'}
-            options={dataMock}
+            options={clinicsFormat}
           />
         </div>
         <div className="mt-[48px] lg:mt-[48px]">
           <CustomerInform
-            setCustomerName={setCustomerName}
+            customerName={customerName}
             setCustomerEmail={setCustomerEmail}
             setCustomerPhone={setCustomerPhone}
           />
