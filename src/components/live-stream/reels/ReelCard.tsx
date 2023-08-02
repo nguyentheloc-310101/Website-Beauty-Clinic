@@ -22,13 +22,13 @@ const ReelCard = ({ title, author, date }: Props) => {
               className="w-[2rem] h-[2rem] sm:w-[4rem] sm:h-[4rem] object-cover overflow-hiden rounded-lg"
             />
             <div className="text-[0.6rem] sm:text-[0.9rem] h-full flex flex-col items-center justify-center">
-              <p className="text-center font-[600]">Tên sản phẩm</p>
-              <p>
+              <div className="text-center font-[600]">Tên sản phẩm</div>
+              <div>
                 <span className="font-[600] text-center text-[#bc2449]">
                   $12.99
                 </span>{' '}
                 <span className="text-[#B9BDC1] line-through">$14.97</span>
-              </p>
+              </div>
             </div>
           </div>
           <div className="text-white bg-[#bc2449] w-[1.5rem] h-[1.5rem] rounded-lg flex justify-center items-center">

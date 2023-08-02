@@ -40,13 +40,13 @@ interface ItemInfoProps {
 function ItemInfo({ label, value, color, background }: ItemInfoProps) {
   return (
     <div className="flex justify-between items-center lg:text-[16px] text-[#36383A] font-[300] py-2 ">
-      <p>{label}</p>
-      <p
+      <div>{label}</div>
+      <div
         className={`${
           color || 'text-[#36383A]'
         } rounded-md py-1 font-[600] ${background} text-end`}>
         {typeof value == 'number' ? convertVnd(value) : value}
-      </p>
+      </div>
     </div>
   );
 }

@@ -1,22 +1,48 @@
 import { gradientText } from '@/constants/gradentText';
+import { Input } from 'antd';
 import { ChangeEvent, useState } from 'react';
 
 interface CustomerInformProps {
-  setCustomerName: (value: string) => void;
+  customerName: any;
   setCustomerEmail: (value: string) => void;
-  setCustomerPhone: (value: number) => void;
+  setCustomerPhone: (value: string) => void;
 }
-const CustomerInform = (props: CustomerInformProps) => {
-  const { setCustomerName, setCustomerEmail, setCustomerPhone } = props;
+const CustomerInform = ({
+  customerName,
+  setCustomerEmail,
+  setCustomerPhone,
+}: CustomerInformProps) => {
+  const [statusPhone, setStatusPhone] = useState<any>('');
+  const [statusName, setStatusName] = useState<any>('');
   const [phoneValue, setPhoneValue] = useState<any>();
+
   const onChangePhone = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const result = e.target.value.replace(/\D/g, '');
-    setPhoneValue(result);
-    const phoneNumber = Number(result);
-    setCustomerPhone(phoneNumber);
+    if (result === '') {
+      setStatusPhone('error');
+    } else {
+      setStatusPhone('');
+    }
+    setPhoneValue(result.trim());
+
+    setCustomerPhone(result.trim());
   };
+
+  const onChangeName = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const result = e.target.value;
+    if (result == '') {
+      setStatusName('error');
+    } else {
+      setStatusName('');
+    }
+    console.log(result.trim());
+    customerName.current = result.trim();
+  };
+
   return (
     <div className="lg:mt-[12px]">
       <div
@@ -25,15 +51,20 @@ const CustomerInform = (props: CustomerInformProps) => {
       </div>
       <div>
         <InputDefault
+          required={true}
+          status={statusName}
           label="Họ & tên khách hàng"
           placeholder="Họ & tên khách hàng"
-          onChange={(e: any) => setCustomerName(e.target.value)}
+          onChange={onChangeName}
         />
         <div className="lg:grid grid-cols-2 lg:gap-[16px]">
           <InputDefault
+            required={true}
+            status={statusPhone}
             onChange={onChangePhone}
+            pattern="^(\+84|0)(1\d{9}|3\d{8}|5\d{8}|7\d{8}|8\d{8}|9\d{8})$"
             label="Số điện thoại"
-            placeholder="Chỉ nhật số"
+            placeholder="Chỉ nhập số"
             value={phoneValue}
           />
           <InputDefault
@@ -50,21 +81,38 @@ const CustomerInform = (props: CustomerInformProps) => {
 export default CustomerInform;
 interface InputContactProps {
   label: string;
+  pattern?: string;
   placeholder?: string;
   onChange?: any;
+  errorMessage?: string;
+  required?: boolean;
   name?: string;
   value?: any;
+  status?: 'error' | 'warning';
 }
 export const InputDefault = (props: InputContactProps) => {
-  const { name, label, value, placeholder, onChange } = props;
+  const {
+    name,
+    label,
+    value,
+    required,
+    pattern,
+    status,
+    placeholder,
+    onChange,
+    errorMessage,
+  } = props;
   return (
     <div className="py-[5px] z-50">
       <div className="block mb-[5px] text-[#36383A] lg:text-[16px] font-[300] lg:leading-[24px] lg:tracking-[-0.5px]">
         {label}
+        {required && <span className="text-[red]"> *</span>}
       </div>
-      <input
-        required={false}
+      <Input
+        required={required}
         onChange={onChange}
+        pattern={pattern}
+        status={status}
         name={name}
         value={value}
         style={{ outline: '#333' }}

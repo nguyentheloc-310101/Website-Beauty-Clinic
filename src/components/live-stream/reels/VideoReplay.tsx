@@ -77,20 +77,20 @@ const VideoReplay = () => {
                     isConnectStream={true}
                     streamInfo={streams[0]}
                   />
-                  <p className="absolute top-[1rem] left-[1rem] rounded-lg py-1 px-2 bg-[#bc2449] text-white">
+                  <div className="absolute top-[1rem] left-[1rem] rounded-lg py-1 px-2 bg-[#bc2449] text-white">
                     Live
-                  </p>
-                  <p className="absolute top-[1rem] right-[1rem] rounded-lg flex gap-2 items-center py-1 px-2 bg-[#1F1F1F33] text-white text-[1rem]">
+                  </div>
+                  <div className="absolute top-[1rem] right-[1rem] rounded-lg flex gap-2 items-center py-1 px-2 bg-[#1F1F1F33] text-white text-[1rem]">
                     <LiaEyeSolid /> <span>3.5k</span>
-                  </p>
+                  </div>
                 </div>
                 <div className="px-5">
-                  <p className="font-[700] my-1 text-[0.7rem] sm:text-[1.1rem] text-[#bc2449]">
+                  <div className="font-[700] my-1 text-[0.7rem] sm:text-[1.1rem] text-[#bc2449]">
                     Test Stream
-                  </p>
+                  </div>
                   <div className="flex justify-between text-[0.7rem] sm:text-[1rem]">
                     <span>@Rey</span>
-                    <p>5/7/2023 10:30</p>
+                    <div>5/7/2023 10:30</div>
                   </div>
                 </div>
               </div>
@@ -114,7 +114,7 @@ const VideoReplay = () => {
                   </p>
                   <div className="flex justify-between text-[0.7rem] sm:text-[1rem]">
                     <span>@Heo</span>
-                    <p>5/5/2023 7:30</p>
+                    <div>5/5/2023 7:30</div>
                   </div>
                 </div>
               </div>
@@ -140,7 +140,7 @@ const VideoReplay = () => {
                   </p>
                   <div className="flex justify-between text-[0.7rem] sm:text-[1rem]">
                     <span>@Rey</span>
-                    <p>5/7/2023 10:30</p>
+                    <div>5/7/2023 10:30</div>
                   </div>
                 </div>
               </div>
@@ -163,7 +163,7 @@ const VideoReplay = () => {
                   </p>
                   <div className="flex justify-between text-[0.7rem] sm:text-[1rem]">
                     <span>@Heo</span>
-                    <p>5/5/2023 7:30</p>
+                    <div>5/5/2023 7:30</div>
                   </div>
                 </div>
               </div>
@@ -190,7 +190,7 @@ const VideoReplay = () => {
                   </p>
                   <div className="flex justify-between text-[0.7rem] sm:text-[1rem]">
                     <span>@Rey</span>
-                    <p>5/7/2023 10:30</p>
+                    <div>5/7/2023 10:30</div>
                   </div>
                 </div>
               </div>
@@ -214,7 +214,7 @@ const VideoReplay = () => {
                   </p>
                   <div className="flex justify-between text-[0.7rem] sm:text-[1rem]">
                     <span>@Heo</span>
-                    <p>5/5/2023 7:30</p>
+                    <div>5/5/2023 7:30</div>
                   </div>
                 </div>
               </div>
