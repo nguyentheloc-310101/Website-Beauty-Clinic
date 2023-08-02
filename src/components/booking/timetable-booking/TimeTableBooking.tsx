@@ -34,7 +34,6 @@ const time = [
 
 const TimeTableBooking = (props: TimeTableBookingProps) => {
   const { setTimeBooking } = props;
-  const [isClicked, setIsClicked] = useState<boolean>(false);
   const [indexTime, setIndexTime] = useState<number>();
 
   const handleOnClick = (item: any, key: number) => {
@@ -42,12 +41,12 @@ const TimeTableBooking = (props: TimeTableBookingProps) => {
     setIndexTime(key);
   };
   return (
-    <div className="my-[16px] gap-[8px] p-[16px] rounded-[20px] bg-[#fff] lg:p-[24px] lg:w-full lg:h-[326px] lg:flex lg:flex-col justify-center lg:gap-[24px]">
+    <div className="mb-[16px] gap-[8px] p-[16px] rounded-[20px] bg-[#fff] lg:p-[24px] lg:w-full lg:h-full lg:flex lg:flex-col justify-center lg:gap-[24px]">
       <div
         className={`${gradientText} mb-[16px] lg:text-[24px] font-[800] lg:leading-[36px] `}>
         Chọn giờ làm dịch vụ
       </div>
-      <div className="flex ml-[5px] items-center justify-start gap-[8px] flex-wrap lg:gap-[12px]">
+      <div className="flex items-center justify-start gap-[8px] flex-wrap lg:gap-[12px]">
         {time.map((item, index) => {
           return (
             <div
