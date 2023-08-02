@@ -19,7 +19,7 @@ const HeaderAura = () => {
 
   return (
     <>
-      <div className="lg:hidden relative flex justify-between items-center py-[1rem] px-[20px] ">
+      <div className="lg:hidden relative flex bg-white justify-between items-center py-[1rem] px-[20px]">
         <Image
           src={BurgerIcon}
           alt="Burger"
