@@ -20,7 +20,7 @@ const DoctorCard = (props: DoctorCardProps) => {
         <img
           src={image}
           alt="doctor-image"
-          className="w-full h-full scale-100"
+          className="w-full h-auto scale-100"
         />
       </div>
       <div className="w-full lg:p-[20px]">
