@@ -7,7 +7,7 @@ interface CalendarBookingProps {
 const CalendarBooking = (props: CalendarBookingProps) => {
   const { setDateBooking } = props;
   const onSelectChange = (value: any) => {
-    setDateBooking(value.format('DD/MM/YYYY') as string);
+    setDateBooking(value.format('YYYY/MM/DD') as string);
   };
 
   return (

@@ -7,6 +7,7 @@ import BurgerIcon from '../../statics/images/Layer_1.png';
 import HomeIcon from '../../statics/images/home.png';
 import ServiceIcon from '../../statics/images/service.png';
 import NavLinks from './NavLinks';
+import { gradientText } from '@/constants/gradentText';
 
 const FooterIcon =
   'https://ucarecdn.com/755747d3-1799-4b18-af37-70ef308bb242/-/quality/smart/-/format/webp/';
@@ -92,17 +93,18 @@ const HeaderAura = () => {
         </div>
       </div>
       <>
-        <div className="hidden w-full h-[80px] lg:flex xl:px-[10rem] lg:px-[7rem]  md:px-[6rem] py-[1rem] items-center">
+        <div className="hidden w-full h-[90px] lg:flex xl:px-[10rem] lg:px-[7rem] lg:justify-between md:px-[6rem] py-[1rem] items-center">
           <Link href="/">
             <img
               src={Logo}
               alt="Logo"
               style={{ objectFit: 'contain' }}
-              className="w-[103px] h-[45px] cursor-pointer"
+              className="w-[118px] h-[52px] cursor-pointer"
             />
           </Link>
 
-          <div className="flex ml-[10%] w-full font-[600] text-[#bc2449] text-[16px] items-center justify-between">
+          <div
+            className={`flex ml-[10%] w-full font-[600] ${gradientText} text-[20px] items-center justify-end gap-[70px]`}>
             <Link href="/">
               <span className="text-center cursor-pointer">TRANG CHỦ</span>
             </Link>
@@ -117,10 +119,10 @@ const HeaderAura = () => {
             </Link>
 
             <div className="flex flex-col items-center">
-              <span className="text-[16px] font-[500px] text-center cursor-pointer">
+              <span className="text-[16px] font-[500px] text-black  text-center cursor-pointer">
                 Tư vấn miễn phí
               </span>
-              <span className="font-[700px] text-[18px] text-black text-center cursor-pointer">
+              <span className="font-[700px] text-[18px] text-[#BC2449] text-center cursor-pointer">
                 0833.08.2222
               </span>
             </div>

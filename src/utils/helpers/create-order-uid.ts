@@ -1,4 +1,4 @@
-export const CreateOrderId = () => {
+export const CreateId = () => {
   var result = '';
   var characters = '0123456789';
   var charactersLength = characters.length;

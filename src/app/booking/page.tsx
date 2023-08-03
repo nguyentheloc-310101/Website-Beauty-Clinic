@@ -9,14 +9,17 @@ import { useEffect, useRef, useState } from 'react';
 import lottie_booking from '../../../public/lottie/animation_lks6x6yc.json';
 import { message } from 'antd';
 import { Service } from '@/interfaces/service/service';
-
 import useSWR from 'swr';
-import { CreateOrderId } from '@/utils/helpers/create-order-uid';
+import { CreateId } from '@/utils/helpers/create-order-uid';
 import { User } from '@/interfaces/users/user';
+
+import useUsersStore from '@/stores/users-store';
+import { useRouter } from 'next/navigation';
 
 const desc_popConfirm_sending =
   'Khi bấm “Xác nhận”, đặt hẹn của bạn sẽ được lên lịch. Sẽ có tư vấn viên liên hệ với bạn thời gian sớm nhất. ';
 const BookingPage = () => {
+  const router = useRouter();
   const [dateBooking, setDateBooking] = useState<string>('dd-mm-yy');
   const [timeBooking, setTimeBooking] = useState<string>('00:00');
   const [confirmSending, setConfirmSending] = useState<boolean>(false);
@@ -24,10 +27,11 @@ const BookingPage = () => {
   const [service, setService] = useState<string[]>([]);
   const [clinic, setClinic] = useState<string>('');
   const [customerEmail, setCustomerEmail] = useState<string>('');
-  const [customerPhone, setCustomerPhone] = useState<string>();
+  const [customerPhone, setCustomerPhone] = useState<string>('');
   const customerName = useRef<string>('');
   const [loading, setLoading] = useState<boolean>(false);
-
+  const [allUsers, setAllUsers] = useState<User[]>([]);
+  const usersStore = useUsersStore((state) => state);
   const onOkeTest = () => {
     console.log('service: ', service);
     console.log('clinic: ', clinic);
@@ -40,10 +44,12 @@ const BookingPage = () => {
 
   const onOk = async () => {
     //create user
-    const validPhone: any = allUsers?.filter(
-      (user: User) => user.phone == customerPhone
-    );
-    if (validPhone.length > 0) {
+    console.log(allUsers);
+    const { data: validPhone } = await supabase
+      .from('users')
+      .select()
+      .match({ phone: customerPhone });
+    if (validPhone && validPhone.length > 0) {
       message.error('Số điện thoại đã tồn tại');
       setConfirmSending(false);
       return;
@@ -54,7 +60,8 @@ const BookingPage = () => {
       phone: customerPhone,
     };
     let userId = '';
-    let orderId = CreateOrderId();
+    const orderId = CreateId();
+
     setLoading(true);
     const { data: dataUser, error: errorCreateUser } = await supabase
       .from('users')
@@ -84,14 +91,30 @@ const BookingPage = () => {
     // message.success('Order Create Success');
 
     //create booking
-  };
-
-  const fetchUsers = async () => {
-    const { data }: any = await supabase.from('users').select('*');
-    if (data) {
-      return data;
+    {
+      service &&
+        service.map(async (item) => {
+          let new_booking = {
+            id: CreateId(),
+            order_id: orderId,
+            clinic_id: clinic,
+            service_id: item,
+            date: dateBooking,
+            time: timeBooking,
+          };
+          const { data: dataBooking, error: errorBooking } = await supabase
+            .from('bookings')
+            .insert(new_booking);
+          if (errorBooking) {
+            console.log('I am at create Booking');
+            message.warning(errorBooking.message);
+            return;
+          }
+        });
     }
-    return [];
+    setConfirmSending(false);
+    message.success('Booking Create Success');
+    router.push('/service-details');
   };
 
   const fetchClinics = async () => {
@@ -117,12 +140,6 @@ const BookingPage = () => {
   };
 
   const {
-    data: allUsers,
-    error: errorUsers,
-    isLoading: userIsLoading,
-  } = useSWR<User[]>('/users/get', fetchUsers);
-
-  const {
     data: allClinics,
     error: clinicError,
     isLoading: clinicIsLoading,
@@ -133,21 +150,28 @@ const BookingPage = () => {
     error: serviceError,
     isLoading: serviceIsLoading,
   } = useSWR<Service[]>('/services/get', fetchServices);
-  useEffect(() => {
-    if (userIsLoading || clinicIsLoading || serviceIsLoading) {
-      setLoading(true);
-    } else {
-      setLoading(false);
-    }
-  }, [userIsLoading, clinicIsLoading, serviceIsLoading]);
 
   useEffect(() => {
-    if (clinicError || serviceError || errorUsers) {
+    if (usersStore.users) {
+      console.log('updated here');
+      setAllUsers(usersStore.users);
+    }
+  }, [usersStore.users]);
+  useEffect(() => {
+    if (clinicIsLoading || serviceIsLoading) {
+      setLoading(true);
+    } else {
+      setLoading(false);
+    }
+  }, [clinicIsLoading, serviceIsLoading]);
+
+  useEffect(() => {
+    if (clinicError || serviceError) {
       setLoading(false);
     } else {
       setLoading(true);
     }
-  }, [clinicError, serviceError, errorUsers]);
+  }, [clinicError, serviceError]);
 
   return (
     <div className="mt-[12px] lg:mt-[2px] flex flex-col px-[16px] lg:grid lg:grid-cols-2 lg:px-[130px] lg:py-[30px] lg:gap-[24px]">
@@ -169,7 +193,6 @@ const BookingPage = () => {
             dateBooking={dateBooking}
             allClinics={allClinics as Clinic[]}
             allServices={allServices as Service[]}
-            // setCustomerName={setCustomerName}
             customerName={customerName}
             setCustomerEmail={setCustomerEmail}
             setCustomerPhone={setCustomerPhone}

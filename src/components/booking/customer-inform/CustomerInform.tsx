@@ -67,6 +67,8 @@ const CustomerInform = ({
           />
           <InputDefault
             label="Email"
+            type={'email'}
+            // pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
             placeholder="Khách có thể bỏ trống"
             onChange={(e: any) => setCustomerEmail(e.target.value)}
           />
@@ -85,6 +87,7 @@ interface InputContactProps {
   errorMessage?: string;
   required?: boolean;
   name?: string;
+  type?: string;
   value?: any;
   status?: 'error' | 'warning';
 }
@@ -98,6 +101,7 @@ export const InputDefault = (props: InputContactProps) => {
     status,
     placeholder,
     onChange,
+    type,
     errorMessage,
   } = props;
   return (
@@ -113,6 +117,7 @@ export const InputDefault = (props: InputContactProps) => {
         status={status}
         name={name}
         value={value}
+        type={type}
         style={{ outline: '#333' }}
         className="w-full h-[46px] gap-[8px] border p-[12px] lg:text-[15px] text-[#36383A] lg:w-full font-[300] lg:leading-[20px] lg:tracking-[0.15px] lg:mb-[12px] lg:h-[42px] rounded-[8px] "
         placeholder={placeholder}
