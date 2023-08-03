@@ -7,7 +7,7 @@ import { Clinic } from '@/interfaces/clinic/clinic';
 import { supabase } from '@/services/supabase';
 import { useEffect, useRef, useState } from 'react';
 import lottie_booking from '../../../public/lottie/animation_lks6x6yc.json';
-import { message } from 'antd';
+import { Spin, message } from 'antd';
 import { Service } from '@/interfaces/service/service';
 import useSWR from 'swr';
 import { CreateId } from '@/utils/helpers/create-order-uid';
@@ -15,6 +15,7 @@ import { User } from '@/interfaces/users/user';
 
 import useUsersStore from '@/stores/users-store';
 import { useRouter } from 'next/navigation';
+import LoadingDefault from '@/components/common/loading/LoadingDefault';
 
 const desc_popConfirm_sending =
   'Khi bấm “Xác nhận”, đặt hẹn của bạn sẽ được lên lịch. Sẽ có tư vấn viên liên hệ với bạn thời gian sớm nhất. ';
@@ -44,7 +45,7 @@ const BookingPage = () => {
 
   const onOk = async () => {
     //create user
-    console.log(allUsers);
+
     const { data: validPhone } = await supabase
       .from('users')
       .select()
@@ -113,7 +114,8 @@ const BookingPage = () => {
         });
     }
     setConfirmSending(false);
-    message.success('Booking Create Success');
+    message.success('Đặt lịch hẹn thành công');
+    setLoading(false);
     router.push('/service-details');
   };
 
@@ -157,59 +159,47 @@ const BookingPage = () => {
       setAllUsers(usersStore.users);
     }
   }, [usersStore.users]);
-  useEffect(() => {
-    if (clinicIsLoading || serviceIsLoading) {
-      setLoading(true);
-    } else {
-      setLoading(false);
-    }
-  }, [clinicIsLoading, serviceIsLoading]);
-
-  useEffect(() => {
-    if (clinicError || serviceError) {
-      setLoading(false);
-    } else {
-      setLoading(true);
-    }
-  }, [clinicError, serviceError]);
 
   return (
-    <div className="mt-[12px] lg:mt-[2px] flex flex-col px-[16px] lg:grid lg:grid-cols-2 lg:px-[130px] lg:py-[30px] lg:gap-[24px]">
-      <div className="flex flex-col lg:flex-col lg:gap-[24px] lg:h-full">
-        <div>
-          <CalendarBooking setDateBooking={setDateBooking} />
+    <div className="relative">
+      <div className="mt-[12px] lg:mt-[2px] flex flex-col px-[16px] lg:grid lg:grid-cols-2 lg:px-[130px] lg:py-[30px] lg:gap-[24px]">
+        <div className="flex flex-col lg:flex-col lg:gap-[24px] lg:h-full">
+          <div>
+            <CalendarBooking setDateBooking={setDateBooking} />
+          </div>
+          <div>
+            <TimeTableBooking setTimeBooking={setTimeBooking} />
+          </div>
         </div>
-        <div>
-          <TimeTableBooking setTimeBooking={setTimeBooking} />
+        <div className="p-[24px] lg:flex lg:w-full rounded-[20px] bg-[#fff] lg:p-[24px]">
+          <div className="w-full">
+            <SummaryBookingForm
+              setConfirmSending={setConfirmSending}
+              setService={setService}
+              setClinic={setClinic}
+              timeBooking={timeBooking}
+              dateBooking={dateBooking}
+              allClinics={allClinics as Clinic[]}
+              allServices={allServices as Service[]}
+              customerName={customerName}
+              setCustomerEmail={setCustomerEmail}
+              setCustomerPhone={setCustomerPhone}
+            />
+          </div>
         </div>
-      </div>
-      <div className="p-[24px] lg:flex lg:w-full rounded-[20px] bg-[#fff] lg:p-[24px]">
-        <div className="w-full">
-          <SummaryBookingForm
-            setConfirmSending={setConfirmSending}
-            setService={setService}
-            setClinic={setClinic}
-            timeBooking={timeBooking}
-            dateBooking={dateBooking}
-            allClinics={allClinics as Clinic[]}
-            allServices={allServices as Service[]}
-            customerName={customerName}
-            setCustomerEmail={setCustomerEmail}
-            setCustomerPhone={setCustomerPhone}
+        {confirmSending && (
+          <PopUpConfirm
+            loading={loading}
+            title={'Gửi đặt hẹn'}
+            description={desc_popConfirm_sending}
+            color={'#BC2449'}
+            lottie={lottie_booking}
+            onCancel={() => setConfirmSending(false)}
+            onOk={onOk}
           />
-        </div>
+        )}
       </div>
-      {confirmSending && (
-        <PopUpConfirm
-          loading={false}
-          title={'Gửi đặt hẹn'}
-          description={desc_popConfirm_sending}
-          color={'#BC2449'}
-          lottie={lottie_booking}
-          onCancel={() => setConfirmSending(false)}
-          onOk={onOk}
-        />
-      )}
+      {loading && <LoadingDefault loading={loading} />}
     </div>
   );
 };

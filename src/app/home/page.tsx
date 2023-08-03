@@ -16,7 +16,6 @@ const HomePage = () => {
     <>
       <div className="">
         <PanelContact />
-
         <div className="flex flex-col items-center justify-center ">
           <HeroSection />
         </div>
@@ -32,7 +31,7 @@ const HomePage = () => {
         <SliderCustomerSaid />
         <SeeMoreAboutAura />
         <ContactInformation />
-        <ReelsOutStanding />
+        {/* <ReelsOutStanding /> */}
       </div>
     </>
   );

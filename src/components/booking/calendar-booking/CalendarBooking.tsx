@@ -21,6 +21,7 @@ const CalendarBooking = (props: CalendarBookingProps) => {
           id="datePicker-antd_id"
           className="w-full">
           <Calendar
+            mode={'month'}
             fullscreen={false}
             onSelect={onSelectChange}
           />

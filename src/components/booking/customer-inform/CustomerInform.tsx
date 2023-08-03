@@ -106,7 +106,7 @@ export const InputDefault = (props: InputContactProps) => {
   } = props;
   return (
     <div className="py-[5px] z-50">
-      <div className="block mb-[5px] text-[#36383A] lg:text-[16px] font-[300] lg:leading-[24px] lg:tracking-[-0.5px]">
+      <div className="block mb-[5px] text-[#36383A] lg:text-[16px] font-[400] lg:leading-[24px] lg:tracking-[-0.5px]">
         {label}
         {required && <span className="text-[red]"> *</span>}
       </div>

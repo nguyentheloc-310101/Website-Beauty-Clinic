@@ -55,7 +55,7 @@ const SelectFormDefault = (props: SelectItemFormProps) => {
       label={
         label && (
           <div className="flex items-end mb-[8px]">
-            <span className="d-block text-[#36383A] lg:text-[16px] font-[300]">
+            <span className="d-block text-[#36383A] lg:text-[16px] font-[400]">
               {label}
             </span>
             <span className="text-[16px] text-[#767A7F] ml-1">{subLabel}</span>

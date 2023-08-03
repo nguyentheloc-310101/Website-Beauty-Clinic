@@ -5,6 +5,7 @@ import ServiceFormMobile from '@/components/service-details/service-form/Service
 import ServiceHero from '@/components/service-details/service-hero/ServiceHero';
 import OtherServices from '@/components/service-details/service-others/OtherServices';
 import ServicePayment from '@/components/service-details/service-payments/ServicePayment';
+import ServiceSideBar from '@/components/service-details/service-sideBar/ServiceSideBar';
 import ServiceSteps from '@/components/service-details/service-steps/ServiceSteps';
 import ZaloQR from '@/components/service-details/zalo-qr/ZaloQR';
 import ZaloQRMobile from '@/components/service-details/zalo-qr/ZaloQRMobile';
@@ -20,7 +21,9 @@ const ServicePage = () => {
       <ServiceHero />
       <div className="lg:flex flex-cols">
         <div>
-          <div className="lg:w-[430px] lg:my-[80px]"></div>
+          <div className="hidden lg:block lg:w-[430px] lg:mt-[197px] px-[16px]">
+            <ServiceSideBar />
+          </div>
         </div>
         <div className="lg:my-[80px]">
           <div className="px-[16px] pb-[16px] lg:mb-[80px]">

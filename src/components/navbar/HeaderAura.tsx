@@ -104,25 +104,28 @@ const HeaderAura = () => {
           </Link>
 
           <div
-            className={`flex ml-[10%] w-full font-[600] ${gradientText} text-[20px] items-center justify-end gap-[70px]`}>
+            className={`flex ml-[10%] w-full font-[700] ${gradientText} text-[16px] items-center justify-end gap-[70px]`}>
             <Link href="/">
-              <span className="text-center cursor-pointer">TRANG CHỦ</span>
+              <span className="text-center cursor-pointer uppercase">
+                Trang chủ
+              </span>
             </Link>
-            <Link href="/introduction">
-              <span className="text-center cursor-pointer">GIỚI THIỆU</span>
-            </Link>
-            <Link href="/preferential">
-              <span className="text-center cursor-pointer">ƯU ĐÃI</span>
+            <Link href="/service-details">
+              <span className="text-center cursor-pointer uppercase">
+                dịch vụ
+              </span>
             </Link>
             <Link href="/contact">
-              <span className="text-center cursor-pointer">LIÊN HỆ</span>
+              <span className="text-center cursor-pointer uppercase">
+                liên hệ
+              </span>
             </Link>
 
             <div className="flex flex-col items-center">
-              <span className="text-[16px] font-[500px] text-black  text-center cursor-pointer">
+              <span className="text-[14px] font-[500px] text-black  text-center cursor-pointer">
                 Tư vấn miễn phí
               </span>
-              <span className="font-[700px] text-[18px] text-[#BC2449] text-center cursor-pointer">
+              <span className="font-[700px] text-[20px] text-[#BC2449] text-center cursor-pointer">
                 0833.08.2222
               </span>
             </div>
