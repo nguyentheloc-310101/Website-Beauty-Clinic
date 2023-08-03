@@ -9,9 +9,10 @@ import { useEffect, useRef, useState } from 'react';
 import lottie_booking from '../../../public/lottie/animation_lks6x6yc.json';
 import { message } from 'antd';
 import { Service } from '@/interfaces/service/service';
-import { User } from '@/interfaces/users/user';
+
 import useSWR from 'swr';
 import { CreateOrderId } from '@/utils/helpers/create-order-uid';
+import { User } from '@/interfaces/users/user';
 
 const desc_popConfirm_sending =
   'Khi bấm “Xác nhận”, đặt hẹn của bạn sẽ được lên lịch. Sẽ có tư vấn viên liên hệ với bạn thời gian sớm nhất. ';
@@ -81,6 +82,8 @@ const BookingPage = () => {
       return;
     }
     // message.success('Order Create Success');
+
+    //create booking
   };
 
   const fetchUsers = async () => {

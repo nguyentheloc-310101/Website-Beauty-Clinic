@@ -51,16 +51,13 @@ const SummaryBookingForm = (props: SummaryBookingProps) => {
   const [servicesFormat, setServicesFormat] = useState<SelectParams[]>([]);
 
   useEffect(() => {
-    if (!allClinics) {
-      message.error('no data allClinics');
-      return;
+    if (allClinics) {
+      formatClinicData(allClinics);
     }
-    formatClinicData(allClinics);
-    if (!allServices) {
-      message.error('no data allServices');
-      return;
+    if (allServices) {
+      formatServiceData(allServices);
     }
-    formatServiceData(allServices);
+    return;
   }, [allClinics, allServices]);
 
   const formatClinicData = (clinics: Clinic[]) => {
@@ -83,10 +80,6 @@ const SummaryBookingForm = (props: SummaryBookingProps) => {
   };
 
   const onFinish = (e: any) => {
-    // if (e.service == null) {
-    //   message.warning('Vui lòng chọn dịch vụ');
-    //   return;
-    // }
     if (dateBooking == 'dd-mm-yy') {
       message.warning('Vui lòng chọn ngày đặt hẹn');
       return;
