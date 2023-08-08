@@ -6,6 +6,8 @@ import React, { useState } from 'react';
 
 type MenuItem = Required<MenuProps>['items'][number];
 
+const categories = [{}];
+
 function getItem(
   label: React.ReactNode,
   key: React.Key,

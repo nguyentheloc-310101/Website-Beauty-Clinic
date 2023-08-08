@@ -3,17 +3,23 @@
 import { useState } from 'react';
 import CardServiceAdvisory from '../card-service-advisory/CardServiceAdvisory';
 import VoucherButton from './VoucherButton';
+import { useGeneralHomeContext } from '@/app/home/page';
+import { IHomeService } from '@/interfaces/home/IHome';
 
 const HeroSection = () => {
-  // console.log(heroImg);
   const [isAdviseCard, setIsAdviceCard] = useState<boolean>(false);
+  const { generalData, setGeneralData } = useGeneralHomeContext();
+  const [background, setBackground] = useState<string>('');
+  const [videoLink, setVideoLink] = useState<string>('');
+
+  // console.log('generalData', generalData);
   return (
     <div className="relative w-full">
       <div>
         <div className="w-full">
           <img
             src={
-              'https://ucarecdn.com/0671beec-521d-4966-ada9-e564afcadfbb/-/quality/smart/-/format/auto/'
+              generalData?.data?.background + '/-/quality/smart/-/format/auto/'
             }
             alt="cover-img"
             className="w-full h-full"
@@ -37,7 +43,9 @@ const HeroSection = () => {
         </div>
       </div>
       {isAdviseCard && (
-        <CardServiceAdvisory setIsAdviceCard={setIsAdviceCard} />
+        <div>
+          <CardServiceAdvisory setIsAdviceCard={setIsAdviceCard} />
+        </div>
       )}
     </div>
   );

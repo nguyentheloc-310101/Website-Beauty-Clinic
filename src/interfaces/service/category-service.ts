@@ -1,9 +1,12 @@
-interface CategoryService {
+interface IBase {
   id: string;
+  key: React.Key;
+}
+
+interface Category extends IBase {
   created_at: any;
   name: string;
-  label: string;
   active: true;
 }
 
-export type { CategoryService };
+export type { Category };

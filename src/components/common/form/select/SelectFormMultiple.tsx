@@ -24,7 +24,6 @@ interface SelectItemFormProps {
   onChange?: Function;
 }
 
-const { Option } = Select;
 const SelectFormMultiple = (props: SelectItemFormProps) => {
   const {
     name,

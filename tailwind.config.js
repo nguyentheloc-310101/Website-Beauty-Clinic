@@ -10,6 +10,7 @@ module.exports = {
     extend: {},
     fontFamily: {
       montserrat: ['Montserrat', 'sans-serif'],
+      ameyallinda: ['Ameyallinda Signatur', 'sans-serif'],
     },
   },
   plugins: [require('tailwind-scrollbar-hide')],

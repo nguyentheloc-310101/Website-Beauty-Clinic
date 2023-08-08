@@ -2,7 +2,11 @@
 import serviceSlideData from '@/data/sliders/serviceSlider';
 import React, { useRef, useState } from 'react';
 import CardService from './CardService';
+import { IHomeService } from '@/interfaces/home/IHome';
+import { useGeneralHomeContext } from '@/app/home/page';
 const SliderService = () => {
+  const { generalData, setGeneralData } = useGeneralHomeContext();
+  const serviceList: IHomeService[] = generalData?.data?.services;
   const sliderRef = useRef<HTMLDivElement>(null);
   const [isMouseDown, setIsMouseDown] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -32,15 +36,15 @@ const SliderService = () => {
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onMouseMove={handleMouseMove}>
-      {serviceSlideData.map((item) => {
-        return (
-          <CardService
-            key={item.key}
-            image={item.image}
-            alt={item.alt}
-          />
-        );
-      })}
+      {serviceList &&
+        serviceList?.map((item, key) => {
+          return (
+            <CardService
+              key={key}
+              image={item.image}
+            />
+          );
+        })}
     </div>
   );
 };

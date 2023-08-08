@@ -5,14 +5,14 @@ import { ItemInfo } from '../components/ItemInform';
 import SelectFormMultiple from '@/components/common/form/select/SelectFormMultiple';
 import SelectFormDefault from '@/components/common/form/select/SelectFormDefault';
 import CustomerInform from '../customer-inform/CustomerInform';
-import { Clinic } from '@/interfaces/clinic/clinic';
-import { Service } from '@/interfaces/service/service';
+import { IClinic } from '@/interfaces/clinic/clinic';
+import { IService } from '@/interfaces/service/service';
 
 interface SummaryBookingProps {
   timeBooking: string;
   dateBooking: string;
-  allClinics: Clinic[];
-  allServices: Service[];
+  allClinics: IClinic[];
+  allServices: IService[];
   setService: (service: string[]) => void;
   setClinic: (clinic: string) => void;
   setConfirmSending: (e: boolean) => void;
@@ -60,7 +60,7 @@ const SummaryBookingForm = (props: SummaryBookingProps) => {
     return;
   }, [allClinics, allServices]);
 
-  const formatClinicData = (clinics: Clinic[]) => {
+  const formatClinicData = (clinics: IClinic[]) => {
     const result: SelectParams[] = clinics.map((clinic) => {
       return {
         value: clinic.id,
@@ -69,7 +69,7 @@ const SummaryBookingForm = (props: SummaryBookingProps) => {
     });
     setClinicsFormat(result);
   };
-  const formatServiceData = (clinics: Service[]) => {
+  const formatServiceData = (clinics: IService[]) => {
     const result: SelectParams[] = clinics.map((clinic) => {
       return {
         value: clinic.id,

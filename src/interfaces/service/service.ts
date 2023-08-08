@@ -1,20 +1,23 @@
-import { CategoryService } from './category-service';
-interface Service {
-  id: string;
-  created_at: string;
-  name: string;
-  price: number;
+interface IBase {
+  id: string; // supabase id
+  key: number; // key for react mapping table
+}
+
+export interface IServiceStep extends IBase {
+  step: number;
+  image: any;
+  desc: string;
+}
+
+export interface IService extends IBase {
   image: string;
-  description: string;
-  category_id: CategoryService;
-  active: boolean;
-  label: string;
-  status: string;
+  price: number;
+  content: string;
+  name: string;
+  category_id: string;
 }
 
-interface ExtendedService extends Service {
-  quantity: number;
-  newPrice: number;
+export interface IServiceCategory extends IBase {
+  slug: string;
+  name: string;
 }
-
-export type { Service, ExtendedService };

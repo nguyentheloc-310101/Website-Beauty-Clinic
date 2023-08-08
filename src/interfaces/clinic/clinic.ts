@@ -1,13 +1,13 @@
-interface Clinic {
+interface IClinic {
   id: string;
+  image: string;
   created_at: string;
-  name: string;
-  avatar: string;
-  label: string | null;
-  address: string;
-  description: string;
+  location: string;
+  short_address: string;
+  open: string;
+  closed: string;
   active: boolean;
-  district: string | null;
+  name: string;
+  description: string;
 }
-
-export type { Clinic };
+export type { IClinic };

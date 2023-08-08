@@ -5,7 +5,7 @@ import ServiceFormMobile from '@/components/service-details/service-form/Service
 import ServiceHero from '@/components/service-details/service-hero/ServiceHero';
 import OtherServices from '@/components/service-details/service-others/OtherServices';
 import ServicePayment from '@/components/service-details/service-payments/ServicePayment';
-import ServiceSideBar from '@/components/service-details/service-sideBar/ServiceSideBar';
+import ServiceSideBarVs1 from '@/components/service-details/service-sideBar/vs1/ServiceSideBarVs1';
 import ServiceSteps from '@/components/service-details/service-steps/ServiceSteps';
 import ZaloQR from '@/components/service-details/zalo-qr/ZaloQR';
 import ZaloQRMobile from '@/components/service-details/zalo-qr/ZaloQRMobile';
@@ -22,7 +22,7 @@ const ServicePage = () => {
       <div className="lg:flex flex-cols">
         <div>
           <div className="hidden lg:block lg:w-[430px] lg:mt-[197px] px-[16px]">
-            <ServiceSideBar />
+            <ServiceSideBarVs1 />
           </div>
         </div>
         <div className="lg:my-[80px]">
@@ -38,11 +38,6 @@ const ServicePage = () => {
         <div className="lg:ml-[430px]">
           <ServiceForm />
         </div>
-        <img
-          src="https://ucarecdn.com/13e7673d-1023-4915-9a0d-e7a7a882808f/-/quality/smart/-/format/auto/"
-          alt="rb-service"
-          className="absolute top-[-15vh] right-0 w-[90vw] h-auto "
-        />
       </div>
       <div className="relative lg:hidden h-[683px] w-full overflow-hidden">
         <ServiceFormMobile />

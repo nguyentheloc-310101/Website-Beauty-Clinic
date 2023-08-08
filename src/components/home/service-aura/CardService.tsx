@@ -1,8 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-
 interface CardServiceProps {
   image: string;
-  alt: string;
+  alt?: string;
 }
 
 const CardService = (props: CardServiceProps) => {

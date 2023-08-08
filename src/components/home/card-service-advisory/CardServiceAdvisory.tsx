@@ -6,7 +6,7 @@ interface CardServiceAdvisory {
 }
 const CardServiceAdvisory = ({ setIsAdviceCard }: CardServiceAdvisory) => {
   return (
-    <div className="w-[400px] h-fit rounded-lg">
+    <div className="w-[400px]  h-fit rounded-lg">
       <ModalFormAdvisory
         onCancel={() => {
           setIsAdviceCard(false);

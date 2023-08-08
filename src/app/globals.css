@@ -3,6 +3,7 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 /* @import url('https://sf16-scmcdn-sg.ibytedtos.com/obj/static-sg/livesaas-client/pc/byteplus/css/index.1.1.2-beta.2.css'); */
+@import url('https://fonts.cdnfonts.com/css/ameyallinda-signatur');
 
 *,
 *::before,
@@ -12,6 +13,78 @@
 }
 ::-webkit-scrollbar {
   display: none;
+}
+
+h1 {
+  color: var(--neutral-black-n-80);
+  /* Inter/Headline 1 */
+  font-size: 94px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 140px; /* 148.936% */
+  letter-spacing: -1.5px;
+}
+
+h2 {
+  color: var(--neutral-black-n-80);
+  /* Inter/Headline 2 */
+  font-size: 59px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 88px; /* 149.153% */
+  letter-spacing: -0.5px;
+}
+h3 {
+  color: var(--neutral-black-n-80);
+  /* Inter/Headline 3 */
+  font-size: 47px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 70px; /* 148.936% */
+}
+h4 {
+  color: var(--neutral-black-n-80);
+
+  /* Inter/Headline 4 */
+  font-size: 33px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px; /* 145.455% */
+  letter-spacing: 0.25px;
+}
+
+h5 {
+  color: var(--neutral-black-n-80);
+
+  /* Inter/Headline 5 */
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px; /* 150% */
+}
+h6 {
+  color: var(--neutral-black-n-80);
+
+  /* Inter/Headline 6 */
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px; /* 150% */
+  letter-spacing: 0.15px;
+}
+p {
+  color: var(--neutral-black-n-80);
+
+  /* Inter/Body 1 */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  letter-spacing: 0.5px;
+}
+
+a {
+  text-decoration: none;
 }
 .absolute-center {
   position: absolute;

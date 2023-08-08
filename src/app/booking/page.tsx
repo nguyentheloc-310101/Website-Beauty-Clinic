@@ -3,19 +3,19 @@ import CalendarBooking from '@/components/booking/calendar-booking/CalendarBooki
 import SummaryBookingForm from '@/components/booking/summary-form/SummaryBookingForm';
 import TimeTableBooking from '@/components/booking/timetable-booking/TimeTableBooking';
 import PopUpConfirm from '@/components/common/modal/modal-popconfirm/ModalPopconfirm';
-import { Clinic } from '@/interfaces/clinic/clinic';
 import { supabase } from '@/services/supabase';
 import { useEffect, useRef, useState } from 'react';
 import lottie_booking from '../../../public/lottie/animation_lks6x6yc.json';
 import { Spin, message } from 'antd';
-import { Service } from '@/interfaces/service/service';
 import useSWR from 'swr';
 import { CreateId } from '@/utils/helpers/create-order-uid';
-import { User } from '@/interfaces/users/user';
 
 import useUsersStore from '@/stores/users-store';
 import { useRouter } from 'next/navigation';
 import LoadingDefault from '@/components/common/loading/LoadingDefault';
+import { IClinic } from '@/interfaces/clinic/clinic';
+import { IService } from '@/interfaces/service/service';
+import { User } from '@/interfaces/users/user';
 
 const desc_popConfirm_sending =
   'Khi bấm “Xác nhận”, đặt hẹn của bạn sẽ được lên lịch. Sẽ có tư vấn viên liên hệ với bạn thời gian sớm nhất. ';
@@ -33,15 +33,6 @@ const BookingPage = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [allUsers, setAllUsers] = useState<User[]>([]);
   const usersStore = useUsersStore((state) => state);
-  const onOkeTest = () => {
-    console.log('service: ', service);
-    console.log('clinic: ', clinic);
-    console.log('customerName: ', customerName.current);
-    console.log('customerEmail: ', customerEmail);
-    console.log('customerPhone: ', customerPhone);
-    console.log('dateBooking: ', dateBooking);
-    console.log('timeBooking: ', timeBooking);
-  };
 
   const onOk = async () => {
     //create user
@@ -145,13 +136,13 @@ const BookingPage = () => {
     data: allClinics,
     error: clinicError,
     isLoading: clinicIsLoading,
-  } = useSWR<Clinic[]>('/clinics/get', fetchClinics);
+  } = useSWR<IClinic[]>('/clinics/get', fetchClinics);
 
   const {
     data: allServices,
     error: serviceError,
     isLoading: serviceIsLoading,
-  } = useSWR<Service[]>('/services/get', fetchServices);
+  } = useSWR<IService[]>('/services/get', fetchServices);
 
   useEffect(() => {
     if (usersStore.users) {
@@ -179,8 +170,8 @@ const BookingPage = () => {
               setClinic={setClinic}
               timeBooking={timeBooking}
               dateBooking={dateBooking}
-              allClinics={allClinics as Clinic[]}
-              allServices={allServices as Service[]}
+              allClinics={allClinics as IClinic[]}
+              allServices={allServices as IService[]}
               customerName={customerName}
               setCustomerEmail={setCustomerEmail}
               setCustomerPhone={setCustomerPhone}

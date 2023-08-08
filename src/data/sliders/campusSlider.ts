@@ -1,11 +1,9 @@
-//
-
 interface ListImageDetails {
   index: React.Key;
   image_details: any;
 }
 const mapCamau =
-  'https://ucarecdn.com/c66dc76a-4fb0-43af-ae49-877102625a89/-/quality/lightest/-/format/webp/';
+  'https://ucarecdn.com/c66dc76a-4fb0-43af-ae49-877102625a89/-/preview/625x625/-/quality/lightest/-/format/webp/';
 const dongthap =
   'https://ucarecdn.com/f1ed5dc5-53d4-4955-9dbd-3c792302be39/-/preview/625x625/-/quality/lightest/-/format/webp/';
 const caMau =

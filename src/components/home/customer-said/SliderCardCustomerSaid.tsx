@@ -1,6 +1,7 @@
 'use client';
 import React, { useRef, useState } from 'react';
 import { CardCustomer } from './CardCustomer';
+import { ICustomFeedback } from '@/interfaces/home/IHome';
 const customer1 =
   'https://ucarecdn.com/bd420e86-e59c-499f-9d91-ff90d68f6117/-/quality/lightest/-/format/webp/';
 const customer2 =
@@ -14,7 +15,11 @@ const customer5 =
 const customer6 =
   'https://ucarecdn.com/45899a1c-5e01-40f5-8d16-5210b42ddfc7/-/preview/706x760/-/quality/lightest/-/format/webp/';
 
-const SliderCardCustomerSaid = () => {
+interface CustomerFeedbackProps {
+  customerSaid: ICustomFeedback[];
+}
+
+const SliderCardCustomerSaid = ({ customerSaid }: CustomerFeedbackProps) => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [isMouseDown, setIsMouseDown] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -45,56 +50,19 @@ const SliderCardCustomerSaid = () => {
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onMouseMove={handleMouseMove}>
-      <CardCustomer
-        customer_name={' Chú Hải - Aura Cà Mau'}
-        message={
-          'Là đàn ông xăm mày sợ bị trêu nhưng mà bên đây làm tự nhiên không ai nhận ra hết. Làm xong chân mày phong thủy này về chú trúng 2 lô đất to'
-        }
-        signed={'Hai'}
-        image={
-          'https://ucarecdn.com/bd420e86-e59c-499f-9d91-ff90d68f6117/-/preview/310x373/-/quality/lightest/-/format/webp/'
-        }
-      />
-      <CardCustomer
-        customer_name={' Chị Ngọc - Aura HCM'}
-        message={
-          'Đừng có dại nghe lời người này người kia chỉ bôi kem thuốc gì hết nám, chị sợ lắm rồi. Phải đến Aura gặp bác sĩ da liệu, soi da mới sạch nám được'
-        }
-        signed={'  Ngọc'}
-        image={customer2}
-      />
-      <CardCustomer
-        customer_name={'Chị Linh - Aura HCM'}
-        message={
-          'Aura làm mũi bên đẹp lắm luôn nhìn hài hòa, sang cực. Bác sĩ bên này cắt mí hay nâng mũi kỹ về phong thủy lắm, 10 điểm chất lượng nha.'
-        }
-        signed={'Linh'}
-        image={customer3}
-      />
-      <CardCustomer
-        customer_name={'Cô Thắm - Aura Phú Yên'}
-        message={
-          'Các bé nhân viên ở đây dễ thương lắm con ơi đến vừa trẻ đẹp, vừa vui vậy ai mà không thích đến.'
-        }
-        signed={'  Ngọc'}
-        image={customer4}
-      />
-      <CardCustomer
-        customer_name={'Chị Liên - Aura Vĩnh Long'}
-        message={
-          'Bác sĩ ở đây tay nghề rất cao, nám nặng như chị mà 5 buổi sạch trơn.'
-        }
-        signed={'Lien'}
-        image={customer5}
-      />
-      <CardCustomer
-        customer_name={'Cô Phượng - Aura Cần Thơ'}
-        message={
-          'Cô đến làm thử nâng cơ trẻ hóa xem sao ai có mà dè đẹp vậy đâu, về nhà chồng con ai cũng khen.'
-        }
-        signed={'Phuong'}
-        image={customer6}
-      />
+      {customerSaid &&
+        customerSaid.map((item, key) => {
+          return (
+            <div key={key}>
+              <CardCustomer
+                customer_name={item.name}
+                message={item.content}
+                signed={item.signature}
+                image={item.image}
+              />
+            </div>
+          );
+        })}
     </div>
   );
 };

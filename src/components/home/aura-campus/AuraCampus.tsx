@@ -2,6 +2,12 @@
 import { ListImageDetails, dataCampus } from '@/data/sliders/campusSlider';
 import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
 import CardCampus from './CardCampus';
+import { useGeneralHomeContext } from '@/app/home/page';
+import { IService } from '@/interfaces/service/service';
+import { useEffect, useState } from 'react';
+import { supabase_website } from '@/services/supabase';
+import { IClinic } from '@/interfaces/clinic/clinic';
+import { message } from 'antd';
 
 interface CampusItem {
   key: number;
@@ -15,6 +21,28 @@ interface CampusItem {
 }
 
 const AuraCampus = () => {
+  const { generalData, setGeneralData } = useGeneralHomeContext();
+  const [clinics, setClinics] = useState<IClinic[]>([]);
+
+  useEffect(() => {
+    for (let i = 0; i < generalData?.data.clinic_ids.length; i++) {
+      fetchClinicById(generalData?.data.clinic_ids[i]);
+    }
+  }, []);
+  const fetchClinicById = async (id: string) => {
+    const { data: allClinics, error: errorClinics } = await supabase_website
+      .from('clinics')
+      .select('*')
+      .eq('id', id);
+    if (errorClinics) {
+      message.error(errorClinics.message);
+      return;
+    }
+    setClinics((prev: any) => [...prev, allClinics]);
+  };
+
+  console.log('clinicsHome: ', clinics);
+
   const scrollLeft = () => {
     const content = document.getElementById('content') as HTMLElement;
     if (content) {
