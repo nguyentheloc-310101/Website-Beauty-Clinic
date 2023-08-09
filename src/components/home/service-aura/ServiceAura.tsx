@@ -31,7 +31,7 @@ const SliderService = () => {
   };
   return (
     <div
-      className="flex md:flex-row md:w-full items-center md:gap-[60px] md:overflow-x-scroll md:scrollbar-hide"
+      className="flex px-[20px] md:flex-row lg:h-[500px] md:w-full items-center md:gap-[60px] md:overflow-x-scroll md:scrollbar-hide"
       ref={sliderRef}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
@@ -42,6 +42,8 @@ const SliderService = () => {
             <CardService
               key={key}
               image={item.image}
+              name={''}
+              tagline={''}
             />
           );
         })}

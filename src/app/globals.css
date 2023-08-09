@@ -30,7 +30,23 @@
 .linear-bg {
   background: linear-gradient(180deg, #c20459 41.39%, #4d0523 100%);
 }
-
+.linear-yellow-text {
+  background: var(
+    --linear,
+    linear-gradient(
+      63deg,
+      #f8e669 0%,
+      #fff9cf 19.06%,
+      #fef4b2 38.47%,
+      #f2e58d 60.43%,
+      #fffad9 84.48%,
+      #fff9d1 100%
+    )
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 body {
   font-family: 'Montserrat', sans-serif;
   width: 100vw;
@@ -156,7 +172,7 @@ body {
   border-radius: 12px;
   background: linear-gradient(180deg, #c20459 41.39%, #4d0523 100%);
   left: 12px;
-  bottom: 180px;
+  bottom: 80px;
   position: fixed;
   z-index: 999;
   padding: 23px 12px;

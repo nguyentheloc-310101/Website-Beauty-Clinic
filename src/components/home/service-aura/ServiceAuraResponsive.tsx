@@ -13,6 +13,8 @@ const SliderServiceResponsive = () => {
           <CardService
             key={key}
             image={item.image}
+            name={''}
+            tagline={''}
           />
         );
       })}
