@@ -81,7 +81,7 @@ const HeaderAura = () => {
               />
             )}
           </div>
-          {openServiceDrop && <NavLinks />}
+          {/* {openServiceDrop && <NavLinks />} */}
 
           <Link href="/">
             <img

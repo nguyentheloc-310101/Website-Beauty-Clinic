@@ -5,7 +5,7 @@ import { IHomeService } from '@/interfaces/home/IHome';
 const CardService = (props: IHomeService) => {
   const { image, name, tagline } = props;
   return (
-    <div className="relative h-fit rounded-[40px] overflow-hidden border-4 border-[#BF264B]">
+    <div className="relative rounded-[40px] overflow-hidden border-4 border-[#BF264B]">
       <img
         src={image}
         alt={'service-img'}
