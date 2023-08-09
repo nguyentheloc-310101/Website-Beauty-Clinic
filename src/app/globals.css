@@ -30,6 +30,9 @@
 .linear-bg {
   background: linear-gradient(180deg, #c20459 41.39%, #4d0523 100%);
 }
+.linear-bg-service-card {
+  background: linear-gradient(180deg, rgba(220, 113, 113, 0) 0%, #9c1a39 100%);
+}
 .linear-yellow-text {
   background: var(
     --linear,

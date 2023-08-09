@@ -11,11 +11,14 @@ const CardService = (props: IHomeService) => {
         alt={'service-img'}
         className="md:w-[280px] md:h-[410px] w-[150px] h-[206px] object-cover"
       />
-      <div className="linear-yellow-text lg:text-[60px] absolute -rotate-[20deg] lg:bottom-[60px] lg:right-[22px]">
-        Exosome
-      </div>
-      <div className="linear-yellow-text -rotate-[20deg] absolute lg:bottom-[40px] lg:right-[10px] z-50 lg:text-[20px] text-[12px] font-[700] lg:leading-[28px] lg:tracking-[-0.25px]">
-        Sach nam sang da
+
+      <div className="linear-bg-service-card flex flex-col pr-[10px] justify-end pb-[30px] w-full lg:h-full absolute z-50 lg:bottom-0 ">
+        <div className="linear-yellow-text text-right -rotate-[10deg] lg:text-[60px]">
+          Exosome
+        </div>
+        <div className="linear-yellow-text -rotate-[10deg] text-right lg:text-[20px] text-[12px] font-[700] lg:leading-[28px] lg:tracking-[-0.25px]">
+          Sach nam sang da
+        </div>
       </div>
     </div>
   );
