@@ -69,14 +69,15 @@ const AuraCampus = ({ allClinics, allClinicId }: AuraCampusProps) => {
       <div
         id="content"
         className="flex items-center overflow-x-auto hide-scrollbar gap-[16px] px-[16px] mt-[32px] lg:px-[130px] lg:gap-[50px] lg:mt-[40px]">
-        {allClinics.map((item, key) => {
-          return (
-            <CardCampus
-              key={key}
-              item={item}
-            />
-          );
-        })}
+        {allClinics &&
+          allClinics.map((item, key) => {
+            return (
+              <CardCampus
+                key={key}
+                item={item}
+              />
+            );
+          })}
       </div>
     </div>
   );

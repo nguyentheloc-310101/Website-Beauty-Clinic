@@ -12,12 +12,12 @@ const CardService = (props: IHomeService) => {
         className="md:w-[280px] md:h-[410px] w-[150px] h-[206px] object-cover"
       />
 
-      <div className="linear-bg-service-card flex flex-col pr-[10px] justify-end pb-[30px] w-full lg:h-full absolute z-50 lg:bottom-0 ">
-        <div className="linear-yellow-text text-right -rotate-[10deg] lg:text-[60px]">
-          Exosome
+      <div className="linear-bg-service-card flex flex-col lg:pr-[20px] justify-end pb-[30px] w-full lg:h-[500px] absolute z-50 lg:bottom-0 ">
+        <div className="font-service-card w-full h-fit linear-yellow-text text-right z-10 -rotate-[10deg] lg:text-[62px]">
+          {name}
         </div>
         <div className="linear-yellow-text -rotate-[10deg] text-right lg:text-[20px] text-[12px] font-[700] lg:leading-[28px] lg:tracking-[-0.25px]">
-          Sach nam sang da
+          {tagline}
         </div>
       </div>
     </div>

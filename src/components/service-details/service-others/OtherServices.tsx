@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import CardOtherService from './cards-services-horizontal/CardOtherService';
 import { otherServiceData } from '@/data/other-services/OtherServiceData';
 
-//TODO: use map() -> optimize
 const OtherServices = () => {
   return (
     <div>

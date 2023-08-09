@@ -12,7 +12,7 @@ const LoadingDefault = (props: LoadingDefaultProps) => {
     <Spin
       size={'large'}
       spinning={loading}
-      className="fixed top-0 bg-white/70 z-50 left-0 flex items-center justify-center h-[100%] w-full"></Spin>
+      className="fixed top-0 bg-white/70 z-[100] left-0 flex items-center justify-center h-[100%] w-full"></Spin>
   );
 };
 

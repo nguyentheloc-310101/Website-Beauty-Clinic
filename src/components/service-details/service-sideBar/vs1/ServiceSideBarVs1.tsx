@@ -1,53 +1,27 @@
 'use client';
-import { IService } from '@/interfaces/service/service';
+import { IService, IServiceStep } from '@/interfaces/service/service';
 import React, { useState } from 'react';
 import { BiSolidRightArrow } from 'react-icons/bi';
 
-const dummyServices = [
-  {
-    id: '1',
-    name: 'Căng bóng',
-  },
-  {
-    id: '2',
-    name: 'Dưỡng sinh - Gội',
-  },
-  {
-    id: '3',
-    name: 'Tắm trắng',
-  },
-  {
-    id: '4',
-    name: 'Mí',
-  },
-  {
-    id: '5',
-    name: 'Mũi',
-  },
-  {
-    id: '6',
-    name: 'Béo',
-  },
-  {
-    id: '7',
-    name: 'Nám',
-  },
-  {
-    id: '8',
-    name: 'Phun xăm mày',
-  },
-  {
-    id: '9',
-    name: 'Phun xăm môi',
-  },
-];
 interface ServiceSideBarProps {
   allServices: IService[];
+  serviceSelected?: IService;
+  setHasDoctor: any;
+  setHasSteps: any;
+  setSteps: (e: IServiceStep[]) => void;
   setServiceSelected: (e: IService) => void;
 }
 const ServiceSideBarVs1 = (props: ServiceSideBarProps) => {
-  const { allServices, setServiceSelected } = props;
-  const [idSelected, setIdSelected] = useState<any>(null);
+  const {
+    serviceSelected,
+    allServices,
+    setServiceSelected,
+    setHasDoctor,
+    setHasSteps,
+    setSteps,
+  } = props;
+  let id = serviceSelected?.id;
+  const [idSelected, setIdSelected] = useState<any>(id);
 
   const onSelectService = (id: string) => {
     setIdSelected(id);
@@ -56,8 +30,13 @@ const ServiceSideBarVs1 = (props: ServiceSideBarProps) => {
     );
     if (result.length > 0) {
       setServiceSelected(result[0]);
+      setHasDoctor(result[0].hasDoctors);
+      setHasSteps(result[0].hasSteps);
+      setSteps(result[0].steps);
     }
+    console.log('result[0].steps:', result[0].steps);
   };
+
   return (
     <div className="w-full rounded-[16px] h-[100vh] flex flex-col items-center">
       <div className="text-[20px] w-full px-[24px] ml-[80px] font-[400] leading-[30px] tracking-[0.5px] text-[#36383A]">

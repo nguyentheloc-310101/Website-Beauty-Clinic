@@ -2,8 +2,14 @@ import { doctorData } from '@/data/service-data/serviceDoctorData';
 import React from 'react';
 import DoctorCard from './doctor-card/DoctorCard';
 import { gradientText } from '@/constants/gradentText';
-
-export const Doctors = () => {
+import { IService } from '@/interfaces/service/service';
+import { IDoctor } from '@/interfaces/doctor/doctor';
+interface DoctorsProps {
+  serviceSelected: any;
+}
+export const Doctors = (props: DoctorsProps) => {
+  const { serviceSelected } = props;
+  const doctorsList: IDoctor[] = serviceSelected?.doctors;
   return (
     <>
       <div
@@ -12,12 +18,12 @@ export const Doctors = () => {
       </div>
 
       <div className="flex flex-col lg:flex-row gap-[8px] lg:flex-wrap lg:gap-[20px]">
-        {doctorData.map((item) => {
+        {doctorsList?.map((item, key) => {
           return (
-            <div key={item.key}>
+            <div key={key}>
               <DoctorCard
                 name={item.name}
-                experience={item.experience_year}
+                experience={item.experience}
                 desc_doctor={item.desc_doctor}
                 major={item.major}
                 image={item.image}

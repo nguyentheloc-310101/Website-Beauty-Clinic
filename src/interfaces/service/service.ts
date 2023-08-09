@@ -7,7 +7,7 @@ interface IBase {
 export interface IServiceStep extends IBase {
   step: number;
   image: any;
-  desc: string;
+  description: string;
 }
 export interface IService extends IBase {
   image: string;

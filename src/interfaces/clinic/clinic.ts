@@ -5,7 +5,7 @@ interface IClinic {
   address: string;
   short_address: string;
   open: string;
-  close: string;
+  closed: string;
   active: boolean;
   name: string;
   description: string;

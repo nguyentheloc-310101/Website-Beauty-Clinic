@@ -57,7 +57,9 @@ const HomePage = () => {
     allId.map((id: string) => {
       const tmp = allClinics.filter((clinic) => clinic.id == id);
       console.log('tmp: ', tmp[0]);
-      setClinicsOnHome((prev) => [...prev, tmp[0]]);
+      if (tmp.length !== 0) {
+        setClinicsOnHome((prev) => [...prev, tmp[0]]);
+      }
     });
 
     setLoading(false);
@@ -66,16 +68,16 @@ const HomePage = () => {
   console.log('data_here: ', generalData);
   console.log('data_clinics: ', allClinics);
   console.log('clinicsOnHome: ', clinicsOnHome);
-  // console.log('clinicsOnHome: ', clinicsOnHome);
 
   return (
     <GeneralHomeContext.Provider value={{ generalData, setGeneralData }}>
+      {loading && <LoadingDefault loading={loading} />}
       <div>
         <PanelContact />
         <div className="flex flex-col items-center justify-center ">
           <HeroSection />
         </div>
-        <div className="hidden md:block">
+        <div className="hidden md:block lg:mb-[20px] mb-[30px]">
           <SliderService />
         </div>
         <div className="md:hidden">
@@ -91,7 +93,6 @@ const HomePage = () => {
         <SeeMoreAboutAura />
         <ContactInformation />
       </div>
-      {loading && <LoadingDefault loading={loading} />}
     </GeneralHomeContext.Provider>
   );
 };

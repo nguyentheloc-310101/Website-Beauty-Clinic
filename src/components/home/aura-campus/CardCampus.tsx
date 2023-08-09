@@ -58,25 +58,25 @@ const CardCampus = (props: CardCampusProps) => {
         onMouseLeave={handleMouseLeave}>
         {hoveredCards ? (
           <CardCampusHover
-            name={item.name}
-            address={item.short_address}
-            image={item.background}
-            open={item.open}
-            close={item.close}
+            name={item?.name}
+            address={item?.short_address}
+            image={item?.background}
+            open={item?.open}
+            closed={item?.closed}
           />
         ) : (
           <div className="w-[237px] rounded-[20px] lg:w-[380px]  mb-[60px] lg:h-[542px] lg:rounded-[40px] shadow-lg text-[#bf264b] bg-white">
             <img
-              src={item.background}
+              src={item?.background}
               alt="cover-img"
               className="w-[237px] h-[237px] rounded-t-[20px] lg:h-[380px] lg:w-[380px] lg:rounded-t-[40px]"
               style={{ objectFit: 'cover' }}
             />
             <div className="px-[16px] py-[24px] lg:px-6 lg:py-4">
               <div className="mb-2 font-[800] leading-[140%] text-[16px] lg:text-[25px] ">
-                {item.name}
+                {item?.name}
               </div>
-              <p className="text-base text-[#36383A]">{item.short_address}</p>
+              <p className="text-base text-[#36383A]">{item?.short_address}</p>
               <span className="w-[] h-[]"></span>
             </div>
           </div>
@@ -86,11 +86,11 @@ const CardCampus = (props: CardCampusProps) => {
         <CardCampusDetails
           setIsDetails={setIsDetails}
           isDetails={isDetails}
-          image={item.background}
-          name={item.name}
-          address={item.address}
-          open={item.open}
-          close={item.close}
+          image={item?.background}
+          name={item?.name}
+          address={item?.address}
+          open={item?.open}
+          close={item?.closed}
           map={
             'https://ucarecdn.com/c66dc76a-4fb0-43af-ae49-877102625a89/-/preview/625x625/-/quality/lightest/-/format/webp/'
           }

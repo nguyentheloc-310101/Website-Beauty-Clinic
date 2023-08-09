@@ -42,8 +42,8 @@ const SliderService = () => {
             <CardService
               key={key}
               image={item.image}
-              name={''}
-              tagline={''}
+              name={item.name}
+              tagline={item.tagline}
             />
           );
         })}
