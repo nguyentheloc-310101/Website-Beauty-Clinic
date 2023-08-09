@@ -4,7 +4,7 @@ interface IDoctor {
   image: string;
   name: string;
   experience: number;
-  desc_doctor: string;
+  description: string;
   major: string;
   service_id: string;
 }

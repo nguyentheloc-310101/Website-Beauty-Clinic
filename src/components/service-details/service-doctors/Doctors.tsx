@@ -24,7 +24,7 @@ export const Doctors = (props: DoctorsProps) => {
               <DoctorCard
                 name={item.name}
                 experience={item.experience}
-                desc_doctor={item.desc_doctor}
+                desc_doctor={item.description}
                 major={item.major}
                 image={item.image}
               />
