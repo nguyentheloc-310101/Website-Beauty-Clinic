@@ -40,7 +40,7 @@ const ServicePage = () => {
     console.log('service: ', data);
     setAllServices(data);
     // setServiceSelected(data[0]);
-
+    //hello
     const allServices = data[0];
     setLoading(false);
   };
