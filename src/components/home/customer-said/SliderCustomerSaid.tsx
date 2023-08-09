@@ -2,6 +2,7 @@
 import { useGeneralHomeContext } from '@/app/home/page';
 import SliderCardCustomerSaid from './SliderCardCustomerSaid';
 import { ICustomFeedback, INews } from '@/interfaces/home/IHome';
+import Link from 'next/link';
 
 const SliderCustomerSaid = () => {
   const { generalData } = useGeneralHomeContext();
@@ -34,12 +35,16 @@ const SliderCustomerSaid = () => {
           {news &&
             news.map((item, key) => {
               return (
-                <img
-                  key={key}
-                  src={item.image}
-                  alt={'logo'}
-                  className="w-auto h-[41px] "
-                />
+                <Link
+                  target="blank"
+                  href={item.url}
+                  key={key}>
+                  <img
+                    src={item.image}
+                    alt={'logo'}
+                    className="w-auto h-[41px] "
+                  />
+                </Link>
               );
             })}
         </div>

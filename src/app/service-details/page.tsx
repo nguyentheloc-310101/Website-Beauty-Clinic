@@ -23,7 +23,7 @@ const ServicePage = () => {
   const [hasDoctor, setHasDoctor] = useState<boolean>(true);
   const [hasSteps, setHasSteps] = useState<boolean>(true);
   const [steps, setSteps] = useState<IServiceStep[]>([]);
-  const [otherServices, setOtherServices] = useState<IService[]>([]);
+  const [otherServices, setOtherServices] = useState<any>();
 
   useEffect(() => {
     fetchDataServiceDetail();
@@ -42,16 +42,17 @@ const ServicePage = () => {
     console.log('service: ', data);
     setAllServices(data);
     setServiceSelected(data[0]);
-    setHasDoctor(data[0].hasDoctors);
-    setHasSteps(data[0].hasSteps);
-    setSteps(data[0].steps);
-    setOtherServices(data[0].others);
+    setHasDoctor(data[0]?.hasDoctors);
+    setHasSteps(data[0]?.hasSteps);
+    setSteps(data[0]?.steps);
+    setOtherServices(data[0]?.others);
 
     //hello
     const allServices = data[0];
     setLoading(false);
   };
-  console.log('steps: ', steps);
+  console.log('serviceSelect: ', serviceSelected);
+  console.log('otherServices: ', otherServices);
   return (
     <div>
       <ServiceHero serviceSelected={serviceSelected} />
@@ -65,6 +66,7 @@ const ServicePage = () => {
               setHasDoctor={setHasDoctor}
               setHasSteps={setHasSteps}
               setSteps={setSteps}
+              setOtherServices={setOtherServices}
             />
           </div>
         </div>
@@ -98,7 +100,10 @@ const ServicePage = () => {
         <ServicePayment />
       </div>
       <div className="hidden lg:block lg:px-[130px] lg:mt-[5%]">
-        <OtherServices />
+        <OtherServices
+          otherServices={otherServices}
+          allServices={allServices}
+        />
       </div>
 
       <div className="hidden lg:block mt-[80px] relative h-[500px]">

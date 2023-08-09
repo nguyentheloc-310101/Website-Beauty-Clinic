@@ -59,6 +59,7 @@ const SliderCardCustomerSaid = ({ customerSaid }: CustomerFeedbackProps) => {
                 message={item.content}
                 signed={item.signature}
                 image={item.image}
+                clinic={item.clinic}
               />
             </div>
           );

@@ -1,10 +1,31 @@
 'use client';
 import { gradientText } from '@/constants/gradentText';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CardOtherService from './cards-services-horizontal/CardOtherService';
 import { otherServiceData } from '@/data/other-services/OtherServiceData';
+import { IService } from '@/interfaces/service/service';
+interface OtherProps {
+  otherServices?: any;
+  allServices: IService[];
+}
+const OtherServices = (props: OtherProps) => {
+  const { otherServices, allServices } = props;
 
-const OtherServices = () => {
+  useEffect(() => {
+    filterOther(otherServices);
+  }, [allServices]);
+  const [otherServicesList, setOtherServicesList] = useState<IService[]>([]);
+  const filterOther = (otherServices: any) => {
+    otherServices?.map((item: any) => {
+      const result: IService[] = allServices.filter(
+        (service) => service.id == item.id
+      );
+      if (result.length > 0) {
+        setOtherServicesList((prev) => [...prev, result[0]]);
+      }
+    });
+  };
+
   return (
     <div>
       <div
@@ -12,13 +33,13 @@ const OtherServices = () => {
         Dịch vụ khác tại Thẩm mỹ Aura
       </div>
       <div className="cursor-pointer">
-        {otherServiceData.map((item) => {
+        {otherServicesList.map((item) => {
           return (
             <>
               <div key={item.key}>
                 <CardOtherService
                   image={item.image}
-                  desc={item.desc}
+                  desc={item.description}
                   service_name={item.name}
                 />
               </div>

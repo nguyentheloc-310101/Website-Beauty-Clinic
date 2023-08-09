@@ -27,7 +27,7 @@ const ActorSaid = () => {
         />
         <div className="lg:ml-[30px] text-right">
           <div className="text-[10px] font-[400] lg:ml-[40px] w-[150px] text-[#414141]  md:w-[350px] md:text-[18px] lg:w-[508px] lg:h-[264px] lg:text-[22px] lg:font-[300]">
-            &quot;{celebFeedback?.content}.&quot;
+            {celebFeedback?.content}
           </div>
           <div className="w-full text-center h-[40px]">
             <div className="text-[#4f4f4f] mt-[5px] italic sm:font-[300] text-[9px] uppercase ms:text-[12px] md:text-[18px] lg:font-[100] lg:text-[27px]">

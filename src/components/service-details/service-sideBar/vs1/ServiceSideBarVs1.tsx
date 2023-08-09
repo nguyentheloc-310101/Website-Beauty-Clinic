@@ -8,6 +8,7 @@ interface ServiceSideBarProps {
   serviceSelected?: IService;
   setHasDoctor: any;
   setHasSteps: any;
+  setOtherServices: any;
   setSteps: (e: IServiceStep[]) => void;
   setServiceSelected: (e: IService) => void;
 }
@@ -16,6 +17,7 @@ const ServiceSideBarVs1 = (props: ServiceSideBarProps) => {
     serviceSelected,
     allServices,
     setServiceSelected,
+    setOtherServices,
     setHasDoctor,
     setHasSteps,
     setSteps,
@@ -33,8 +35,8 @@ const ServiceSideBarVs1 = (props: ServiceSideBarProps) => {
       setHasDoctor(result[0].hasDoctors);
       setHasSteps(result[0].hasSteps);
       setSteps(result[0].steps);
+      setOtherServices(result[0].others);
     }
-    console.log('result[0].steps:', result[0].steps);
   };
 
   return (
