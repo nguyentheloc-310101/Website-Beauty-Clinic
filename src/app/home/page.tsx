@@ -27,23 +27,9 @@ const HomePage = () => {
   const [clinicsOnHome, setClinicsOnHome] = useState<IClinic[]>([]);
 
   useEffect(() => {
-    // fetchAllClinics();
     fetchDataHome();
   }, []);
 
-  // const fetchAllClinics = async () => {
-  //   setLoading(true);
-  //   const { data: allClinics, error: errorClinics } = await supabase_website
-  //     .from('clinics')
-  //     .select('*');
-  //   if (errorClinics) {
-  //     message.error(errorClinics.message);
-  //     return;
-  //   } else {
-  //     setAllClinics(allClinics);
-  //     setLoading(false);
-  //   }
-  // };
   const fetchDataHome = async () => {
     setLoading(true);
     const { data, error } = await supabase_website.from('data').select('*');

@@ -1,20 +1,25 @@
+import { IDoctor } from '../doctor/doctor';
+
 interface IBase {
   id: string; // supabase id
   key: number; // key for react mapping table
 }
-
 export interface IServiceStep extends IBase {
   step: number;
   image: any;
   desc: string;
 }
-
 export interface IService extends IBase {
   image: string;
   price: number;
-  content: string;
+  description: string;
   name: string;
-  category_id: string;
+  hasDoctors: boolean;
+  doctors: IDoctor[];
+  hasSteps: boolean;
+  steps: IServiceStep[];
+  service_id: string;
+  others: IService[];
 }
 
 export interface IServiceCategory extends IBase {

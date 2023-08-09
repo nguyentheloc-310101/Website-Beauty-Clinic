@@ -1,4 +1,5 @@
 'use client';
+import { IService } from '@/interfaces/service/service';
 import React, { useState } from 'react';
 import { BiSolidRightArrow } from 'react-icons/bi';
 
@@ -40,19 +41,32 @@ const dummyServices = [
     name: 'Phun xăm môi',
   },
 ];
-
-const ServiceSideBarVs1 = () => {
+interface ServiceSideBarProps {
+  allServices: IService[];
+  setServiceSelected: (e: IService) => void;
+}
+const ServiceSideBarVs1 = (props: ServiceSideBarProps) => {
+  const { allServices, setServiceSelected } = props;
   const [idSelected, setIdSelected] = useState<any>(null);
+
   const onSelectService = (id: string) => {
     setIdSelected(id);
+    const result: IService[] = allServices.filter(
+      (service) => service.id == id
+    );
+    if (result.length > 0) {
+      setServiceSelected(result[0]);
+    }
   };
   return (
     <div className="w-full rounded-[16px] h-[100vh] flex flex-col items-center">
       <div className="text-[20px] w-full px-[24px] ml-[80px] font-[400] leading-[30px] tracking-[0.5px] text-[#36383A]">
-        {dummyServices.map((item: any) => {
+        {allServices.map((item: any) => {
           return (
             <div
-              onClick={() => onSelectService(item.id)}
+              onClick={() => {
+                onSelectService(item.id);
+              }}
               className={`${
                 idSelected == item.id
                   ? ' ml-[15px] font-[800] text-[#BC2449] flex items-center justify-between pr-[40px]'

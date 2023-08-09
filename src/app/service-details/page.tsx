@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+'use client';
 import { Doctors } from '@/components/service-details/service-doctors/Doctors';
 import ServiceForm from '@/components/service-details/service-form/ServiceForm';
 import ServiceFormMobile from '@/components/service-details/service-form/ServiceFormMobile';
@@ -9,29 +10,64 @@ import ServiceSideBarVs1 from '@/components/service-details/service-sideBar/vs1/
 import ServiceSteps from '@/components/service-details/service-steps/ServiceSteps';
 import ZaloQR from '@/components/service-details/zalo-qr/ZaloQR';
 import ZaloQRMobile from '@/components/service-details/zalo-qr/ZaloQRMobile';
+import { IService } from '@/interfaces/service/service';
+import { supabase_website } from '@/services/supabase';
+import { message } from 'antd';
 import { Metadata } from 'next';
-export const metadata: Metadata = {
-  title: 'Thẩm mỹ quốc tế Aura - Dịch vụ',
-  description: 'Aura Beauty Clinic',
-};
+import { useEffect, useState } from 'react';
 
 const ServicePage = () => {
+  const [allServices, setAllServices] = useState<IService[]>([]);
+  const [serviceSelected, setServiceSelected] = useState<IService>();
+  const [loading, setLoading] = useState<boolean>(false);
+  const [hasDoctor, setHasDoctor] = useState<boolean>(true);
+  const [hasSteps, setHasSteps] = useState<boolean>(true);
+
+  useEffect(() => {
+    fetchDataServiceDetail();
+  }, []);
+
+  const fetchDataServiceDetail = async () => {
+    setLoading(true);
+    const { data, error } = await supabase_website
+      .from('services')
+      .select('*,doctors(*)');
+    if (error) {
+      message.error(error.message);
+      setLoading(false);
+      return;
+    }
+    console.log('service: ', data);
+    setAllServices(data);
+    // setServiceSelected(data[0]);
+
+    const allServices = data[0];
+    setLoading(false);
+  };
+  console.log('service_selected: ', serviceSelected);
   return (
     <div>
       <ServiceHero />
       <div className="lg:flex flex-cols">
         <div>
           <div className="hidden lg:block lg:w-[430px] lg:mt-[197px] px-[16px]">
-            <ServiceSideBarVs1 />
+            <ServiceSideBarVs1
+              allServices={allServices}
+              setServiceSelected={setServiceSelected}
+            />
           </div>
         </div>
         <div className="lg:my-[80px]">
-          <div className="px-[16px] pb-[16px] lg:mb-[80px]">
-            <Doctors />
-          </div>
-          <div className="p-[16px]">
-            <ServiceSteps />
-          </div>
+          {hasDoctor && (
+            <div className="px-[16px] pb-[16px] lg:mb-[80px]">
+              <Doctors />
+            </div>
+          )}
+          {hasSteps && (
+            <div className="p-[16px]">
+              <ServiceSteps />
+            </div>
+          )}
         </div>
       </div>
       <div className="hidden lg:block relative pr-[130px]">
