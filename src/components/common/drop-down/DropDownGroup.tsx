@@ -2,13 +2,6 @@ import React from 'react';
 import { DownOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Dropdown, Space } from 'antd';
-import { Service } from '@/interfaces/service/service';
-
-interface DropDownGroupProp {
-  key: React.Key;
-  service_title: string;
-  service_list: Service[];
-}
 
 const items: MenuProps['items'] = [
   {

@@ -4,10 +4,17 @@ interface CardHoverProps {
   name: string;
   address: string;
   image: any;
-  time: string;
+  open: string;
+  close: string;
 }
 
-const CardCampusHover = ({ name, address, image, time }: CardHoverProps) => {
+const CardCampusHover = ({
+  name,
+  address,
+  image,
+  open,
+  close,
+}: CardHoverProps) => {
   return (
     <div className="w-[380px] h-[542px] rounded-[40px] shadow-lg p-[6px] bg-gradient-to-r from-[#BF264B] to-[#DF4B6E] text-white lg:mb-[60px]">
       <img
@@ -24,7 +31,7 @@ const CardCampusHover = ({ name, address, image, time }: CardHoverProps) => {
           {address}
         </p>
         <p className="text-neutral-ng-0 text-white font-[400] leading-[140%] text-[16px] mt-[12px]">
-          {time}
+          {open} - {close}
         </p>
       </div>
       <div className="flex w-full h-[55px] item-center px-6 mt-[20px]">

@@ -4,13 +4,13 @@ import { useGeneralHomeContext } from '@/app/home/page';
 import { ICelebFeedback } from '@/interfaces/home/IHome';
 
 const ActorSaid = () => {
-  const { generalData, setGeneralData } = useGeneralHomeContext();
-  const celebFeedback: ICelebFeedback = generalData.data.celebFeedback;
+  const { generalData } = useGeneralHomeContext();
+  const celebFeedback: ICelebFeedback = generalData?.data.celebFeedback;
   return (
     <div className="grid grid-cols-2 lg:px-[107px] sm:mt-[80px] lg:mt-[100px] sm:h-fit">
       <div className="col-span-1 ">
         <img
-          src={celebFeedback.image + '/-/quality/smart/-/format/webp/'}
+          src={celebFeedback?.image + '/-/quality/smart/-/format/webp/'}
           alt="actor-img"
           className="md:w-[555px] md:h-[891px]"
           style={{ objectFit: 'cover' }}
@@ -37,7 +37,7 @@ const ActorSaid = () => {
               {celebFeedback?.name}
             </div>
             <div className=" sm:font-[500] text-transparent bg-clip-text bg-gradient-to-r from-[#BF264B] to-[#DF4B6E] mr-[20px] text-[8px] md:text-[18px] lg:text-[24px] lg:font-[500]">
-              {celebFeedback.tagline}
+              {celebFeedback?.tagline}
             </div>
           </div>
         </div>

@@ -33,6 +33,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
     "react-sticky-box": "^2.0.4",
+    "sharp": "^0.32.4",
     "styled-components": "^6.0.5",
     "swiper": "^10.0.4",
     "swr": "^2.2.0",

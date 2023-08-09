@@ -21,25 +21,66 @@ const HomePage = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [generalData, setGeneralData] = useState<any>();
 
-  const [clinicsHome, setClinicsHome] = useState<IClinic[]>([]);
+  // const [clinicsHome, setClinicsHome] = useState<IClinic[]>([]);
+  const [allClinics, setAllClinics] = useState<IClinic[]>([]);
+  const [allClinicId, setAllClinicId] = useState<string[]>([]);
+  const [clinicsOnHome, setClinicsOnHome] = useState<IClinic[]>([]);
+
   useEffect(() => {
+    // fetchAllClinics();
     fetchDataHome();
   }, []);
 
+  // const fetchAllClinics = async () => {
+  //   setLoading(true);
+  //   const { data: allClinics, error: errorClinics } = await supabase_website
+  //     .from('clinics')
+  //     .select('*');
+  //   if (errorClinics) {
+  //     message.error(errorClinics.message);
+  //     return;
+  //   } else {
+  //     setAllClinics(allClinics);
+  //     setLoading(false);
+  //   }
+  // };
   const fetchDataHome = async () => {
     setLoading(true);
     const { data, error } = await supabase_website.from('data').select('*');
     if (error) {
       message.error(error.message);
       setLoading(false);
-
       return;
     }
     setGeneralData(data[0]);
+    setAllClinicId(data[0].data.clinic_ids);
+
+    const allId = data[0].data.clinic_ids;
+
+    const { data: allClinics, error: errorClinics } = await supabase_website
+      .from('clinics')
+      .select('*');
+    if (errorClinics) {
+      message.error(errorClinics.message);
+      return;
+    } else {
+      setAllClinics(allClinics);
+      setLoading(false);
+    }
+
+    allId.map((id: string) => {
+      const tmp = allClinics.filter((clinic) => clinic.id == id);
+      console.log('tmp: ', tmp[0]);
+      setClinicsOnHome((prev) => [...prev, tmp[0]]);
+    });
+
     setLoading(false);
   };
 
   console.log('data_here: ', generalData);
+  console.log('data_clinics: ', allClinics);
+  console.log('clinicsOnHome: ', clinicsOnHome);
+  // console.log('clinicsOnHome: ', clinicsOnHome);
 
   return (
     <GeneralHomeContext.Provider value={{ generalData, setGeneralData }}>
@@ -55,7 +96,10 @@ const HomePage = () => {
           <SliderServiceResponsive />
         </div>
         <CustomerSaidVideo />
-        <AuraCampus />
+        <AuraCampus
+          allClinics={clinicsOnHome}
+          allClinicId={allClinicId}
+        />
         <ActorSaid />
         <SliderCustomerSaid />
         <SeeMoreAboutAura />

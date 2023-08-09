@@ -9,8 +9,6 @@ import { IHomeService } from '@/interfaces/home/IHome';
 const HeroSection = () => {
   const [isAdviseCard, setIsAdviceCard] = useState<boolean>(false);
   const { generalData, setGeneralData } = useGeneralHomeContext();
-  const [background, setBackground] = useState<string>('');
-  const [videoLink, setVideoLink] = useState<string>('');
 
   // console.log('generalData', generalData);
   return (

@@ -9,7 +9,8 @@ interface CardCampusDetailsProps {
   image: any;
   name: string;
   address: string;
-  time: string;
+  open: string;
+  close: string;
   image_list: ListImageDetails[];
   map: any;
   setIsDetails: (e: boolean) => void;
@@ -22,7 +23,8 @@ const CardCampusDetails = (props: CardCampusDetailsProps) => {
   const {
     name,
     address,
-    time,
+    open,
+    close,
     image,
     map,
     setIsDetails,
@@ -48,7 +50,8 @@ const CardCampusDetails = (props: CardCampusDetailsProps) => {
             image={image}
             name={name}
             address={address}
-            time={time}
+            open={open}
+            close={close}
             setShowCampusMapMobile={setShowCampusMapMobile}
             image_list={image_list}
           />
@@ -70,7 +73,7 @@ const CardCampusDetails = (props: CardCampusDetailsProps) => {
                 {address}
               </p>
               <p className="text-neutral-ng-0 text-white font-[400] leading-[140%] text-[16px] mt-[12px]">
-                {time}
+                {open} - {close}
               </p>
             </div>
             <div className="flex w-full justify-between px-[17px] mt-[20px]">

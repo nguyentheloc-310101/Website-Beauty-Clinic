@@ -1,11 +1,11 @@
 interface IClinic {
   id: string;
-  image: string;
+  background: string;
   created_at: string;
-  location: string;
+  address: string;
   short_address: string;
   open: string;
-  closed: string;
+  close: string;
   active: boolean;
   name: string;
   description: string;

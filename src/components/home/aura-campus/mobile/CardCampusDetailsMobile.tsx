@@ -13,11 +13,13 @@ interface CampusDetailsMobile {
   image_list: ListImageDetails[];
   name: string;
   address: string;
-  time: string;
+  open: string;
+  close: string;
   setShowCampusMapMobile: (e: boolean) => void;
 }
 const CardCampusDetailsMobile = (props: CampusDetailsMobile) => {
-  const { name, time, address, image_list, setShowCampusMapMobile } = props;
+  const { name, open, close, address, image_list, setShowCampusMapMobile } =
+    props;
   return (
     <div className="flex justify-center ">
       <div className="rounded-[20px] text-white">
@@ -55,7 +57,7 @@ const CardCampusDetailsMobile = (props: CampusDetailsMobile) => {
           </p>
           <div className="flex items-center justify-between">
             <p className="text-neutral-ng-0 text-white font-[400] leading-[140%] text-[13px] mt-[12px]">
-              {time}
+              {open} - {close}
             </p>
             <div
               className="flex h-full"

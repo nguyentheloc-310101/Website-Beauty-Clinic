@@ -19,29 +19,13 @@ interface CampusItem {
   map: any;
   image_list: ListImageDetails[];
 }
+interface AuraCampusProps {
+  allClinics: IClinic[];
+  allClinicId: string[];
+}
 
-const AuraCampus = () => {
-  const { generalData, setGeneralData } = useGeneralHomeContext();
-  const [clinics, setClinics] = useState<IClinic[]>([]);
-
-  useEffect(() => {
-    for (let i = 0; i < generalData?.data.clinic_ids.length; i++) {
-      fetchClinicById(generalData?.data.clinic_ids[i]);
-    }
-  }, []);
-  const fetchClinicById = async (id: string) => {
-    const { data: allClinics, error: errorClinics } = await supabase_website
-      .from('clinics')
-      .select('*')
-      .eq('id', id);
-    if (errorClinics) {
-      message.error(errorClinics.message);
-      return;
-    }
-    setClinics((prev: any) => [...prev, allClinics]);
-  };
-
-  console.log('clinicsHome: ', clinics);
+const AuraCampus = ({ allClinics, allClinicId }: AuraCampusProps) => {
+  const { generalData } = useGeneralHomeContext();
 
   const scrollLeft = () => {
     const content = document.getElementById('content') as HTMLElement;
@@ -85,10 +69,10 @@ const AuraCampus = () => {
       <div
         id="content"
         className="flex items-center overflow-x-auto hide-scrollbar gap-[16px] px-[16px] mt-[32px] lg:px-[130px] lg:gap-[50px] lg:mt-[40px]">
-        {dataCampus.map((item: CampusItem) => {
+        {allClinics.map((item, key) => {
           return (
             <CardCampus
-              key={item.key}
+              key={key}
               item={item}
             />
           );

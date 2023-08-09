@@ -4,9 +4,10 @@ import { CampusItem } from './AuraCampus';
 import CardCampusDetails from './CardCampusDetails';
 import CardCampusHover from './CardCampusHover';
 import CardCampusMapMobile from './mobile/CardCampusMapMobile';
+import { IClinic } from '@/interfaces/clinic/clinic';
 
 interface CardCampusProps {
-  item: CampusItem;
+  item: IClinic;
 }
 
 const CardCampus = (props: CardCampusProps) => {
@@ -51,7 +52,6 @@ const CardCampus = (props: CardCampusProps) => {
   return (
     <div>
       <div
-        key={item.key}
         onClick={onDetails}
         className="cursor-pointer"
         onMouseEnter={handleMouseEnter}
@@ -59,14 +59,15 @@ const CardCampus = (props: CardCampusProps) => {
         {hoveredCards ? (
           <CardCampusHover
             name={item.name}
-            address={item.address_hover}
-            image={item.image}
-            time={item.time}
+            address={item.short_address}
+            image={item.background}
+            open={item.open}
+            close={item.close}
           />
         ) : (
           <div className="w-[237px] rounded-[20px] lg:w-[380px]  mb-[60px] lg:h-[542px] lg:rounded-[40px] shadow-lg text-[#bf264b] bg-white">
             <img
-              src={item.image}
+              src={item.background}
               alt="cover-img"
               className="w-[237px] h-[237px] rounded-t-[20px] lg:h-[380px] lg:w-[380px] lg:rounded-t-[40px]"
               style={{ objectFit: 'cover' }}
@@ -75,7 +76,7 @@ const CardCampus = (props: CardCampusProps) => {
               <div className="mb-2 font-[800] leading-[140%] text-[16px] lg:text-[25px] ">
                 {item.name}
               </div>
-              <p className="text-base text-[#36383A]">{item.address}</p>
+              <p className="text-base text-[#36383A]">{item.short_address}</p>
               <span className="w-[] h-[]"></span>
             </div>
           </div>
@@ -85,21 +86,26 @@ const CardCampus = (props: CardCampusProps) => {
         <CardCampusDetails
           setIsDetails={setIsDetails}
           isDetails={isDetails}
-          image={item.image}
+          image={item.background}
           name={item.name}
-          address={item.address_hover}
-          time={item.time}
-          map={item.map}
+          address={item.address}
+          open={item.open}
+          close={item.close}
+          map={
+            'https://ucarecdn.com/c66dc76a-4fb0-43af-ae49-877102625a89/-/preview/625x625/-/quality/lightest/-/format/webp/'
+          }
           isMobile={isMobile}
           setShowCampusMapMobile={setShowCampusMapMobile}
-          image_list={item.image_list}
+          image_list={[]}
         />
       )}
       {showCampusMapMobile && (
         <CardCampusMapMobile
           showCampusMapMobile={showCampusMapMobile}
           setShowCampusMapMobile={setShowCampusMapMobile}
-          image={item.map}
+          image={
+            'https://ucarecdn.com/c66dc76a-4fb0-43af-ae49-877102625a89/-/preview/625x625/-/quality/lightest/-/format/webp/'
+          }
         />
       )}
     </div>
