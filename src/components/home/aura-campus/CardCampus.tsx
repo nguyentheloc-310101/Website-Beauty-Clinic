@@ -59,7 +59,7 @@ const CardCampus = (props: CardCampusProps) => {
         {hoveredCards ? (
           <CardCampusHover
             name={item?.name}
-            address={item?.short_address}
+            address={item?.address}
             image={item?.background}
             open={item?.open}
             closed={item?.closed}
