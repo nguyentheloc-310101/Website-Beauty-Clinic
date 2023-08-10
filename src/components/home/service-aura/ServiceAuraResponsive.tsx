@@ -7,14 +7,14 @@ const SliderServiceResponsive = () => {
   const { generalData } = useGeneralHomeContext();
   const serviceList: IHomeService[] = generalData?.data.services;
   return (
-    <div className="flex flex-wrap items-center justify-center gap-[15px]">
+    <div className="flex mb-[20px] flex-wrap items-center justify-center gap-[15px]">
       {serviceList?.slice(0, 4).map((item, key) => {
         return (
           <CardService
             key={key}
             image={item.image}
-            name={''}
-            tagline={''}
+            name={item.name}
+            tagline={item.tagline}
           />
         );
       })}

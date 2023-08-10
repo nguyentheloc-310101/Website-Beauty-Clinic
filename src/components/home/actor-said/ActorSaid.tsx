@@ -7,7 +7,7 @@ const ActorSaid = () => {
   const { generalData } = useGeneralHomeContext();
   const celebFeedback: ICelebFeedback = generalData?.data.celebFeedback;
   return (
-    <div className="grid grid-cols-2 lg:gap-[24px] lg:px-[130px] sm:mt-[80px] lg:mt-[100px] sm:h-fit">
+    <div className="grid grid-cols-2 lg:gap-[24px] lg:px-[130px] sm:mt-[80px] lg:my-[100px] sm:h-fit">
       <div className="col-span-1 h-fit relative lg:flex justify-center items-center">
         <img
           src={celebFeedback?.image + '/-/quality/smart/-/format/webp/'}
@@ -24,7 +24,7 @@ const ActorSaid = () => {
           </div>
         </div>
       </div>
-      <div className="col-span-1 lg:mt-[66px] flex flex-col items-center">
+      <div className="col-span-1 lg:ml-[2%] flex flex-col items-center">
         <div className="lg:w-[600px] text-right uppercase lg:text-[56px] lg:font-[900] lg:leading-[64px] text-[#BC2449]">
           <div className="lg:mr-[60px]"> Aura là</div>
           <br />

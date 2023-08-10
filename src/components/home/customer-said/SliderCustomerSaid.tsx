@@ -25,7 +25,7 @@ const SliderCustomerSaid = () => {
           Khách hàng nói gì về Aura
         </div>
       </div>
-      <div className="flex items center justify-center">
+      <div className="flex flex-col items center justify-center">
         <SliderCardCustomerSaid customerSaid={customerSaid} />
       </div>
       <div className="hidden text-white text-[50px] font-[800] uppercase lg:flex items-center justify-center mt-[75px]">
