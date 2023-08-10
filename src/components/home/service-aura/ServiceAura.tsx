@@ -31,7 +31,7 @@ const SliderService = () => {
   };
   return (
     <div
-      className="flex md:flex-row lg:h-[500px] lg:w-full items-center md:gap-[60px] lg:overflow-x-scroll md:scrollbar-hide"
+      className="flex md:px-[24px] md:flex-row md:w-full items-center md:gap-[60px] md:overflow-x-scroll md:scrollbar-hide"
       ref={sliderRef}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
@@ -47,6 +47,17 @@ const SliderService = () => {
             />
           );
         })}
+      {/* {serviceList &&
+        serviceList?.map((item, key) => {
+          return (
+            <CardService
+              key={key}
+              image={item.image}
+              name={''}
+              tagline={''} // alt={item.alt}
+            />
+          );
+        })} */}
     </div>
   );
 };

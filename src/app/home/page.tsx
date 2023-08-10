@@ -70,30 +70,32 @@ const HomePage = () => {
   console.log('clinicsOnHome: ', clinicsOnHome);
 
   return (
-    <GeneralHomeContext.Provider value={{ generalData, setGeneralData }}>
+    <>
       {loading && <LoadingDefault loading={loading} />}
-      <div>
-        <PanelContact />
-        <div className="flex flex-col items-center justify-center ">
-          <HeroSection />
+      <GeneralHomeContext.Provider value={{ generalData, setGeneralData }}>
+        <div>
+          <PanelContact />
+          <div className="flex flex-col items-center justify-center ">
+            <HeroSection />
+          </div>
+          <div className="hidden lg:block lg:w-full lg:mb-[20px] mb-[30px]">
+            <SliderService />
+          </div>
+          <div className="md:hidden">
+            <SliderServiceResponsive />
+          </div>
+          <CustomerSaidVideo />
+          <AuraCampus
+            allClinics={clinicsOnHome}
+            allClinicId={allClinicId}
+          />
+          <ActorSaid />
+          <SliderCustomerSaid />
+          <SeeMoreAboutAura />
+          <ContactInformation />
         </div>
-        <div className="hidden md:block lg:mb-[20px] mb-[30px]">
-          <SliderService />
-        </div>
-        <div className="md:hidden">
-          <SliderServiceResponsive />
-        </div>
-        <CustomerSaidVideo />
-        <AuraCampus
-          allClinics={clinicsOnHome}
-          allClinicId={allClinicId}
-        />
-        <ActorSaid />
-        <SliderCustomerSaid />
-        <SeeMoreAboutAura />
-        <ContactInformation />
-      </div>
-    </GeneralHomeContext.Provider>
+      </GeneralHomeContext.Provider>
+    </>
   );
 };
 

@@ -15,15 +15,18 @@ const profession =
 const SeeMoreAboutAura = () => {
   return (
     <div className="relative flex flex-col items-center justify-center md:mt-[100px]">
-      <div className="lg:mt-[50px] lg:mb-[33px] z-50">
-        <img
-          src={text5stars}
-          alt={'text-customer'}
-          className="hidden lg:flex lg:w-[845px] lg:h-auto "
-        />
+      <div className="lg:mt-[50px] lg:mb-[100px] z-50">
+        <div className="text-[56px] text-[#BC2449] font-[900] uppercase leading-[64px]">
+          <span className="ml-[350px]"> Aura - Thẩm mỹ viện</span>
+
+          <br />
+          <span className="text-[130px] normal-case font-service-card font-[400] leading-[148px]">
+            Quốc tế 5 sao
+          </span>
+        </div>
       </div>
       <div className="lg:hidden w-[233px] h-[64px] my-[50px]">
-        <div className="text-center text-[26px] text-[#bf264b] uppercase leading-[115%] font-[800]">
+        <div className="text-center  text-[26px] text-[#BC2449] uppercase leading-[115%] font-[800]">
           Thẩm mỹ viện quốc tế 5 sao
         </div>
       </div>
@@ -47,16 +50,7 @@ const SeeMoreAboutAura = () => {
             className="md:w-auto md:h-[450px] w-[265px] h-[398px]"
           />
         </div>
-        <div className="hidden text-[#BF264B] text-[30px] font-[300] md:flex items-center">
-          Tìm hiểu thêm về Aura
-          <img
-            src={leftIcon}
-            alt={'text-customer'}
-            className="w-auto h-[18px] ml-[24px] cursor-pointer z-50"
-          />
-        </div>
       </div>
-
       <div className="lg:flex lg:absolute lg:z-0 lg:h-[541px] lg:w-[100%] lg:bottom-[40px] hidden">
         <img
           src={ribbon}

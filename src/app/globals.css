@@ -182,7 +182,8 @@ body {
 }
 /*video*/
 .customer-said-container {
-  height: 900px;
+  padding: 48px 0px;
+  height: auto;
   background-image: url('https://ucarecdn.com/50206a34-4e1f-4501-b539-007aa7161dca/-/preview/-/quality/lightest/-/format/webp/s');
   background-size: cover;
 }
@@ -235,14 +236,14 @@ body {
 .form-contact {
   position: relative;
   margin-top: 32px;
-  width: 500px;
-  height: 530px;
-  padding: 16px 0px 39.605px 0px;
+  width: 458px;
+  height: auto;
+  padding: 40px;
   flex-direction: column;
   align-items: center;
-  gap: 11.82px;
+  gap: 20px;
   flex-shrink: 0;
-  border-radius: 30px;
+  border-radius: 40px;
   /* padding: 10px; */
   display: flex;
   align-items: center;

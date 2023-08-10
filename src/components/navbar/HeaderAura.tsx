@@ -115,6 +115,11 @@ const HeaderAura = () => {
                 dịch vụ
               </span>
             </Link>
+            <Link href="/booking">
+              <span className="text-center cursor-pointer uppercase">
+                Đặt hẹn
+              </span>
+            </Link>
             <Link href="/contact">
               <span className="text-center cursor-pointer uppercase">
                 liên hệ

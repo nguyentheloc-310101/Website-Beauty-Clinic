@@ -17,9 +17,9 @@ const HeroSection = () => {
         <div className="w-full">
           <img
             src={
-              generalData?.data?.background + '/-/quality/smart/-/format/auto/'
+              generalData?.data?.background + '-/quality/smart/-/format/auto/'
             }
-            alt="cover-img"
+            alt=""
             className="w-full h-full"
             style={{ objectFit: 'cover', width: '100%' }}
           />

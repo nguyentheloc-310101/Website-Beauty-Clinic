@@ -11,13 +11,10 @@ const SliderCustomerSaid = () => {
   return (
     <div className="background-customer-said">
       <div className="hidden lg:flex lg:items-center lg:justify-center">
-        <img
-          src={
-            'https://ucarecdn.com/4f1b4f0e-d7c3-4fd2-a93b-3220db293803/-/quality/lightest/-/format/webp/'
-          }
-          alt={'text-customer'}
-          className="w-[812px] h-[258px] mt-[87px] mb-[43px]"
-        />
+        <div className="mt-[80px] text-[#fff]  font-[800] text-[31px] w-[220px] h-[62px]">
+          Khách hàng
+          <div>nói gì về Aura</div>
+        </div>
       </div>
       <div className="lg:hidden flex items-center justify-center z-10">
         <div className="mt-[45px] text-[#fff]  font-[800] text-[31px] w-[220px] h-[62px]">
