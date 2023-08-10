@@ -15,11 +15,11 @@ const ActorSaid = () => {
           className="md:w-[555px] md:h-[891px]"
           style={{ objectFit: 'cover' }}
         />
-        <div className="lg:absolute flex flex-col items-center lg:bottom-[200px] w-full text-left h-[40px]">
+        <div className="lg:absolute flex flex-col items-center justify-end lg:bottom-0 w-full text-left h-fit">
           <div className="text-[#4f4f4f] mt-[5px] italic sm:font-[300] text-[9px] uppercase ms:text-[12px] md:text-[18px] lg:font-[100] lg:text-[27px]">
             {celebFeedback?.job}
           </div>
-          <div className="font-service-card lg:h-[120px] font-[600] italic sm:text-[21px] text-transparent bg-clip-text bg-gradient-to-r from-[#BF264B] to-[#DF4B6E] md:text-[30px] lg:font-[600] lg:text-[61px]">
+          <div className="font-service-card lg:h-[260px] font-[600] italic sm:text-[21px] text-transparent bg-clip-text bg-gradient-to-r from-[#BF264B] to-[#DF4B6E] md:text-[30px] lg:font-[600] lg:text-[61px]">
             {celebFeedback?.name}
           </div>
         </div>
