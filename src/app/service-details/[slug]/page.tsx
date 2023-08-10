@@ -10,70 +10,89 @@ import ServiceSideBarVs1 from '@/components/service-details/service-sideBar/vs1/
 import ServiceSteps from '@/components/service-details/service-steps/ServiceSteps';
 import ZaloQR from '@/components/service-details/zalo-qr/ZaloQR';
 import ZaloQRMobile from '@/components/service-details/zalo-qr/ZaloQRMobile';
-import { IService, IServiceStep } from '@/interfaces/service/service';
+import {
+  IService,
+  IServiceDetails,
+  IServiceStep,
+} from '@/interfaces/service/service';
 import { supabase_website } from '@/services/supabase';
 import { message } from 'antd';
-import { Metadata } from 'next';
 import { useEffect, useState } from 'react';
 
-const ServicePage = () => {
-  const [allServices, setAllServices] = useState<IService[]>([]);
+interface ServicePageProps {
+  params: { slug: string };
+}
+
+const ServicePage = ({ params }: ServicePageProps) => {
   const [serviceSelected, setServiceSelected] = useState<IService>();
+  const [serviceSelectedDetails, setServiceSelectedDetails] =
+    useState<IServiceDetails>();
   const [loading, setLoading] = useState<boolean>(false);
+  const [backgroundService, setBackgroundService] = useState<string>('');
   const [hasDoctor, setHasDoctor] = useState<boolean>(true);
   const [hasSteps, setHasSteps] = useState<boolean>(true);
   const [steps, setSteps] = useState<IServiceStep[]>([]);
   const [otherServices, setOtherServices] = useState<any>();
-
   useEffect(() => {
     fetchDataServiceDetail();
   }, []);
 
   const fetchDataServiceDetail = async () => {
-    setLoading(true);
-    const { data, error } = await supabase_website.from('services').select('*');
-    if (error) {
-      message.error(error.message);
-      setLoading(false);
-      return;
-    }
-    console.log('service: ', data);
-    setAllServices(data);
-    setServiceSelected(data[0]);
-    setHasDoctor(data[0]?.hasDoctors);
-    setHasSteps(data[0]?.hasSteps);
-    setSteps(data[0]?.steps);
-    setOtherServices(data[0]?.others);
+    try {
+      setLoading(true);
+      const { data: serviceSelect, error: errSelect } = await supabase_website
+        .from('services')
+        .select('*,doctors(*), others!others_other_fkey(*)')
+        .eq('slug', params.slug);
+      if (errSelect) {
+        message.error(errSelect.message);
+        setLoading(false);
+        return;
+      }
+      console.log('service: ', serviceSelect[0]);
+      if (serviceSelect.length > 0) {
+        setServiceSelected(serviceSelect[0]);
+        setOtherServices(serviceSelect[0].others);
+        const id = serviceSelect[0].id;
+        const { data: serviceDetails, error: detailErr } =
+          await supabase_website
+            .from('service-details')
+            .select('*')
+            .eq('service_id', id);
+        if (detailErr) {
+          message.error(detailErr.message);
+          setLoading(false);
+          return;
+        }
 
-    //hello
-    const allServices = data[0];
-    setLoading(false);
+        if (serviceDetails && serviceDetails.length > 0) {
+          // Check if 'data' is not null
+          setServiceSelectedDetails(serviceDetails[0]);
+          setHasDoctor(serviceDetails[0].hasDoctors);
+          setHasSteps(serviceDetails[0]?.hasSteps);
+          setSteps(serviceDetails[0]?.steps);
+        } else {
+          setHasDoctor(false); // Set 'hasDoctor' to false when there's no data
+        }
+      }
+    } finally {
+      setLoading(false);
+    }
   };
-  console.log('serviceSelect: ', serviceSelected);
-  console.log('otherServices: ', otherServices);
+  console.log('slug---------------data detail: ', serviceSelectedDetails);
   return (
     <div>
-      {/* <ServiceHero serviceSelected={serviceSelected} /> */}
+      <ServiceHero serviceSelectedDetails={serviceSelectedDetails} />
       <div className="lg:flex flex-cols">
         <div>
-          <div className="hidden lg:block lg:w-[430px] lg:mt-[197px] px-[16px]">
-            <ServiceSideBarVs1
-              serviceSelected={serviceSelected}
-              allServices={allServices}
-              setServiceSelected={setServiceSelected}
-              // setHasDoctor={setHasDoctor}
-              // setHasSteps={setHasSteps}
-              // setSteps={setSteps}
-              // setOtherServices={setOtherServices}
-            />
-          </div>
+          <div className="hidden lg:block lg:w-[430px] lg:mt-[197px] px-[16px]"></div>
         </div>
         <div className="lg:my-[80px]">
-          {/* {hasDoctor && (
+          {hasDoctor && (
             <div className="px-[16px] pb-[16px] lg:mb-[80px]">
-              <Doctors serviceSelectedDetails={serviceSelectedDetails} />
+              <Doctors serviceSelected={serviceSelected} />
             </div>
-          )} */}
+          )}
           {hasSteps == true && (
             <div className="p-[16px]">
               <ServiceSteps steps={steps} />
@@ -100,7 +119,8 @@ const ServicePage = () => {
       <div className="hidden lg:block lg:px-[130px] lg:mt-[5%]">
         <OtherServices
           otherServices={otherServices}
-          allServices={allServices}
+          // allServices={allServices}
+          allServices={[]}
         />
       </div>
 

@@ -4,18 +4,18 @@ import SummaryBookingForm from '@/components/booking/summary-form/SummaryBooking
 import TimeTableBooking from '@/components/booking/timetable-booking/TimeTableBooking';
 import PopUpConfirm from '@/components/common/modal/modal-popconfirm/ModalPopconfirm';
 import { supabase } from '@/services/supabase';
-import { useEffect, useRef, useState } from 'react';
-import lottie_booking from '../../../public/lottie/animation_lks6x6yc.json';
-import { Spin, message } from 'antd';
-import useSWR from 'swr';
 import { CreateId } from '@/utils/helpers/create-order-uid';
+import { message } from 'antd';
+import { useEffect, useRef, useState } from 'react';
+import useSWR from 'swr';
+import lottie_booking from '../../../public/lottie/animation_lks6x6yc.json';
 
-import useUsersStore from '@/stores/users-store';
-import { useRouter } from 'next/navigation';
 import LoadingDefault from '@/components/common/loading/LoadingDefault';
 import { IClinic } from '@/interfaces/clinic/clinic';
 import { IService } from '@/interfaces/service/service';
 import { User } from '@/interfaces/users/user';
+import useUsersStore from '@/stores/users-store';
+import { useRouter } from 'next/navigation';
 
 const desc_popConfirm_sending =
   'Khi bấm “Xác nhận”, đặt hẹn của bạn sẽ được lên lịch. Sẽ có tư vấn viên liên hệ với bạn thời gian sớm nhất. ';

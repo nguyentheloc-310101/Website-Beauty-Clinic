@@ -9,7 +9,7 @@ export interface IServiceStep extends IBase {
   image: any;
   description: string;
 }
-export interface IService extends IBase {
+export interface IServiceDetails extends IBase {
   image: string;
   price: number;
   description: string;
@@ -21,7 +21,14 @@ export interface IService extends IBase {
   service_id: string;
   others: IService[];
 }
-
+export interface IService extends IBase {
+  name: string;
+  category_id: string;
+  serviceDetails: IServiceDetails[];
+  doctors: IDoctor[];
+  others: IService[];
+  slug: string;
+}
 export interface IServiceCategory extends IBase {
   slug: string;
   name: string;
