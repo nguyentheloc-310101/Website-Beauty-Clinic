@@ -183,7 +183,7 @@ body {
 /*video*/
 .customer-said-container {
   padding: 48px 0px;
-  height: auto;
+  height: fit-content;
   background-image: url('https://ucarecdn.com/50206a34-4e1f-4501-b539-007aa7161dca/-/preview/-/quality/lightest/-/format/webp/s');
   background-size: cover;
 }
