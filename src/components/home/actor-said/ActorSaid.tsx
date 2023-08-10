@@ -34,8 +34,8 @@ const ActorSaid = () => {
           <br />
           <div className="lg:mr-[20px]">vì khách hàng</div>
         </div>
-        <div className="lg:ml-[30px] text-left lg:mt-[80px]">
-          <div className="text-[10px] font-[400] w-[150px] text-[#414141]  md:w-[350px] md:text-[18px] lg:w-[508px] lg:h-[264px] lg:text-[22px] lg:font-[300]">
+        <div className="lg:ml-[30px] lg:h-auto text-left lg:mt-[80px]">
+          <div className="text-[10px] font-[400] w-[150px] text-[#414141] md:w-[350px] md:text-[18px] lg:w-[508px] lg:h-auto lg:text-[22px] lg:font-[300]">
             {celebFeedback?.content}
           </div>
           <div className=" sm:font-[500] text-transparent bg-clip-text bg-gradient-to-r from-[#BF264B] to-[#DF4B6E] mr-[20px] text-[8px] md:text-[18px] lg:text-[26px] font-[400] lg:leading-[34px] lg:tracking-[1px]">
