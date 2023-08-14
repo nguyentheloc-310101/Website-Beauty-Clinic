@@ -22,7 +22,6 @@
     "antd": "^5.6.4",
     "autoprefixer": "^10.4.14",
     "axios": "^1.4.0",
-    "bootstrap": "^5.3.1",
     "dayjs": "^1.11.9",
     "eslint": "8.44.0",
     "eslint-config-next": "^13.4.12",

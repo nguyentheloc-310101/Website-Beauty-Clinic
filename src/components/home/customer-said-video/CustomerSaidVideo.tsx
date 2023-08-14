@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import 'bootstrap/dist/css/bootstrap.min.css';
 interface CustomerSaidVideoProps {
   videoLink: string;
 }
@@ -15,17 +14,12 @@ const CustomerSaidVideo = (props: CustomerSaidVideoProps) => {
           <div className="lg:ml-[38%]"> phá bỏ giới hạn</div>
         </div>
         <section className="max-w-[360px] md:max-w-[660px] mt-[5px] lg:mt-0 lg:max-w-[980px] mx-auto relative  w-full z-50">
-          {/* <div className="pt-[56.25%] relative">
+          <div className="pt-[56.25%] relative">
             <iframe
-              src="https://www.youtube.com/embed/mfZ-KSP_iA4?color=red"
+              src={videoLink}
               title="Aura Video"
               className="absolute rounded-[40px] bg-black top-0 left-0 w-full h-full object-contain"
             />
-          </div> */}
-          <div className="embed-responsive embed-responsive-16by9 pt-[56.25%] relative">
-            <iframe
-              className="embed-responsive-item absolute rounded-[40px] bg-black top-0 left-0 w-full h-full object-contain"
-              src={videoLink}></iframe>
           </div>
         </section>
 
