@@ -24,19 +24,19 @@ const ZaloQR = () => {
               />
             </div>
           </div>
-        </div>
-        <div className="flex">
-          <div className="mt-[40px] px-[40px]">
-            <img
-              src="https://ucarecdn.com/09555e4c-fd2b-4cc6-a011-4b4edf0ff08b/-/preview/586x270/-/quality/smart/-/format/auto/"
-              alt="qr-image"
-              className="w-[216px] h-[216px]"
-            />
-          </div>
-          <div className="flex  items-end lg:text-[24px] font-[400] leading-[36px] text-[#36383A]">
-            <div>
-              Hoặc quét <br />
-              <span className="font-[700]"> QR code</span>
+          <div className="flex">
+            <div className="mt-[40px] px-[40px]">
+              <img
+                src="https://ucarecdn.com/09555e4c-fd2b-4cc6-a011-4b4edf0ff08b/-/preview/586x270/-/quality/smart/-/format/auto/"
+                alt="qr-image"
+                className="w-[216px] h-[216px]"
+              />
+            </div>
+            <div className="flex  items-end lg:text-[24px] font-[400] leading-[36px] text-[#36383A]">
+              <div>
+                Hoặc quét <br />
+                <span className="font-[700]"> QR code</span>
+              </div>
             </div>
           </div>
         </div>

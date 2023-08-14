@@ -16,12 +16,6 @@ const LeftFormContent = () => {
             tư vấn miễn phí
           </div>
         </div>
-
-        <div className="flex w-full items-center justify-center">
-          <button className="bg-gradient-to-r lg:py-[12px] lg:px-[24px] lg:w-[244px] lg:h-[44px] rounded-[8px] from-[#FFF2DE] to-[#FFF] text-[#BC2449] text-[16px] font-[600] leading-[20px] tracking-[0.25px] flex items-center justify-center">
-            Gửi thông tin
-          </button>
-        </div>
       </div>
     </div>
   );
