@@ -1,6 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import 'bootstrap/dist/css/bootstrap.min.css';
-const CustomerSaidVideo = () => {
+interface CustomerSaidVideoProps {
+  videoLink: string;
+}
+const CustomerSaidVideo = (props: CustomerSaidVideoProps) => {
+  const { videoLink } = props;
   return (
     <>
       <div className="customer-said-container  lg:relative">
@@ -21,7 +25,7 @@ const CustomerSaidVideo = () => {
           <div className="embed-responsive embed-responsive-16by9 pt-[56.25%] relative">
             <iframe
               className="embed-responsive-item absolute rounded-[40px] bg-black top-0 left-0 w-full h-full object-contain"
-              src="https://www.youtube.com/embed/mfZ-KSP_iA4"></iframe>
+              src={videoLink}></iframe>
           </div>
         </section>
 
