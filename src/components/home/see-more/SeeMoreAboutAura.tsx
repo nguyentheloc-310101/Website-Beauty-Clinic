@@ -16,7 +16,7 @@ const SeeMoreAboutAura = () => {
   return (
     <div className="relative flex flex-col items-center justify-center md:mt-[100px]">
       <div className="lg:mt-[50px] lg:mb-[100px] z-50">
-        <div className="text-[56px] text-[#BC2449] font-[900] uppercase leading-[64px]">
+        <div className="hidden text-[56px] text-[#BC2449] font-[900] uppercase leading-[64px]">
           <span className="ml-[350px]"> Aura - Thẩm mỹ viện</span>
 
           <br />

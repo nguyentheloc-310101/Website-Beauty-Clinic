@@ -33,7 +33,7 @@ const SliderCardCustomerSaid = ({ customerSaid }: CustomerFeedbackProps) => {
 
   return (
     <div
-      className="flex items-end gap-[20px] lg:gap-[60px] overflow-x-scroll hide-scrollbar h-[500px]"
+      className="flex items-end gap-[20px] lg:px-[28px]  lg:gap-[60px] overflow-x-scroll hide-scrollbar h-[500px]"
       ref={sliderRef}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}

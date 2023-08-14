@@ -7,48 +7,35 @@ const NavigationAura = () => {
   return (
     <div className="hidden w-full text-white bg-[#bc2449] text-[14px] lg:flex items-center justify-between font-[600] xl:px-[10rem] lg:px-[7rem] md:px-[6rem] py-[10px] hover:text-[]">
       <div
-        className="cursor-pointer"
-        // onMouseEnter={() => handleMouseEnter(itemsPT)}
+      // onMouseEnter={() => handleMouseEnter(itemsPT)}
       >
-        <span className="text-center hover:text-[#f7d5dd]">
-          Phẩu thuật thẩm mỹ
-        </span>
-      </div>
-
-      <div
-        className="cursor-pointer"
-        // onMouseEnter={() => handleMouseEnter(itemsTriNam)}
-      >
-        <span className="text-center hover:text-[#f7d5dd]">Trị nám</span>
+        <span className="text-center">Phẩu thuật thẩm mỹ</span>
       </div>
       <div
-        className="cursor-pointer"
-        // onMouseEnter={() => handleMouseEnter(itemsPhunXam)}
+      // onMouseEnter={() => handleMouseEnter(itemsTriNam)}
       >
-        <span className="text-center hover:text-[#f7d5dd]">Phun xăm</span>
+        <span className="text-center">Trị nám</span>
       </div>
       <div
-        className="cursor-pointer"
-        // onMouseEnter={() => handleMouseEnter(itemsTaoHinh)}
+      // onMouseEnter={() => handleMouseEnter(itemsPhunXam)}
       >
-        <span className="text-center hover:text-[#f7d5dd]">
-          Tạo hình không xâm lấn
-        </span>
-      </div>
-
-      <div
-        className="cursor-pointer"
-        // onMouseEnter={() => handleMouseEnter(itemsNangCo)}
-      >
-        <span className="text-center hover:text-[#f7d5dd]">
-          Nâng cơ trẻ hóa
-        </span>
+        <span className="text-center">Phun xăm</span>
       </div>
       <div
-        className="cursor-pointer"
+      // onMouseEnter={() => handleMouseEnter(itemsTaoHinh)}
+      >
+        <span className="text-center">Tạo hình không xâm lấn</span>
+      </div>
+      <div
+      // onMouseEnter={() => handleMouseEnter(itemsNangCo)}
+      >
+        <span className="text-center">Nâng cơ trẻ hóa</span>
+      </div>
+      <div
+        className=""
         // onMouseEnter={() => handleMouseEnter(itemsOtherService)}
       >
-        <span className="text-center hover:text-[#f7d5dd]">Dịch vụ khác</span>
+        <span className="text-center">Dịch vụ khác</span>
       </div>
     </div>
   );

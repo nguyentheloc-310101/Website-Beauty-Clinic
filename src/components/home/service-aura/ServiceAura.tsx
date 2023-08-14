@@ -47,17 +47,6 @@ const SliderService = () => {
             />
           );
         })}
-      {/* {serviceList &&
-        serviceList?.map((item, key) => {
-          return (
-            <CardService
-              key={key}
-              image={item.image}
-              name={''}
-              tagline={''} // alt={item.alt}
-            />
-          );
-        })} */}
     </div>
   );
 };

@@ -24,7 +24,7 @@ export interface IServiceDetails extends IBase {
 export interface IService extends IBase {
   name: string;
   category_id: string;
-  serviceDetails: IServiceDetails[];
+  // serviceDetails: IServiceDetails[];
   doctors: IDoctor[];
   others: IService[];
   slug: string;
