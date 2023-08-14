@@ -1,18 +1,16 @@
+import { IAuraInfos } from '@/interfaces/home/IHome';
+import Item from 'antd/es/list/Item';
+
 /* eslint-disable @next/next/no-img-element */
-const big =
-  'https://ucarecdn.com/5a13183f-7f66-4d9e-b08b-c75ebcb55198/-/preview/500x700/-/quality/lightest/-/format/webp/';
+
 const ribbon =
   'https://ucarecdn.com/205392a3-8131-4e98-857c-c42de0638347/-/quality/lightest/-/format/webp/';
-const modern =
-  'https://ucarecdn.com/7f029865-8b70-4cf8-89f9-98772420bda9/-/preview/500x700/-/quality/lightest/-/format/webp/';
-const leftIcon =
-  'https://ucarecdn.com/862e2b7b-bebd-44fb-8ff9-0034d1b3a88b/-/preview/500x700/-/quality/lightest/-/format/webp/';
-const text5stars =
-  'https://ucarecdn.com/d96567d8-ff54-408d-9f57-c393c661bb09/-/preview/850x1000/-/quality/lightest/-/format/webp/';
-const profession =
-  'https://ucarecdn.com/3e624024-4900-4527-9049-f907f1fe246f/-/preview/500x700/-/quality/lightest/-/format/webp/';
 
-const SeeMoreAboutAura = () => {
+interface AuraScopeProps {
+  auraInfos: IAuraInfos[];
+}
+const SeeMoreAboutAura = (props: AuraScopeProps) => {
+  const { auraInfos } = props;
   return (
     <div className="relative flex flex-col items-center justify-center md:mt-[100px]">
       <div className="lg:mt-[50px] lg:mb-[100px] z-50">
@@ -32,23 +30,39 @@ const SeeMoreAboutAura = () => {
       </div>
       <div className="flex flex-col items-center z-10">
         <div className="flex overflow-x-scroll gap-[37px] mb-[20px] scrollbar-hide">
-          <img
-            src={big}
-            alt={'text-customer'}
-            className="lg:w-auto lg:h-[450px] w-[265px] h-[398px] z-50"
-          />
-
-          <img
-            src={modern}
-            alt={'text-customer'}
-            className="md:w-auto md:h-[450px] w-[265px] h-[398px]"
-          />
-
-          <img
-            src={profession}
-            alt={'text-customer'}
-            className="md:w-auto md:h-[450px] w-[265px] h-[398px]"
-          />
+          {/* {auraInfos &&
+            auraInfos.map((info, index) => {
+              return (
+                <div
+                  key={index}
+                  className="flex-shrink-0  rounded-[160px] w-[265px] h-[398px] overflow-hidden relative lg:w-[319px] lg:h-[450px] border-[6px] border-[#BC2449] bg-[white]">
+                  <img
+                    src={info.image}
+                    alt=""
+                    className="w-full h-full object-fit z-10"
+                  />
+                  <div className="w-full linear-white h-[25vh] absolute bottom-0"></div>
+                  <div className="absolute-bottom-center text-[#BC2449] lg:text-[36px] lg:leading-[42px] uppercase text-center">
+                    <div className="font-[800]">{info.mainText}</div>
+                    <div className="font-[600]">{info.subText}</div>
+                  </div>
+                </div>
+              );
+            })} */}
+          <div className="flex-shrink-0  rounded-[160px] w-[265px] h-[398px] overflow-hidden relative lg:w-[319px] lg:h-[450px] border-[6px] border-[#BC2449] bg-[white]">
+            <img
+              src={
+                'https://ucarecdn.com/b3e71052-7c5b-4725-8913-bfa817b3f3e8/-/quality/smart/-/format/auto/'
+              }
+              alt=""
+              className="w-full h-full object-fit z-10"
+            />
+            <div className="w-full linear-white h-[25vh] absolute bottom-0"></div>
+            <div className="absolute-bottom-center text-[#BC2449] lg:text-[36px] lg:leading-[42px] uppercase text-center">
+              <div className="font-[800]">quy mô</div>
+              <div className="font-[600]">lớn</div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="lg:flex lg:absolute lg:z-0 lg:h-[541px] lg:w-[100%] lg:bottom-[40px] hidden">

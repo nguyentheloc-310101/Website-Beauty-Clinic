@@ -10,7 +10,7 @@ export const CardCustomer = (props: CardCustomerProps) => {
   const { customer_name, message, signed, image, clinic } = props;
   return (
     <div className="card-customer lg:overflow-hidden">
-      <div className="flex lg:relative md:ml-[35px] flex-col w-[286px] h-full md:w-[260px] lg:w-[350px] lg:items-start items-center lg:justify-center lg:ml-[40px]">
+      <div className="flex lg:relative md:ml-[35px] flex-col justify-end py-[20px] w-[286px] h-full md:w-[260px] lg:w-[350px] lg:items-start  lg:justify-center lg:ml-[40px]">
         <div className="text-[#B24B64] text-center lg:text-[20px] mt-[40px] font-[700]">
           {customer_name} - {clinic}
         </div>
@@ -25,7 +25,7 @@ export const CardCustomer = (props: CardCustomerProps) => {
         <img
           src={image}
           alt={'image-customer'}
-          className="w-auto h-[273px] left-[55px] top-[-90px] lg:-left-[-30px] lg:top-0 lg:bottom-[10px] lg:h-[406px] lg:w-auto absolute lg:relative"
+          className="w-auto h-[273px] left-[55px] top-[-120px] lg:-left-[-30px] lg:top-0 lg:bottom-[10px] object-cover lg:h-[406px] lg:w-auto absolute lg:relative"
         />
       </div>
     </div>

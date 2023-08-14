@@ -37,3 +37,9 @@ export interface IHome {
   news: INews[];
   auraInfos: IAuraInfo[];
 }
+
+export interface IAuraInfos {
+  image: string;
+  mainText: string;
+  subText: string;
+}

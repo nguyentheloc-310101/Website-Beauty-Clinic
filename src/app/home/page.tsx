@@ -10,7 +10,7 @@ import SeeMoreAboutAura from '@/components/home/see-more/SeeMoreAboutAura';
 import SliderService from '@/components/home/service-aura/ServiceAura';
 import SliderServiceResponsive from '@/components/home/service-aura/ServiceAuraResponsive';
 import PanelContact from '@/components/panel-contact/PanelContact';
-import { IHome } from '@/interfaces/home/IHome';
+import { IAuraInfos, IHome } from '@/interfaces/home/IHome';
 import { supabase_website } from '@/services/supabase';
 import { message } from 'antd';
 import { IClinic } from '@/interfaces/clinic/clinic';
@@ -26,6 +26,9 @@ const HomePage = () => {
   const [allClinicId, setAllClinicId] = useState<string[]>([]);
   const [clinicsOnHome, setClinicsOnHome] = useState<IClinic[]>([]);
 
+  const [isShowAuraInfos, setIsShowAuraInfos] = useState<boolean>(true);
+  const [auraInfos, setAuraInfos] = useState<IAuraInfos[]>([]);
+
   useEffect(() => {
     fetchDataHome();
   }, []);
@@ -40,7 +43,8 @@ const HomePage = () => {
     }
     setGeneralData(data[0]);
     setAllClinicId(data[0].data.clinic_ids);
-
+    setIsShowAuraInfos(data[0].data.hasAuraInfos);
+    setAuraInfos(data[0].data.auraInfos);
     const allId = data[0].data.clinic_ids;
 
     const { data: allClinics, error: errorClinics } = await supabase_website
@@ -54,20 +58,21 @@ const HomePage = () => {
       setLoading(false);
     }
 
-    allId.map((id: string) => {
-      const tmp = allClinics.filter((clinic) => clinic.id == id);
-      console.log('tmp: ', tmp[0]);
-      if (tmp.length !== 0) {
-        setClinicsOnHome((prev) => [...prev, tmp[0]]);
-      }
-    });
+    allId &&
+      allId.map((id: string) => {
+        const tmp = allClinics.filter((clinic) => clinic.id == id);
+        console.log('tmp: ', tmp[0]);
+        if (tmp.length !== 0) {
+          setClinicsOnHome((prev) => [...prev, tmp[0]]);
+        }
+      });
 
     setLoading(false);
   };
 
   console.log('data_here: ', generalData);
   console.log('data_clinics: ', allClinics);
-  console.log('clinicsOnHome: ', clinicsOnHome);
+  console.log('auraInfos: ', auraInfos);
 
   return (
     <>
@@ -91,7 +96,12 @@ const HomePage = () => {
           />
           <ActorSaid />
           <SliderCustomerSaid />
-          <SeeMoreAboutAura />
+          {isShowAuraInfos ? (
+            <SeeMoreAboutAura auraInfos={auraInfos} />
+          ) : (
+            <div className="hidden lg:block lg:my-[00px]"></div>
+          )}
+
           <ContactInformation />
         </div>
       </GeneralHomeContext.Provider>

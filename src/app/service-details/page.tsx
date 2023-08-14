@@ -13,7 +13,6 @@ import ZaloQRMobile from '@/components/service-details/zalo-qr/ZaloQRMobile';
 import { IService, IServiceStep } from '@/interfaces/service/service';
 import { supabase_website } from '@/services/supabase';
 import { message } from 'antd';
-import { Metadata } from 'next';
 import { useEffect, useState } from 'react';
 
 const ServicePage = () => {

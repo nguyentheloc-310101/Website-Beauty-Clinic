@@ -5,7 +5,7 @@ import { IHomeService } from '@/interfaces/home/IHome';
 const CardService = (props: IHomeService) => {
   const { image, name, tagline } = props;
   return (
-    <div className="lg:flex-shrink-0 lg relative lg:rounded-[40px] ">
+    <div className="lg:flex lg relative lg:rounded-[40px] ">
       <div className="absolute linear-bg-service-card z-[100] w-full h-[50%] bottom-0 rounded-[40px]"></div>
       <img
         src={image}
