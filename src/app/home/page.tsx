@@ -10,11 +10,12 @@ import SeeMoreAboutAura from '@/components/home/see-more/SeeMoreAboutAura';
 import SliderService from '@/components/home/service-aura/ServiceAura';
 import SliderServiceResponsive from '@/components/home/service-aura/ServiceAuraResponsive';
 import PanelContact from '@/components/panel-contact/PanelContact';
-import { IAuraInfos, IHome } from '@/interfaces/home/IHome';
+
 import { supabase_website } from '@/services/supabase';
 import { message } from 'antd';
 import { IClinic } from '@/interfaces/clinic/clinic';
 import LoadingDefault from '@/components/common/loading/LoadingDefault';
+import { IAuraInfos } from '@/interfaces/home/IHome';
 
 const GeneralHomeContext = createContext<any>(null);
 const HomePage = () => {
@@ -25,6 +26,8 @@ const HomePage = () => {
   const [allClinics, setAllClinics] = useState<IClinic[]>([]);
   const [allClinicId, setAllClinicId] = useState<string[]>([]);
   const [clinicsOnHome, setClinicsOnHome] = useState<IClinic[]>([]);
+
+  const [videoLink, setVideoLink] = useState<string>('');
 
   const [isShowAuraInfos, setIsShowAuraInfos] = useState<boolean>(true);
   const [auraInfos, setAuraInfos] = useState<IAuraInfos[]>([]);
@@ -45,6 +48,7 @@ const HomePage = () => {
     setAllClinicId(data[0].data.clinic_ids);
     setIsShowAuraInfos(data[0].data.hasAuraInfos);
     setAuraInfos(data[0].data.auraInfos);
+    setVideoLink(data[0].data.videoLink);
     const allId = data[0].data.clinic_ids;
 
     const { data: allClinics, error: errorClinics } = await supabase_website
@@ -89,7 +93,7 @@ const HomePage = () => {
           <div className="md:hidden">
             <SliderServiceResponsive />
           </div>
-          <CustomerSaidVideo />
+          <CustomerSaidVideo videoLink={videoLink} />
           <AuraCampus
             allClinics={clinicsOnHome}
             allClinicId={allClinicId}
