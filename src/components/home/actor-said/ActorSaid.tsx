@@ -15,7 +15,7 @@ const ActorSaid = () => {
           className="md:w-[555px] md:h-[891px]"
           style={{ objectFit: 'cover' }}
         />
-        <div className="lg:absolute flex flex-col items-center justify-end lg:bottom-0 w-full text-left h-fit">
+        <div className="absolute flex flex-col items-center justify-end bottom-5 lg:bottom-0 w-full text-left h-fit">
           <div className="text-[#4f4f4f] mt-[5px] italic sm:font-[300] text-[9px] uppercase ms:text-[12px] md:text-[18px] lg:font-[100] lg:text-[27px]">
             {celebFeedback?.job}
           </div>
@@ -25,13 +25,22 @@ const ActorSaid = () => {
         </div>
       </div>
       <div className="col-span-1 lg:ml-[2%] flex flex-col items-center">
-        <div className="lg:w-[600px] text-right uppercase lg:text-[56px] lg:font-[900] lg:leading-[64px] text-[#BC2449]">
+        <div className="hidden lg:block lg:w-[600px] text-right uppercase lg:text-[56px] lg:font-[900] lg:leading-[64px] text-[#BC2449]">
           <div className="lg:mr-[60px]"> Aura là</div>
           <br />
           <div className="normal-case font-service-card lg:text-[140px] font-[400] lg:leading-[45px]">
             địa chỉ số 1
           </div>
           <br />
+          <div className="lg:mr-[20px]">vì khách hàng</div>
+        </div>
+        <div className="lg:hidden text-right uppercase lg:text-[56px] lg:font-[900] lg:leading-[64px] text-[#BC2449]">
+          <div className="lg:mr-[60px]"> Aura là</div>
+          {'\n'}
+          <div className="normal-case font-service-card lg:text-[140px] font-[400] lg:leading-[45px]">
+            địa chỉ số 1
+          </div>
+          {'\n'}
           <div className="lg:mr-[20px]">vì khách hàng</div>
         </div>
         <div className="lg:ml-[30px] lg:h-auto text-left lg:mt-[80px]">
