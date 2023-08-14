@@ -3,7 +3,7 @@ import { gradientText } from '@/constants/gradentText';
 import React, { useEffect, useState } from 'react';
 import CardOtherService from './cards-services-horizontal/CardOtherService';
 import { otherServiceData } from '@/data/other-services/OtherServiceData';
-import { IService } from '@/interfaces/service/service';
+import { IService, IServiceDetails } from '@/interfaces/service/service';
 interface OtherProps {
   otherServices?: any;
   allServices: IService[];
@@ -14,14 +14,16 @@ const OtherServices = (props: OtherProps) => {
   useEffect(() => {
     filterOther(otherServices);
   }, [allServices]);
-  const [otherServicesList, setOtherServicesList] = useState<IService[]>([]);
+  const [otherServicesList, setOtherServicesList] = useState<IServiceDetails[]>(
+    []
+  );
   const filterOther = (otherServices: any) => {
     otherServices?.map((item: any) => {
       const result: IService[] = allServices.filter(
         (service) => service.id == item.id
       );
       if (result.length > 0) {
-        setOtherServicesList((prev) => [...prev, result[0]]);
+        setOtherServicesList((prev: any) => [...prev, result[0]]);
       }
     });
   };
