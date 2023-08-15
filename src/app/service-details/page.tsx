@@ -99,7 +99,7 @@ const ServicePage = () => {
       <div className="hidden lg:block lg:px-[130px] lg:mt-[5%]">
         <OtherServices
           otherServices={otherServices}
-          allServices={allServices}
+          allServices={[]}
         />
       </div>
 

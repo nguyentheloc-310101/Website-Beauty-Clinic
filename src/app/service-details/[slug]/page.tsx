@@ -28,6 +28,7 @@ const ServicePage = ({ params }: ServicePageProps) => {
   const [serviceSelectedDetails, setServiceSelectedDetails] =
     useState<IServiceDetails>();
   const [loading, setLoading] = useState<boolean>(false);
+  const [allServices, setAllServices] = useState<IService[]>();
 
   const [hasDoctor, setHasDoctor] = useState<boolean>(true);
   const [hasSteps, setHasSteps] = useState<boolean>(true);
@@ -41,6 +42,16 @@ const ServicePage = ({ params }: ServicePageProps) => {
   const fetchDataServiceDetail = async () => {
     try {
       setLoading(true);
+
+      const { data: all, error: errAll } = await supabase_website
+        .from('service-details')
+        .select('*');
+      if (all) {
+        setAllServices(all);
+      }
+      if (errAll) {
+        message.error(errAll.message);
+      }
       const { data: serviceSelect, error: errSelect } = await supabase_website
         .from('services')
         .select('*,doctors(*), others!others_other_fkey(*)')
@@ -50,7 +61,7 @@ const ServicePage = ({ params }: ServicePageProps) => {
         setLoading(false);
         return;
       }
-      console.log('service: ', serviceSelect[0]);
+      console.log('service: ', all);
       if (serviceSelect.length > 0) {
         setServiceSelected(serviceSelect[0]);
         setServiceName(serviceSelect[0].name);
@@ -81,7 +92,7 @@ const ServicePage = ({ params }: ServicePageProps) => {
       setLoading(false);
     }
   };
-  // console.log('slug---------------data detail: ', serviceSelectedDetails);
+  console.log(allServices);
   return (
     <div>
       <ServiceHero
@@ -123,12 +134,10 @@ const ServicePage = ({ params }: ServicePageProps) => {
       </div>
       <div className="hidden lg:block lg:px-[130px] lg:mt-[5%]">
         <OtherServices
-          otherServices={otherServices}
-          // allServices={allServices}
-          allServices={[]}
+          otherServices={otherServices ? [...otherServices] : []}
+          allServices={allServices ? [...(allServices as any)] : []}
         />
-      </div>
-
+      </div>{' '}
       <div className="hidden lg:block mt-[80px] relative h-[500px]">
         <div className="absolute bottom-[-37%]">
           <ZaloQR />
