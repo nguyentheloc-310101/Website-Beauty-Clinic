@@ -33,6 +33,7 @@ const ServicePage = ({ params }: ServicePageProps) => {
   const [hasSteps, setHasSteps] = useState<boolean>(true);
   const [steps, setSteps] = useState<IServiceStep[]>([]);
   const [otherServices, setOtherServices] = useState<any>();
+  const [serviceName, setServiceName] = useState<string>('');
   useEffect(() => {
     fetchDataServiceDetail();
   }, []);
@@ -52,6 +53,7 @@ const ServicePage = ({ params }: ServicePageProps) => {
       console.log('service: ', serviceSelect[0]);
       if (serviceSelect.length > 0) {
         setServiceSelected(serviceSelect[0]);
+        setServiceName(serviceSelect[0].name);
         setOtherServices(serviceSelect[0].others);
         const id = serviceSelect[0].id;
         const { data: serviceDetails, error: detailErr } =
@@ -79,10 +81,13 @@ const ServicePage = ({ params }: ServicePageProps) => {
       setLoading(false);
     }
   };
-  console.log('slug---------------data detail: ', serviceSelectedDetails);
+  // console.log('slug---------------data detail: ', serviceSelectedDetails);
   return (
     <div>
-      <ServiceHero serviceSelectedDetails={serviceSelectedDetails} />
+      <ServiceHero
+        serviceSelectedDetails={serviceSelectedDetails}
+        serviceName={serviceName}
+      />
       <div className="lg:flex flex-cols">
         <div>
           <div className="hidden lg:block lg:w-[430px] lg:mt-[197px] px-[16px]"></div>

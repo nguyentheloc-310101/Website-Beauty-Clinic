@@ -7,9 +7,10 @@ import React from 'react';
 
 interface HeroServiceProps {
   serviceSelectedDetails?: IServiceDetails;
+  serviceName: string;
 }
 const ServiceHero = (props: HeroServiceProps) => {
-  const { serviceSelectedDetails } = props;
+  const { serviceSelectedDetails, serviceName } = props;
   return (
     <div className="relative w-full h-[336px] lg:w-full lg:h-auto overflow-hidden">
       <img
@@ -20,7 +21,7 @@ const ServiceHero = (props: HeroServiceProps) => {
       <div className="absolute top-[16px] left-[16px] w-[216px] rounded-[16px] p-[16px] lg:top-[120px] lg:left-[132px] z-50 lg:w-[578px] lg:h-[380px] lg:p-[36px] bg-white/70 lg:rounded-[40px] ">
         <div
           className={`${gradientText} text-[16px] leading-[24px] tracking-[0.25px] lg:tracking-[0.25px] lg:leading-[52px] lg:text-[35px] font-[800]`}>
-          {serviceSelectedDetails?.name}
+          {serviceName}
         </div>
         <div className="lg:text-[16px] font-[300] text-[10px] leading-[14px] mt-[10px] lg:leading-[24px] text-[#36383A] lg:tracking-[0.5px] lg:mt-[12px]">
           {serviceSelectedDetails?.description}
