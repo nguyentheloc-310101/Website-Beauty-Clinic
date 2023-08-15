@@ -65,7 +65,6 @@ const HomePage = () => {
     allId &&
       allId.map((id: string) => {
         const tmp = allClinics.filter((clinic) => clinic.id == id);
-        console.log('tmp: ', tmp[0]);
         if (tmp.length !== 0) {
           setClinicsOnHome((prev) => [...prev, tmp[0]]);
         }
