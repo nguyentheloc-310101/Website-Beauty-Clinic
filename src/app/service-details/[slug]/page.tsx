@@ -28,7 +28,7 @@ const ServicePage = ({ params }: ServicePageProps) => {
   const [serviceSelectedDetails, setServiceSelectedDetails] =
     useState<IServiceDetails>();
   const [loading, setLoading] = useState<boolean>(false);
-  const [backgroundService, setBackgroundService] = useState<string>('');
+
   const [hasDoctor, setHasDoctor] = useState<boolean>(true);
   const [hasSteps, setHasSteps] = useState<boolean>(true);
   const [steps, setSteps] = useState<IServiceStep[]>([]);
