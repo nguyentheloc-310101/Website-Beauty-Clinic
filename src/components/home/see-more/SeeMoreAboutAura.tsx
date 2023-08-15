@@ -30,7 +30,7 @@ const SeeMoreAboutAura = (props: AuraScopeProps) => {
       </div>
       <div className="flex flex-col items-center z-10">
         <div className="flex overflow-x-scroll gap-[37px] mb-[20px] scrollbar-hide">
-          {/* {auraInfos &&
+          {auraInfos &&
             auraInfos.map((info, index) => {
               return (
                 <div
@@ -48,8 +48,8 @@ const SeeMoreAboutAura = (props: AuraScopeProps) => {
                   </div>
                 </div>
               );
-            })} */}
-          <div className="flex-shrink-0  rounded-[160px] w-[265px] h-[398px] overflow-hidden relative lg:w-[319px] lg:h-[450px] border-[6px] border-[#BC2449] bg-[white]">
+            })}
+          {/* <div className="flex-shrink-0  rounded-[160px] w-[265px] h-[398px] overflow-hidden relative lg:w-[319px] lg:h-[450px] border-[6px] border-[#BC2449] bg-[white]">
             <img
               src={
                 'https://ucarecdn.com/b3e71052-7c5b-4725-8913-bfa817b3f3e8/-/quality/smart/-/format/auto/'
@@ -62,7 +62,7 @@ const SeeMoreAboutAura = (props: AuraScopeProps) => {
               <div className="font-[800]">quy mô</div>
               <div className="font-[600]">lớn</div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="lg:flex lg:absolute lg:z-0 lg:h-[541px] lg:w-[100%] lg:bottom-[40px] hidden">

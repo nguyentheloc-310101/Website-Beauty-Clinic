@@ -1,8 +1,12 @@
 import React from 'react';
 import FormInputContent from './right-form/FormInputContent';
 import LogoSvg from '../../../../public/images/svg/LogoSvg';
+type ServiceFormMobileProps = {
+  setLoading: (e: boolean) => void;
+};
 
-const ServiceFormMobile = () => {
+const ServiceFormMobile = (props: ServiceFormMobileProps) => {
+  const { setLoading } = props;
   return (
     <div className="linear-bg my-[64px] h-[576px] flex flex-col items-center justify-center rounded-[20px] mx-[16px]">
       <div className="z-50">
@@ -13,7 +17,7 @@ const ServiceFormMobile = () => {
           tư vấn miễn phí
         </div>
       </div>
-      <FormInputContent />
+      <FormInputContent setLoading={setLoading} />
       <div className="relative flex w-full items-center justify-center">
         <LogoSvg />
       </div>

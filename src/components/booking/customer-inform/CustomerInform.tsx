@@ -68,7 +68,7 @@ const CustomerInform = ({
           <InputDefault
             label="Email"
             type={'email'}
-            // pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
             placeholder="Khách có thể bỏ trống"
             onChange={(e: any) => setCustomerEmail(e.target.value)}
           />

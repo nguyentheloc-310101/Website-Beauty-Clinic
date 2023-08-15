@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
+import LoadingDefault from '@/components/common/loading/LoadingDefault';
 import { Doctors } from '@/components/service-details/service-doctors/Doctors';
 import ServiceForm from '@/components/service-details/service-form/ServiceForm';
 import ServiceFormMobile from '@/components/service-details/service-form/ServiceFormMobile';
 import ServiceHero from '@/components/service-details/service-hero/ServiceHero';
 import OtherServices from '@/components/service-details/service-others/OtherServices';
 import ServicePayment from '@/components/service-details/service-payments/ServicePayment';
-import ServiceSideBarVs1 from '@/components/service-details/service-sideBar/vs1/ServiceSideBarVs1';
 import ServiceSteps from '@/components/service-details/service-steps/ServiceSteps';
 import ZaloQR from '@/components/service-details/zalo-qr/ZaloQR';
 import ZaloQRMobile from '@/components/service-details/zalo-qr/ZaloQRMobile';
@@ -28,6 +28,7 @@ const ServicePage = ({ params }: ServicePageProps) => {
   const [serviceSelectedDetails, setServiceSelectedDetails] =
     useState<IServiceDetails>();
   const [loading, setLoading] = useState<boolean>(false);
+  const [allServices, setAllServices] = useState<IService[]>();
 
   const [hasDoctor, setHasDoctor] = useState<boolean>(true);
   const [hasSteps, setHasSteps] = useState<boolean>(true);
@@ -41,6 +42,16 @@ const ServicePage = ({ params }: ServicePageProps) => {
   const fetchDataServiceDetail = async () => {
     try {
       setLoading(true);
+
+      const { data: all, error: errAll } = await supabase_website
+        .from('service-details')
+        .select('*');
+      if (all) {
+        setAllServices(all);
+      }
+      if (errAll) {
+        message.error(errAll.message);
+      }
       const { data: serviceSelect, error: errSelect } = await supabase_website
         .from('services')
         .select('*,doctors(*), others!others_other_fkey(*)')
@@ -50,7 +61,7 @@ const ServicePage = ({ params }: ServicePageProps) => {
         setLoading(false);
         return;
       }
-      console.log('service: ', serviceSelect[0]);
+      console.log('service: ', all);
       if (serviceSelect.length > 0) {
         setServiceSelected(serviceSelect[0]);
         setServiceName(serviceSelect[0].name);
@@ -81,63 +92,67 @@ const ServicePage = ({ params }: ServicePageProps) => {
       setLoading(false);
     }
   };
-  // console.log('slug---------------data detail: ', serviceSelectedDetails);
+  console.log(allServices);
   return (
-    <div>
-      <ServiceHero
-        serviceSelectedDetails={serviceSelectedDetails}
-        serviceName={serviceName}
-      />
-      <div className="lg:flex flex-cols">
+    <>
+      {loading ? (
+        <LoadingDefault loading={loading} />
+      ) : (
         <div>
-          <div className="hidden lg:block lg:w-[430px] lg:mt-[197px] px-[16px]"></div>
-        </div>
-        <div className="lg:my-[80px]">
-          {hasDoctor && (
-            <div className="px-[16px] pb-[16px] lg:mb-[80px]">
-              <Doctors serviceSelected={serviceSelected} />
+          <ServiceHero
+            serviceSelectedDetails={serviceSelectedDetails}
+            serviceName={serviceName}
+          />
+          <div className="lg:flex flex-cols">
+            <div>
+              <div className="hidden lg:block lg:w-[430px] lg:mt-[197px] px-[16px]"></div>
             </div>
-          )}
-          {hasSteps == true && (
-            <div className="p-[16px]">
-              <ServiceSteps steps={steps} />
+            <div className="lg:my-[80px]">
+              {hasDoctor && (
+                <div className="px-[16px] pb-[16px] lg:mb-[80px]">
+                  <Doctors serviceSelected={serviceSelected} />
+                </div>
+              )}
+              {hasSteps == true && (
+                <div className="p-[16px]">
+                  <ServiceSteps steps={steps} />
+                </div>
+              )}
             </div>
-          )}
+          </div>
+          <div className="hidden lg:block relative pr-[130px]">
+            <div className="lg:ml-[430px]">
+              <ServiceForm setLoading={setLoading} />
+            </div>
+          </div>
+          <div className="relative lg:hidden h-[683px] w-full overflow-hidden">
+            <ServiceFormMobile setLoading={setLoading} />
+            <img
+              src="https://ucarecdn.com/449f407d-d989-466f-b772-8412f0e620cb/-/quality/smart/-/format/auto/"
+              alt="rb-service"
+              className="absolute top-[-1vh] w-full h-auto "
+            />
+          </div>
+          <div className="lg:pr-[130px] lg:pl-[430px] lg:mt-[30vh]">
+            <ServicePayment />
+          </div>
+          <div className="hidden lg:block lg:px-[130px] lg:mt-[5%]">
+            <OtherServices
+              otherServices={otherServices ? [...otherServices] : []}
+              allServices={allServices ? [...(allServices as any)] : []}
+            />
+          </div>
+          <div className="hidden lg:block mt-[80px] relative h-[500px]">
+            <div className="absolute bottom-[-37%]">
+              <ZaloQR />
+            </div>
+          </div>
+          <div className="lg:hidden">
+            <ZaloQRMobile />
+          </div>
         </div>
-      </div>
-      <div className="hidden lg:block relative pr-[130px]">
-        <div className="lg:ml-[430px]">
-          <ServiceForm />
-        </div>
-      </div>
-      <div className="relative lg:hidden h-[683px] w-full overflow-hidden">
-        <ServiceFormMobile />
-        <img
-          src="https://ucarecdn.com/449f407d-d989-466f-b772-8412f0e620cb/-/quality/smart/-/format/auto/"
-          alt="rb-service"
-          className="absolute top-[-1vh] w-full h-auto "
-        />
-      </div>
-      <div className="lg:pr-[130px] lg:pl-[430px] lg:mt-[30vh]">
-        <ServicePayment />
-      </div>
-      <div className="hidden lg:block lg:px-[130px] lg:mt-[5%]">
-        <OtherServices
-          otherServices={otherServices}
-          // allServices={allServices}
-          allServices={[]}
-        />
-      </div>
-
-      <div className="hidden lg:block mt-[80px] relative h-[500px]">
-        <div className="absolute bottom-[-37%]">
-          <ZaloQR />
-        </div>
-      </div>
-      <div className="lg:hidden">
-        <ZaloQRMobile />
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 

@@ -1,35 +1,141 @@
 'use client';
-import { Form } from 'antd';
-import React from 'react';
+import { Contact } from '@/components/home/form-contact/FormContactAdvisory';
+import { Form, message } from 'antd';
+import { useRouter } from 'next/navigation';
+import React, { ChangeEvent, useState } from 'react';
 
-const FormInputContent = () => {
+const initState: Contact = {
+  name: '',
+  phone: '',
+  address: '',
+  service: '',
+};
+type FormInputContent = {
+  setLoading: (e: boolean) => void;
+};
+const FormInputContent = (props: FormInputContent) => {
+  const { setLoading } = props;
+  const router = useRouter();
+  const [data, setData] = useState<Contact>(initState);
+  const handleSubmit = async () => {
+    if (data.name == '' || data.phone == '' || data.service == '') {
+      return message.warning('Vui lòng điền đầy đủ thông tin!');
+    }
+
+    const tmp = data.phone.substring(0, 2);
+    if (tmp == '84') {
+      if (data.phone.length !== 11) {
+        return message.error('Hãy nhập đúng số điện thoại (nếu bắt đầu là 84)');
+      }
+    } else {
+      if (data.phone.length !== 10) {
+        return message.error('Hãy nhập đúng số điện thoại');
+      }
+    }
+
+    const { name, phone, address, service } = data;
+    console.log(data);
+    //api send
+    setLoading(true);
+    await fetch(
+      `${process.env.NEXT_PUBLIC_DOMAIN}/${process.env.NEXT_PUBLIC_LARK_CREATE_RECORD_API}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          phone,
+          address,
+          service,
+        }),
+      }
+    ),
+      await fetch(
+        `${process.env.NEXT_PUBLIC_DOMAIN}/${process.env.NEXT_PUBLIC_LARK_MESSAGE_INTERNAL_API}`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name,
+            phone,
+            address,
+            service,
+          }),
+        }
+      ),
+      await fetch(
+        `${process.env.NEXT_PUBLIC_DOMAIN}/${process.env.NEXT_PUBLIC_LARK_MESSAGE_EXTERNAL_API}`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name,
+            phone,
+            address,
+            service,
+          }),
+        }
+      ),
+      setLoading(false);
+    message.success('Gửi thông tin thành công');
+
+    router.push(`/verify-advisory`);
+  };
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const name = e.target.name;
+
+    setData((prevData) => ({
+      ...prevData,
+      [name]: e.target.value,
+    }));
+  };
+  const handleChangePhone = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const result = e.target.value.replace(/\D/g, '');
+
+    setData((prevState) => ({
+      ...prevState,
+      phone: result,
+    }));
+  };
   return (
     <div className="px-[16px] lg:px-[60px] w-full flex items-center justify-center z-50">
-      <Form className="w-full gap-[20px]">
+      <Form
+        className="w-full gap-[20px]"
+        onFinish={handleSubmit}>
         <InputContact
           name={'name'}
-          //   value={data.name}
-          //   onChange={handleChange}
+          value={data.name}
+          onChange={handleChange}
           label={'Họ và tên'}
           placeholder={'Nhập họ và tên'}
         />
         <InputContact
           name={'phone'}
-          //   onChange={handleChangePhone}
+          onChange={handleChangePhone}
           label={'Số điện thoại'}
-          //   value={data.phone}
+          value={data.phone}
           placeholder={'Nhập số điện thoại'}
         />
         <InputContact
-          //   onChange={handleChange}
+          onChange={handleChange}
           name={'address'}
           label={'Địa chỉ'}
           placeholder={'Nhập địa chỉ'}
         />
         <InputContact
-          //   onChange={handleChange}
+          onChange={handleChange}
           name={'service'}
-          //   value={data.service}
+          value={data.service}
           label={'Dịch vụ quan tâm'}
           placeholder={'Nhập tên dịch vụ'}
         />

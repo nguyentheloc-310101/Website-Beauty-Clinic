@@ -10,7 +10,7 @@ interface Contact {
   service: string;
 }
 
-const initState = {
+const initState: Contact = {
   name: '',
   phone: '',
   address: '',
