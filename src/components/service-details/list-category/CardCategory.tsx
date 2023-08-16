@@ -16,7 +16,7 @@ const CardCategory = (props: CardCategoryProps) => {
     <div
       className={`${
         onDetail ? 'bg-[#BC2449]' : 'bg-[#fff] hover:border-[#BC2449]'
-      } lg:w-[366px]  lg:p-[20px] rounded-[20px] border `}>
+      } lg:w-[466px]  lg:p-[20px] rounded-[20px] border `}>
       <img
         src={image}
         alt=""
