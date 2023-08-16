@@ -1,14 +1,17 @@
 'use client';
 import { gradientText } from '@/constants/gradentText';
-import React, { useEffect, useState } from 'react';
+import { IServiceDetails } from '@/interfaces/service/service';
+import { supabase_website } from '@/services/supabase';
+import { message } from 'antd';
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import CardOtherService from './cards-services-horizontal/CardOtherService';
-import { otherServiceData } from '@/data/other-services/OtherServiceData';
-import { IService, IServiceDetails } from '@/interfaces/service/service';
 interface OtherProps {
   otherServices?: any;
   allServices: IServiceDetails[];
 }
 const OtherServices = (props: OtherProps) => {
+  const router = useRouter();
   const { otherServices, allServices } = props;
 
   useEffect(() => {
@@ -19,6 +22,23 @@ const OtherServices = (props: OtherProps) => {
   const [otherServicesList, setOtherServicesList] = useState<IServiceDetails[]>(
     []
   );
+
+  const handleClickOtherServices = async (idService: string) => {
+    let slugService: string = '';
+    if (idService) {
+      const { data } = await supabase_website
+        .from('services')
+        .select('*')
+        .eq('id', idService);
+      if (data) {
+        slugService = data[0].slug;
+      }
+      router.push(`/service-details/${slugService}`);
+    } else {
+      message.warning('Không tìm thấy dịch vụ');
+      return;
+    }
+  };
   const filterOther = (otherServices: any) => {
     if (otherServices) {
       otherServices?.map((item: any) => {
@@ -31,7 +51,7 @@ const OtherServices = (props: OtherProps) => {
       });
     }
   };
-
+  console.log(otherServicesList);
   return (
     <div>
       <div
@@ -42,7 +62,9 @@ const OtherServices = (props: OtherProps) => {
       <div className="cursor-pointer">
         {otherServicesList.map((item) => {
           return (
-            <div key={item.key}>
+            <div
+              key={item.key}
+              onClick={() => handleClickOtherServices(item.service_id)}>
               <CardOtherService
                 image={item.image}
                 desc={item.description}
