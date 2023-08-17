@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
-import React, { useState } from 'react';
 type CoverImageProps = {
   image: string;
   textAbove: string;
@@ -16,7 +15,7 @@ const CoverImage = (props: CoverImageProps) => {
       <img
         src={image}
         alt=""
-        className="object-cover"
+        className="object-cover w-full lg:h-[722px]"
       />
       <div className="lg:absolute lg:text-right lg:w-[551px] lg:top-[90px] lg:right-[130px]">
         <div className="font-service-card lg:text-[100px] text-[#BC2449] font-[400] lg:leading-[140px]">

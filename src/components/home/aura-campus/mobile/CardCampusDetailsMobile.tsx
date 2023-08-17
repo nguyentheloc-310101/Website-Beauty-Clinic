@@ -8,6 +8,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
+import Link from 'next/link';
 interface CampusDetailsMobile {
   image: any;
   image_list: ListImageDetails[];
@@ -15,38 +16,23 @@ interface CampusDetailsMobile {
   address: string;
   open: string;
   close: string;
+  where?: 'contact' | 'home' | '';
+
   setShowCampusMapMobile: (e: boolean) => void;
 }
 const CardCampusDetailsMobile = (props: CampusDetailsMobile) => {
-  const { name, open, close, address, image_list, setShowCampusMapMobile } =
+  const { name, open, close, address, image, where, setShowCampusMapMobile } =
     props;
   return (
     <div className="flex justify-center ">
       <div className="rounded-[20px] text-white">
         <div className="h-[288px] w-[350px]">
-          <Swiper
-            slidesPerView={1}
-            spaceBetween={30}
-            loop={true}
-            pagination={{
-              clickable: true,
-            }}
-            navigation={true}
-            modules={[Pagination, Navigation]}
-            className="mySwiper">
-            {image_list.map((item) => {
-              return (
-                <SwiperSlide key={item.index}>
-                  <img
-                    src={item.image_details}
-                    alt="cover-img"
-                    className="h-[288px] w-[361px] rounded-t-[20px]"
-                    style={{ objectFit: 'cover' }}
-                  />
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
+          <img
+            src={image}
+            alt="cover-img"
+            className="h-[288px] w-[361px] rounded-t-[20px]"
+            style={{ objectFit: 'cover' }}
+          />
         </div>
         <div className="px-[16px] mt-2 w-full">
           <div className="mb-2 font-[800] leading-[140%] text-[16px] ">
@@ -66,18 +52,30 @@ const CardCampusDetailsMobile = (props: CampusDetailsMobile) => {
             </div>
           </div>
         </div>
-        <div className="flex w-full justify-center mt-[12px]">
-          <div className="w-[152px] h-[32px] px-[16px] py-[8px] bg-[#fff] rounded-[8px] border-[#BC2449]">
-            <p className="text-[#BF264B] font-[600] text-center flex items-center justify-center text-[12px]">
-              Đặt dịch vụ
-            </p>
+        {where == 'contact' || '' ? (
+          <div className="flex w-full justify-center mt-[12px]">
+            <div className="w-[152px] h-[32px] px-[16px] py-[8px] bg-[#fff] rounded-[8px] border-[#BC2449]">
+              <p className="text-[#BF264B] font-[600] text-center flex items-center justify-center text-[12px]">
+                Đặt dịch vụ
+              </p>
+            </div>
+            <div className="w-[152px] h-[34px] py-[8px] rounded-[8px] cursor-pointer bg-[#BC2449]  text-[#fff]  ml-[10px]">
+              <p className="h-full font-[600] text-center flex items-center justify-center text-[12px]">
+                Gọi ngay
+              </p>
+            </div>
           </div>
-          <div className="w-[152px] h-[34px] py-[8px] rounded-[8px] cursor-pointer bg-[#BC2449]  text-[#fff]  ml-[10px]">
-            <p className="h-full font-[600] text-center flex items-center justify-center text-[12px]">
-              Gọi ngay
-            </p>
+        ) : (
+          <div className="flex w-full justify-start mt-[12px] px-[16px]">
+            <div className="w-full h-[32px] px-[16px] py-[8px] bg-[#fff] rounded-[8px] border-[#BC2449]">
+              <Link href="/booking">
+                <p className="text-[#BF264B] font-[600] text-center flex items-center justify-center text-[12px]">
+                  Đặt hẹn ngay
+                </p>
+              </Link>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

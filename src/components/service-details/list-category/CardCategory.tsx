@@ -1,22 +1,23 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 import { gradientText } from '@/constants/gradentText';
+import { IServiceDetails } from '@/interfaces/service/service';
 import React, { useState } from 'react';
 type CardCategoryProps = {
   image: string;
-  category: string;
+  name: string;
   price: number;
   onDetail: boolean;
 };
 
 const CardCategory = (props: CardCategoryProps) => {
-  const { image, category, price, onDetail } = props;
+  const { image, name, price, onDetail } = props;
 
   return (
     <div
       className={`${
         onDetail ? 'bg-[#BC2449]' : 'bg-[#fff] hover:border-[#BC2449]'
-      } lg:w-[466px]  lg:p-[20px] rounded-[20px] border `}>
+      } lg:w-[366px]  lg:p-[20px] rounded-[20px] border `}>
       <img
         src={image}
         alt=""
@@ -27,7 +28,7 @@ const CardCategory = (props: CardCategoryProps) => {
           className={` ${
             onDetail ? `text-white` : `${gradientText}`
           } lg:text-[24px] font-[800] lg:leading-[36px]`}>
-          {category}
+          {name}
         </div>
         <div
           className={`flex flex-col lg:mt-[16px] ${
@@ -36,7 +37,7 @@ const CardCategory = (props: CardCategoryProps) => {
           <div className="lg:text-[16px] lg:leading-[24px] font-[300] lg:tracking-[0.5px]">
             Giá chỉ từ
           </div>
-          <div className="lg:text-[24px] lg:leading-[36px] font-[600]">
+          <div className={`lg:text-[24px] lg:leading-[36px] font-[600]`}>
             {price}
           </div>
         </div>

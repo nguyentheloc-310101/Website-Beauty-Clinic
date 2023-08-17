@@ -22,9 +22,11 @@ interface CampusItem {
 interface AuraCampusProps {
   allClinics: IClinic[];
   allClinicId: string[];
+  where?: 'contact' | 'home' | '';
 }
 
-const AuraCampus = ({ allClinics, allClinicId }: AuraCampusProps) => {
+const AuraCampus = (props: AuraCampusProps) => {
+  const { allClinicId, allClinics, where } = props;
   const { generalData } = useGeneralHomeContext();
 
   const scrollLeft = () => {
@@ -73,6 +75,7 @@ const AuraCampus = ({ allClinics, allClinicId }: AuraCampusProps) => {
           allClinics.map((item, key) => {
             return (
               <CardCampus
+                where={where}
                 key={key}
                 item={item}
               />

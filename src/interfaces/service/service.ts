@@ -17,6 +17,7 @@ export interface IServiceDetails extends IBase {
   hasDoctors: boolean;
   doctors: IDoctor[];
   hasSteps: boolean;
+  services?: IService[];
   steps: IServiceStep[];
   service_id: string;
   others: IService[];
@@ -24,7 +25,7 @@ export interface IServiceDetails extends IBase {
 export interface IService extends IBase {
   name: string;
   category_id: string;
-  // serviceDetails: IServiceDetails[];
+  serviceDetails?: IServiceDetails[];
   doctors: IDoctor[];
   others: IService[];
   slug: string;

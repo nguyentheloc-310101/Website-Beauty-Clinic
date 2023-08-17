@@ -3,20 +3,15 @@ import { gradientText } from '@/constants/gradentText';
 import { useState } from 'react';
 import { CardCategoryProps } from './CardCategory';
 import CardSelected from './CardSelected';
+import { ICategory } from '@/interfaces/category/Category';
 
-const initCategory: CardCategoryProps = {
-  image:
-    'https://ucarecdn.com/48afb975-ecf8-4017-a230-3eb5eb49ad1b/-/quality/smart/-/format/auto/',
-  category: 'Phun xăm mày',
-  price: 899900,
-  onDetail: false,
-};
-const repeatedObjects = Array.from({ length: 8 }, () => initCategory);
-
-const ListCategory = () => {
+interface ListCategoryProps {
+  categoriesOnPage: any;
+}
+const ListCategory = ({ categoriesOnPage }: ListCategoryProps) => {
   const [activeDetail, setActiveDetail] = useState<boolean>(false);
   const [indexSelected, setIndexSelected] = useState<number | null>();
-  const [cardSelect, setCardSelect] = useState<CardCategoryProps>();
+  const [cardSelect, setCardSelect] = useState<ICategory>();
   const handleCLick = (index: number, item: CardCategoryProps) => {
     if (index === indexSelected && activeDetail == true) {
       setActiveDetail(false);
@@ -25,19 +20,20 @@ const ListCategory = () => {
     }
     setIndexSelected(index);
     setActiveDetail(true);
-    setCardSelect(item);
+    setCardSelect(item as any);
   };
+  console.log('categoriesOnPage', categoriesOnPage);
   return (
     <>
       {activeDetail && (
         <CardSelected
           className={'pt-[40px]'}
-          card={cardSelect as CardCategoryProps}
+          card={cardSelect as ICategory}
         />
       )}
 
       <div className="lg:my-[40px] lg:flex lg:flex-wrap lg:gap-[40px]">
-        {repeatedObjects.map((item, index) => {
+        {categoriesOnPage.map((item: any, index: number) => {
           return (
             <div
               className="flex"
@@ -48,7 +44,7 @@ const ListCategory = () => {
               <div
                 className={`${
                   indexSelected == index
-                    ? 'bg-[#F8DDE4] border-[#BC2449]'
+                    ? 'border-[#BC2449]'
                     : 'bg-[#fff] hover:border-[#BC2449]'
                 } lg:w-[366px]  lg:p-[20px] rounded-[20px] border cursor-pointer`}>
                 <img
@@ -63,7 +59,7 @@ const ListCategory = () => {
                         ? `${gradientText}`
                         : `${gradientText}`
                     } lg:text-[24px] font-[800] lg:leading-[36px]`}>
-                    {item.category}
+                    {item.name}
                   </div>
                   <div
                     className={`flex flex-col lg:mt-[16px] ${

@@ -4,6 +4,8 @@ import { Modal } from 'antd';
 import { ListImageDetails } from '@/data/sliders/campusSlider';
 import { CloseCircleFilled } from '@ant-design/icons';
 import CardCampusDetailsMobile from './mobile/CardCampusDetailsMobile';
+import Link from 'next/link';
+import { useContactContext } from '@/app/contact/page';
 
 interface CardCampusDetailsProps {
   image: any;
@@ -13,8 +15,10 @@ interface CardCampusDetailsProps {
   close: string;
   image_list: ListImageDetails[];
   map: any;
+  where?: 'contact' | 'home' | '';
   setIsDetails: (e: boolean) => void;
   setShowCampusMapMobile: (e: boolean) => void;
+  setClinicSelected?: (e: string) => void;
   isMobile: boolean;
   isDetails: boolean;
 }
@@ -31,9 +35,11 @@ const CardCampusDetails = (props: CardCampusDetailsProps) => {
     isDetails,
     isMobile,
     image_list,
+    where,
     setShowCampusMapMobile,
   } = props;
-
+  const { clinicSelected } = useContactContext();
+  console.log('useContactContext', clinicSelected);
   return (
     <Modal
       open={isDetails}
@@ -76,18 +82,30 @@ const CardCampusDetails = (props: CardCampusDetailsProps) => {
                 {open} - {close}
               </p>
             </div>
-            <div className="flex w-full justify-between px-[17px] mt-[20px]">
-              <div className="w-[128px] h-[36px] hover:w-[129px] hover:h-[37px] bg-[#fff] rounded-[8px] cursor-pointer border-[#BC2449]">
-                <p className="text-[#BF264B] h-full font-[600] text-center flex items-center justify-center">
-                  Đặt dịch vụ
-                </p>
+            {where == 'contact' || where == '' ? (
+              <div className="flex w-full justify-between px-[17px] mt-[20px]">
+                <div className="w-[128px] h-[36px] hover:w-[129px] hover:h-[37px] bg-[#fff] rounded-[8px] cursor-pointer border-[#BC2449]">
+                  <p className="text-[#BF264B] h-full font-[600] text-center flex items-center justify-center">
+                    Đặt dịch vụ
+                  </p>
+                </div>
+                <div className="w-[128px] h-[36px] hover:w-[129px] hover:h-[37px] rounded-[8px] cursor-pointer bg-[#BC2449] hover:bg-[#fff] text-[#fff]  hover:text-[#BC2449] ml-[30px]">
+                  <p className="h-full font-[600] text-center flex items-center justify-center">
+                    Gọi ngay
+                  </p>
+                </div>
               </div>
-              <div className="w-[128px] h-[36px] hover:w-[129px] hover:h-[37px] rounded-[8px] cursor-pointer bg-[#BC2449] hover:bg-[#fff] text-[#fff]  hover:text-[#BC2449] ml-[30px]">
-                <p className="h-full font-[600] text-center flex items-center justify-center">
-                  Gọi ngay
-                </p>
+            ) : (
+              <div className="flex w-full justify-between px-[17px] mt-[20px]">
+                <div className="w-[128px] h-[36px] hover:w-[129px] hover:h-[37px] bg-[#fff] rounded-[8px] cursor-pointer border-[#BC2449]">
+                  <Link href={`/booking?id_clinic=${clinicSelected}`}>
+                    <p className="text-[#BF264B] h-full font-[600] text-center flex items-center justify-center">
+                      Đặt lịch hẹn
+                    </p>
+                  </Link>
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           <div>

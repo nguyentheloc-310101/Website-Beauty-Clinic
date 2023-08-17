@@ -1,24 +1,24 @@
 import React from 'react';
 import CardCategory, { CardCategoryProps } from './CardCategory';
+import ListServiceInCategories from './ListServiceInCategories';
+import { ICategory } from '@/interfaces/category/Category';
 
 type CardSelectedProps = {
-  card: CardCategoryProps;
+  card: ICategory;
   className?: string;
 };
 
 const CardSelected = ({ card, className }: CardSelectedProps) => {
+  console.log('card', card);
   return (
-    <div
-      className={`flex gap-[20px] h-full items-center justify-between ${className}`}>
+    <div className={`flex lg:gap-[20px] h-full  ${className}`}>
       <CardCategory
         image={card.image}
-        category={card.category}
+        name={card.name}
         price={card.price}
         onDetail={true}
       />
-      <div className="w-full bg-[white] h-[500px] rounded-[20px]">
-        &quot;đì-teo &quot; --- waiting for design
-      </div>
+      <ListServiceInCategories listService={card.services} />
     </div>
   );
 };

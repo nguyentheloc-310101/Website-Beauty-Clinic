@@ -3,7 +3,7 @@ import CalendarBooking from '@/components/booking/calendar-booking/CalendarBooki
 import SummaryBookingForm from '@/components/booking/summary-form/SummaryBookingForm';
 import TimeTableBooking from '@/components/booking/timetable-booking/TimeTableBooking';
 import PopUpConfirm from '@/components/common/modal/modal-popconfirm/ModalPopconfirm';
-import { supabase } from '@/services/supabase';
+import { supabase, supabase_website } from '@/services/supabase';
 import { CreateId } from '@/utils/helpers/create-order-uid';
 import { message } from 'antd';
 import { useEffect, useRef, useState } from 'react';
@@ -15,12 +15,14 @@ import { IClinic } from '@/interfaces/clinic/clinic';
 import { IService } from '@/interfaces/service/service';
 import { User } from '@/interfaces/users/user';
 import useUsersStore from '@/stores/users-store';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 const desc_popConfirm_sending =
   'Khi bấm “Xác nhận”, đặt hẹn của bạn sẽ được lên lịch. Sẽ có tư vấn viên liên hệ với bạn thời gian sớm nhất. ';
+
 const BookingPage = () => {
   const router = useRouter();
+
   const [dateBooking, setDateBooking] = useState<string>('dd-mm-yy');
   const [timeBooking, setTimeBooking] = useState<string>('00:00');
   const [confirmSending, setConfirmSending] = useState<boolean>(false);
@@ -111,10 +113,8 @@ const BookingPage = () => {
   };
 
   const fetchClinics = async () => {
-    const { data }: any = await supabase
-      .from('clinics')
-      .select('*')
-      .eq('active', true);
+    const { data }: any = await supabase_website.from('clinics').select('*');
+
     if (data) {
       return data;
     }
@@ -150,6 +150,7 @@ const BookingPage = () => {
       setAllUsers(usersStore.users);
     }
   }, [usersStore.users]);
+  const takeIdParams = () => {};
 
   return (
     <div className="relative">

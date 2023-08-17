@@ -22,8 +22,7 @@ const HomePage = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [generalData, setGeneralData] = useState<any>();
 
-  // const [clinicsHome, setClinicsHome] = useState<IClinic[]>([]);
-  const [allClinics, setAllClinics] = useState<IClinic[]>([]);
+  const [allClinic, setAllClinics] = useState<IClinic[]>([]);
   const [allClinicId, setAllClinicId] = useState<string[]>([]);
   const [clinicsOnHome, setClinicsOnHome] = useState<IClinic[]>([]);
 
@@ -38,7 +37,10 @@ const HomePage = () => {
 
   const fetchDataHome = async () => {
     setLoading(true);
-    const { data, error } = await supabase_website.from('data').select('*');
+    const { data, error } = await supabase_website
+      .from('data')
+      .select('*')
+      .eq('key', 'home');
     if (error) {
       message.error(error.message);
       setLoading(false);
@@ -69,13 +71,8 @@ const HomePage = () => {
           setClinicsOnHome((prev) => [...prev, tmp[0]]);
         }
       });
-
     setLoading(false);
   };
-
-  console.log('data_here: ', generalData);
-  console.log('data_clinics: ', allClinics);
-  console.log('auraInfos: ', auraInfos);
 
   return (
     <>
@@ -94,6 +91,7 @@ const HomePage = () => {
           </div>
           <CustomerSaidVideo videoLink={videoLink} />
           <AuraCampus
+            where={'home'}
             allClinics={clinicsOnHome}
             allClinicId={allClinicId}
           />

@@ -19,7 +19,7 @@ const ActorSaid = () => {
           <div className="text-[#4f4f4f] mt-[5px] italic sm:font-[300] text-[9px] uppercase ms:text-[12px] md:text-[18px] lg:font-[100] lg:text-[27px]">
             {celebFeedback?.job}
           </div>
-          <div className="font-service-card lg:h-[260px] font-[600] italic sm:text-[21px] text-transparent bg-clip-text bg-gradient-to-r from-[#BF264B] to-[#DF4B6E] md:text-[30px] lg:font-[600] lg:text-[61px]">
+          <div className="font-service-card lg:text-center lg:w-[300px] lg:h-fit font-[600] italic sm:text-[21px] text-transparent bg-clip-text bg-gradient-to-r from-[#BF264B] to-[#DF4B6E] md:text-[30px] lg:font-[600] lg:text-[60px]">
             {celebFeedback?.name}
           </div>
         </div>

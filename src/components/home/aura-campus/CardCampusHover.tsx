@@ -6,6 +6,7 @@ interface CardHoverProps {
   image: any;
   open: string;
   closed: string;
+  where?: 'contact' | 'home' | '';
 }
 
 const CardCampusHover = ({
@@ -14,6 +15,7 @@ const CardCampusHover = ({
   image,
   open,
   closed,
+  where,
 }: CardHoverProps) => {
   return (
     <div className="w-[380px] h-[542px] rounded-[40px] shadow-lg p-[6px] bg-gradient-to-r from-[#BF264B] to-[#DF4B6E] text-white lg:mb-[60px]">
@@ -34,18 +36,29 @@ const CardCampusHover = ({
           {open} - {closed}
         </p>
       </div>
-      <div className="flex w-full h-[55px] item-center px-6 mt-[20px]">
-        <div className="w-[128px] h-[36px]  hover:h-[36.5px] bg-[#fff] hover:bg-[#F9F9F1] rounded-[8px] cursor-pointer border-[#BC2449]">
-          <p className="text-[#BF264B] h-full font-[600] text-center flex items-center justify-center">
-            Đặt dịch vụ
-          </p>
+      {/*//TODO: where here*/}
+      {where == 'home' || where == '' ? (
+        <div className="flex w-full h-[55px] item-center px-6 mt-[20px]">
+          <div className="w-[128px] h-[36px]  hover:h-[36.5px] bg-[#fff] hover:bg-[#F9F9F1] rounded-[8px] cursor-pointer border-[#BC2449]">
+            <p className="text-[#BF264B] h-full font-[600] text-center flex items-center justify-center">
+              Đặt dịch vụ
+            </p>
+          </div>
+          <div className="w-[128px] h-[36px] hover:w-[129px] hover:h-[37px] rounded-[8px] cursor-pointer bg-[#BC2449] hover:bg-[#fff] text-[#fff] hover:text-[#BC2449] ml-[24px]">
+            <p className="h-full font-[600] text-center flex items-center justify-center">
+              Gọi ngay
+            </p>
+          </div>
         </div>
-        <div className="w-[128px] h-[36px] hover:w-[129px] hover:h-[37px] rounded-[8px] cursor-pointer bg-[#BC2449] hover:bg-[#fff] text-[#fff] hover:text-[#BC2449] ml-[24px]">
-          <p className="h-full font-[600] text-center flex items-center justify-center">
-            Gọi ngay
-          </p>
+      ) : (
+        <div className="flex w-full h-[55px] item-center px-6 mt-[20px]">
+          <div className="w-[128px] h-[36px] z-[999] hover:h-[36.5px] bg-[#fff] hover:bg-[#F9F9F1] rounded-[8px] cursor-pointer border-[#BC2449]">
+            <p className="text-[#BF264B] h-full font-[600] text-center flex items-center justify-center">
+              Đặt lịch hẹn
+            </p>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
