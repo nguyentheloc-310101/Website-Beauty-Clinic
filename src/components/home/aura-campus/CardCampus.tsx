@@ -5,13 +5,16 @@ import CardCampusDetails from './CardCampusDetails';
 import CardCampusHover from './CardCampusHover';
 import CardCampusMapMobile from './mobile/CardCampusMapMobile';
 import { IClinic } from '@/interfaces/clinic/clinic';
+import { useContactContext } from '@/app/contact/page';
 
 interface CardCampusProps {
   item: IClinic;
+  setClinicSelected?: any;
+  where?: 'contact' | 'home' | '';
 }
 
 const CardCampus = (props: CardCampusProps) => {
-  const { item } = props;
+  const { item, where, setClinicSelected } = props;
   const [hoveredCards, setHoveredCards] = useState(false);
   const [isDetails, setIsDetails] = useState(false);
 
@@ -23,9 +26,7 @@ const CardCampus = (props: CardCampusProps) => {
     const handleResize: any = () => {
       setIsMobile(window.innerWidth < 640);
     };
-
     handleResize(); // Call it initially
-
     window.addEventListener('resize', handleResize);
 
     return () => {
@@ -34,6 +35,7 @@ const CardCampus = (props: CardCampusProps) => {
   }, []);
 
   const onDetails = () => {
+    setClinicSelected(item.id);
     setIsDetails(!isDetails);
   };
 
@@ -63,6 +65,7 @@ const CardCampus = (props: CardCampusProps) => {
             image={item?.background}
             open={item?.open}
             closed={item?.closed}
+            where={where}
           />
         ) : (
           <div className="w-[237px] rounded-[20px] lg:w-[380px]  mb-[60px] lg:h-[542px] lg:rounded-[40px] shadow-lg text-[#bf264b] bg-white">

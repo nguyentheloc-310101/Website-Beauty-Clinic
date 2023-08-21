@@ -1,17 +1,17 @@
-"use client";
-import FooterAura from "@/components/footer/FooterAura";
-import HeaderAura from "@/components/navbar/HeaderAura";
-import NavigationAura from "@/components/navbar/NavigationAura";
-import { Inter } from "next/font/google";
-import localFont from "next/font/local";
-import Script from "next/script";
-import "./globals.css";
+'use client';
+import FooterAura from '@/components/footer/FooterAura';
+import HeaderAura from '@/components/navbar/HeaderAura';
+import NavigationAura from '@/components/navbar/NavigationAura';
+import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
+import Script from 'next/script';
+import './globals.css';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 const serviceCardFont = localFont({
-  src: "../../public/fonts/SVN-Ameyallinda Signature.otf",
-  variable: "--font-service-card",
-  style: "normal",
+  src: '../../public/fonts/SVN-Ameyallinda Signature.otf',
+  variable: '--font-service-card',
+  style: 'normal',
 });
 
 export default function RootLayout({

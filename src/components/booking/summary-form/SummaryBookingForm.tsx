@@ -7,6 +7,7 @@ import SelectFormDefault from '@/components/common/form/select/SelectFormDefault
 import CustomerInform from '../customer-inform/CustomerInform';
 import { IClinic } from '@/interfaces/clinic/clinic';
 import { IService } from '@/interfaces/service/service';
+import { useSearchParams } from 'next/navigation';
 
 interface SummaryBookingProps {
   timeBooking: string;
@@ -17,6 +18,7 @@ interface SummaryBookingProps {
   setClinic: (clinic: string) => void;
   setConfirmSending: (e: boolean) => void;
   customerName: any;
+
   setCustomerEmail: (e: string) => void;
   setCustomerPhone: (e: string) => void;
 }
@@ -33,7 +35,10 @@ interface SelectParams {
   label: string;
   value: string;
 }
+
 const SummaryBookingForm = (props: SummaryBookingProps) => {
+  let id_clinic = useSearchParams().get('id_clinic');
+  console.log('outside:------------', id_clinic);
   const {
     timeBooking,
     dateBooking,
@@ -102,7 +107,8 @@ const SummaryBookingForm = (props: SummaryBookingProps) => {
       <Form
         onFinish={onFinish}
         layout="vertical"
-        style={{ width: '100%' }}>
+        style={{ width: '100%' }}
+        initialValues={{ clinic: [id_clinic] }}>
         <div className="grid divide-y divide-[#E9EBED] w-full">
           <div className="">
             <ItemInfo
