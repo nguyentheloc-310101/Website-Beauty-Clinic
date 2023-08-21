@@ -5,7 +5,8 @@ import RecommendTag from '@/components/service-details/RecommendTag';
 import ListCategory from '@/components/service-details/list-category/ListCategory';
 import ZaloQR from '@/components/service-details/zalo-qr/ZaloQR';
 import ZaloQRMobile from '@/components/service-details/zalo-qr/ZaloQRMobile';
-import { ICategory, ITag } from '@/interfaces/category/Category';
+import { ICategory, ITag } from '@/interfaces/category/category';
+
 import { supabase_website } from '@/services/supabase';
 import { message } from 'antd';
 import { useEffect, useState } from 'react';

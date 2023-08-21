@@ -1,7 +1,7 @@
 import React from 'react';
 import CardCategory, { CardCategoryProps } from './CardCategory';
 import ListServiceInCategories from './ListServiceInCategories';
-import { ICategory } from '@/interfaces/category/Category';
+import { ICategory } from '@/interfaces/category/category';
 
 type CardSelectedProps = {
   card: ICategory;

@@ -1,5 +1,5 @@
 'use client';
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import CoverImageContact, {
   ContactCover,
 } from '@/components/contact/CoverImageContact';
@@ -76,31 +76,19 @@ const ContactPage = () => {
   console.log('clinicSelected', clinicSelected);
   return (
     <>
-      <ContactPageContext.Provider value={{ clinicSelected }}>
-        <CoverImageContact
-          image={coverData.image}
-          textAbove={coverData.textAbove}
-          textBeneath={coverData.textBeneath}
-        />
-        <ClinicsOnContact
-          clinicSelected={clinicSelected}
-          setClinicSelected={setClinicSelected}
-          where={'contact'}
-          allClinics={clinicsOnContact}
-        />
-      </ContactPageContext.Provider>
+      <CoverImageContact
+        image={coverData.image}
+        textAbove={coverData.textAbove}
+        textBeneath={coverData.textBeneath}
+      />
+      <ClinicsOnContact
+        clinicSelected={clinicSelected}
+        setClinicSelected={setClinicSelected}
+        where={'contact'}
+        allClinics={clinicsOnContact}
+      />
     </>
   );
 };
 
 export default ContactPage;
-
-export function useContactContext() {
-  const context = useContext(ContactPageContext);
-  if (!context) {
-    throw new Error(
-      'useGeneralDataContext must be used within a GeneralDataContext'
-    );
-  }
-  return context;
-}

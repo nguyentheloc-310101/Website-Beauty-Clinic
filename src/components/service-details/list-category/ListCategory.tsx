@@ -3,7 +3,7 @@ import { gradientText } from '@/constants/gradentText';
 import { useState } from 'react';
 import { CardCategoryProps } from './CardCategory';
 import CardSelected from './CardSelected';
-import { ICategory } from '@/interfaces/category/Category';
+import { ICategory } from '@/interfaces/category/category';
 
 interface ListCategoryProps {
   categoriesOnPage: any;

@@ -1,4 +1,4 @@
-import { ITag } from '@/interfaces/category/Category';
+import { ITag } from '@/interfaces/category/category';
 import React from 'react';
 
 type RecommendTagProps = {
