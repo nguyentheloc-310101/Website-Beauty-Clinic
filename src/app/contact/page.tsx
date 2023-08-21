@@ -75,18 +75,21 @@ const ContactPage = () => {
   };
   console.log('clinicSelected', clinicSelected);
   return (
-    <ContactPageContext.Provider value={{ clinicSelected }}>
-      <CoverImageContact
-        image={coverData.image}
-        textAbove={coverData.textAbove}
-        textBeneath={coverData.textBeneath}
-      />
-      <ClinicsOnContact
-        setClinicSelected={setClinicSelected}
-        where={'contact'}
-        allClinics={clinicsOnContact}
-      />
-    </ContactPageContext.Provider>
+    <>
+      <ContactPageContext.Provider value={{ clinicSelected }}>
+        <CoverImageContact
+          image={coverData.image}
+          textAbove={coverData.textAbove}
+          textBeneath={coverData.textBeneath}
+        />
+        <ClinicsOnContact
+          clinicSelected={clinicSelected}
+          setClinicSelected={setClinicSelected}
+          where={'contact'}
+          allClinics={clinicsOnContact}
+        />
+      </ContactPageContext.Provider>
+    </>
   );
 };
 

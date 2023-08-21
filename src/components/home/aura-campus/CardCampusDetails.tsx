@@ -5,7 +5,6 @@ import { ListImageDetails } from '@/data/sliders/campusSlider';
 import { CloseCircleFilled } from '@ant-design/icons';
 import CardCampusDetailsMobile from './mobile/CardCampusDetailsMobile';
 import Link from 'next/link';
-import { useContactContext } from '@/app/contact/page';
 
 interface CardCampusDetailsProps {
   image: any;
@@ -15,6 +14,7 @@ interface CardCampusDetailsProps {
   close: string;
   image_list: ListImageDetails[];
   map: any;
+  clinicSelected?: any;
   where?: 'contact' | 'home' | '';
   setIsDetails: (e: boolean) => void;
   setShowCampusMapMobile: (e: boolean) => void;
@@ -35,10 +35,11 @@ const CardCampusDetails = (props: CardCampusDetailsProps) => {
     isDetails,
     isMobile,
     image_list,
+    clinicSelected,
     where,
     setShowCampusMapMobile,
   } = props;
-  const { clinicSelected } = useContactContext();
+
   console.log('useContactContext', clinicSelected);
   return (
     <Modal

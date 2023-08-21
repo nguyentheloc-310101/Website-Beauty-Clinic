@@ -8,12 +8,13 @@ import { IClinic } from '@/interfaces/clinic/clinic';
 
 interface CardCampusProps {
   item: IClinic;
+  clinicSelected?: any;
   setClinicSelected?: any;
   where?: 'contact' | 'home' | '';
 }
 
 const CardCampus = (props: CardCampusProps) => {
-  const { item, where, setClinicSelected } = props;
+  const { item, where, setClinicSelected, clinicSelected } = props;
   const [hoveredCards, setHoveredCards] = useState(false);
   const [isDetails, setIsDetails] = useState(false);
 
@@ -86,6 +87,7 @@ const CardCampus = (props: CardCampusProps) => {
       </div>
       {isDetails && (
         <CardCampusDetails
+          clinicSelected={clinicSelected}
           setIsDetails={setIsDetails}
           isDetails={isDetails}
           image={item?.background}

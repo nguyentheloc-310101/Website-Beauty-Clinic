@@ -3,11 +3,12 @@ import React from 'react';
 import CardCampus from '../home/aura-campus/CardCampus';
 interface ClinicsProps {
   allClinics: IClinic[];
+  clinicSelected?: any;
   setClinicSelected?: any;
   where?: 'contact' | 'home' | '';
 }
 const ClinicsOnContact = (props: ClinicsProps) => {
-  const { allClinics, where, setClinicSelected } = props;
+  const { allClinics, where, setClinicSelected, clinicSelected } = props;
   return (
     <div
       id="content"
@@ -16,6 +17,7 @@ const ClinicsOnContact = (props: ClinicsProps) => {
         allClinics.map((item, key) => {
           return (
             <CardCampus
+              clinicSelected={clinicSelected}
               setClinicSelected={setClinicSelected}
               where={where}
               key={key}

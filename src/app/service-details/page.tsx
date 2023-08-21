@@ -3,11 +3,9 @@
 import CoverImage from '@/components/service-details/CoverImage';
 import RecommendTag from '@/components/service-details/RecommendTag';
 import ListCategory from '@/components/service-details/list-category/ListCategory';
-import ServiceSideBarVs1 from '@/components/service-details/service-sideBar/vs1/ServiceSideBarVs1';
 import ZaloQR from '@/components/service-details/zalo-qr/ZaloQR';
 import ZaloQRMobile from '@/components/service-details/zalo-qr/ZaloQRMobile';
 import { ICategory, ITag } from '@/interfaces/category/Category';
-import { IService, IServiceStep } from '@/interfaces/service/service';
 import { supabase_website } from '@/services/supabase';
 import { message } from 'antd';
 import { useEffect, useState } from 'react';
