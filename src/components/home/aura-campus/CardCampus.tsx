@@ -5,7 +5,6 @@ import CardCampusDetails from './CardCampusDetails';
 import CardCampusHover from './CardCampusHover';
 import CardCampusMapMobile from './mobile/CardCampusMapMobile';
 import { IClinic } from '@/interfaces/clinic/clinic';
-import { useContactContext } from '@/app/contact/page';
 
 interface CardCampusProps {
   item: IClinic;
