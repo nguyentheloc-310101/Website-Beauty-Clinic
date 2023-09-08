@@ -112,7 +112,7 @@ const FormContactSmall = () => {
   };
 
   return (
-    <div className="relative w-[242px] h-[245px] pt-[5px] md:w-[250px] lg:w-[310px] lg:h-[320px] flex flex-cols item-center justify-center gap-[8px] mb-[10px] border bg-gradient-to-r from-[#fff2de] to-[#fff] rounded-[23px] lg:pt-[16px] lg:pl-[10px]">
+    <div className='relative w-[242px] h-[245px] pt-[5px] md:w-[250px] lg:w-[310px] lg:h-[320px] flex flex-cols item-center justify-center gap-[8px] mb-[10px] border bg-gradient-to-r from-[#fff2de] to-[#fff] rounded-[23px] lg:pt-[16px] lg:pl-[10px]'>
       <Form
         onFinish={handleSubmit}
         layout={'vertical'}
@@ -148,9 +148,9 @@ const FormContactSmall = () => {
           label={'Dịch vụ muốn tư vấn'}
           placeholder={'Nhập tên dịch vụ'}
         />
-        <div className="w-full flex items-center justify-center mt-[10px]">
+        <div className='w-full flex items-center justify-center mt-[10px]'>
           <PrimaryButton
-            typeBtn="submit"
+            typeBtn='submit'
             loading={loading}
             text={'Gửi thông tin'}
             size={'small'}
@@ -175,7 +175,7 @@ const InputContactSmall = (props: InputContactProps) => {
   const { label, value, name, placeholder, onChange, required } = props;
   return (
     <div>
-      <label className="block lg:mb-1 text-[#BF264B] lg:text-[14px] font-[500]">
+      <label className='block lg:mb-1 text-[#BF264B] lg:text-[14px] font-[500]'>
         {label}
       </label>
       <input
@@ -183,7 +183,7 @@ const InputContactSmall = (props: InputContactProps) => {
         name={name}
         required={required}
         value={value}
-        className="w-[180px] h-[30px] p-[12px] lg:w-[240px] lg:h-[34px] lg:p-[20px] rounded-[7px] border border-[#bf264b] "
+        className='w-[180px] h-[30px] p-[12px] lg:w-[240px] lg:h-[34px] lg:p-[20px] rounded-[7px] border border-[#bf264b] '
         placeholder={placeholder}
       />
     </div>

@@ -12,10 +12,11 @@ import SliderServiceResponsive from '@/components/home/service-aura/ServiceAuraR
 import PanelContact from '@/components/panel-contact/PanelContact';
 
 import { supabase_website } from '@/services/supabase';
-import { message } from 'antd';
+import { FloatButton, message } from 'antd';
 import { IClinic } from '@/interfaces/clinic/clinic';
 import LoadingDefault from '@/components/common/loading/LoadingDefault';
 import { IAuraInfos } from '@/interfaces/home/IHome';
+import { CommentOutlined, CustomerServiceOutlined } from '@ant-design/icons';
 
 const GeneralHomeContext = createContext<any>(null);
 const HomePage = () => {
@@ -79,14 +80,24 @@ const HomePage = () => {
       {loading && <LoadingDefault loading={loading} />}
       <GeneralHomeContext.Provider value={{ generalData, setGeneralData }}>
         <div>
-          <PanelContact />
-          <div className="flex flex-col items-center justify-center ">
+          {/* <PanelContact /> */}
+          <FloatButton.Group
+            trigger='click'
+            type='primary'
+            style={{ right: 24 }}
+            icon={<CustomerServiceOutlined className='text-[#BC2449]' />}>
+            <FloatButton />
+            <FloatButton
+              icon={<CommentOutlined className='text-[#BC2449]' />}
+            />
+          </FloatButton.Group>
+          <div className='flex flex-col items-center justify-center '>
             <HeroSection />
           </div>
-          <div className="hidden lg:block lg:w-full lg:mb-[20px] mb-[30px]">
+          <div className='hidden lg:block lg:w-full lg:mb-[20px] mb-[30px]'>
             <SliderService />
           </div>
-          <div className="md:hidden">
+          <div className='md:hidden'>
             <SliderServiceResponsive />
           </div>
           <CustomerSaidVideo videoLink={videoLink} />
@@ -100,7 +111,7 @@ const HomePage = () => {
           {isShowAuraInfos ? (
             <SeeMoreAboutAura auraInfos={auraInfos} />
           ) : (
-            <div className="hidden lg:block lg:my-[00px]"></div>
+            <div className='hidden lg:block lg:my-[00px]'></div>
           )}
 
           <ContactInformation />

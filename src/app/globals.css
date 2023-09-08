@@ -506,3 +506,29 @@ body {
   label.ant-radio-button-wrapper.ant-radio-button-wrapper-checked {
   border-color: #36383a;
 }
+body
+  > div.flex-1.mb-\[5rem\]
+  > div
+  > div
+  > div.ant-float-btn-group.css-dev-only-do-not-override-14wwjjs.ant-float-btn-group-circle
+  > button
+  > span
+  > div {
+  border-radius: 100px;
+  background: var(--neutral-ng-0, #fff);
+  /* Drop Shadown | Bottom | Level 1 */
+  box-shadow: 0px 0px 6px 0px rgba(20, 20, 21, 0.14);
+}
+body
+  > div.flex-1.mb-\[5rem\]
+  > div
+  > div
+  > div.ant-float-btn-group.css-dev-only-do-not-override-14wwjjs.ant-float-btn-group-circle
+  > button
+  > span
+  > div
+  > div
+  > div
+  > span {
+  color: #bf264b;
+}
