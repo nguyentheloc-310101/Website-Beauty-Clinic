@@ -17,6 +17,7 @@ import { IClinic } from '@/interfaces/clinic/clinic';
 import LoadingDefault from '@/components/common/loading/LoadingDefault';
 import { IAuraInfos } from '@/interfaces/home/IHome';
 import { CommentOutlined, CustomerServiceOutlined } from '@ant-design/icons';
+import LiveCommerce from '../live-commerce/page';
 
 const GeneralHomeContext = createContext<any>(null);
 const HomePage = () => {
@@ -113,7 +114,7 @@ const HomePage = () => {
           ) : (
             <div className='hidden lg:block lg:my-[00px]'></div>
           )}
-
+          <LiveCommerce />
           <ContactInformation />
         </div>
       </GeneralHomeContext.Provider>
