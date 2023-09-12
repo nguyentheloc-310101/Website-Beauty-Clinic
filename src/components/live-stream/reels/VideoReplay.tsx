@@ -1,229 +1,108 @@
 /* eslint-disable @next/next/no-img-element */
-import { supabase } from '@/services/supabase';
-import { useEffect, useState } from 'react';
-import { LiaEyeSolid } from 'react-icons/lia';
+import { supabase } from "@/services/supabase";
+import { useEffect, useState } from "react";
+import { LiaEyeSolid } from "react-icons/lia";
 
-import PlayerStream from './player-stream';
+import PlayerStream from "./player-stream";
 const MainImg =
-  'https://ucarecdn.com/49a4f250-587d-4660-a221-e6fb026890dd/-/quality/smart/-/format/webp/';
+    "https://ucarecdn.com/49a4f250-587d-4660-a221-e6fb026890dd/-/quality/smart/-/format/webp/";
 const Video1Img =
-  'https://ucarecdn.com/e70e3d89-5556-411d-975f-8f72e60bf868/-/quality/smart/-/format/webp/';
+    "https://ucarecdn.com/e70e3d89-5556-411d-975f-8f72e60bf868/-/quality/smart/-/format/webp/";
 const Video2Img =
-  'https://ucarecdn.com/03ef030b-62ca-479a-b593-a8928a96705a/-/quality/smart/-/format/webp/';
+    "https://ucarecdn.com/03ef030b-62ca-479a-b593-a8928a96705a/-/quality/smart/-/format/webp/";
 const VideoReplay = () => {
-  const [streams, setStreams] = useState([]);
-  useEffect(() => {
-    getStreams();
-  }, []);
+    const [streams, setStreams] = useState([]);
+    useEffect(() => {
+        getStreams();
+    }, []);
 
-  const getStreams = async () => {
-    try {
-      let data: any = await supabase
-        .from('stream_info')
-        .select()
-        .eq('status', 'live');
+    const getStreams = async () => {
+        try {
+            let data: any = await supabase
+                .from("stream_info")
+                .select()
+                .eq("status", "live");
 
-      setStreams(data?.data);
-    } catch (e) {
-      console.log(e);
-    }
-  };
-  // const channel = supabase
-  //   .channel('schema-db-changes')
-  //   .on(
-  //     'postgres_changes',
-  //     {
-  //       event: '*',
-  //       schema: 'public',
-  //       table: 'stream_info',
-  //     },
-  //     async (payload) => {
-  //       await getStreams();
-  //     }
-  //   )
-  //   .subscribe();
-  return (
-    <div className="w-full h-auto px-[16px] sm:px-[5rem] pt-5 flex-wrap">
-      <p className="font-[700] py-1 sm:py-5 text-[1.5rem] sm:text-[2rem] text-[#bc2449]">
-        Video đã phát
-      </p>
-      <div className="flex justify-between gap-5 h-[60vh] sm:h-[75vh]">
-        <div className="relative w-[50%] h-full overflow-hidden rounded-lg">
-          <div className="z-50 w-full h-full absolute top-0 left-0 bg-gradient-to-b from-transparent to-slate-50"></div>
-          <img
-            src={MainImg}
-            alt="theme"
-            className="z-10 w-full h-full object-cover"
-          />
-          <div className="z-[100] absolute bottom-5 w-[75%] left-5 flex flex-col gap-2">
-            <p className="text-[1rem] sm:text-[1.5rem] font-[600] text-[#bc2449]">
-              Title của video
+            setStreams(data?.data);
+        } catch (e) {
+            console.log(e);
+        }
+    };
+    // const channel = supabase
+    //   .channel('schema-db-changes')
+    //   .on(
+    //     'postgres_changes',
+    //     {
+    //       event: '*',
+    //       schema: 'public',
+    //       table: 'stream_info',
+    //     },
+    //     async (payload) => {
+    //       await getStreams();
+    //     }
+    //   )
+    //   .subscribe();
+    return (
+        <div className="w-full flex flex-col gap-[30px] px-[16px] sm:px-[10%] flex-wrap">
+            <p className="font-[600] py-1 sm:py-5 text-[1.2rem] sm:text-[2.5rem] text-[#bc2449]">
+                Video đã phát
             </p>
-            <p className="text-[0.7rem] sm:text-[0.9rem] text-[#36383A]">
-              Lorem ipsum dolor sit amet consectetur. Tortor hendrerit aliquam
-              suscipit fringilla. Elit eget proin semper tempus sed biben.
-            </p>
-            <button className="text-[0.7rem] sm:text-[1rem] w-[45%] sm:w-[35%] bg-[#bc2449] rounded-lg text-white py-2 px-3">
-              Xem ngay
-            </button>
-          </div>
+            <section className="flex w-full items-center justify-center gap-[30px]">
+                <div className="relative replay-video w-[calc((100%-30px)/2)] h-[720px]">
+                    <div className="w-full h-full  bg-gradient-to-t from-[#fff] via-transparent to-transparent absolute top-0 left-0"></div>
+                    <div className="absolute bottom-[2rem] left-[2rem] flex flex-col gap-[1rem]">
+                        <h1 className="text-[#bc2449] font-[600] text-[2rem] my-0">
+                            Title của video
+                        </h1>
+                        <p className="text-[#36383A] text-[14px] font-[400] max-w-[60%] my-0">
+                            Lorem ipsum dolor sit amet consectetur. Tortor
+                            hendrerit aliquam suscipit fringilla. Elit eget
+                            proin semper tempus sed biben.
+                        </p>
+                        <div>
+                            <button className="px-[32px] py-[12px] text-[1rem] font-[500] bg-[#bc2449] text-white rounded-lg">
+                                Xem ngay
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div className="flex flex-col gap-[30px] w-[calc((100%-30px)/2)] h-[720px]">
+                    <div className="w-full h-[calc((100%-30px)/2)] flex flex-col gap-[1rem]">
+                        <img
+                            src={Video1Img}
+                            alt="img"
+                            className="w-full flex-[5] rounded-lg"
+                        />
+                        <div className="w-full flex-[1] px-[1rem] flex flex-col gap-[8px]">
+                            <h1 className="text-[#bc2449] font-[600] text-[1.25rem] my-0">
+                                Title của video
+                            </h1>{" "}
+                            <div className="w-full flex items-center justify-between text-[12px] text-[#36383A]">
+                                <span>@username</span>
+                                <span>dd/mm/yy</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-full h-[calc((100%-30px)/2)] flex flex-col gap-[1rem]">
+                        <img
+                            src={Video1Img}
+                            alt="img"
+                            className="w-full flex-[5] rounded-lg"
+                        />
+                        <div className="w-full flex-[1] px-[1rem] flex flex-col gap-[8px]">
+                            <h1 className="text-[#bc2449] font-[600] text-[1.25rem] my-0">
+                                Title của video
+                            </h1>{" "}
+                            <div className="w-full flex items-center justify-between text-[12px] text-[#36383A]">
+                                <span>@username</span>
+                                <span>dd/mm/yy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-        <div className="flex flex-col gap-5 relative w-[50%] h-full">
-          {streams.length == 1 ? (
-            <>
-              <div className="h-[50%]">
-                <div className="relative rounded-lg h-[80%] overflow-hidden">
-                  <PlayerStream
-                    isConnectStream={true}
-                    streamInfo={streams[0]}
-                  />
-                  <div className="absolute top-[1rem] left-[1rem] rounded-lg py-1 px-2 bg-[#bc2449] text-white">
-                    Live
-                  </div>
-                  <div className="absolute top-[1rem] right-[1rem] rounded-lg flex gap-2 items-center py-1 px-2 bg-[#1F1F1F33] text-white text-[1rem]">
-                    <LiaEyeSolid /> <span>3.5k</span>
-                  </div>
-                </div>
-                <div className="px-5">
-                  <div className="font-[700] my-1 text-[0.7rem] sm:text-[1.1rem] text-[#bc2449]">
-                    Test Stream
-                  </div>
-                  <div className="flex justify-between text-[0.7rem] sm:text-[1rem]">
-                    <span>@Rey</span>
-                    <div>5/7/2023 10:30</div>
-                  </div>
-                </div>
-              </div>
-              <div className="h-[50%]">
-                <div className="relative rounded-lg h-[80%] overflow-hidden">
-                  <img
-                    src={Video2Img}
-                    alt="theme"
-                    className="w-full h-full"
-                  />
-                  <p className="absolute top-[1rem] left-[1rem] rounded-lg py-1 px-2 bg-[#bc2449] text-white">
-                    Live
-                  </p>
-                  <p className="absolute top-[1rem] right-[1rem] rounded-lg flex gap-2 items-center py-1 px-2 bg-[#1F1F1F33] text-white text-[1rem]">
-                    <LiaEyeSolid /> <span>3.5k</span>
-                  </p>
-                </div>
-                <div className="px-5">
-                  <p className="font-[700] my-1  text-[0.7rem] sm:text-[1rem] text-[#bc2449]">
-                    Combo mày môi tùy chọn
-                  </p>
-                  <div className="flex justify-between text-[0.7rem] sm:text-[1rem]">
-                    <span>@Heo</span>
-                    <div>5/5/2023 7:30</div>
-                  </div>
-                </div>
-              </div>
-            </>
-          ) : streams.length == 2 ? (
-            <>
-              <div className="h-[50%]">
-                <div className="relative rounded-lg h-[80%] overflow-hidden">
-                  <PlayerStream
-                    isConnectStream={true}
-                    streamInfo={streams[0]}
-                  />
-                  <p className="absolute top-[1rem] left-[1rem] rounded-lg py-1 px-2 bg-[#bc2449] text-white">
-                    Live
-                  </p>
-                  <p className="absolute top-[1rem] right-[1rem] rounded-lg flex gap-2 items-center py-1 px-2 bg-[#1F1F1F33] text-white text-[1rem]">
-                    <LiaEyeSolid /> <span>3.5k</span>
-                  </p>
-                </div>
-                <div className="px-5">
-                  <p className="font-[700] my-1 text-[0.7rem] sm:text-[1rem] text-[#bc2449]">
-                    Test Stream
-                  </p>
-                  <div className="flex justify-between text-[0.7rem] sm:text-[1rem]">
-                    <span>@Rey</span>
-                    <div>5/7/2023 10:30</div>
-                  </div>
-                </div>
-              </div>
-              <div className="h-[50%]">
-                <div className="relative rounded-lg h-[80%] overflow-hidden">
-                  <PlayerStream
-                    isConnectStream={true}
-                    streamInfo={streams[1]}
-                  />
-                  <p className="absolute top-[1rem] left-[1rem] rounded-lg py-1 px-2 bg-[#bc2449] text-white">
-                    Live
-                  </p>
-                  <p className="absolute top-[1rem] right-[1rem] rounded-lg flex gap-2 items-center py-1 px-2 bg-[#1F1F1F33] text-white text-[1rem]">
-                    <LiaEyeSolid /> <span>3.5k</span>
-                  </p>
-                </div>
-                <div className="px-5">
-                  <p className="font-[700] my-1 text-[0.7rem] sm:text-[1rem] text-[#bc2449]">
-                    Combo mày môi tùy chọn
-                  </p>
-                  <div className="flex justify-between text-[0.7rem] sm:text-[1rem]">
-                    <span>@Heo</span>
-                    <div>5/5/2023 7:30</div>
-                  </div>
-                </div>
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="h-[50%]">
-                <div className="relative rounded-lg h-[80%] overflow-hidden">
-                  <img
-                    src={Video2Img}
-                    alt="theme"
-                    className="w-full h-full"
-                  />
-                  <p className="absolute top-[1rem] left-[1rem] rounded-lg py-1 px-2 bg-[#bc2449] text-white">
-                    Live
-                  </p>
-                  <p className="absolute top-[1rem] right-[1rem] rounded-lg flex gap-2 items-center py-1 px-2 bg-[#1F1F1F33] text-white text-[1rem]">
-                    <LiaEyeSolid /> <span>3.5k</span>
-                  </p>
-                </div>
-                <div className="px-5">
-                  <p className="font-[700] my-1 text-[0.7rem] sm:text-[1rem] text-[#bc2449]">
-                    Test Stream
-                  </p>
-                  <div className="flex justify-between text-[0.7rem] sm:text-[1rem]">
-                    <span>@Rey</span>
-                    <div>5/7/2023 10:30</div>
-                  </div>
-                </div>
-              </div>
-              <div className="h-[50%]">
-                <div className="relative rounded-lg h-[80%] overflow-hidden">
-                  <img
-                    src={Video1Img}
-                    alt="theme"
-                    className="w-full h-full"
-                  />
-                  <p className="absolute top-[1rem] left-[1rem] rounded-lg py-1 px-2 bg-[#bc2449] text-white">
-                    Live
-                  </p>
-                  <p className="absolute top-[1rem] right-[1rem] rounded-lg flex gap-2 items-center py-1 px-2 bg-[#1F1F1F33] text-white text-[1rem]">
-                    <LiaEyeSolid /> <span>3.5k</span>
-                  </p>
-                </div>
-                <div className="px-5">
-                  <p className="font-[700] my-1 text-[0.7rem] sm:text-[1rem] text-[#bc2449]">
-                    Combo mày môi tùy chọn
-                  </p>
-                  <div className="flex justify-between text-[0.7rem] sm:text-[1rem]">
-                    <span>@Heo</span>
-                    <div>5/5/2023 7:30</div>
-                  </div>
-                </div>
-              </div>
-            </>
-          )}
-        </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default VideoReplay;

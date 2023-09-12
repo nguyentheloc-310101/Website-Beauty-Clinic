@@ -1,15 +1,14 @@
 "use client";
 import Link from "next/link";
-import { BsChevronRight } from "react-icons/bs";
-import ReelCard from "./ReelCard";
 import { ISessionStream } from "@/interfaces/stream/session-stream";
+import LiveCard from "./LiveCard";
 type Props = {
     sessions?: ISessionStream[];
     setCurrentSession: any;
     setOpenModalVideo: (state: boolean) => void;
     setMode: any;
 };
-const ReelsOutStanding = ({
+const LivesOutStanding = ({
     sessions,
     setCurrentSession,
     setOpenModalVideo,
@@ -19,7 +18,7 @@ const ReelsOutStanding = ({
         <div className="w-full h-auto px-[20%] sm:px-[10%] pt-[40px] flex-wrap mb-[10%] flex flex-col gap-[30px]">
             <div className="flex justify-between items-center">
                 <p className="font-[600] !my-0 text-[1.2rem] sm:py-5 sm:text-[2.5rem] text-[#bc2449]">
-                    Reels nổi bật
+                    Lives nổi bật
                 </p>
                 {/* <Link href="/live-commerce" className="flex items-center gap-5">
                     <span className="font-[700] text-[1.2rem] sm:py-5 sm:text-[2rem] text-[#bc2449]">
@@ -35,7 +34,7 @@ const ReelsOutStanding = ({
                         .filter((session) => session.created_at != null)
                         .map((session, idx) => {
                             return (
-                                <ReelCard
+                                <LiveCard
                                     session={session}
                                     key={idx}
                                     setCurrentSession={setCurrentSession}
@@ -49,4 +48,4 @@ const ReelsOutStanding = ({
     );
 };
 
-export default ReelsOutStanding;
+export default LivesOutStanding;
