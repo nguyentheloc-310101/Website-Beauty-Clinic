@@ -17,7 +17,7 @@ import { IClinic } from "@/interfaces/clinic/clinic";
 import LoadingDefault from "@/components/common/loading/LoadingDefault";
 import { IAuraInfos } from "@/interfaces/home/IHome";
 import { CommentOutlined, CustomerServiceOutlined } from "@ant-design/icons";
-import LiveCommerce from "../live-commerce/page";
+import LiveCommerce from "@/components/live-stream/live-commerce";
 
 const GeneralHomeContext = createContext<any>(null);
 const HomePage = () => {
