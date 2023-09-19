@@ -11,7 +11,10 @@ import Script from "next/script";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
 
-export default function LiveCommerce() {
+type Props = {
+    hideNavigate?: boolean;
+};
+export default function LiveCommerce({ hideNavigate }: Props) {
     const [openModal, setOpenModal] = useState(false);
     const [mode, setMode] = useState<"vod" | "stream">("vod");
     const [currentSession, setCurrentSession] = useState<ISessionStream>();
@@ -93,6 +96,7 @@ export default function LiveCommerce() {
                         setCurrentSession={setCurrentSession}
                         setOpenModalVideo={setOpenModal}
                         setMode={setMode}
+                        hideNavigate={hideNavigate}
                     />
                 )}
                 {sessions && sessions.length > 0 && (
@@ -101,10 +105,11 @@ export default function LiveCommerce() {
                         setCurrentSession={setCurrentSession}
                         setOpenModalVideo={setOpenModal}
                         setMode={setMode}
+                        hideNavigate={hideNavigate}
                     />
                 )}
 
-                <VideoReplay />
+                {/* <VideoReplay /> */}
             </div>
             {openModal && (
                 <ModalViewVideo

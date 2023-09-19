@@ -2,17 +2,20 @@
 import Link from "next/link";
 import { ISessionStream } from "@/interfaces/stream/session-stream";
 import LiveCard from "./LiveCard";
+import { BsChevronRight } from "react-icons/bs";
 type Props = {
     sessions?: ISessionStream[];
     setCurrentSession: any;
     setOpenModalVideo: (state: boolean) => void;
     setMode: any;
+    hideNavigate?: boolean;
 };
 const LivesOutStanding = ({
     sessions,
     setCurrentSession,
     setOpenModalVideo,
     setMode,
+    hideNavigate,
 }: Props) => {
     return (
         <div className="w-full h-auto px-[20%] sm:px-[10%] pt-[40px] flex-wrap mb-[10%] flex flex-col gap-[30px]">
@@ -20,12 +23,17 @@ const LivesOutStanding = ({
                 <p className="font-[600] !my-0 text-[1.2rem] sm:py-5 sm:text-[2.5rem] text-[#bc2449]">
                     Lives nổi bật
                 </p>
-                {/* <Link href="/live-commerce" className="flex items-center gap-5">
-                    <span className="font-[700] text-[1.2rem] sm:py-5 sm:text-[2rem] text-[#bc2449]">
-                        Xem thêm
-                    </span>
-                    <BsChevronRight className="text-[1.2rem] sm:text-[2rem] text-[#bc2449]" />{" "}
-                </Link> */}
+                {hideNavigate && (
+                    <Link
+                        href="/live-commerce"
+                        className="flex items-center gap-5"
+                    >
+                        <span className="font-[700] text-[1.2rem] sm:py-5 sm:text-[2rem] text-[#bc2449]">
+                            Xem thêm
+                        </span>
+                        <BsChevronRight className="text-[1.2rem] sm:text-[2rem] text-[#bc2449]" />{" "}
+                    </Link>
+                )}
             </div>
             <div className="flex flex-wrap w-full gap-[30px]">
                 {sessions &&
